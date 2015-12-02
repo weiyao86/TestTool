@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sass</title>
+	<link rel="stylesheet" href="../css/sass.css">
+</head>
+<body>
+<a href="" class="list-val">多值变量之list</a>
+<a href="" class="map-val">多值变量之map</a>
+<p class="page-heder">原因是ruby 的gem被和谐了，现在淘宝的ruby工程师架设了rubygems的国内镜像。使用方法如下：</p>
+<pre>$ gem sources --remove https://rubygems.org/
+$ gem sources -a https://ruby.taobao.org/
+$ gem sources -l
+*** CURRENT SOURCES ***
+
+https://ruby.taobao.org</pre>
+
+<p>监视单个文件   <kbd>sass --watch sass/style.scss</kbd></p>
+
+<p>监视sass目录下的所有.scss文件编译到css目录下后缀为.css sass --watch sass目录:目标目录(css)</p>
+
+<p>CSS转译成SASS    sass-convert css/style.css style.scss</p>
+
+<p>sass命令使用 sass -help</p>
+
+<p class="ts-top">特殊变量:一般我们定义的变量都为属性值，可直接使用，但是如果变量作为属性或在某些特殊情况下等则必须要以#{$variables}形式使用。</p>
+
+<p class="selector-nexting"><a href=""> 嵌套:选择器嵌套 &指父元素</a></p>
+<p class="attr-nesting">嵌套:选择器嵌套</p>
+<p class="mixin-one">混合(mixin)无参</p>
+<p class="mixin-two">混合(mixin)有参</p>
+<p class="mixin-three">多参数按顺序调用,没传则使用默认值或可指定key名传参(mixin)有参</p>
+<p class="mixin-more">多组值参数mixin:如果一个参数可以有多组值，如box-shadow、transition等，那么参数则需要在变量后加三个点表示，如1variables...</p>
+
+<p class='extend-one'>PS：@mixin通过@include调用后解析出来的样式是以拷贝形式存在的，而下面的继承则是以联合声明的方式存在的，所以从3.2.0版本以后，建议传递参数的用@mixin，而非传递参数类的使用下面的继承%</p>
+<p class="item-1">item-1</p>
+<p class="item-2">item-2</p>
+<p class="item-3">item-3</p>
+<p class="back-icon">Yellow</p>
+</body>
+</html>

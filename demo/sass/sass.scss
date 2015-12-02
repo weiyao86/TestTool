@@ -1,0 +1,169 @@
+@import "basic";
+
+$headings: (h1: 2em, h2: 1.5em, h3: 0.6em);
+$main-color: #ccc !default;
+$style: solid !default;
+$top: top !default;
+$linkColor: #08c #333 !default;
+
+p, div {
+    border-width: 50px;
+    border-style: $style;
+    border-color: $main-color;
+    padding: 5px;
+
+    &:hover {
+        box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
+        transition: all .3s ease-in-out 0s;
+    }
+}
+
+::selection {
+    background-color: #FF3238;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    border-bottom: {
+        color: $main-color;
+        style: $style;
+    };
+}
+
+.list-val {
+    color: nth($linkColor, 1);
+
+    &:hover {
+        color: nth($linkColor, 2);
+    }
+}
+
+.map-val {
+    font-size: map-get($headings, h3);
+    transition: all .6s ease-in-out 0s;
+
+    &:hover {
+        font-size: map-get($headings, h1);
+        transition: all .6s ease-in-out 0s;
+    }
+}
+
+.page-heder {
+    border: 1px $style $main-color;
+    padding: 10px;
+}
+
+.ts-#{$top} {
+    border-#{$top}-color: #5c2f1a;
+}
+
+.selector-nexting {
+    a {
+        background-color: red;
+        color: #fff;
+
+        &:hover {
+            color: black;
+            background-color: #fff;
+            transition: all .5s ease-out 0s;
+        }
+    }
+}
+
+.attr-nesting {
+    border: {
+        style: solid;
+        top: {
+            width: 5px;
+            color: red;
+        };
+    };
+}
+
+@mixin center-block($opacity: 50, $width: 200px) {
+    margin: 0 auto;
+    width: $width;
+    color: #fff;
+    background-color: #000;
+    opacity: $opacity / 100;
+    filter: alpha(opacity = $opacity);
+}
+
+.mixin-one {
+    @include center-block;
+}
+
+.mixin-two {
+    @include center-block(80);
+}
+
+.mixin-three {
+    @include center-block($width: 300px);
+}
+
+@mixin shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+.mixin-more {
+    @include shadow(inset 0 2px 2px rgba(100, 100, 0, 0.3), inset 0 3px 3px rgba(0, 255, 125, 0.3), 0 4px 4px rgba(255, 255, 255, 0.3));
+}
+
+/**
+ * @content 
+ *
+ * 
+ */
+
+@mixin min-screen($res) {
+    @media only screen and (min-width: $res) {
+        @content;
+    }
+}
+
+@include min-screen(480px) {
+    body {
+        color: #898;
+        padding: 100px;
+
+        @include shadow(inset 0 0 100px rgba(20, 20, 20, 0.6));
+    }
+}
+
+
+.extend-one {
+    @extend .mixin-more;
+
+    border-width: 2px;
+}
+
+@for $i from 1 through 3 {
+    .item-#{$i} {
+        width: $i * 5em;
+    }
+}
+
+@for $i from 1 to 3 {
+    .item-to-#{$i} {
+        width: $i * 5em;
+    }
+}
+
+@each $key, $val in $headings {
+    #{$key} {
+        font-size: $val;
+    }
+}
+
+.back-icon {
+    width: 400px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    color: rgba(255, 255, 0, 1);
+    font-size: 30px;
+    text-shadow: 0 0 5px #fff, 0 0 20px #fefcce, 10px -10px 30px #ffae34, -20px -20px 40px rgba(255, 0, 0, 1);
+    background: url("../images/1.jpg") no-repeat scroll (left (bottom / 150px)) 150px content-box padding-box, url("../images/2.jpg") no-repeat scroll (left (top / 150px)) 150px content-box padding-box, url("../images/3.png") no-repeat scroll (right (top / 150px)) 300px content-box padding-box #f80;
+}

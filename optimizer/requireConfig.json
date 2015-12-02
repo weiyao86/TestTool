@@ -1,0 +1,81 @@
+{
+	 "paths": {
+            "jquery": "libs/public/jquery-1.8.1.min",
+            "jqueryUI": "libs/public/jquery-ui-1.9.0.custom.min",
+            "jqueryDatepickeri18n": "libs/public/jquery.ui.datepicker-zh_CN",
+	        "amplify": "libs/public/amplify.min",
+	        "mustache": "libs/public/mustache",
+	        "linq": "libs/public/linq",
+	        "json2": "libs/public/json2",
+	        "domReady": "libs/public/domReady",
+	        "css": "libs/public/css",
+	        "text": "libs/public/text",
+	        "moment": "libs/public/moment.min",
+	        "jqueryScrollIntoView": "libs/public/jquery.scrollIntoView.min",
+			"form": "libs/public/jquery.form",
+
+	        "ajax": "libs/private/ajax",
+	        "jqExtend": "libs/private/jquery.extend",
+
+	        "blockUI": "component/public/blockUI/jquery.blockUI",
+	        "uploadify": "component/public/uploadify/jquery.uploadify",
+	        "layResizable": "component/public/layResizable/layResizable",
+	        "jqueryForm": "component/public/jqueryForm/jquery.form",
+	        "cookie": "component/public/cookie/jquery.cookies.2.2.0",       
+	        "jqueryEasyUI": "component/public/jqueryEasyUI/jquery.easyui.min",
+
+	        "note": "app/catalog/content/note",
+	        "usage": "app/catalog/content/usage",
+	        "loader": "app/catalog/content/loader",
+	        "catalog": "app/catalog/content/catalog",
+            
+	        "tree": "app/catalog/epcBar/tree",
+	        "crumbs": "app/catalog/epcBar/crumbs",
+	        "infoQuery": "app/catalog/epcBar/infoQuery",
+	        "viewMode": "app/catalog/epcBar/viewMode",
+	        "vsn": "app/catalog/epcBar/infoQuery/vsn",
+	        "info": "app/catalog/epcBar/infoQuery/info",
+	        "part": "app/catalog/epcBar/infoQuery/part",
+	        "legend": "app/catalog/epcBar/infoQuery/legend",
+	        "initMasterCmp": "app/master/initMasterCmp",
+	        "superSession": "app/catalog/epcBar/infoQuery/superSession",
+	        "advancedSearch": "app/catalog/epcBar/infoQuery/advancedSearch",
+
+            "initMasterCmp": "app/master/initMasterCmp",
+	       
+            "orderGrid": "app/order/orderGrid",
+            "delear": "app/order/delear",
+            "operationOrder": "app/order/operationOrder",
+            "updateAds": "app/order/updateAds",
+
+            "remark": "app/detail/remark",
+
+            "grid": "component/private/grid/grid",
+            "swfobject": "component/private/swfobject/swfobject",
+            "bookmark": "component/private/bookmark/js/bookmark",
+            "history": "component/private/history/js/history",
+            "notice": "component/private/notice/js/notice",
+            "shoppingCart": "component/private/shoppingCart/js/shoppingCart",
+
+			"globalConfig": "empty:"
+
+        },
+        "shim": {
+            "jquery": {
+                "exports": "$"
+            },
+            "jqueryUI": ["jquery"],
+            "hotpoint": ["jquery"],
+            "jqueryEasyUI": ["jquery", "jqueryUI"],
+            "jqueryScrollIntoView": ["jquery"],
+            "layResizable": ["jquery"],
+            "amplify": ["jquery"],
+            "blockUI": ["jquery"],
+            "jqueryForm": ["jquery"],
+            "jqExtend": ["jquery"],
+            "uploadify": ["jquery"],
+            "cookie": ["jquery"],
+            "bookmark": ["jquery", "text"],
+            "history":["jquery"]
+        }
+}

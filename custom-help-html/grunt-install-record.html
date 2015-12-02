@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+		html,body{margin:0;padding: 0;font-family:'Microsoft Yahei',Arial;}
+		body{font-size:16px;}
+		input{outline: none;}
+		p,input,li{border:1px solid #ccc;background: #fff;transition:all .3s ease-in-out 0s;padding:20px;position:static;}
+		:hover{box-shadow:0 0 50px rgba(0,0,0,.5);transition:all .3s ease-in-out 0s;position:relative;z-index: 2;}
+		::selection{background:#ff0;}
+		ol{padding:20px;list-style: decimal inside none;}
+		ol>li{margin-top:-1px;}
+		ol>li:first-child{
+			margin-top:1px;
+		}
+	</style>
+	<script>
+
+	window.onload=function(){
+		var i=0;
+		document.onkeydown=function(){
+			document.getElementsByTagName("input")[0].value=i++;
+		}
+	}
+	</script>
+</head>
+<body>
+<fieldset>
+	<p>安装nodejs site:https://nodejs.org/ 安装了nodejs之后，可以在你的控制台中输入“node -v”来查看nodejs的版本，也顺便试验nodejs是否安装成功</p>
+	<p>安装grunt-CLI</p>
+	<p>“CLI”被翻译为“命令行”。要想使用grunt，首先必须将grunt-cli安装到全局环境中，使用nodejs的“npm install…”进行安装</p>
+	<p>example:npm install -g grunt -cli</p>
+	<p>接下在在项目中安装grunt:cd 项目/xx/xx grunt --save -dev</p>
+	<p>相关grunt 插件(npm instal  grunt-contrib-watch)</p>
+	<ol>
+		<li>Contrib-jshint——javascript语法错误检查</li>
+		<li>Contrib-watch——实时监控文件变化、调用相应的任务重新执行；</li>
+		<li>Contrib-clean——清空文件、文件夹；</li>
+		<li>Contrib-uglify——压缩javascript代码</li>
+		<li>Contrib-copy——复制文件、文件夹</li>
+		<li>Contrib-concat——合并多个文件的代码到一个文件中</li>
+		<li>karma——前端自动化测试工具</li>
+	</ol>
+	<input type="text">
+</fieldset>
+</body>
+</html>

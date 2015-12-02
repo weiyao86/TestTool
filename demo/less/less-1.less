@@ -1,0 +1,124 @@
+.box-shadow(@x:0,@y:0,@blur:1px,@color:#000){
+	/*如果你不想单独处理每一个参数的话就可以像这样写:*/
+	box-shadow: @arguments;
+}
+
+div{padding:12px;margin:10px;border:1px solid;}
+/*变量定义*/
+/*变量允许我们单独定义一系列通用的样式，然后在需要的时候去调用。所以在做全局样式调整的时候我们可能只需要修改几行代码就可以了。*/
+@base:#f938ab;
+@line-gary:#5c85ba;
+@the-border:1px;
+@base-color:#111;
+@red:#842210;
+
+.box{
+	color:@base;
+	border:2px solid @line-gary;
+	.box-shadow(2px,5px);
+}
+
+/*混合*/
+.rounded-corners(@radius:5px){
+	border-radius:@radius;
+}
+.mixin{
+	.rounded-corners;
+}
+.mixin-o{
+	.rounded-corners(10%);
+}
+
+/*嵌套*/
+.nest{
+	h1{
+		font-size: 26px;
+		font-weight: bold;
+	}
+	p{
+		font-size:12px;
+		a{
+			text-decoration: none;
+			&:hover{color:red;}
+		}
+	}
+}
+/*函数 & 运算*/
+.fun-calc{
+	color:@base-color * 2;
+	border-left-width: @the-border;
+	border-right-width: @the-border * 50;
+}
+
+/*甚至可以用变量名定义为变量*/
+@fnord:"i am variable.";
+@var:'fnord';
+.variable:after{
+	content:@@var;
+}
+
+/*你也可以定义不带参数属性集合,如果你想隐藏这个属性集合，不让它暴露到CSS中去，但是你还想在其他的属性集合中引用，你会发现这个方法非常的好用:*/
+.private(){
+	font-size:20px;
+	color:@base-color;
+}
+.private-wrap{
+	.private;
+}
+
+/*模式匹配和导引表达式*/
+@switch:dark;
+.cls-1(light,@color){
+	color:@color;
+	font-size: 24px;
+}
+.cls-1(dark,@color){
+	color:@color;
+	font-size: 38px;
+}
+.cls-1(@_,@color){
+	display: inline-block;
+}
+
+.cls-test{
+	.cls-1(@switch,#5c85ba);
+}
+
+/*引导*/
+.mixin(@a) when (lightness(@a)>=50%){
+	background-color: black;
+}
+.mixin(@a) when (lightness(@a)<50%){
+	background-color: yellow;
+}
+.mixin(@a){
+	color:@a;
+}
+.cls1{
+	.mixin(#333);
+}
+
+/*使用&串联选择器或伪类  用反绰号`包含可使用Javascript,此处定义的是大写HELLO通过toLowerCase()转为小写
+*
+* 此处伪类after中内容为当前文档标题
+*/
+/*.bordered{
+	@var:`"HELLO".toLowerCase()`;
+	@heigh:`window.document.title`;
+	&.float{
+		float:left;
+		color:#f32e1f;
+	}
+	&:hover{
+		color:#5c85ba;
+		cursor:pointer;
+	}
+	&:after{
+		content:@heigh;
+	}
+	.top{
+		margin:5px;
+		color:#aaa;
+	}
+}
+*/

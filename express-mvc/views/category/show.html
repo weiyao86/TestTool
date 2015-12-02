@@ -1,0 +1,17 @@
+<%- include('../shared/head')-%>
+    <h1><%= category.name %></h1>
+    
+    <% for(var i=0,item;item=products[i];i++) {%>  
+            <article class="product">
+                <h2><%= item.name %></h2>
+                <p><%= item.description %></p>
+                <img alt="" src="<%= item.imageUrl %>" style="max-width: 300px" />
+                <p>$<%= item.price %></p>
+                <form method="post" action="/basket/add">
+                    <input type="hidden" name="productId" value="<%= item.id %>" />
+                    <button>Add To Basket</button>
+                </form>
+            </article>
+    <% } %>
+
+<%- include('../shared/footer')-%>

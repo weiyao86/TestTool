@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>First Page</title>
+	
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+	<!-- respond.js 让lt IE9支持媒体查询 -->
+	<!-- html5shiv 支持html5标签 -->
+	  <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type='text/css'>
+		    body {
+		  padding: 50px 0;
+		}
+		.starter-template {
+		  padding: 40px 15px;
+		  text-align: center;
+		}
+		.row {
+			  margin-bottom: 20px;
+			}
+			.row .row {
+			  margin-top: 10px;
+			  margin-bottom: 0;
+			}
+			[class*="col-"] {
+			  padding-top: 15px;
+			  padding-bottom: 15px;
+			  background-color: #eee;
+			  background-color: rgba(86,61,124,.15);
+			  border: 1px solid #ddd;
+			  border: 1px solid rgba(86,61,124,.2);
+			}
+</style>
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="glyphicon glyphicon-align-justify"></span>
+					<!-- <span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> -->
+				</button>
+				<a href="#" class="navbar-brand">Project Name</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height:1px;">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="First.html">Home</a></li>
+					<li><a href="Index.html">Index</a></li>
+					<li><a href="theme.html">Test</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+			<div class="row">
+				  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3 Resize your viewport or check it out on your phone for an example.</div>
+				  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3+1</div>
+
+				  <!-- Add the extra clearfix for only the required viewport -->
+				  <div class="clearfix visible-xs-block"></div>
+
+				  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3+3</div>
+				  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3+6
+				  	<h1>h1. <mark>Bootstrap</mark> heading <small>Secondary text</small></h1>
+				  	<h2>h2. <del>Bootstrap</del> heading <small>Secondary text</small></h2>
+					<h3>h3. Bootstrap heading <small>Secondary text</small></h3>
+					<h4 class="lead">h4. Bootstrap heading <small>Secondary text</small></h4>
+					<h5>h5. <s>Bootstrap</s> heading <small>Secondary text</small></h5>
+					<h6>h6.<mark>Bootstrap</mark> heading <small>Secondary text</small></h6>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 text-center"><b>absa</b>dfasf<i>asfd</i>a</div>
+				<abbr title="attribute">attr</abbr>
+					<address>
+					  <strong>Twitter, Inc.</strong><br>
+					  795 Folsom Ave, Suite 600<br>
+					  San Francisco, CA 94107<br>
+					  <abbr title="Phone">P:</abbr> (123) 456-7890
+					</address>
+
+					<address>
+					  <strong>Full Name</strong><br>
+					  <a href="mailto:#">first.last@example.com</a>
+					</address>
+
+					<blockquote class="blockquote-reverse"><p>默认样式的引用,通过赋予 .blockquote-reverse 类可以让引用呈现内容右对齐的效果</p>
+						<footer>用于标明引用来源 <cite title="Source Title">Source Title cite</cite></footer>
+					</blockquote>
+
+					<ul class="list-inline">
+						<li>UL 通过设置 display: inline-block;</li>
+						<li>并添加少量的内补（padding）</li>
+						<li>将所有元素放置于同一行</li>
+					</ul>
+					<kbd>通过 kbd 标签标记用户通过键盘输入的内容。=</kbd>
+					<samp>标签来标记程序输出的内容。</samp>
+					<div class="table-responsive">
+						<table class="table table-hover table-bordered">
+							<tr>
+							  <td class="active">将任何 .table 元素包裹在 .table-responsive 元素内，即可创建响应式表格，其会在小屏幕设备上（小于768px）水平滚动。当屏幕大于 768px 宽度时，水平滚动条消失</td>
+							  <td class="success">标记</td>
+							  <td class="warning">用户</td>
+							  <td class="danger">通过</td>
+							  <td class="info">输入的内容</td>
+							</tr>
+							<tr>
+							  <td class="active">标签</td>
+							  <td class="success">标记</td>
+							  <td class="warning">用户</td>
+							  <td class="danger">通过</td>
+							  <td class="info">输入的内容</td>
+							</tr>
+						</table>
+					</div>
+
+	<pre>单独的表单控件会被自动赋予一些全局样式。所有设置了 .form-control 类的 input、textarea 和 select 元素都将被默认设置宽度属性为 width: 100%;。 将 label 元素和前面提到的控件包裹在 .form-group 中可以获得最好的排列</pre>
+					<form class="form-inline">
+					  <div class="form-group">
+					    <label for="exampleInputEmail1">Email address</label>
+					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleInputPassword1">Password</label>
+					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleInputFile">File input</label>
+					    <input type="file" id="exampleInputFile">
+					    <p class="help-block">Example block-level help text here.</p>
+					  </div>
+					  <div class="checkbox">
+					    <label>
+					      <input type="checkbox"> Check me out
+					    </label>
+					  </div>
+					  <button type="submit" class="btn btn-default">Submit</button>
+					</form>
+
+					<form class="form-inline">
+					  <div class="form-group">
+					    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+					    <div class="input-group">
+					      <div class="input-group-addon">$</div>
+					      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+					       <div class="input-group-addon">.00</div>
+					    </div>
+					  </div>
+					  <button type="submit" class="btn btn-primary">Transfer cash</button>
+					</form>
+
+					<form>
+					  <div class="form-group">
+					    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+					    <div class="input-group">
+					      <div class="input-group-btn">
+					      	<button type="button" class="btn btn-default">GO!</button>
+					      </div>
+					      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+					    </div>
+					  </div>
+					  <button type="submit" class="btn btn-primary">Transfer cash</button>
+					</form>
+					<pre>作为额外元素的按钮式下拉菜单</pre>
+					<div class="row">
+					  <div class="col-lg-6">
+					    <div class="input-group">
+					      <div class="input-group-btn">
+					        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+					        <ul class="dropdown-menu">
+					          <li><a href="#">Action</a></li>
+					          <li><a href="#">Another action</a></li>
+					          <li><a href="#">Something else here</a></li>
+					          <li role="separator" class="divider"></li>
+					          <li><a href="#">Separated link</a></li>
+					        </ul>
+					      </div><!-- /btn-group -->
+					      <input type="text" class="form-control" aria-label="...">
+					    </div><!-- /input-group -->
+					  </div><!-- /.col-lg-6 -->
+					  <div class="col-lg-6">
+					    <div class="input-group">
+					      <input type="text" class="form-control" aria-label="...">
+					      <div class="input-group-btn">
+					        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+					        <ul class="dropdown-menu dropdown-menu-right">
+					          <li><a href="#">Action</a></li>
+					          <li><a href="#">Another action</a></li>
+					          <li><a href="#">Something else here</a></li>
+					          <li role="separator" class="divider"></li>
+					          <li><a href="#">Separated link</a></li>
+					        </ul>
+					      </div><!-- /btn-group -->
+					    </div><!-- /input-group -->
+					  </div><!-- /.col-lg-6 -->
+					  <div class="col-lg-12">
+					  	<div class="input-group">
+					  		<div class="input-group-btn">
+					  			<button type="button" class="btn btn-default">Action</button>
+					  			<button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle" aria-haspopup="false" aria-expanded="false"><span class="caret"></span></button>
+					  			<ul class="dropdown-menu">
+					  				<li><a href="#">Action</a></li>
+					  				<li><a href="#">Another action</a></li>
+					  				<li role="separator" class="divider"></li>
+					  				<li><a href="#">Separated</a></li>
+					  			</ul>
+					  		</div>
+					  		<input type="text" class="form-control" aria-label="..." placeholder="Search for...">
+					  	</div>
+					  </div>
+					</div><!-- /.row -->
+
+<pre>导航</pre>
+
+				<div role="navigation"> 
+					<ul id="myTabs" class="nav nav-pills" role='tablist'>
+						<li role="presentation" class="active"><a href="#t1" aria-controls="t1" role="tab" data-toggle="tab">1</a></li>
+						<li role="presentation"><a href="#t2" aria-controls="t2" role="tab" data-toggle="tab">2</a></li>
+						<li role="presentation"><a href="#t3" aria-controls="t3" role="tab" data-toggle="tab">3</a></li>
+						<li role="presentation"><a href="#t4" aria-controls="t4" role="tab" data-toggle="tab">4</a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div class="tab-pane fade active" id="t1">1....</div>
+						<div class="tab-pane fade" id="t2">2....ssssssssssssssss</div>
+						<div class="tab-pane fade" id="t3">3....sssssss<br/>sssssss</div>
+						<div class="tab-pane fade" id="t4" class="btn btn-default"  data-toggle="tooltip" data-placement="bottom" title="ToolTip on bottom">4....sssssssss<br>sssssssssss<br></div>
+					</div>
+
+					<ul class="nav nav-tabs">
+					  <li role="presentation" class="active"><a href="#">Home</a></li>
+					  <li role="presentation" class="disabled"><a href="#">Profile</a></li>
+					  <li role="presentation"><a href="#">Messages</a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div class="tab-pane active" id="t1">1....<br/></div>
+						<div class="tab-pane" id="t2">2....</div>
+						<div class="tab-pane" id="t3">3....<br/></div>
+						<div class="tab-pane" id="t4">4....</div>
+					</div>
+
+			</div> 
+
+			<pre>ToolTip</pre>
+			<div class="row">
+				<div class="col-lg-12">
+					<button type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="left">ToolTip left</button>
+					<button type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="right" title="ToolTip on right">ToolTip right</button>
+					<button type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="top" title="ToolTip on top">ToolTip top</button>
+					<button id="last" type="button" class="btn btn-default"  data-toggle="tooltip" data-placement="bottom" title="ToolTip on bottom">ToolTip bottom</button>
+				</div>
+			</div>
+
+			<pre>导航条表单</pre>
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<!-- <div class="navbar-header"> -->
+						<a href="" class="navbar-brand">Project Name</a>
+						<form action="" class="navbar-form navbar-left" role="search">
+							<div class="form-group"><input type="text" class="form-control" placeholder="Search"></div>
+							<button type="submit" class="btn btn-default">Submit</button>
+						</form>
+						<p class="navbar-text navbar-right">Signed in as <a class="navbar-link">Mark otto</a></p>
+					<!-- </div> -->
+				</div>
+			</nav>
+
+			<nav>
+				<ul class="pagination">
+					<li><a href="javascript:;" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+					</a></li>
+				<li><a href="javascript:;">1</a></li>
+					<li><a href="javascript:;">2</a></li>
+					<li class="active"><a href="javascript:;">3</a></li>
+					<li><a href="javascript:;">4</a></li>
+					<li><a href="javascript:;">5</a></li>
+					<li><a href="javascript:;"  aria-label="Next">
+					<span aria-hidden="true">&raquo;</span></a></li>
+				</ul>
+			</nav>
+			<nav>
+				<ul class="pager">
+					<li class="active"><a href="javascript">Previous</a></li>
+					<li><a href="javascript">Next</a></li>
+				</ul>
+			</nav>
+			<nav>
+				<ul class="pager">
+					<li class="previous"><a href="javascript:;"><span aria-hidden="true">&larr;</span>Previous</a></li>
+					<li class="next active"><a href="javascript:;">Next<span aria-hidden="true">&rarr;</span></a></li>
+				</ul>;
+			</nav>
+
+
+			<pre>标签</pre>
+			<h1>H1<span class="label label-default">default</span></h1>
+			<h2>H2<span class="label label-primary">primary</span></h2>
+			<h3>H3<span class="label label-success">success</span></h3>
+			<h4>H4<span class="label label-info">info</span></h4>
+			<h5>H5<span class="label label-warning">warning</span></h5>
+			<h6>H6<span class="label label-danger">danger</span></h6>
+
+			<pre>badge</pre>
+			<a href="">Index<span class="badge">42</span></a>
+			<button type="button" class="btn btn-primary">Messages<span class="badge">5</span></button>
+
+			<pre>胶囊式导航</pre>
+			<ul class="nav nav-pills" id="myTabs2" role="tablist">
+				<li role="presentation" class="active"><a href="#t22" role="tab" data-toggle="tab">Home<span class="badge">1*3</span></a></li>
+				<li role="presentation"><a href="#t33" data-toggle="tab">Index<span class="badge">2*3</span></a></li>
+				<li role="presentation"><a href="#t44" data-toggle="tab">Second<span class="badge">3*3</span></a></li>
+			</ul>
+
+			<div class="tab-content">
+				<div class="tab-pane" id="t22">2....</div>
+				<div class="tab-pane" id="t33">3....<br/></div>
+				<div class="tab-pane" id="t44">4....</div>
+			</div>
+
+			<pre>巨幕</pre>
+			<div class="jumbotron">
+				<h1>Hello World!</h1>
+				<p>....</p>
+				<p><a href="" class="btn btn-primary btn-lg">Learn more</a></p>
+			</div>
+			<pre>页头</pre>
+			<div class="page-header">
+				<h1>Example page header</h1>
+			</div>
+			<pre>缩略图</pre>
+			<div class="row">
+				<div class="col-xs-6 col-md-3 col-lg-3"><div href="" class="thumbnail">
+					<img src="../images/2.jpg" alt="..." width="200" height="100%">
+				</div></div>
+				<div class="col-xs-6 col-md-3 col-lg-3"><div href="" class="thumbnail">
+					<img src="../images/2.jpg" alt="..." width="200" height="100%">
+				</div></div>
+				<div class="col-xs-6 col-md-3 col-lg-3">
+				<div  class="thumbnail">
+					<img src="../images/2.jpg" alt="..." width="200" height="100%">
+					<div class="caption">
+						<h3>Thumbnail</h3>
+						<p>此处背景相关样式受页头定义的col*=...控制</p>
+						<p><a href="" class="btn btn-primary" role="button">Button</a> <a href="" class="btn btn-default" role="button">Button</a></p>
+					</div>
+				</div>
+				</div>
+			</div>
+			<pre>警告框</pre>
+			<div class="alert alert-success">Well done...</div>
+			<div class="alert alert-info">Heads up...</div>
+			<div class="alert alert-warning">Warning...</div>
+			<div class="alert alert-danger">oh snap!...&times;</div>
+
+			<pre>进度条</pre>
+			<div class="progress">
+				<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%;">60%
+					<span class="sr-only">60% Complete</span>
+				</div>
+			</div>
+
+			<pre>列表组</pre>
+
+			<ul class="list-group">
+				<li class="list-group-item">1.............<span class="badge badge-primary">1</span></li>
+				<li class="list-group-item">2.............<span class="badge">2</span></li>
+				<li class="list-group-item">3.............<span class="badge">3</span></li>
+				<li class="list-group-item">4.............<span class="badge">4</span></li>
+				<li class="list-group-item">5.............<span class="badge">5</span></li>
+			</ul>
+
+			<div class="list-group">
+				<a href="" class="list-group-item active">
+					<h4 class="list-group-item-heading">List group item heading</h4>
+					<p class="list-group-item-text">这是一段文字内容...</p>
+				</a>
+				<a href="" class="list-group-item">
+					<h4 class="list-group-item-heading">List group item heading</h4>
+					<p class="list-group-item-text">这是一段文字内容...</p>
+				</a>
+				<a href="" class="list-group-item">
+					<h4 class="list-group-item-heading">List group item heading</h4>
+					<p class="list-group-item-text">这是一段文字内容...</p>
+				</a>
+			</div>
+			<pre>面板</pre>
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<div class="panel-title"><a href="#">Link Title<span class="glyphicon glyphicon-star"></span></a></div>
+				</div>
+				<div class="panel-body">Panel body</div>
+				<table class="table">
+					<tr>
+						<th>First</th>
+						<th>Second</th>
+						<th>Third</th>
+					</tr>
+					<tr>
+						<td>1*****</td>
+						<td>2*****</td>
+						<td>3*****</td>
+					</tr>
+					<tr>
+						<td>1*****</td>
+						<td>2*****</td>
+						<td>3*****</td>
+					</tr>
+					<tr>
+						<td>1*****</td>
+						<td>2*****</td>
+						<td>3*****</td>
+					</tr>
+				</table>
+
+
+				<div class="panel-footer">Panel footer</div>
+			</div>
+			<pre>具有响应式特性的嵌入内容</pre>
+			<div class="embed-responsive embed-responsive-16by9">
+				<!-- <iframe src="//www.youtube.com/embed/zpOULjyy-n8?rel=0"  class="embed-responsive-item" arrowfullscreen></iframe> -->
+			</div> 
+			<pre>well</pre>
+			<div class="well">把 Well 用在元素上，能有嵌入（inset）的的简单效果。</div>
+			<div class="well well-lg"><span class="glyphicon glyphicon-flag"></span> 把 Well 用在元素上，能有嵌入（inset）的的简单效果。</div>
+			<div class="well well-sm">把 Well 用在元素上，<kbd>能有嵌入</kbd>（inset）的的简单效果。</div>
+
+
+
+			<span class="glyphicon glyphicon-star" style="color:#ccc;"></span>
+
+
+			
+
+
+<!-- end -->
+			</div>
+</div>
+
+		<pre>巨幕与视口宽度相等</pre>
+		<div class="jumbotron">
+					<div class="container">
+						<h1>Hello World!</h1>
+						<p>....</p>
+						<p><a href="" class="btn btn-primary btn-lg">Learn more</a></p>
+					</div>
+		</div>
+
+	<nav class="navbar navbar-inverse navbar-fixed-bottom">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand">Project Name</a>
+			</div>
+			<div id="navbar1" class="navbar-collapse collapse" aria-expanded="false" style="height:1px;">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="First.html">Home</a></li>
+					<li><a href="Index.html">Index</a></li>
+					<li><a href="Test.html">Test</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+	$(function(){
+
+
+		  $('[data-toggle="tooltip"]').tooltip({
+		 	placement:"top",
+		 	title:function(){return "我是默认的title"}
+		 });
+
+		  setTimeout(function(){
+
+		  	$('[data-toggle="tooltip"]').tooltip("destroy");
+		  },4000);
+
+
+		$("#myTabs2").on({
+			"show.bs.tab":function(e){
+				alert("当前标签显示前:"+e.target);
+				alert("当前标签上一个标签:"+e.relatedTarget)
+			},
+			"hide.bs.tab":function(e) {
+				alert("当前标签隐藏前触发")
+			}
+		},"a");
+	});
+</script>
+</body>
+</html>

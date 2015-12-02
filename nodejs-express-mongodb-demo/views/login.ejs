@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+	<style>
+
+.box{
+	border:1px solid #cc9;
+	box-shadow: inset 0 0 10px rgba(0,0,0,.5);
+	border-radius:4px;
+	overflow: hidden;
+}
+.page-box{
+	margin:20px auto;
+	line-height: 2em;
+	text-align: center;
+	overflow: hidden;
+}
+.page-box label,select{
+	margin:0 5px;
+	line-height: 2em;
+	font-size:14px;
+}
+ol{padding:5px 0;margin:0;overflow: hidden;list-style: inside none none;}
+ol li{float:left;width:15%;padding:5px;text-align: center;}
+
+ol:nth-of-type(2n){background:#ccc;}
+ol:hover{background:#5a851a;color:#fff;transition:all .3s ease-in 0s;}
+.btn{border:1px solid #ccc;border-radius: 4px;padding:5px 10px;background:#5a811b;color:#fff;text-decoration:none;}
+.btn:hover{background:#0a6011;transition:all .3s ease-in 0s;}
+input::-ms-clear{
+	display: none;
+}
+input{border:1px solid #ccc;border-radius:4px;height:25px;vertical-align: middle;box-shadow: inset 0 0 3px rgba(0,60,0,.6);text-indent:1em;}
+input:focus{
+	outline: 1px dotted #f00;
+}
+.lab-text{width:200px;display: inline-block;text-align: right;}
+.gradient{
+	line-height: 40px;
+	background-image: linear-gradient(bottom, rgb(90,133,26) 50%, rgb(90,133,26) 50%, rgb(85,143,40) 70%);
+	background-image: -o-linear-gradient(bottom, rgb(90,133,26) 50%, rgb(90,133,26) 50%, rgb(85,143,40) 70%);
+	background-image: -moz-linear-gradient(bottom, rgb(90,133,26) 50%, rgb(90,133,26) 50%, rgb(85,143,40) 70%);
+	background-image: -webkit-linear-gradient(bottom, rgb(90,133,26) 50%, rgb(90,133,26) 50%, rgb(85,143,40) 70%);
+	background-image: -ms-linear-gradient(bottom, rgb(90,133,26) 50%, rgb(90,133,26) 50%, rgb(85,143,40) 70%);
+	
+	/*background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, rgb(80,102,127)),
+		color-stop(0.5, rgb(87,109,136)),
+		color-stop(1, rgb(106,129,155))
+	);*/
+}
+
+	</style>
+
+</head>
+<body>
+	<form action="/submit" method="post">
+		<p>
+			<span class="lab-text">userId:</span>
+
+			<input id="userid" name="userid" type="text"></p>
+		<p>
+			<span class="lab-text">password:</span>
+
+			<input id="password" name="password" type="password" value=""></p>
+		<p>
+			<span class="lab-text">query:</span>
+
+			<input id="query" name="query" type="text" value=""></p>
+		<p>
+			<span class="lab-text">age:</span>
+
+			<input id="age" name="age" type="text" value=""></p>
+		<p>
+			<span class="lab-text">studentName:</span>
+
+			<input id="studentName" name="studentName" type="text" value=""></p>
+		<p>
+			<a class="btn gradient" href="/submit">Save</a>
+			<a class="btn gradient" href="/search">SearchAll</a>
+			<a class="btn gradient" href="/select">Search</a>
+			<a class="btn gradient" href="/schema/read">Schema read</a>
+			<a class="btn gradient" href="/update">Update</a>
+			<a class="btn gradient" href="/Delete">Delete</a>
+		</p>
+
+		<div class="box">
+			<ol>
+				<% for(var j in data[0]) {%>	
+				<li><%= j %></li>
+				<% }%></ol>
+			<% for(var i=0;i<data.length;i++) {%>	
+			<ol data-id="content">
+				<% for(var j in data[i]) {%>	
+				<li data-field="<%= j %>"><%= data[i][j] %></li>
+				<% }%></ol>
+			<% }%></div>
+		<div class="page-box">
+			<span>cur:</span>
+			<input type="text"  name="page_cur" value="<%= page.curidx %>"/>
+			<span>total:</span>
+			<input type="text"  name="page_total" value="<%= page.total %>"/>
+			<label for="page-dropdown">cur show:</label>
+			<select name="limit" id="page-dropdown">
+				<option value="5">5</option>
+				<option value="10">10</option>
+				<option value="15">15</option>
+			</select>
+
+			<a href="/page?page=first" class="btn gradient">First</a>
+			<a href="/page?page=prev" class="btn gradient">Prev</a>
+			<a href="/page?page=next" class="btn gradient">Next</a>
+			<a href="/page?page=last" class="btn gradient">Last</a>
+
+		</div>
+	</form>
+	<h3>文件上传：</h3>
+	选择一个文件上传:
+	<br />	
+	<form action="/file_upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="image" size="50" />
+		<br />	
+		<input type="submit" value="上传文件" />
+	</form>
+	<div class="gradient">aaaaaaaaaaaaa</div>
+	<script type="text/javascript" src="/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="/javascripts/crud.js"></script>
+</body>
+</html>

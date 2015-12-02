@@ -1,0 +1,10 @@
+*.zip
+*.rar
+*.bak
+*.log
+test2/node_modules
+demo/node_modules
+express-mvc/node_modules
+ext-demo/node_modules
+nodejs-express-mongodb-demo/node_modules
+optimizer/node_modules

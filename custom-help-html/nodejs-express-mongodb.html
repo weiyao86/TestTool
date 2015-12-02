@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nodejs-express-mongodb</title>
+	<style>
+
+		html,body{margin:0;padding: 0;height: 100%;font-family:'Microsoft Yahei',Arial;}
+		
+		body{font-size:16px; box-shadow:inset 0 0 150px rgba(0,0,0,.5);}
+		.wrap{padding:100px 0;}
+		p{border:1px solid #ccc;background: #fff;transition:all .3s ease-in-out 0s;padding:20px;position:static;margin:0 auto;width:50%;margin-top:-1px;box-shadow:0 0 10px rgba(0,0,0,.3);}
+		p:hover{box-shadow:0 0 50px rgba(0,0,0,.5);transition:all .3s ease-in-out 0s;position:relative;z-index: 2;}
+		p::selection{background:#ff0;text-shadow:inset 0 0 10px rgba(0,0,0,.3);}
+		p:first-child{margin-top:0;}
+		p:nth-of-type(2n-1){background:#eee;}
+		h2{position: fixed;}
+
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<p>从node官网下载安装文件，官网地址：http://nodejs.org/</p>
+	<p>
+		在命令行中执行
+		<code>"npm install -g express" </code>
+		等待下载并且自动完成安装。测试express完成安装的一个方法就是查看其版本号，执行命令 “express -V”正常情况下回输出版本号如图，但有遇到不正常情况的，会提示“express不是内部或外部命令”，这样问题就来了，这是什么原因呢？
+	</p>
+	<p>
+		有两种可能：①在第二步安装node是没有添加环境变量，这种情况把node添加的环境变量即可解决。②express 4.x版本中将命令工具分出来了，需要再安装一个命令工具，执行命令“npm install -g express-generator”完成后再测试就可以了
+	</p>
+	<p>
+		mongodb：这个数据库安装很简单，下载地址http://www.mongodb.org/。安装好了，就在cmd里cd到mongodb安装目录下的bin目录，然后敲命令：
+mongod --dbpath="mongodb安装目录\data" --logpath="mongodb安装目录\log\log.txt" --install --serviceName MongoDB --serviceDisplayName MongoDB
+操作完，你会发现，你的电脑的服务里多了一个MongoDB服务，没错，就是它，然后你运行这个服务就行了。
+	</p>
+	<p>express 待建的项目名 -e （-e表示支持ejs模板引擎，默认是jaden)</p>
+	<p>
+		npm i （这样就会自动将项目需要的依赖modules安装到项目的modules里去了）
+我们cd到hello-world目录下，是用命令
+	</p>
+</div>
+</body>
+</html>

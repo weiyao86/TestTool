@@ -1,0 +1,21 @@
+<%- include('../shared/bootstrap_head')-%>
+
+<link rel="stylesheet" href="/styles/login.css">
+<div class="content">
+	<div class="container login login-table">
+		<div class="table-middle">
+			<form action="/login/save" method="post" class="form-signin">
+				<h4 class="form-signin-heading">用户登录</h4>
+				<input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+				<input type="password" name="password" class="form-control" placeholder="Password" required >
+				<div class="checkbox">
+					<label for="re_ck">
+						<input id='re_ck' type="checkbox" name="remeber" value="Remeber me">Remeber me</label>
+				</div>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<%- include('../shared/bootstrap_footer')-%>

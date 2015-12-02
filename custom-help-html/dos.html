@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+		html,body{margin:0;padding: 0;font-family:'Microsoft Yahei',Arial;}
+
+		body{font-size:16px;padding:100px 0; box-shadow:inset 0 0 150px rgba(0,0,0,.5);}
+		p{border:1px solid #ccc;background: #fff;transition:all .3s ease-in-out 0s;padding:20px;position:static;margin:0 auto;width:50%;margin-top:-1px;box-shadow:0 0 10px rgba(0,0,0,.3);}
+		p:hover{box-shadow:0 0 50px rgba(0,0,0,.5);transition:all .3s ease-in-out 0s;position:relative;z-index: 2;}
+		p::selection{background:#ff0;text-shadow:inset 0 0 10px rgba(0,0,0,.3);}
+		p:first-child{margin-top:0;}
+		p:nth-of-type(2n-1){background:#eee;}
+		h2{position: fixed;}
+
+	</style>
+	<script>
+	window.onload=function(){
+		var s={"aaa":"fadsaf"};
+		function t(){
+			var later=function(){
+				s="abcdf";
+			};
+		}
+		t();
+
+	}
+	</script>
+</head>
+<body>
+
+	<h2>MS DOS 命令大全</h2>
+
+	<p>一、基础命令</p>
+	<p>1 dir</p>
+	<p>无参数：查看当前所在目录的文件和文件夹。</p>
+	<p>/s：查看当前目录已经其所有子目录的文件和文件夹。</p>
+	<p>/a：查看包括隐含文件的所有文件。</p>
+	<p>/ah：只显示出隐含文件。</p>
+	<p>/w：以紧凑方式（一行显示5个文件）显示文件和文件夹。</p>
+	<p>/p：以分页方式（显示一页之后会自动暂停）显示。</p>
+	<p>|more：前面那个符号是“\”上面的那个，叫做重定向符号，就是把一个</p>
+	<p>命令的结果输出为另外一个命令的参数。more也是一个命令，dir /w |more</p>
+	<p>得到的结果和dir /w /p的结果是一样的。</p>
+	<p>其他的参数大家可以用：dir/?查看。</p>
+
+	<p>2 cd</p>
+	<p>cd 目录名：进入特定的目录。如果看到有个目录显示为：abcdef ghi 就</p>
+	<p>输入：cdabcdef.ghi进入该目录。</p>
+	<p>cd\ 退回到根目录。</p>
+	<p>cd..退回到上一级目录。</p>
+
+	<p>3 md rd</p>
+	<p>md 目录名：建立特定的文件夹。 （dos下面习惯叫目录，win下面习惯叫文</p>
+	<p>件夹。呵呵！）</p>
+	<p>rd 目录名：删除特定的文件夹。</p>
+
+	<p>4 cls</p>
+	<p>清除屏幕。</p>
+
+	<p>5 copy</p>
+	<p>copy 路径\文件名 路径\文件名 ：把一个文件拷贝到另一个地方。</p>
+
+	<p>6 move</p>
+	<p>move 路径\文件名 路径\文件名 ：把一个文件移动（就是剪切+复制）到另</p>
+	<p>一个地方。</p>
+
+	<p>7 del</p>
+	<p>del 文件名：删除一个文件。</p>
+	<p>del *.*：删除当前文件夹下所有文件。</p>
+	<p>del不能删除文件夹。</p>
+
+	<p>8 deltree</p>
+	<p>删除文件夹和它下面的所有子文件夹还有文件，厉害。。。不要乱用。</p>
+
+	<p>9 format</p>
+	<p>format x: ：x代表盘符，格式化一个分区。在dos下是用fat文件系统格式</p>
+	<p>化的，在windows2000安装的时候会问你要不要转换为ntfs。</p>
+
+	<p>10 type</p>
+	<p>type 文本文件名：显示出文本文件的内容。</p>
+
+	<p>11 edit</p>
+	<p>其实这是个小程序，编辑文本文件用的。</p>
+
+	<p>12 ren</p>
+	<p>ren 旧文件名 新文件名：改文件名。</p>
+
+	<p>二、关于网络的常用命令</p>
+	<p>1 ping</p>
+	<p>ping 主机ip或名字：向目标主机发送4个icmp数据包，测试对方主机是否收</p>
+	<p>到并响应，一般常用于做普通网络是否通畅的测试。但是ping不同不代表网</p>
+	<p>络不通，有可能是目标主机装有防火墙并且阻止了icmp响应。</p>
+	<p>ping -t ：不停的发送数据包。当然都很小，不能称作攻击。有些人自己写</p>
+	<p>了一些类似于ping命令的程序，不停的发送很大的数据包，以阻塞目标主机</p>
+	<p>的网络连接。</p>
+
+	<p>2 net</p>
+	<p>建议是用net /?获取具体帮助信息。实在是有很多参数，参数下面还有参</p>
+	<p>数。常用：net view \\主机 来看共享，net start/stop 服务 来启动和停</p>
+	<p>止服务，信使服务个人不太喜欢。</p>
+
+	<p>3 netstat</p>
+	<p>netstat 主机：查看主机当前的tcp/ip连接状态，如端口的状态。</p>
+
+	<p>4 nbtstat</p>
+	<p>nbtstat 主机：查看主机使用的NetBIOS name。</p>
+
+	<p>5 tracert</p>
+	<p>tracert 主机：查看从你自己到目标逐机到底经过了那些路径。如：</p>
+	<p>tracert www.ncie.gov.cn 然后等待。。。就会看到你经过的一个个路由节</p>
+	<p>点，一般大一点的路由器，如电信的主干路由，除了ip以外，都有英文标示</p>
+	<p>的。</p>
+
+	<p>6 pathping</p>
+	<p>pathping 主机：类似tracert，但可以显示一些tracert不能显示出来的信</p>
+	<p>息。可以自己试试。</p>
+
+	<p>7 ftp</p>
+	<p>字符方式的ftp，我喜欢用；）不用装cuteftp了。</p>
+
+	<p>8 telnet</p>
+	<p>字符方式的远程登录程序，是网络人员极其爱用的远程登录程序。我最近常</p>
+	<p>用来调试邮件服务器。</p>
+
+	<p>9 ipconfig 非常有用的网络配置、排错。。。命令。</p>
+	<p>不加参数显示当前机器的网络接口状态。</p>
+	<p>/all 先是详细的信息。</p>
+	<p>/release 释放当前ip。</p>
+	<p>/renew 重新申请ip。</p>
+	<p>/flushdns 刷新dns缓存。</p>
+	<p>/registerdns 重新栽dns服务器上注册自己。</p>
+	<p>。。。。。。</p>
+
+	<p>10 arp 操作当前的arp缓存。</p>
+	<p>-a 显示arp缓存。</p>
+	<p>-d 删除一条缓存纪录。</p>
+	<p>-s 田家一条缓存纪录。</p>
+
+	<p>11 nslookup 排除dns错误的利器。是一个交互的工具。使用之前请先努力弄清楚dns的作用以及dns的工作原理。</p>
+
+	<p>
+		xcopy是一个外部命令，也就是说，是一个小程序，有的时候会发现软盘上没有，硬盘上也没有。。。昏倒。。。当然勇气来使比copy好用，我喜欢加/e参数。
+	</p>
+	<p>smartdrv.exe 加载磁盘缓存，参数是缓存的大小，单位是kb。</p>
+	<p>如：smartdrv 32768 就是加载32M的缓存。</p>
+	<p>缓存的作用在你安装WIN2K的时候非常明显！不加缓存装WIN2K PRO要3小时左右，加载8M缓存后，只要30分钟。</p>
+	<p>原理是在内存中划分出一块区域，在安装期间不断地把硬盘上的数据读取到那块缓存区域中，充分利用了内存。</p>
+
+	<p>AT和任务计划作用一样。</p>
+	<p>以下是使用方法，可以通过在命令提示符下面输入：AT /?获得帮助。</p>
+
+	<p>AT 命令安排在特定日期和时间运行命令和程序。</p>
+	<p>要使用 AT 命令，计划服务必须已在运行中。</p>
+	<p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+	<p>AT [\\computername] [ [id] [/DELETE] | /DELETE [/YES]]</p>
+	<p>AT [\\computername] time [/INTERACTIVE]</p>
+	<p>[ /EVERY:date[,...] | /NEXT:date[,...]] "command"</p>
+
+	<p>\\computername 指定远程计算机。 如果省略这个参数，会计划在本地计算机上运行命令。</p>
+	<p>\\127.0.0.1代表本机。和不加这个参数意思一样。</p>
+
+	<p>id 指定给已计划命令的识别号。</p>
+	<p>用来识别任务，比如你要添加好几个任务，ID=1就代表第一个喽！</p>
+
+	<p>/delete 删除某个已计划的命令。如果省略 id，</p>
+	<p>计算机上所有已计划的命令都会被删除。</p>
+	<p>/yes 不需要进一步确认时，跟删除所有作业</p>
+	<p>的命令一起使用。</p>
+	<p>time 指定运行命令的时间。</p>
+	<p>/interactive 允许作业在运行时，与当时登录的用户</p>
+	<p>桌面进行交互。</p>
+	<p>/every:date[,...] 每个月或每个星期在指定的日期运行命令。</p>
+	<p>如果省略日期，则默认为在每月的本日运行。</p>
+	<p>/next:date[,...] 指定在下一个指定日期(如，下周四)运行命令。</p>
+	<p>如果省略日期，则默认为在每月的本日运行。</p>
+	<p>"command" 准备运行的 Windows NT 命令或批处理程序。</p>
+</body>
+</html>

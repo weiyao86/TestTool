@@ -1,0 +1,30 @@
+{% extends "shared/_layout.html" %}
+{% block content %}
+
+    <h1>My Shopping Basket</h1>
+    
+    {% if items %}
+        <ul class="basket">
+            {% for item in items %}
+                <li>
+                    <h2 class="title">{{ item.product.name }}</h2>
+                    <p class="quantity">Quantity: {{ item.quantity }}</p>
+                    <div class="prices">
+                        <p class="unit">Total: £{{ item.quantity * item.product.price }}</p>
+                    </div>
+                    <form method="post" action="/basket/remove">
+                        <input type="hidden" name="productId" value="{{ item.product.id }}" />
+                        <button>Remove</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+        
+        <form method="post" action="/basket/empty">
+            <button>Empty Basket</button>
+        </form>
+    {% else %}
+        <p>You have no items in your shopping basket</p>
+    {% endif %}
+
+{% endblock %}

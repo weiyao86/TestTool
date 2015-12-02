@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<style>
+		.container{
+			border:1px solid #5b85ac;
+			width:500px;
+			height:300px;
+			overflow: hidden;
+			position: relative;
+		}
+		.item{
+			width: 500px;
+			height:300px;
+			background: #30fe30;
+			position: relative;
+			display: none;
+			transition:left .6s ease-in-out 0s;
+		}
+		.item:nth-of-type(2n-1){
+			background: red;
+		}
+			
+		.active,
+		.next,
+		.prev {
+		  display: block;
+		}
+		.active {
+		  left: 0;
+		}
+		.next,
+		.prev {
+		  position: absolute;
+		  top: 0;
+		  width: 100%;
+		}
+		.next {
+		  left: 100%;
+		}
+		.prev {
+		  left: -100%;
+		}
+		.next.left,
+		.prev.right {
+		  left: 0;
+		}
+		.active.left {
+		  left: -100%;
+		}
+		.active.right {
+		  left: 100%;
+		}
+
+
+    </style>
+	<script type="text/javascript">
+    $(function(){
+    	$("#btn1").on("click",function(){
+			cycle("next");
+    	});
+
+    	$("#btn2").on("click",function(){
+			cycle("prev");
+		});
+
+		function cycle(dir){
+			var $active=$(".active"),
+				 activeIndex=$(".item").index($active),
+				 willWrap = (dir == 'prev' && activeIndex === 0) || (dir == 'next' && activeIndex == ($(".item").length - 1));
+
+            var delta = dir == 'prev' ? -1 : 1;
+			var itemIndex = (activeIndex + delta) % $(".item").length;
+			var $next=$(".item").eq(itemIndex);
+			var type=dir,direction=dir == "next" ? "left" : "right";
+
+		   $next.addClass(type);
+	       $next[0].offsetWidth; // force reflow
+	       $active.addClass(direction);
+	       $next.addClass(direction);
+
+    		$next.on('transitionend',function(){
+				$next.removeClass([type,direction].join(" ")).addClass("active");
+				$active.removeClass(["active",direction].join(" "))
+			});
+
+		}
+    });
+
+
+    </script>
+</head>
+<body>
+	<div class="container">
+		<div class="item active">First</div>
+		<div class="item">Second</div>
+		<div class="item">Third</div>
+		<div class="item">Fourth</div>
+
+	</div>
+
+	<button id="btn1" type="button" >next</button>
+	<button id="btn2" type="button" >prev</button>
+</body>
+</html>

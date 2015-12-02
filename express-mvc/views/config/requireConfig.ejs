@@ -1,0 +1,27 @@
+
+<script type="text/javascript" src="/scripts/libs/require.js"></script>
+
+<script type="text/javascript">
+    require.config({
+        baseUrl:"/scripts/",
+        waitSeconds: 30,
+        paths: {
+            // libs public
+            jquery:'libs/jquery-1.11.3.js',
+            bootstrap:'libs/bootstrap.js',
+            domReady:'libs/domReady.js',
+            tabPanel: "libs/tabPanel/TabPanel.js",
+            fader: "libs/tabPanel/Fader.js",
+
+            mustache:"libs/private/mustache.js",
+            jqExtend: "libs/private/jquery.extend.js",
+            ajax: "libs/private/ajax.js"
+
+            //module
+        },
+        shim: {
+            bootstrap: ['jquery'],
+            jqExtend: ['jquery']
+        }
+    });
+</script>
