@@ -111,13 +111,12 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 				self.$tbody.html(tempHtml);
 			},
 
-
-
 			save: function() {
 				var self = this,
 					model = self.$modalEdit.prop("model");
 				model && self[model.name].call(self, self.$modalEdit);
 			},
+
 			update: function($that) {
 				var self = this,
 					params = $that.selectedAllAppointScope();
@@ -135,6 +134,7 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 
 				});
 			},
+
 			create: function($that) {
 				var self = this;
 			},
