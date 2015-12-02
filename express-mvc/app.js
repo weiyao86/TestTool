@@ -61,7 +61,7 @@ app.use(function(err, req, res, next) {
 	res.redirect('/noexist');
 });
 
-// Fire up server
+// Fire up server 监听端口
 app.listen(8002, function() {
 	console.log('Express server listening on port: ' + 8002);
 });
