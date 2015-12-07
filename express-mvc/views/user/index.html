@@ -1,0 +1,55 @@
+	<%- include('../frame/frame_head')-%>
+	
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<div class="panel-title">
+				<button class="btn btn-success" type="button"  id="user_add" data-field="add">新增</button>
+				<button class="btn btn-link" type="button" data-toggle="modal" data-target="#modal_edit">导出</button>
+			</div>
+		</div>
+
+		<div class="table-responsive">
+			<table id="user_list" class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>_id</th>
+						<th>email</th>
+						<th>password</th>
+						<th class="text-center" style="width:15%;">操作</th>
+					</tr>
+				</thead>
+				<tbody id="tbody_user">
+					<script id="tbody_user_template" type="template">
+						{{#User}}
+						<tr>
+							<td><span  data-field="_id">{{_id}}</span></td>
+							<td><span  data-field="email">{{email}}</span></td>
+							<td><span  data-field="password">{{password}}</span></td>
+							<td class="text-center">
+								<button class="btn btn-success"  title="根据ID修改" data-field="update">修改</button>
+								<button class="btn btn-danger" data-field="del" title="根据ID删除">删除</button>
+							</td>
+						</tr>
+						{{/User}}
+					</script>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="panel-footer text-center">
+			<ul class="pagination">
+				<li><a href="javascript:;"><span>&laquo;</span> </a></li>
+				<li><a href="javascript:;">1</a></li>
+				<li><a href="javascript:;">2</a></li>
+				<li><a href="javascript:;">3</a></li>
+				<li><a href="javascript:;"><span>&raquo;</span> </a></li>
+			</ul>
+		</div>
+	</div>
+
+	<script type='text/javascript' src='/scripts/app/user/main.js'></script>
+
+	<!-- 编辑信息 -->
+	<%- include('../frame/modal')-%>
+	<%- include('../frame/frame_footer')-%>
+

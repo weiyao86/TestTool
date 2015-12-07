@@ -57,3 +57,12 @@ body {
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
 }
+
+.bg-active {
+    color: #fff;
+    background-color: #337ab7 !important;
+
+    a {
+        @extend .bg-active;
+    }
+}

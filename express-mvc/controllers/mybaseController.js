@@ -13,4 +13,12 @@
 		next();
 	});
 
+	myBaseController.prototype.handlerError = function(err, res) {
+		res.json({
+			IsSuccess: false,
+			msg: err
+		});
+	}
+
+
 	module.exports = myBaseController;

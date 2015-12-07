@@ -15,3 +15,5 @@ body { padding-top: 70px; }
 .nav-sidebar > li > a { padding: 10px 20px; }
 
 .sub-header { border-bottom: 1px solid #eee; padding-bottom: 10px; }
+
+.bg-active, .bg-active a { color: #fff; background-color: #337ab7 !important; }
