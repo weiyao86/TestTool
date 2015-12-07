@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>操作git遇到的问题agd</title>
+	<title>操作git遇到的问题sublime git</title>
 </head>
 <body>
 	<p>使用github desktop工具--github我在家里改</p>
@@ -12,29 +12,27 @@
 		设置全局邮箱:git config --global user.email "wei.yaoisnull@gmail.com"
 	</p>
 	<p>提交步骤:</p>
-	<dl>
-		<dt>step 1:</dt>
-		<dd>建本地仓库然后:git init</dd>
-		<dt>step 2:</dt>
-		<dd>新建一个文件加入本地仓库: git add test.txt</dd>
-		<dt>step 3:</dt>
-		<dd>提交到本地仓库: git commit -m "提交的说明"</dd>
-		<dt>step 4:</dt>
-		<dd>
-			建立与github的联系: git remote add origin https://github.com/weiyao86/TestTool.git
-		</dd>
-		<dt>step 5:</dt>
-		<dd>push到远程: git push -u origin master</dd>
-		<dt>step 6:</dt>
-		<dd>
-			push过程出现问题: git pull origin master  -- 步骤三 ---  git push origin master
-		</dd>
-		<dt>step 7:</dt>
-		<dd>
-			出现orign exists问题: git remote rm origin  --  git remote add origin https://github.com/weiyao86/TestTool.git  --git push -u origin master
-		</dd>
-		<dt>以上仅简单粗暴解决部分问题,后期使用跟进,未续</dt>
-	</dl>
+	<dt>step 1:</dt>
+    <dd>建本地仓库然后:git init</dd>
+    <dt>step 2:</dt>
+    <dd>新建一个文件加入本地仓库: git add test.txt</dd>
+    <dt>step 3:</dt>
+    <dd>提交到本地仓库: git commit -m "提交的说明"</dd>
+    <dt>step 4:</dt>
+    <dd>
+        建立与github的联系: git remote add origin https://github.com/weiyao86/TestTool.git
+    </dd>
+    <dt>step 5:</dt>
+    <dd>push到远程: git push -u origin master</dd>
+    <dt>step 6:</dt>
+    <dd>
+        push过程出现问题: git pull origin master  -- 步骤三 ---  git push origin master
+    </dd>
+    <dt>step 7:</dt>
+    <dd>
+        出现orign exists问题: git remote rm origin  --  git remote add origin https://github.com/weiyao86/TestTool.git  --git push -u origin master
+    </dd>
+    <dt>以上仅简单粗暴解决部分问题,后期使用跟进,未续</dt>
 	<pre>
 		github常见操作和常见错误！错误提示：fatal: remote origin already exists.
 
