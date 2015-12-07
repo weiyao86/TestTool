@@ -61,7 +61,7 @@
 						res.cookie("account", params, {
 							maxAge: 60 * 60 * 60 * 10
 						});
-						res.redirect("/main/index");
+						res.redirect("/main");
 					} else {
 						res.send("帐号名或密码错误!");
 					}

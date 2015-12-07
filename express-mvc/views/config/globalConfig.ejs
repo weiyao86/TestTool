@@ -4,13 +4,15 @@
     define("globalConfig", [], function () {
         return {
 	            context:{
-	            	lang:"zh-CN",
+	            	lang:"zh_CN",
 	                path:"",
 	                ext:".png"
 	            },
 	            paths:{
-	            	loadUser:"/main/queryAll",
-	            	createUserUrl:"/main/updateUser"
+	            	loadUser:"/user/queryAll",
+	            	createUser:"/user/createUser",
+	            	updateUser:"/user/updateUser",
+	            	delUserUrl:"/user/deleteUserByEmail"
 	            }
             };
     });

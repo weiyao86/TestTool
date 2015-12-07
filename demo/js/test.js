@@ -1,11 +1,12 @@
-﻿var Test=function(){
+﻿var Test = function() {
 
 	this.init();
 };
 
-Test.prototype={
+Test.prototype = {
 
-	init:function(){
+	init: function() {
+
 		alert('init')
 	}
 };
