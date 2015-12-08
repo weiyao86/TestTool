@@ -83,30 +83,21 @@ body {
 .modal-center, .modal-center::after, .modal-center::before {
     @extend %center;
 
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 100%;
-    opacity: 0.75;
     transition: all .75s ease;
-}
-
-.modal-center::after, .modal-center::before {
-    content: "";
-}
-
-.modal-center::before {
-    border: 5px solid #ccc;
-}
-
-.modal-center::after {
-    border: 5px solid transparent;
-    border-top-color: #fff;
-    transform: scale(50, 250);
 }
 
 .modal-center {
     width: 350px;
-    height: 350px;
+    height: 150px;
+}
+
+.modal-center p {
+    background: #fff;
+    border-radius: 4px;
+    line-height: 35px;
 }
 
 @mixin min-screen($res) {
@@ -116,6 +107,24 @@ body {
 }
 
 @include min-screen(978px) {
+    .modal-center p {
+        display: none;
+    }
+
+    .modal-center::after, .modal-center::before {
+        content: "";
+    }
+
+    .modal-center::before {
+        border: 5px solid #ccc;
+    }
+
+    .modal-center::after {
+        border: 5px solid transparent;
+        border-color: #fff #000 #f00 #3a7a7b;
+        transform: scale(50, 250);
+    }
+
     .modal-center::after {
         animation: rotatedeg 2s linear infinite normal;
     }

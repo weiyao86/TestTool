@@ -2,9 +2,6 @@ require(["ajax", "globalConfig", "jquery", "bootstrap", "domReady!"], function(a
 	var initBootstrap = {
 			init: function() { //init bootstrap reference
 				$("[data-toggle='popover']").popover();
-				$("[data-toggle='tooltip']").tooltip({
-					placement: 'top'
-				});
 			}
 		},
 		main = {
