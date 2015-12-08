@@ -1,3 +1,4 @@
+@charset "utf-8";
 $bodyTop: 70px;
 
 %center {
@@ -139,4 +140,17 @@ body {
     to {
         transform: rotate(360deg);
     }
+}
+
+/**
+ * 分页相关
+ */
+.page-middle{
+    vertical-align:middle;
+}
+.m-l-r{
+    margin:0 5px;
+}
+.page-cur{
+    max-width:120px;
 }
