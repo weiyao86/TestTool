@@ -3,7 +3,7 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 			init: function() { //init bootstrap reference
 				$("[data-toggle='popover']").popover();
 				$("[data-toggle='tooltip']").tooltip({
-					placement: 'top'
+					placement: 'bottom'
 				});
 			}
 		},
@@ -41,6 +41,13 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 				self.$filtersScope.on("click", "[data-action]", function() {
 					var field = $(this).attr("data-action");
 					if (field === "search") {
+						self.load();
+					}
+				});
+
+				self.$filtersScope.on("keyup", "[data-field]", function(e) {
+
+					if (e.keyCode === 13) {
 						self.load();
 					}
 				});
@@ -132,7 +139,7 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 						})
 					},
 					complete: function() {
-						//self.$modalLoading.modal("hide");
+						self.$modalLoading.modal("hide");
 					},
 					success: function(rst) {
 						self.render(rst.data);
