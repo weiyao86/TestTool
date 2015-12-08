@@ -24,7 +24,7 @@ body { padding-top: 70px; }
 
 .modal-center, .modal-center::after, .modal-center::before { width: 30px; height: 30px; border-radius: 100%; transition: all .75s ease; }
 
-.modal-center { width: 550px; height: 150px; }
+.modal-center { width: 150px; height: 150px; }
 
 .modal-center p { background: #fff; border-radius: 4px; line-height: 35px; }
 
