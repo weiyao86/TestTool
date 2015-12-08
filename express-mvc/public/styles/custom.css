@@ -28,7 +28,8 @@ body { padding-top: 70px; }
 
 .modal-center::before { border: 5px solid #ccc; }
 
-.modal-center::after { border: 5px solid transparent; border-top-color: #fff; transform: scale(50, 250); animation: rotatedeg 2s linear infinite alternate; -webkit-animatio: rotatedeg 2s linear infinite; -moz-animation: rotatedeg 2s linear infinite; -ms-animation: rotatedeg 2s linear infinite; -o-animation: rotatedeg 2s linear infinite; }
+.modal-center::after { border: 5px solid transparent; border-top-color: #fff; transform: scale(50, 250); }
 
-@keyframes rotatedeg { from { transform: rotate(0deg); transform: scale(1.2); }
-  to { transform: rotate(360deg); transform: scale(1.5); } }
+@media only screen and (min-width: 978px) { .modal-center::after { animation: rotatedeg 2s linear infinite normal; } }
+@keyframes rotatedeg { from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); } }
