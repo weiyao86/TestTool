@@ -1,5 +1,14 @@
 $bodyTop: 70px;
 
+%center {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
 body {
     padding-top: $bodyTop;
 }
@@ -69,4 +78,45 @@ body {
 
 .form-inline .mg-t {
     margin: 10px 10px 10px 0;
+}
+
+.modal-center, .modal-center::after, .modal-center::before {
+    @extend %center;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    opacity: 0.75;
+    transition: all .75s ease;
+}
+
+.modal-center::after, .modal-center::before {
+    content: "";
+}
+
+.modal-center::before {
+    border: 5px solid #ccc;
+}
+
+.modal-center::after {
+    border: 5px solid transparent;
+    border-top-color: #fff;
+    transform: scale(50, 250);
+    animation: rotatedeg 2s linear infinite alternate;
+    -webkit-animatio: rotatedeg 2s linear infinite;
+    -moz-animation: rotatedeg 2s linear infinite;
+    -ms-animation: rotatedeg 2s linear infinite;
+    -o-animation: rotatedeg 2s linear infinite;
+}
+
+@keyframes rotatedeg {
+    from {
+        transform: rotate(0deg);
+        transform: scale(1.2);
+    }
+
+    to {
+        transform: rotate(360deg);
+        transform: scale(1.5);
+    }
 }

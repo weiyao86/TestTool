@@ -1,5 +1,6 @@
 	var gu = require("guthrie"),
 		commonfun = require(__appRoot + "/lib/commonfun").commonfun,
+		filters = require(__appRoot + '/lib/filters'),
 		user = require(__appRoot + "/lib/user").user,
 		baseController = require("./mybaseController"),
 		userController = gu.controller.inherit(baseController);
@@ -12,8 +13,11 @@
 		},
 
 		queryAll: {
+			filters: [filters.userfilter],
 			POST: function(req, res) {
-				queryAll(res);
+
+				var model = this.condition;
+				queryAll(res, model);
 			}
 		},
 
@@ -73,7 +77,7 @@
 			POST: function(req, res) {
 				var model = req.body,
 					email = model.email;
-				console.log(email);
+
 				user.remove({
 					email: email
 				}, function(err) {
@@ -90,13 +94,16 @@
 		}
 	};
 
+
 	function queryAll(res, condition) {
+
+
 		user.find(condition || {}, '-__v', {
 			'sort': {
 				"_id": -1
 			}
 		}, function(err, users) {
-			if (err) return console.log(err);
+			if (err) return commonfun.handlerError(err, res);
 			users = users.map(function(tag) {
 				return tag.toJSON();
 			});

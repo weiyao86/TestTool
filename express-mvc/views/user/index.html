@@ -2,23 +2,22 @@
 
 	<blockquote>查询条件</blockquote>
 
-<div class="panel">
-	<div class="form-inline clearfix">
-	
-		<div class="form-group mg-t">
-			<label for="">email:</label>
-			<input type="text" class="form-control">
-		</div>
+	<div class="panel">
+		<div id="filters_scope" class="form-inline clearfix">
+			<div class="form-group mg-t">
+				<label for="">email:</label>
+				<input type="text" data-field="email" class="form-control">
+			</div>
 
-		<div class="form-group mg-t">
-			<label for="">other:</label>
-			<input type="text" class="form-control">
-		</div>
-		<div class="form-group pull-right mg-t">
-			<button class="btn btn-success"  title="查询" data-field="update">查询</button>
+			<div class="form-group mg-t">
+				<label for="">password:</label>
+				<input type="text" data-field="password" class="form-control">
+			</div>
+			<div class="form-group pull-right mg-t">
+				<button class="btn btn-success"  title="查询" data-action="search">查询</button>
+			</div>
 		</div>
 	</div>
-</div>
 
 	<blockquote>查询结果</blockquote>
 	<div class="panel panel-info">
@@ -85,5 +84,5 @@
 	<script type='text/javascript' src='/scripts/app/user/main.js'></script>
 
 	<!-- 编辑信息 -->	
-	<%- include('../frame/modal')-%>	
-	<%- include('../frame/frame_footer')-%>	
+	<%- include('../frame/modal')-%>
+	<%- include('../frame/frame_footer')-%>

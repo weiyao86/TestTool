@@ -27,12 +27,23 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 
 				self.$email = self.$modalEdit.find("[data-field='email']");
 
+				self.$filtersScope = $("#filters_scope");
+
 				self.$modalSuccess = $("#modal_success");
 				self.$globalSearch = $("#global_search");
+
+				self.$modalLoading = $("#modal_loading");
 			},
 
 			bindEvent: function() {
 				var self = this;
+
+				self.$filtersScope.on("click", "[data-action]", function() {
+					var field = $(this).attr("data-action");
+					if (field === "search") {
+						self.load();
+					}
+				});
 
 				self.$userList.on("click", "[data-field='update'],[data-field='del']", function() {
 
@@ -83,10 +94,9 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 					}).modal("show");
 				});
 
-				self.$modalEdit.on("show.bs.modal", function() {
-					self.$globalSearch.val("edit show before");
-				});
-
+				// self.$modalEdit.on("show.bs.modal", function() {
+				// 	self.$globalSearch.val("edit show before");
+				// });
 				self.$modalEdit.on("shown.bs.modal", function(evt) {
 					self.$globalSearch.val("edit show after");
 					var model = $(this).prop("model"),
@@ -97,9 +107,9 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 						self.$modalEdit.loadAppointScope(rst);
 					}
 				});
-				self.$modalEdit.on("hide.bs.modal", function() {
-					self.$globalSearch.val("edit hide before");
-				});
+				// self.$modalEdit.on("hide.bs.modal", function() {
+				// 	self.$globalSearch.val("edit hide before");
+				// });
 
 				self.$modalEdit.on("hidden.bs.modal", function() {
 					self.$globalSearch.val("edit hide after");
@@ -109,9 +119,21 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 			},
 
 			load: function() {
-				var self = this;
+				var self = this,
+					params = self.$filtersScope.selectedAllAppointScope();
+
+
 				ajax.invoke({
 					url: globalConfig.paths.loadUser,
+					data: params,
+					beforeSend: function() {
+						self.$modalLoading.modal({
+							backdrop: 'static'
+						})
+					},
+					complete: function() {
+						//self.$modalLoading.modal("hide");
+					},
 					success: function(rst) {
 						self.render(rst.data);
 					},

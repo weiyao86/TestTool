@@ -22,7 +22,7 @@ define(["globalConfig"], function(globalConfig) {
 	var defaultOpts = {
 		cache: true,
 		data: {},
-		timeout: 3000,
+		timeout: 6000,
 		dataType: "json",
 		type: "POST",
 		contentType: 'application/x-www-form-urlencoded',
