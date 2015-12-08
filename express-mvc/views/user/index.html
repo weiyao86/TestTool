@@ -1,5 +1,26 @@
-	<%- include('../frame/frame_head')-%>
+	<%- include('../frame/frame_head')-%>	
+
+	<blockquote>查询条件</blockquote>
+
+<div class="panel">
+	<div class="form-inline clearfix">
 	
+		<div class="form-group mg-t">
+			<label for="">email:</label>
+			<input type="text" class="form-control">
+		</div>
+
+		<div class="form-group mg-t">
+			<label for="">other:</label>
+			<input type="text" class="form-control">
+		</div>
+		<div class="form-group pull-right mg-t">
+			<button class="btn btn-success"  title="查询" data-field="update">查询</button>
+		</div>
+	</div>
+</div>
+
+	<blockquote>查询结果</blockquote>
 	<div class="panel panel-info">
 		<div class="panel-heading">
 			<div class="panel-title">
@@ -38,18 +59,31 @@
 
 		<div class="panel-footer text-center">
 			<ul class="pagination">
-				<li><a href="javascript:;"><span>&laquo;</span> </a></li>
-				<li><a href="javascript:;">1</a></li>
-				<li><a href="javascript:;">2</a></li>
-				<li><a href="javascript:;">3</a></li>
-				<li><a href="javascript:;"><span>&raquo;</span> </a></li>
+				<li>
+					<a href="javascript:;">
+						<span>&laquo;</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">1</a>
+				</li>
+				<li>
+					<a href="javascript:;">2</a>
+				</li>
+				<li>
+					<a href="javascript:;">3</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<span>&raquo;</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
 
 	<script type='text/javascript' src='/scripts/app/user/main.js'></script>
 
-	<!-- 编辑信息 -->
-	<%- include('../frame/modal')-%>
-	<%- include('../frame/frame_footer')-%>
-
+	<!-- 编辑信息 -->	
+	<%- include('../frame/modal')-%>	
+	<%- include('../frame/frame_footer')-%>	

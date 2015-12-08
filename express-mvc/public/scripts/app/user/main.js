@@ -207,7 +207,7 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 				var self = this;
 				self.$modalAlert.modal("hide");
 				self.$modalEdit.modal("hide");
-				self.$modalSuccess.modal("show").find("[data-field='tip_info']").html(msg);
+				msg && self.$modalSuccess.modal("show").find("[data-field='tip_info']").html(msg);
 				self.$email.popover("hide");
 			}
 

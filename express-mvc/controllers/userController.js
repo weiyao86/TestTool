@@ -23,8 +23,7 @@
 					params = {
 						email: model.email,
 						password: model.password
-					},
-					rst = {};
+					};
 
 				user.count({
 					email: params.email
@@ -91,8 +90,8 @@
 		}
 	};
 
-	function queryAll(res) {
-		user.find({}, '-__v', {
+	function queryAll(res, condition) {
+		user.find(condition || {}, '-__v', {
 			'sort': {
 				"_id": -1
 			}
