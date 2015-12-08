@@ -30,6 +30,8 @@ body { padding-top: 70px; }
 
 .modal-center::after { border: 5px solid transparent; border-top-color: #fff; transform: scale(50, 250); }
 
+.modal-center { width: 350px; height: 350px; }
+
 @media only screen and (min-width: 978px) { .modal-center::after { animation: rotatedeg 2s linear infinite normal; } }
 @keyframes rotatedeg { from { transform: rotate(0deg); }
   to { transform: rotate(360deg); } }
