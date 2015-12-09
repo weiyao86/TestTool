@@ -97,7 +97,7 @@
 
 
 	function queryAll(res, condition, filters) {
-		var limit = (filters && filters.limit) || 10,
+		var limit = (filters && filters.limit) || 5,
 			idx = (filters && filters.pageIndex) || 1;
 		user.count(condition || {}, function(err, count) {
 			if (err) return handerError(err);
@@ -108,7 +108,7 @@
 						"_id": -1
 					}
 				});
-				query.skip(limit * idx).limit(limit).exec(function(err, users) {
+				query.skip(limit * (idx-1)).limit(limit).exec(function(err, users) {
 					if (err) return commonfun.handlerError(err, res);
 					users = users.map(function(tag) {
 						return tag.toJSON();
