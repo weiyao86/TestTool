@@ -19,25 +19,28 @@
 
     exports.userfilter = function(req, res, next) {
     	var body = req.body,
-    		params = {};
+    		params = {},
+    		filters = {};
+
     	for (var i in body) {
     		if (body.hasOwnProperty(i)) {
     			var val = body[i];
     			if (val) {
-    				if (user.schema.paths[i] && user.schema.paths[i].instance == "String") {
-    					params[i] = new RegExp(val, "ig");
-    				} else {
-    					params[i] = val;
+    				if (user.schema.paths[i]) { //筛选数据库查询字段
+    					if (user.schema.paths[i].instance == "String") {
+    						params[i] = new RegExp(val, "ig");
+    					} else {
+    						params[i] = val;
+    					}
+    				} else { //与数据库字段无关作其它条件筛选
+    					filters[i] = val;
     				}
     			}
     		}
     	}
-    	for (var key in params) {
-    		if (!user.schema.paths.hasOwnProperty(key)) {
-    			delete params[key];
-    		}
-    	}
+
     	this.condition = params;
+    	this.filters = filters;
 
     	next();
     };

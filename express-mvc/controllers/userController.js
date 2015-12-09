@@ -16,8 +16,9 @@
 			filters: [filters.userfilter],
 			POST: function(req, res) {
 
-				var model = this.condition;
-				queryAll(res, model);
+				var condition = this.condition,
+					filters = this.filters;
+				queryAll(res, condition, filters);
 			}
 		},
 
@@ -95,23 +96,50 @@
 	};
 
 
-	function queryAll(res, condition) {
+	function queryAll(res, condition, filters) {
+		var limit = (filters && filters.limit) || 10,
+			idx = (filters && filters.pageIndex) || 1;
+		user.count(condition || {}, function(err, count) {
+			if (err) return handerError(err);
+			if (count) {
 
-
-		user.find(condition || {}, '-__v', {
-			'sort': {
-				"_id": -1
+				var query = user.find(condition || {}, '-__v', {
+					'sort': {
+						"_id": -1
+					}
+				});
+				query.skip(limit * idx).limit(limit).exec(function(err, users) {
+					if (err) return commonfun.handlerError(err, res);
+					users = users.map(function(tag) {
+						return tag.toJSON();
+					});
+					res.json({
+						IsSuccess: true,
+						data: users,
+						total: count
+					});
+				});
 			}
-		}, function(err, users) {
-			if (err) return commonfun.handlerError(err, res);
-			users = users.map(function(tag) {
-				return tag.toJSON();
-			});
-			res.json({
-				IsSuccess: true,
-				data: users
-			});
 		});
+
+
+
+		// user.find(condition || {}, '-__v', {
+		// 	'sort': {
+		// 		"_id": -1
+		// 	}
+		// }, function(err, users) {
+		// 	if (err) return commonfun.handlerError(err, res);
+		// 	users = users.map(function(tag) {
+		// 		return tag.toJSON();
+		// 	});
+		// 	res.json({
+		// 		IsSuccess: true,
+		// 		data: users
+		// 	});
+		// });
+
+
 	}
 
 	module.exports = userController;
