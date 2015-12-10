@@ -101,25 +101,24 @@
 			idx = (filters && filters.pageIndex) || 1;
 		user.count(condition || {}, function(err, count) {
 			if (err) return handerError(err);
-			if (count) {
 
-				var query = user.find(condition || {}, '-__v', {
-					'sort': {
-						"_id": -1
-					}
+			var query = user.find(condition || {}, '-__v', {
+				'sort': {
+					"_id": -1
+				}
+			});
+			query.skip(limit * (idx - 1)).limit(limit).exec(function(err, users) {
+				if (err) return commonfun.handlerError(err, res);
+				users = users.map(function(tag) {
+					return tag.toJSON();
 				});
-				query.skip(limit * (idx-1)).limit(limit).exec(function(err, users) {
-					if (err) return commonfun.handlerError(err, res);
-					users = users.map(function(tag) {
-						return tag.toJSON();
-					});
-					res.json({
-						IsSuccess: true,
-						data: users,
-						total: count
-					});
+				return res.json({
+					IsSuccess: true,
+					data: users,
+					total: count
 				});
-			}
+			});
+
 		});
 
 

@@ -1,4 +1,4 @@
-require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "jquery", "bootstrap", "domReady!"], function(ajax, globalConfig, Mustache) {
+require(["ajax", "globalConfig", "mustache", "paging", "jqExtend", "fader", "tabPanel", "blockUI", "jquery", "bootstrap", "domReady!"], function(ajax, globalConfig, Mustache, Paging) {
 	var initBootstrap = {
 			init: function() { //init bootstrap reference
 				$("[data-toggle='popover']").popover();
@@ -12,7 +12,7 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 				var self = this;
 				self.buildDom();
 				self.bindEvent();
-				self.load();
+				self.initComponent();
 			},
 
 			buildDom: function() {
@@ -32,7 +32,7 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 				self.$modalSuccess = $("#modal_success");
 				self.$globalSearch = $("#global_search");
 
-				self.$modalLoading = $("#modal_loading");
+				self.$modalLoading = $("#gridpanel");
 			},
 
 			bindEvent: function() {
@@ -41,14 +41,14 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 				self.$filtersScope.on("click", "[data-action]", function() {
 					var field = $(this).attr("data-action");
 					if (field === "search") {
-						self.load();
+						self.reload();
 					}
 				});
 
 				self.$filtersScope.on("keyup", "[data-field]", function(e) {
 
 					if (e.keyCode === 13) {
-						self.load();
+						self.reload();
 					}
 				});
 
@@ -75,8 +75,6 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 						default:
 							break;
 					}
-
-
 				});
 
 				self.$email.on("blur keyup propertychange", function() {
@@ -125,24 +123,46 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 				});
 			},
 
-			load: function() {
-				var self = this,
-					params = self.$filtersScope.selectedAllAppointScope();
+			initComponent: function() {
+				var self = this;
+				self.paging = new Paging({
+					pageList: 10,
+					limit: 5,
+					callbacks: {
+						fireLoad: $.proxy(self.fireLoad, self)
+					}
+				});
+				self.paging.load();
+			},
 
+			reload: function() {
+				var self = this;
+				self.paging.reload();
+			},
+
+			fireLoad: function(appendParams) {
+				var self = this,
+					params = $.extend({}, self.$filtersScope.selectedAllAppointScope(), appendParams || {});
 
 				ajax.invoke({
 					url: globalConfig.paths.loadUser,
 					data: params,
 					beforeSend: function() {
-						self.$modalLoading.modal({
-							backdrop: 'static'
-						})
+						self.$modalLoading.block({
+							css: {
+								border: "none",
+								width: 50,
+								height: 50,
+								background: "transparent",
+							},
+							message: "<div class='modal-center'><p class='text-center'>Loading...</p></div>"
+						});
 					},
 					complete: function() {
-						self.$modalLoading.modal("hide");
+						self.$modalLoading.unblock();
 					},
 					success: function(rst) {
-						self.render(rst.data);
+						self.render(rst);
 					},
 					failed: function(err) {
 						alert(err.reason);
@@ -150,12 +170,14 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 				});
 			},
 
-			render: function(data) {
+			render: function(rst) {
 				var self = this,
 					tempHtml = Mustache.render(self.template, {
-						User: data
+						User: rst.data
 					});
 				self.$tbody.html(tempHtml);
+
+				self.paging.render(rst);
 			},
 
 			save: function() {
@@ -172,7 +194,7 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 					contentType: "application/json",
 					data: JSON.stringify(params),
 					success: function(rst) {
-						self.load();
+						self.reload();
 						self.showTipSuccess("保存成功!");
 					},
 					failed: function(err) {
@@ -192,7 +214,7 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 					data: JSON.stringify(params),
 					success: function(rst) {
 						if (rst.data) {
-							self.load();
+							self.reload();
 							self.showTipSuccess("保存成功!");
 						} else {
 							self.$email.attr("data-content", "此条记录已存在").popover("show");
@@ -217,7 +239,7 @@ require(["ajax", "globalConfig", "mustache", "jqExtend", "fader", "tabPanel", "j
 						email: email
 					}),
 					success: function(rst) {
-						self.load();
+						self.reload();
 						self.showTipSuccess("保存成功!");
 					},
 					failed: function(err) {

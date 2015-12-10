@@ -1,6 +1,4 @@
 @charset "UTF-8";
-.modal-center, .modal-center::after, .modal-center::before { position: fixed; top: 0; left: 0; right: 0; bottom: 0; margin: auto; }
-
 body { padding-top: 70px; }
 
 .content { width: 100%; height: 100%; position: relative; box-shadow: inset 0 0 30px 10px rgba(0, 0, 0, 0.5); }
@@ -23,7 +21,7 @@ body { padding-top: 70px; }
 
 .form-inline .mg-t { margin: 10px 10px 10px 0; }
 
-.modal-center, .modal-center::after, .modal-center::before { width: 30px; height: 30px; border-radius: 100%; transition: all .75s ease; }
+.modal-center, .modal-center::after, .modal-center::before { position: absolute; top: 0; left: 0; width: 30px; height: 30px; border-radius: 100%; transition: all .75s ease; }
 
 .modal-center { width: 150px; height: 150px; }
 
@@ -31,9 +29,9 @@ body { padding-top: 70px; }
 
 @media only screen and (min-width: 978px) { .modal-center p { display: none; }
   .modal-center::after, .modal-center::before { content: ""; }
-  .modal-center::before { border: 5px solid #ccc; }
-  .modal-center::after { border: 5px solid transparent; border-color: #fff #000 #f00 #3a7a7b; transform: scale(50, 250); }
-  .modal-center::after { animation: rotatedeg 2s linear infinite normal; } }
+  .modal-center::before { border: 5px solid rgba(51, 51, 51, 0.55); }
+  .modal-center::after { border: 5px solid transparent; border-top-color: #fff; transform: scale(50, 250); }
+  .modal-center::after { animation: rotatedeg 1s linear infinite normal; } }
 @keyframes rotatedeg { from { transform: rotate(0deg); }
   to { transform: rotate(360deg); } }
 /** 分页相关 */
