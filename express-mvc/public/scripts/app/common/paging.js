@@ -41,8 +41,17 @@ define(["ajax", "mustache", "jquery"], function(ajax, Mustache) {
 			self.$paging.on("click", "[data-action='redirect_page']", function() {
 				self.redirectByNum();
 			});
+
 			self.$paging.on("keyup", "[data-field='page_num']", function(e) {
-				e.keyCode === 13 && self.redirectByNum();
+				e.keyCode == 13 && self.redirectByNum();
+			});
+
+			self.$paging.on("focus blur", "[data-field='page_num']", function(e) {
+				if (e.type === "focusin") {
+
+					$.trim($(this).val()) && self.validateNum();
+				} else
+					$(this).popover('hide');
 			});
 		},
 
@@ -128,18 +137,31 @@ define(["ajax", "mustache", "jquery"], function(ajax, Mustache) {
 
 		redirectByNum: function() {
 			var self = this,
-				$go = self.$paging.find("[data-field='page_num']").blur(),
-				curIdx = $.trim($go.val());
+				rst = self.validateNum();
 
-			if (!curIdx || !/^[1-9][0-9]*$/.test(curIdx)) return $go.popover('show');
-			if (self.pageCount && curIdx >= 1 && curIdx <= self.pageCount) {
-				self.reload(curIdx);
-			} else {
-				$go.popover('show');
+			if (rst.flag) {
+				self.reload(rst.curIdx);
 			}
+		},
+
+		validateNum: function() {
+			var self = this,
+				$go = self.$paging.find("[data-field='page_num']"),
+				curIdx = $.trim($go.val()),
+				flag = true;
+
+			if (!curIdx || !/^[1-9][0-9]*$/.test(curIdx)) {
+				flag = false;
+			} else if (self.pageCount && (curIdx < 1 || curIdx > self.pageCount)) {
+				flag = false;
+			}!flag && $go.popover('show');
+
+			return {
+				flag: flag,
+				curIdx: curIdx
+			};
 		}
 	};
-
 
 	return Paging;
 });
