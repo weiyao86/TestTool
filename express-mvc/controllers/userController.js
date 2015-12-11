@@ -8,6 +8,7 @@
 	userController.actions = {
 		index: {
 			GET: function(req, res) {
+				//add 
 				res.view();
 			}
 		},

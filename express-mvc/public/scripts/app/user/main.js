@@ -127,7 +127,7 @@ require(["ajax", "globalConfig", "mustache", "paging", "jqExtend", "fader", "tab
 				var self = this;
 				self.paging = new Paging({
 					pageList: 10,
-					limit: 5,
+					limit: 10,
 					callbacks: {
 						fireLoad: $.proxy(self.fireLoad, self)
 					}
