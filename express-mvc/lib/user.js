@@ -17,7 +17,7 @@ var mongoose = require("mongoose"),
 	}),
 	collectionName = "user";
 
-//verify user sign in
+//verify user sign in 
 schema.statics.verify = function(params, cb) {
 	return this.model("user").findOne(params, cb);
 };

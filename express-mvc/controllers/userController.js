@@ -1,4 +1,5 @@
 	var gu = require("guthrie"),
+		fs = require("fs"),
 		commonfun = require(__appRoot + "/lib/commonfun").commonfun,
 		filters = require(__appRoot + '/lib/filters'),
 		user = require(__appRoot + "/lib/user").user,
@@ -8,11 +9,10 @@
 	userController.actions = {
 		index: {
 			GET: function(req, res) {
-				//add 
+				watchTest();
 				res.view();
 			}
 		},
-
 		queryAll: {
 			filters: [filters.userfilter],
 			POST: function(req, res) {
@@ -20,6 +20,26 @@
 				var condition = this.condition,
 					filters = this.filters;
 				queryAll(res, condition, filters);
+			}
+		},
+
+		exportExcel: {
+			GET: function(req, res) {
+				var filepath = __appRoot + '/areas/test-2/t12.js';
+				fs.exists(filepath, function(exists) {
+					if (exists) {
+						console.log("fine")
+						var scripts = fs.createReadStream(filepath);
+						res.writeHead(200, {
+							'Content-Type': 'application/force-download',
+							'Content-Disposition': 'attachment;filename=t1.js'
+						});
+						scripts.pipe(res);
+					} else {
+						res.write("file is not exist");
+						res.end();
+					}
+				});
 			}
 		},
 
@@ -100,6 +120,7 @@
 	function queryAll(res, condition, filters) {
 		var limit = (filters && filters.limit) || 5,
 			idx = (filters && filters.pageIndex) || 1;
+
 		user.count(condition || {}, function(err, count) {
 			if (err) return handerError(err);
 
@@ -121,25 +142,19 @@
 			});
 
 		});
+	}
 
+	function watchTest() {
+		console.log('start Watch');
 
-
-		// user.find(condition || {}, '-__v', {
-		// 	'sort': {
-		// 		"_id": -1
-		// 	}
-		// }, function(err, users) {
-		// 	if (err) return commonfun.handlerError(err, res);
-		// 	users = users.map(function(tag) {
-		// 		return tag.toJSON();
-		// 	});
-		// 	res.json({
-		// 		IsSuccess: true,
-		// 		data: users
-		// 	});
-		// });
-
-
+		fs.watch(__appRoot + '/areas/test-2', function(event, filename) {
+			console.log('event is: ' + event);
+			if (filename) {
+				console.log('filename provided: ' + filename);
+			} else {
+				console.log('filename not provided');
+			}
+		});
 	}
 
 	module.exports = userController;
