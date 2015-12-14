@@ -2,7 +2,7 @@
 	<!-- load css -->
 	<link rel="stylesheet" href="/styles/css/grid.css">
 
-	<blockquote>查询条件</blockquote>
+	<blockquote>Condition</blockquote>
 
 	<div class="panel">
 		<div id="filters_scope" class="form-inline clearfix">
@@ -16,17 +16,22 @@
 				<input type="text" data-field="password" class="form-control">
 			</div>
 			<div class="form-group pull-right mg-t">
-				<button class="btn btn-success" data-toggle="tooltip" title="为空查询全部" data-action="search">查询</button>
+				<div class="btn-group">
+					<button class="btn btn-primary" data-toggle="tooltip" title="为空查询全部" data-action="search">Search</button>
+				</div>
+				<div class="btn-group">
+					<button class="btn btn-primary" data-toggle="tooltip" title="清空所有查询条件" data-action="clear">Clear</button>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<blockquote>查询结果</blockquote>
+	<blockquote>Result</blockquote>
 	<div id="gridpanel" class="panel panel-info">
 		<div class="panel-heading">
 			<div class="panel-title">
-				<button class="btn btn-success" type="button"  id="user_add" data-field="add">新增</button>
-				<a class="btn btn-link" type="button" href="/user/exportExcel" target="_blank">导出</a>
+				<button class="btn btn-success" type="button"  id="user_add" data-field="add">Add</button>
+				<a class="btn btn-link" type="button" href="/user/exportExcel" target="_blank">Export</a>
 			</div>
 		</div>
 
@@ -37,7 +42,7 @@
 						<th>_id</th>
 						<th>email</th>
 						<th>password</th>
-						<th class="text-center" style="width:15%;">操作</th>
+						<th class="text-center" style="width:15%;">Operation</th>
 					</tr>
 				</thead>
 				<tbody id="tbody_user">
@@ -50,8 +55,8 @@
 								<td class="text-center">
 
 									<div class="btn-group btn-group-justified">
-										<div class="btn-group"><button type="button" title="根据ID修改" data-field="update" class="btn btn-success">修改</button></div>
-										<div class="btn-group"><button type="button" data-field="del"  title="根据ID删除" class="btn btn-danger">删除</button></div>
+										<div class="btn-group"><button type="button" title="根据ID修改" data-field="update" class="btn btn-success">Update</button></div>
+										<div class="btn-group"><button type="button" data-field="del"  title="根据ID删除" class="btn btn-danger">Delete</button></div>
 									</div>
 
 								</td>

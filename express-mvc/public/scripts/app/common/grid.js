@@ -50,8 +50,13 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 		bindEvent: function() {
 			var self = this;
 
-			self.$filter.on("click", "[data-action='search']", function() {
-				self.load();
+			self.$filter.on("click", "[data-action]", function(e) {
+				var field = $(this).attr("data-action");
+				if (field === 'search')
+					self.load();
+				else if (field === 'clear') {
+					self.$filter.loadAppointScope({});
+				}
 			});
 
 			self.$filter.on("keyup", "[data-field]", function(e) {
