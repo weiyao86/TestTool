@@ -1,9 +1,9 @@
 define(["ajax", "mustache", "jquery"], function(ajax, Mustache) {
 	var defaults = {
 		paging: "paging",
-		paging_template: "paging_template",
+		pagingTemplate: "paging_template",
 		callbacks: {
-			fireLoad: $.noop
+			fireLoad: null
 		}
 	};
 
@@ -19,26 +19,26 @@ define(["ajax", "mustache", "jquery"], function(ajax, Mustache) {
 			var self = this;
 			self.buildDom();
 			self.bindEvent();
-
 		},
 
 		buildDom: function() {
 			var self = this;
 			self.$paging = $("#" + self.opts.paging);
-			self.template = $("#" + self.opts.paging_template).html();
+			self.template = $("#" + self.opts.pagingTemplate).html();
 
 			self.curIdx = 1;
 			self.pageCount = 0;
 		},
 
 		bindEvent: function() {
-			var self = this;
-			self.$paging.on("click", "ul>li>a", function() {
+			var self = this,
+				count = 0;
+			self.$paging.on("click", "ul>li>a", function(e) {
 				var actionPage = $(this).attr("data-action");
 				self.load($(this), actionPage);
 			});
 
-			self.$paging.on("click", "[data-action='redirect_page']", function() {
+			self.$paging.on("click", "[data-action='redirect_page']", function(e) {
 				self.redirectByNum();
 			});
 
@@ -48,7 +48,6 @@ define(["ajax", "mustache", "jquery"], function(ajax, Mustache) {
 
 			self.$paging.on("focus blur", "[data-field='page_num']", function(e) {
 				if (e.type === "focusin") {
-
 					$.trim($(this).val()) && self.validateNum();
 				} else
 					$(this).popover('hide');
@@ -58,7 +57,7 @@ define(["ajax", "mustache", "jquery"], function(ajax, Mustache) {
 		render: function(rst) {
 			var self = this,
 				total = rst.total,
-				pageList = self.opts.pageList,
+				limitList = self.opts.limitList,
 				tempHtml;
 
 			pageCount = 0;
@@ -69,8 +68,8 @@ define(["ajax", "mustache", "jquery"], function(ajax, Mustache) {
 					pageCount += 1;
 			}
 
-			if (pageList) {
-				var middle = Math.floor(pageList / 2);
+			if (limitList) {
+				var middle = Math.floor(limitList / 2);
 				var max = pageCount;
 				var min = 1;
 				if (middle + self.curIdx < pageCount) {
@@ -79,7 +78,7 @@ define(["ajax", "mustache", "jquery"], function(ajax, Mustache) {
 				if (self.curIdx - middle > 1) {
 					min = self.curIdx - middle;
 				}
-				while (max - min < pageList - 1) {
+				while (max - min < limitList - 1) {
 					if (max < pageCount) max++;
 					else if (max == pageCount && min > 1) min--;
 					else break;

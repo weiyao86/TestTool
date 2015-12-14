@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+.modal-center, .modal-center::after, .modal-center::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    transition: all .75s ease;
+}
+
+.modal-center {
+    width: 150px;
+    height: 150px;
+}
+
+.modal-center p {
+    background: #fff;
+    border-radius: 4px;
+    line-height: 35px;
+}
+
+@mixin min-screen($res) {
+    @media only screen and (min-width: $res) {
+        @content;
+    }
+}
+
+@include min-screen(978px) {
+    .modal-center p {
+        display: none;
+    }
+
+    .modal-center::after, .modal-center::before {
+        content: "";
+    }
+
+    .modal-center::before {
+        border: 5px solid rgba(51, 51, 51, 0.55);
+    }
+
+    .modal-center::after {
+        border: 5px solid transparent;
+        border-top-color: #fff;
+        transform: scale(50, 250);
+    }
+
+    .modal-center::after {
+        animation: rotatedeg 1s linear infinite normal;
+    }
+}
+
+
+@keyframes rotatedeg {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/**
+ * 分页相关
+ */
+.page-middle {
+    vertical-align: middle;
+}
+
+.m-l-r {
+    margin: 0 5px;
+}
+
+.page-cur {
+    max-width: 120px;
+}

@@ -12,13 +12,13 @@ module.exports = function(grunt) {
 				cwd: 'public/styles/',
 				src: '*.scss',
 				ext: '.css',
-				dest: 'public/styles/'
+				dest: 'public/styles/css/'
 			}
 		},
 		//监听模式
 		watch: {
 			css: {
-				files: ["public/styles/*.css"],
+				files: ["public/styles/css/*.css"],
 				options: {
 					livereload: true
 				}

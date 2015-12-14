@@ -26,7 +26,6 @@ require(["ajax", "globalConfig", "jquery", "bootstrap", "domReady!"], function(a
 					if (url.match(src)) {
 						$(val).closest("li").addClass("bg-active");
 					}
-					console.log(url.match(src))
 				});
 
 			}
