@@ -25,6 +25,10 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				delete: '',
 				create: ''
 			},
+			operator: {
+				addBtn: "user_add",
+				export: ""
+			},
 			/*modal*/
 			modalAlert: "modal_alert",
 			modalSuccess: "modal_success"
@@ -63,6 +67,9 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			self.createUser = self.$grid.attr("data-read-url") || self.opts.urls.create;
 			self.updateUser = self.$grid.attr("data-update-url") || self.opts.urls.update;
 
+			/*add operator*/
+			self.$addBtn = $("#" + self.opts.operator.addBtn);
+
 			/*modal*/
 			self.$modalAlert = $("#" + self.opts.modalAlert);
 			self.$modalSuccess = $("#" + self.opts.modalSuccess);
@@ -74,7 +81,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			self.$filter.on("click", "[data-action]", function(e) {
 				var field = $(this).attr("data-action");
 				if (field === 'search')
-					self.load();
+					self.reload();
 				else if (field === 'clear') {
 					self.$filter.loadAppointScope({});
 				}
@@ -82,13 +89,13 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 
 			self.$filter.on("keyup", "[data-field]", function(e) {
 				if (e.keyCode === 13) {
-					self.load();
+					self.reload();
 				}
 			});
 
 			self.$grid.on("click", "[data-field='update'],[data-field='del']", function() {
 				var field = $(this).attr("data-field"),
-					id = $(this).closest("tr").find("[data-field='id']").html();
+					id = $(this).closest("tr").find("[data-field='_id']").html();
 				switch (field) {
 					case "update":
 						self.$edit.prop("model", {
@@ -137,6 +144,12 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 
 			self.$modalAlert.on('click', "[data-field='del_sure']", function() {
 				self.delete();
+			});
+
+			self.$addBtn.on("click", function() {
+				self.$edit.prop("model", {
+					"name": "create"
+				}).modal("show");
 			});
 		},
 
@@ -287,7 +300,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				id = self.$modalAlert.data("id");
 
 			ajax.invoke({
-				url: globalConfig.paths.delUserUrl,
+				url: self.opts.urls.delete,
 				contentType: "application/json",
 				data: JSON.stringify({
 					id: id

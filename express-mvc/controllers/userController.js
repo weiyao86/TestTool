@@ -185,7 +185,7 @@
 					id = model.id;
 
 				user.remove({
-					id: id
+					_id: id
 				}, function(err) {
 					if (err) return res.json({
 						IsSuccess: false,
