@@ -36,46 +36,46 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "fader", "tabPa
 		bindEvent: function() {
 			var self = this;
 
-			self.$userList.on("click", "[data-field='update'],[data-field='del']", function() {
+			// self.$userList.on("click", "[data-field='update'],[data-field='del']", function() {
 
-				var field = $(this).attr("data-field"),
-					email = $(this).closest("tr").find("[data-field='email']").html();
-				switch (field) {
-					case "update":
-						self.$modalEdit.prop("model", {
-							"name": "update",
-							"idx": $(this).closest("tr").index()
-						}).modal({
-							backdrop: true, //默认,是否显示背景,值为static时点击背景无效
-							keyboard: true, //默认,点击esc消失
-							show: true //默认,模态框初始化之后就立即显示出来。
-						});
-						break;
-					case "del":
-						self.$modalAlert.data("id", email).modal({
-							backdrop: 'static'
-						});
-						break;
-					default:
-						break;
-				}
-			});
+			// 	var field = $(this).attr("data-field"),
+			// 		email = $(this).closest("tr").find("[data-field='email']").html();
+			// 	switch (field) {
+			// 		case "update":
+			// 			self.$modalEdit.prop("model", {
+			// 				"name": "update",
+			// 				"idx": $(this).closest("tr").index()
+			// 			}).modal({
+			// 				backdrop: true, //默认,是否显示背景,值为static时点击背景无效
+			// 				keyboard: true, //默认,点击esc消失
+			// 				show: true //默认,模态框初始化之后就立即显示出来。
+			// 			});
+			// 			break;
+			// 		case "del":
+			// 			self.$modalAlert.data("id", email).modal({
+			// 				backdrop: 'static'
+			// 			});
+			// 			break;
+			// 		default:
+			// 			break;
+			// 	}
+			// });
 
 			self.$email.on("blur keyup propertychange", function() {
 				$(this).popover("hide");
 			});
 
-			self.$userList.on("click", "tbody tr", function() {
-				self.toggleActive($(this));
-			});
+			// self.$userList.on("click", "tbody tr", function() {
+			// 	self.toggleActive($(this));
+			// });
 
-			self.$modalEdit.on("click", "[data-field='save']", function() {
-				self.save();
-			});
+			// self.$modalEdit.on("click", "[data-field='save']", function() {
+			// 	self.save();
+			// });
 
-			self.$modalAlert.on('click', "[data-field='del_sure']", function() {
-				self.delUerInfo();
-			});
+			// self.$modalAlert.on('click', "[data-field='del_sure']", function() {
+			// 	self.delUerInfo();
+			// });
 
 			self.$userAdd.on('click', function() {
 				self.$modalEdit.prop("model", {
@@ -86,25 +86,27 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "fader", "tabPa
 			// self.$modalEdit.on("show.bs.modal", function() {
 			// 	self.$globalSearch.val("edit show before");
 			// });
-			self.$modalEdit.on("shown.bs.modal", function(evt) {
-				self.$globalSearch.val("edit show after");
-				var model = $(this).prop("model"),
-					$tr;
-				if (model.name === "update") {
-					$tr = self.$userList.find(">tbody>tr:eq(" + model.idx + ")");
-					var rst = $tr.selectedAllAppointScope();
-					self.$modalEdit.loadAppointScope(rst);
-				}
-			});
+
+			// self.$modalEdit.on("shown.bs.modal", function(evt) {
+			// 	self.$globalSearch.val("edit show after");
+			// 	var model = $(this).prop("model"),
+			// 		$tr;
+			// 	if (model.name === "update") {
+			// 		$tr = self.$userList.find(">tbody>tr:eq(" + model.idx + ")");
+			// 		var rst = $tr.selectedAllAppointScope();
+			// 		self.$modalEdit.loadAppointScope(rst);
+			// 	}
+			// });
+
 			// self.$modalEdit.on("hide.bs.modal", function() {
 			// 	self.$globalSearch.val("edit hide before");
 			// });
 
-			self.$modalEdit.on("hidden.bs.modal", function() {
-				self.$globalSearch.val("edit hide after");
-				self.$modalEdit.clearAllAppointScope();
-				self.showTipSuccess();
-			});
+			// self.$modalEdit.on("hidden.bs.modal", function() {
+			// 	self.$globalSearch.val("edit hide after");
+			// 	self.$modalEdit.clearAllAppointScope();
+			// 	self.showTipSuccess();
+			// });
 		},
 
 		initComponent: function() {
@@ -112,107 +114,47 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "fader", "tabPa
 			self.grid = new Grid({
 				"gridPanel": "gridpanel",
 				"filter": "filters_scope",
-				"grid": "",
+				"grid": "user_list",
 				"gBody": "tbody_user",
 				"template": "tbody_user_template",
+				"edit": "modal_edit",
 				"limitList": 10, //显示10个页码标签
-				"limit": 10, //每页显示10条记录
+				"limit": 5, //每页显示10条记录
 				callbacks: {
 					beforeSend: null,
 					beforeRender: null,
 					afterRender: null,
-					complete: null
+					complete: null,
+					afterModalHidden: function() {
+						self.showTipSuccess();
+						self.$email.popover("hide");
+					},
+					operatorError: function(action, msg) {
+						switch (action) {
+							case "create":
+								self.$email.attr("data-content", msg).popover("show");
+								break;
+							case "update":
+								break;
+							case "delete":
+								break;
+							default:
+								break;
+						}
+					}
 				},
-				"searchUrl": globalConfig.paths.loadUser,
 				/*paging*/
 				paging: "paging",
-				pagingTemplate: "paging_template"
+				pagingTemplate: "paging_template",
+				urls: {
+					read: globalConfig.paths.loadUser,
+					create: globalConfig.paths.createUser,
+					update: globalConfig.paths.updateUser,
+					delete: globalConfig.paths.delUserUrl
+				}
 			});
 			self.grid.load();
-		},
-
-		save: function() {
-			var self = this,
-				model = self.$modalEdit.prop("model");
-			model && self[model.name].call(self, self.$modalEdit);
-		},
-
-		update: function($that) {
-			var self = this,
-				params = $that.selectedAllAppointScope();
-			ajax.invoke({
-				url: globalConfig.paths.updateUser,
-				contentType: "application/json",
-				data: JSON.stringify(params),
-				success: function(rst) {
-					self.grid.load();
-					self.showTipSuccess("保存成功!");
-				},
-				failed: function(err) {
-					alert(err.reason);
-				}
-
-			});
-		},
-
-		create: function($that) {
-			var self = this,
-				params = $that.selectedAllAppointScope();
-
-			ajax.invoke({
-				url: globalConfig.paths.createUser,
-				contentType: "application/json",
-				data: JSON.stringify(params),
-				success: function(rst) {
-					if (rst.data) {
-						self.grid.load();
-						self.showTipSuccess("保存成功!");
-					} else {
-						self.$email.attr("data-content", "此条记录已存在").popover("show");
-					}
-
-				},
-				failed: function(err) {
-					alert(err.reason);
-				}
-
-			});
-		},
-
-		delUerInfo: function() {
-			var self = this,
-				email = self.$modalAlert.data("id");
-
-			ajax.invoke({
-				url: globalConfig.paths.delUserUrl,
-				contentType: "application/json",
-				data: JSON.stringify({
-					email: email
-				}),
-				success: function(rst) {
-					self.grid.load();
-					self.showTipSuccess("保存成功!");
-				},
-				failed: function(err) {
-					alert(err.reason);
-				}
-
-			});
-		},
-
-		toggleActive: function($target) {
-			var self = this;
-			$target.siblings(".bg-active").removeClass("bg-active").end().addClass("bg-active");
-		},
-
-		showTipSuccess: function(msg) {
-			var self = this;
-			self.$modalAlert.modal("hide");
-			self.$modalEdit.modal("hide");
-			msg && self.$modalSuccess.modal("show").find("[data-field='tip_info']").html(msg);
-			self.$email.popover("hide");
 		}
-
 	};
 
 	initBootstrap.init();

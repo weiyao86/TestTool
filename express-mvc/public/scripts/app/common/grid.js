@@ -11,12 +11,23 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				beforeSend: null,
 				beforeRender: null,
 				afterRender: null,
-				complete: null
+				complete: null,
+				operatorError: null,
+				afterModalHidden: null
 			},
 			"searchUrl": "",
 			/*paging*/
 			paging: "paging",
-			pagingTemplate: "paging_template"
+			pagingTemplate: "paging_template",
+			urls: {
+				read: '',
+				update: '',
+				delete: '',
+				create: ''
+			},
+			/*modal*/
+			modalAlert: "modal_alert",
+			modalSuccess: "modal_success"
 
 		},
 		Grid = function(opts) {
@@ -42,9 +53,19 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			/*result*/
 			self.$gBody = $("#" + self.opts.gBody);
 			self.template = $("#" + self.opts.template).html();
+			/*edit*/
+			self.$edit = $("#" + self.opts.edit);
 
 			/*paging*/
 			self.paging = null;
+
+			/*urls*/
+			self.createUser = self.$grid.attr("data-read-url") || self.opts.urls.create;
+			self.updateUser = self.$grid.attr("data-update-url") || self.opts.urls.update;
+
+			/*modal*/
+			self.$modalAlert = $("#" + self.opts.modalAlert);
+			self.$modalSuccess = $("#" + self.opts.modalSuccess);
 		},
 
 		bindEvent: function() {
@@ -63,6 +84,59 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				if (e.keyCode === 13) {
 					self.load();
 				}
+			});
+
+			self.$grid.on("click", "[data-field='update'],[data-field='del']", function() {
+				var field = $(this).attr("data-field"),
+					id = $(this).closest("tr").find("[data-field='id']").html();
+				switch (field) {
+					case "update":
+						self.$edit.prop("model", {
+							"name": "update",
+							"idx": $(this).closest("tr").index()
+						}).modal({
+							backdrop: true, //默认,是否显示背景,值为static时点击背景无效
+							keyboard: true, //默认,点击esc消失
+							show: true //默认,模态框初始化之后就立即显示出来。
+						});
+						break;
+					case "del":
+						self.$modalAlert.data("id", id).modal({
+							backdrop: 'static'
+						});
+						break;
+					default:
+						break;
+				}
+			});
+
+			self.$grid.on("click", "tbody tr", function() {
+				self.toggleActive($(this));
+			});
+
+			self.$edit.on("click", "[data-field='save']", function() {
+				self.save();
+			});
+
+			self.$edit.on("shown.bs.modal", function(evt) {
+				var model = $(this).prop("model"),
+					$tr;
+				if (model.name === "update") {
+					$tr = self.$grid.find(">tbody>tr:eq(" + model.idx + ")");
+					var rst = $tr.selectedAllAppointScope();
+					self.$edit.loadAppointScope(rst);
+				}
+			});
+
+			self.$edit.on("hidden.bs.modal", function() {
+				self.$edit.clearAllAppointScope();
+				if ($.type(self.opts.callbacks.afterModalHidden === "function")) {
+					self.opts.callbacks.afterModalHidden.call(self);
+				}
+			});
+
+			self.$modalAlert.on('click', "[data-field='del_sure']", function() {
+				self.delete();
 			});
 		},
 
@@ -91,7 +165,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			condition = $.extend({}, condition, pagingParams || {});
 
 			ajax.invoke({
-				url: self.opts.searchUrl,
+				url: self.opts.urls.read,
 				data: condition,
 				beforeSend: function() {
 					self.$gridPanel.block({
@@ -153,10 +227,104 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			}
 		},
 
+		save: function() {
+			var self = this,
+				model = self.$edit.prop("model");
+			model && self[model.name].call(self, self.$edit);
+		},
+
+		update: function($that) {
+			var self = this,
+				params = $that.selectedAllAppointScope();
+			ajax.invoke({
+				url: self.opts.urls.update,
+				contentType: "application/json",
+				data: JSON.stringify(params),
+				success: function(rst) {
+					if (rst.msg) {
+						if ($.type(self.opts.callbacks.operatorError === "function")) {
+							self.opts.callbacks.operatorError.call(self, "update", rst.msg);
+						}
+					} else {
+						self.load();
+						self.showTipSuccess("更新成功!");
+					}
+				},
+				failed: function(err) {
+					alert(err.reason);
+				}
+
+			});
+		},
+
+		create: function($that) {
+			var self = this,
+				params = $that.selectedAllAppointScope();
+
+			ajax.invoke({
+				url: self.opts.urls.create,
+				contentType: "application/json",
+				data: JSON.stringify(params),
+				success: function(rst) {
+					if (rst.msg) {
+						if ($.type(self.opts.callbacks.operatorError === "function")) {
+							self.opts.callbacks.operatorError.call(self, "create", rst.msg);
+						}
+					} else {
+						self.load();
+						self.showTipSuccess("创建成功!");
+					}
+				},
+				failed: function(err) {
+					alert(err.reason);
+				}
+
+			});
+		},
+
+		delete: function() {
+			var self = this,
+				id = self.$modalAlert.data("id");
+
+			ajax.invoke({
+				url: globalConfig.paths.delUserUrl,
+				contentType: "application/json",
+				data: JSON.stringify({
+					id: id
+				}),
+				success: function(rst) {
+					if (rst.msg) {
+						if ($.type(self.opts.callbacks.operatorError === "function")) {
+							self.opts.callbacks.operatorError.call(self, "delete", rst.msg);
+						}
+					} else {
+						self.load();
+						self.showTipSuccess("删除成功!");
+					}
+				},
+				failed: function(err) {
+					alert(err.reason);
+				}
+
+			});
+		},
+
 		getCondition: function() {
 			var self = this,
 				condition = self.$filter.selectedAllAppointScope();
 			return condition;
+		},
+
+		showTipSuccess: function(msg) {
+			var self = this;
+			self.$modalAlert.modal("hide");
+			self.$edit.modal("hide");
+			msg && self.$modalSuccess.modal("show").find("[data-field='tip_info']").html(msg);
+		},
+
+		toggleActive: function($target) {
+			var self = this;
+			$target.siblings(".bg-active").removeClass("bg-active").end().addClass("bg-active");
 		}
 	};
 	return Grid;

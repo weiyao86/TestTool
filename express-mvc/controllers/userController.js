@@ -43,6 +43,88 @@
 			}
 		},
 
+		invokeWebservice: {
+			GET: function(req, res) {
+
+				/**
+				 * 1.原生http调用webservice
+				 */
+
+				// var options = {
+				// 	host: 'wsf.cdyne.com',
+				// 	port: '',
+				// 	path: '/WeatherWS/Weather.asmx?wsdl',
+				// 	method: 'POST',
+				// 	headers: {
+				// 		'Content-Type': 'application/json; charset=utf-8',
+				// 		'Content-Length': 0
+				// 	}
+				// };
+				// console.log('into111');
+				// var http = require('http');
+				// var reqinner = http.request(options, function(resinner) {
+				// 	var msg = '';
+				// 	console.log('into');
+				// 	resinner.setEncoding('utf8');
+				// 	resinner.on('data', function(chunk) {
+				// 		msg += chunk;
+				// 		console.log(chunk);
+				// 	});
+				// 	resinner.on('end', function() {
+				// 		console.log(msg);
+				// 	});
+				// });
+				// reqinner.write('abc');
+				// reqinner.end();
+
+				/**
+				 * 2.引用soap是成功的调到webservice
+				 */
+				// 
+				var soap = require("soap");
+				var url = 'http://wsf.cdyne.com/WeatherWS/Weather.asmx?wsdl'; //'http://service.sgmw.com.cn/webservice/SGMW_UserInfoVerify.asmx?wsdl'; 
+
+				var args = {
+					ZIP: req.body.ZIP
+				};
+
+				soap.createClient(url, function(err, client) {
+					client.GetCityWeatherByZIP(args, function(err, result) {
+						console.log(result);
+						var response = {
+							city: result.GetCityWeatherByZIPResult.City,
+							state: result.GetCityWeatherByZIPResult.State,
+							temp: result.GetCityWeatherByZIPResult.Temperature
+						};
+						res.send(response);
+						res.end();
+					});
+				});
+			}
+		},
+
+		insertTempData: {
+			GET: function(req, res) {
+
+				var arr = [],
+					len = 1500;
+				for (var i = len; i > 0; i--) {
+					arr.push({
+						email: "w@" + i + ".com",
+						password: i
+
+					});
+				}
+				user.remove({}, function(err) {
+					user.create(arr, function(err) {
+						if (err) return commonfun.handlerError(err, res);
+						res.send("<p>" + len + "条数据插入成功<p>");
+						res.end();
+					});
+				});
+			}
+		},
+
 		createUser: {
 			POST: function(req, res) {
 				var model = req.body,
@@ -58,14 +140,16 @@
 					if (count) {
 						res.json({
 							IsSuccess: true,
-							data: 0
+							data: [],
+							msg: "此条记录已存在"
 						});
 					} else {
 						user.create(params, function(err) {
 							if (err) return commonfun.handlerError(err, res);
 							res.json({
 								IsSuccess: true,
-								data: 1
+								data: [],
+								msg: ''
 							});
 						});
 					}
@@ -98,10 +182,10 @@
 		deleteUserByEmail: {
 			POST: function(req, res) {
 				var model = req.body,
-					email = model.email;
+					id = model.id;
 
 				user.remove({
-					email: email
+					id: id
 				}, function(err) {
 					if (err) return res.json({
 						IsSuccess: false,
