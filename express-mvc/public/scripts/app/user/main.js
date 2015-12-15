@@ -70,7 +70,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "fader", "tabPa
 						}
 					}
 				},
-				/*paging*/
+				/*paging*/ 
 				paging: "paging",
 				pagingTemplate: "paging_template",
 				urls: {
