@@ -1,6 +1,8 @@
 @charset "utf-8";
 
-.modal-center, .modal-center::after, .modal-center::before {
+$setdeg-count: 12;
+
+%center {
     position: absolute;
     top: 0;
     left: 0;
@@ -10,15 +12,70 @@
     transition: all .75s ease;
 }
 
-.modal-center {
-    width: 150px;
-    height: 150px;
+.loading, .loading-child {
+    @extend %center;
+
+    width: 60px;
+    height: 60px;
+    transition: none;
 }
 
-.modal-center p {
+.loading-child {
+    @extend %center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.loading-child:before {
+    content: '';
+    display: block;
+    background: #000;
+    margin: 0 auto;
+    border-radius: 100%;
+    width: 15%;
+    height: 15%;
+    animation: circle 1.2s ease-in-out infinite;
+    -webkit-animation: circle 1.2s ease-in-out infinite;
+}
+
+@mixin set-deg($deg: 30deg) {
+    transform: rotate($deg);
+    -webkit-transform: rotate($deg);
+}
+
+@for $i from 1 through $setdeg-count {
+    @if $i > 1 {
+        .loading .loading-c-#{$i} {
+            $num: $i - 1;
+
+            @include set-deg($num * 30deg);
+
+            &:before {
+                animation-delay: -1.2s + $num * 0.1;
+                -webkit-animation-delay: -1.2s + $num * 0.1;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes circle ,@keyframes circle {
+    0%, 39%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+.loading p {
     background: #fff;
     border-radius: 4px;
     line-height: 35px;
+    display: none;
 }
 
 @mixin min-screen($res) {
@@ -28,39 +85,12 @@
 }
 
 @include min-screen(978px) {
-    .modal-center p {
-        display: none;
-    }
-
-    .modal-center::after, .modal-center::before {
-        content: "";
-    }
-
-    .modal-center::before {
-        border: 5px solid rgba(51, 51, 51, 0.55);
-    }
-
-    .modal-center::after {
-        border: 5px solid transparent;
-        border-top-color: #fff;
-        transform: scale(50, 250);
-    }
-
-    .modal-center::after {
-        animation: rotatedeg 1s linear infinite normal;
+    .loading p {
+        // display: none;
+   
     }
 }
 
-
-@keyframes rotatedeg {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 /**
  * 分页相关

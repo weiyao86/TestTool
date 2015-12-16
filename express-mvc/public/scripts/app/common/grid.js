@@ -73,6 +73,14 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			/*modal*/
 			self.$modalAlert = $("#" + self.opts.modalAlert);
 			self.$modalSuccess = $("#" + self.opts.modalSuccess);
+
+			self.$blockMsg = $("<div class='loading'><p class='text-center'>Loading...</p></div>");
+			var arr = [];
+			for (var i = 1; i <= 12; i++) {
+				var divStr = '<div class="loading-c-' + i + ' loading-child"></div>';
+				arr.push(divStr);
+			}
+			self.$blockMsg.append(arr.join('')).appendTo("body");
 		},
 
 		bindEvent: function() {
@@ -188,14 +196,15 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 							height: 50,
 							background: "transparent",
 						},
-						message: "<div class='modal-center'><p class='text-center'>Loading...</p></div>"
+
+						message: self.$blockMsg
 					});
 					if (typeof self.opts.callbacks.beforeSend === "function") {
 						self.opts.callbacks.beforeSend.call(self, condition);
 					}
 				},
 				complete: function() {
-					self.$gridPanel.unblock();
+					//self.$gridPanel.unblock();
 					if (typeof self.opts.callbacks.complete === "function") {
 						self.opts.callbacks.complete.call(self);
 					}

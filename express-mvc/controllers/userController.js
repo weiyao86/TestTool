@@ -258,13 +258,15 @@
 
 
 	function queryAll(res, condition, filters) {
-		var limit = (filters && filters.limit) || 5,
+		var limit = (filters && filters.limit) || 0,
 			idx = (filters && filters.pageIndex) || 1;
 
 		user.count(condition || {}, function(err, count) {
 			if (err) return handerError(err);
 
-			var query = user.find(condition || {}, '-__v', {
+			limit === 0 && (limit = count);
+
+			var query = user.find(condition || {}, '-__someElse', {
 				'sort': {
 					"_id": 1
 				}

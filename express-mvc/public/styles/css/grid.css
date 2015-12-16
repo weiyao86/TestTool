@@ -1,17 +1,49 @@
 @charset "UTF-8";
-.modal-center, .modal-center::after, .modal-center::before { position: absolute; top: 0; left: 0; width: 30px; height: 30px; border-radius: 100%; transition: all .75s ease; }
+.loading, .loading-child { position: absolute; top: 0; left: 0; width: 30px; height: 30px; border-radius: 100%; transition: all .75s ease; }
 
-.modal-center { width: 150px; height: 150px; }
+.loading, .loading-child { width: 60px; height: 60px; transition: none; }
 
-.modal-center p { background: #fff; border-radius: 4px; line-height: 35px; }
+.loading-child { width: 100%; height: 100%; }
 
-@media only screen and (min-width: 978px) { .modal-center p { display: none; }
-  .modal-center::after, .modal-center::before { content: ""; }
-  .modal-center::before { border: 5px solid rgba(51, 51, 51, 0.55); }
-  .modal-center::after { border: 5px solid transparent; border-top-color: #fff; transform: scale(50, 250); }
-  .modal-center::after { animation: rotatedeg 1s linear infinite normal; } }
-@keyframes rotatedeg { from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); } }
+.loading-child:before { content: ''; display: block; background: #000; margin: 0 auto; border-radius: 100%; width: 15%; height: 15%; animation: circle 1.2s ease-in-out infinite; -webkit-animation: circle 1.2s ease-in-out infinite; }
+
+.loading .loading-c-2 { transform: rotate(30deg); -webkit-transform: rotate(30deg); }
+.loading .loading-c-2:before { animation-delay: -1.1s; -webkit-animation-delay: -1.1s; }
+
+.loading .loading-c-3 { transform: rotate(60deg); -webkit-transform: rotate(60deg); }
+.loading .loading-c-3:before { animation-delay: -1s; -webkit-animation-delay: -1s; }
+
+.loading .loading-c-4 { transform: rotate(90deg); -webkit-transform: rotate(90deg); }
+.loading .loading-c-4:before { animation-delay: -0.9s; -webkit-animation-delay: -0.9s; }
+
+.loading .loading-c-5 { transform: rotate(120deg); -webkit-transform: rotate(120deg); }
+.loading .loading-c-5:before { animation-delay: -0.8s; -webkit-animation-delay: -0.8s; }
+
+.loading .loading-c-6 { transform: rotate(150deg); -webkit-transform: rotate(150deg); }
+.loading .loading-c-6:before { animation-delay: -0.7s; -webkit-animation-delay: -0.7s; }
+
+.loading .loading-c-7 { transform: rotate(180deg); -webkit-transform: rotate(180deg); }
+.loading .loading-c-7:before { animation-delay: -0.6s; -webkit-animation-delay: -0.6s; }
+
+.loading .loading-c-8 { transform: rotate(210deg); -webkit-transform: rotate(210deg); }
+.loading .loading-c-8:before { animation-delay: -0.5s; -webkit-animation-delay: -0.5s; }
+
+.loading .loading-c-9 { transform: rotate(240deg); -webkit-transform: rotate(240deg); }
+.loading .loading-c-9:before { animation-delay: -0.4s; -webkit-animation-delay: -0.4s; }
+
+.loading .loading-c-10 { transform: rotate(270deg); -webkit-transform: rotate(270deg); }
+.loading .loading-c-10:before { animation-delay: -0.3s; -webkit-animation-delay: -0.3s; }
+
+.loading .loading-c-11 { transform: rotate(300deg); -webkit-transform: rotate(300deg); }
+.loading .loading-c-11:before { animation-delay: -0.2s; -webkit-animation-delay: -0.2s; }
+
+.loading .loading-c-12 { transform: rotate(330deg); -webkit-transform: rotate(330deg); }
+.loading .loading-c-12:before { animation-delay: -0.1s; -webkit-animation-delay: -0.1s; }
+
+@-webkit-keyframes circle ,@keyframes circle { 0%, 39%, 100% { opacity: 0; transform: scale(0); }
+  40% { opacity: 1; transform: scale(1.3); } }
+.loading p { background: #fff; border-radius: 4px; line-height: 35px; display: none; }
+
 /** 分页相关 */
 .page-middle { vertical-align: middle; }
 
