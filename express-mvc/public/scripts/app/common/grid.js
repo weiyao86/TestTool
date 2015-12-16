@@ -74,13 +74,17 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			self.$modalAlert = $("#" + self.opts.modalAlert);
 			self.$modalSuccess = $("#" + self.opts.modalSuccess);
 
-			self.$blockMsg = $("<div class='loading'><p class='text-center'>Loading...</p></div>");
-			var arr = [];
-			for (var i = 1; i <= 12; i++) {
-				var divStr = '<div class="loading-c-' + i + ' loading-child"></div>';
-				arr.push(divStr);
+			//loading 	
+			self.$blockMsg = null;
+			if (!$("#loading_animate").size()) {
+				self.$blockMsg = $("<div id='loading_animate' class='loading'><p class='text-center'>Loading...</p></div>");
+				var arr = [];
+				for (var i = 1; i <= 12; i++) {
+					var divStr = '<div class="loading-c-' + i + ' loading-child"></div>';
+					arr.push(divStr);
+				}
+				self.$blockMsg.append(arr.join('')).appendTo("body");
 			}
-			self.$blockMsg.append(arr.join('')).appendTo("body");
 		},
 
 		bindEvent: function() {
@@ -204,7 +208,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 					}
 				},
 				complete: function() {
-					//self.$gridPanel.unblock();
+					self.$gridPanel.unblock();
 					if (typeof self.opts.callbacks.complete === "function") {
 						self.opts.callbacks.complete.call(self);
 					}
