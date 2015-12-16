@@ -5,7 +5,7 @@
 
 .loading-child { width: 100%; height: 100%; }
 
-.loading-child:before { content: ''; display: block; background: #000; margin: 0 auto; border-radius: 100%; width: 15%; height: 15%; animation: circle 1.2s ease-in-out infinite; -webkit-animation: circle 1.2s ease-in-out infinite; }
+.loading-child:before { content: ''; display: block; background: #fff; margin: 0 auto; border-radius: 100%; width: 20%; height: 20%; animation: circle 1.2s ease-in-out infinite; -webkit-animation: circle 1.2s ease-in-out infinite; }
 
 .loading .loading-c-2 { transform: rotate(30deg); -webkit-transform: rotate(30deg); }
 .loading .loading-c-2:before { animation-delay: -1.1s; -webkit-animation-delay: -1.1s; }
@@ -40,8 +40,10 @@
 .loading .loading-c-12 { transform: rotate(330deg); -webkit-transform: rotate(330deg); }
 .loading .loading-c-12:before { animation-delay: -0.1s; -webkit-animation-delay: -0.1s; }
 
-@-webkit-keyframes circle ,@keyframes circle { 0%, 39%, 100% { opacity: 0; transform: scale(0); }
-  40% { opacity: 1; transform: scale(1.3); } }
+@keyframes circle { 0%, 39%, 100% { opacity: 0; transform: scale(0.3); -webkit-transform: scale(0.3); }
+  40% { opacity: 1; transform: scale(1); -webkit-transform: scale(1); } }
+@-webkit-keyframes circle { 0%, 39%, 100% { opacity: 0; transform: scale(0.3); -webkit-transform: scale(0.3); }
+  40% { opacity: 1; transform: scale(1); -webkit-transform: scale(1); } }
 .loading p { background: #fff; border-radius: 4px; line-height: 35px; display: none; }
 
 /** 分页相关 */
