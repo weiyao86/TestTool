@@ -355,6 +355,28 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 	};
 	return Grid;
 
+
+	// /* Using require js AMD standard */
+ //    if (typeof define === 'function' && define.amd && define.amd.jQuery) {
+
+ //        var basePath = (function () {
+ //            var splittedPath,
+ //                config = require.s.contexts._.config,
+ //                path = config.paths["hotpoint"];
+
+ //            if (typeof path !== "undefined") {
+ //                splittedPath = path.split(/\/+/g);
+ //                return splittedPath.slice(0, splittedPath.length - 2).join("/") + "/";
+ //            } else {
+ //                alert("require config paths 'hotpoint' key not exist");
+ //            }
+ //        })();
+
+ //        define(['text!' + basePath + 'template/assistive-template.htm',"paging", "ajax", "mustache", "blockUI", "jqExtend"],setup);
+ //    } else {
+ //        setup(jQuery);
+ //    }
+
 	// var gridInstance;
 	// return {
 	// 	init: function(opts) {

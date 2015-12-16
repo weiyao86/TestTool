@@ -268,7 +268,7 @@
 
 			var query = user.find(condition || {}, '-__someElse', {
 				'sort': {
-					"_id": 1
+					"_id": -1
 				}
 			});
 			query.skip(limit * (idx - 1)).limit(limit).exec(function(err, users) {
