@@ -1,5 +1,6 @@
 	var gu = require("guthrie"),
 		fs = require("fs"),
+		nodeExcel = require('excel-export'),
 		commonfun = require(__appRoot + "/lib/commonfun").commonfun,
 		filters = require(__appRoot + '/lib/filters'),
 		user = require(__appRoot + "/lib/user").user,
@@ -23,18 +24,20 @@
 			}
 		},
 
-		exportExcel: {
+		export: {
 			GET: function(req, res) {
 				var filepath = __appRoot + '/areas/test-2/t12.js';
 				fs.exists(filepath, function(exists) {
 					if (exists) {
-						console.log("fine")
+
 						var scripts = fs.createReadStream(filepath);
-						res.writeHead(200, {
-							'Content-Type': 'application/force-download',
-							'Content-Disposition': 'attachment;filename=t1.js'
-						});
+						var filename = "中文.js";
+						garbled(res, req, filename);
+
 						scripts.pipe(res);
+
+						//express 下载根据文件名显示下载文件头
+						//res.download(filepath);
 					} else {
 						res.write("file is not exist");
 						res.end();
@@ -42,6 +45,59 @@
 				});
 			}
 		},
+
+		exportExcel: {
+			GET: function(req, res) {
+				var conf = {};
+				conf.stylesXmlFile = __appRoot + '/public/styles.xml';
+				conf.cols = [{
+					caption: 'Id',
+					type: 'string',
+					width: 30,
+					beforeCellWrite: function(row, cellData, eOpt) {
+						eOpt.styleIndex = 2;
+						if (eOpt.rowNum % 2) {
+							eOpt.styleIndex = 1;
+						}
+						return cellData;
+					}
+				}, {
+					caption: 'Version Lock',
+					type: 'string'
+				}, {
+					caption: 'Eamil',
+					type: 'string'
+				}, {
+					caption: 'Password',
+					type: 'string'
+				}];
+
+				user.find({}, '', {
+					"sort": {
+						"_id": -1
+					}
+				}, function(err, docs) {
+					if (err) return commonfun.handlerError(err, res);
+					var arr = [],
+						temp;
+					docs.map(function(tag) {
+						var doc = tag.toJSON();
+						temp = [];
+						temp.push(doc._id, doc.__someElse.toString(), doc.email, doc.password);
+						arr.push(temp);
+						return doc;
+					});
+					conf.rows = arr;
+
+					var result = nodeExcel.execute(conf);
+
+					var filename = "用户帐号文件.xlsx";
+					garbled(res, req, filename);
+					res.end(result, 'binary');
+				});
+			}
+		},
+
 
 		invokeWebservice: {
 			GET: function(req, res) {
@@ -210,7 +266,7 @@
 
 			var query = user.find(condition || {}, '-__v', {
 				'sort': {
-					"_id": -1
+					"_id": 1
 				}
 			});
 			query.skip(limit * (idx - 1)).limit(limit).exec(function(err, users) {
@@ -239,6 +295,20 @@
 				console.log('filename not provided');
 			}
 		});
+	}
+
+	//解决各浏览器文件名中文乱码问题,自定义文件名
+	function garbled(res, req, filename) {
+		var userAgent = (req.headers['user-agent'] || '').toLowerCase();
+		res.set('Content-Type', 'application/force-download;charset=utf-8');
+
+		if (userAgent.indexOf('msie') >= 0 || userAgent.indexOf('chrome') >= 0) {
+			res.setHeader('Content-Disposition', 'attachment; filename=' + encodeURIComponent(filename));
+		} else if (userAgent.indexOf('firefox') >= 0) {
+			res.setHeader('Content-Disposition', 'attachment; filename*="utf8\'\'' + encodeURIComponent(filename) + '"');
+		} else {
+			res.setHeader('Content-Disposition', 'attachment; filename=' + new Buffer(filename).toString('binary'));
+		}
 	}
 
 	module.exports = userController;

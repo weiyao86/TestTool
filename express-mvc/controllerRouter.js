@@ -12,17 +12,7 @@
 		// Map routes
 		var router = new gu.Router(app, __dirname);
 
-		router.mapRoute('/', {
-			controller: 'home',
-			action: 'index'
-		});
-
-		router.mapRoute('/category/:categoryId/:id?', {
-			controller: 'category',
-			action: 'show'
-		});
-
-		// Admin area
+		// example area
 		var adminArea = router.createArea('admin');
 		adminArea.mapRoute('/admin', {
 			controller: 'home',

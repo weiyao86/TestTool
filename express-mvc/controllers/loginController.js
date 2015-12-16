@@ -11,7 +11,7 @@
 			GET: function(req, res) {
 				var cookie = req.cookies["remeber"] || {},
 					params = {
-						email: cookie.email
+						email: (cookie.email || '').trim()
 					};
 
 				res.view(params);
