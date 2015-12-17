@@ -51,7 +51,6 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 						dataType: 'json',
 						iframe: true,
 						beforeSubmit: function() {
-							alert('abc');
 							return true;
 						},
 						success: function(rst) {
