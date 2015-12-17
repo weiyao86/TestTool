@@ -648,6 +648,28 @@
 					}
 				}).show();
 			}
+		},
+
+		messageAlert: function(msg) {
+			var $taget = $("#modal_alert");
+			$taget.modal({
+				backdrop: 'static'
+			}).find("[data-field='tip_info']").html(msg);
+		},
+
+		messageConfirm: function(msg, fun) {
+			var $taget = $("#modal_custom_confirm");
+			$taget.modal({
+				backdrop: 'static'
+			}).find("[data-field='tip_info']").html(msg);
+			$taget.find("[data-field='sure']").click(function() {
+				if (typeof fun === "function") {
+					if (fun.call($taget) === false) {
+						return;
+					}
+				}
+				$taget.modal("hide");
+			});
 		}
 	});
 

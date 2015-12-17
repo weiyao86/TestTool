@@ -11,6 +11,30 @@ $bodyTop: 70px;
     margin: auto;
 }
 
+@mixin centerEl($width: null, $height: null) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    @if not $width and not $height {
+        transform: translate(-50%, -50%);
+    }
+    @else if $width and $height {
+        width: $width;
+        height: $height;
+        margin: -($width / 2);
+    }
+    @else if not $height {
+        width: $width;
+        margin-left: -($width / 2);
+    }
+    @else {
+        height: $height;
+        margin-top: -($height / 2);
+        transform: translate(-50%);
+    }
+}
+
 body {
     padding-top: $bodyTop;
 }

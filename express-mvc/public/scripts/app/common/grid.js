@@ -30,8 +30,8 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				export: ""
 			},
 			/*modal*/
-			modalAlert: "modal_alert",
-			modalSuccess: "modal_success"
+			modalConfirm: "modal_confirm",
+			modalAlert: "modal_alert"
 
 		},
 		Grid = function(opts) {
@@ -71,8 +71,8 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			self.$addBtn = $("#" + self.opts.operator.addBtn);
 
 			/*modal*/
+			self.$modalConfirm = $("#" + self.opts.modalConfirm);
 			self.$modalAlert = $("#" + self.opts.modalAlert);
-			self.$modalSuccess = $("#" + self.opts.modalSuccess);
 
 			//loading 	
 			self.$blockMsg = null;
@@ -120,9 +120,9 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 						});
 						break;
 					case "del":
-						self.$modalAlert.data("id", id).modal({
+						self.$modalConfirm.data("id", id).modal({
 							backdrop: 'static'
-						});
+						}).find("[data-field='tip_info']").html("Confirm delete the record?");
 						break;
 					default:
 						break;
@@ -154,7 +154,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				}
 			});
 
-			self.$modalAlert.on('click', "[data-field='del_sure']", function() {
+			self.$modalConfirm.on('click', "[data-field='sure']", function() {
 				self.delete();
 			});
 
@@ -310,7 +310,9 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 
 		delete: function() {
 			var self = this,
-				id = self.$modalAlert.data("id");
+				id = self.$modalConfirm.data("id");
+
+			if (!id) return;
 
 			ajax.invoke({
 				url: self.opts.urls.delete,
@@ -343,9 +345,9 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 
 		showTipSuccess: function(msg) {
 			var self = this;
-			self.$modalAlert.modal("hide");
+			self.$modalConfirm.modal("hide");
 			self.$edit.modal("hide");
-			msg && self.$modalSuccess.modal("show").find("[data-field='tip_info']").html(msg);
+			msg && self.$modalAlert.modal("show").find("[data-field='tip_info']").html(msg);
 		},
 
 		toggleActive: function($target) {
@@ -357,25 +359,25 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 
 
 	// /* Using require js AMD standard */
- //    if (typeof define === 'function' && define.amd && define.amd.jQuery) {
+	//    if (typeof define === 'function' && define.amd && define.amd.jQuery) {
 
- //        var basePath = (function () {
- //            var splittedPath,
- //                config = require.s.contexts._.config,
- //                path = config.paths["hotpoint"];
+	//        var basePath = (function () {
+	//            var splittedPath,
+	//                config = require.s.contexts._.config,
+	//                path = config.paths["hotpoint"];
 
- //            if (typeof path !== "undefined") {
- //                splittedPath = path.split(/\/+/g);
- //                return splittedPath.slice(0, splittedPath.length - 2).join("/") + "/";
- //            } else {
- //                alert("require config paths 'hotpoint' key not exist");
- //            }
- //        })();
+	//            if (typeof path !== "undefined") {
+	//                splittedPath = path.split(/\/+/g);
+	//                return splittedPath.slice(0, splittedPath.length - 2).join("/") + "/";
+	//            } else {
+	//                alert("require config paths 'hotpoint' key not exist");
+	//            }
+	//        })();
 
- //        define(['text!' + basePath + 'template/assistive-template.htm',"paging", "ajax", "mustache", "blockUI", "jqExtend"],setup);
- //    } else {
- //        setup(jQuery);
- //    }
+	//        define(['text!' + basePath + 'template/assistive-template.htm',"paging", "ajax", "mustache", "blockUI", "jqExtend"],setup);
+	//    } else {
+	//        setup(jQuery);
+	//    }
 
 	// var gridInstance;
 	// return {

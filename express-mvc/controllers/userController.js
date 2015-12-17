@@ -7,6 +7,11 @@
 		baseController = require("./mybaseController"),
 		userController = gu.controller.inherit(baseController);
 
+	var multer = require('multer');
+	var uploadF = multer({
+		dest: __appRoot + '/tempFile/'
+	}).array("example");
+
 	userController.actions = {
 		index: {
 			GET: function(req, res) {
@@ -21,6 +26,27 @@
 				var condition = this.condition,
 					filters = this.filters;
 				queryAll(res, condition, filters);
+			}
+		},
+
+		upload: {
+			POST: function(req, res) {
+				uploadF(req, res, function(err) {
+					console.log(req.files)
+					var des_file = __appRoot + '/data/photo/' + req.files[0].originalname;
+					fs.readFile(req.files[0].path, function(err, data) {
+						fs.writeFile(des_file, data, function(err) {
+							if (err) console.log(err);
+							else {
+								response = {
+									msg: "File uploaded successfully",
+									filename: req.files[0].originalname
+								}
+							}
+							res.json(response);
+						});
+					});
+				});
 			}
 		},
 

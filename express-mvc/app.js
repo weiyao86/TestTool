@@ -15,6 +15,8 @@ var controllerRouter = require('./controllerRouter');
 // other requires
 var path = require('path');
 
+//upload file
+// var multer = require('multer');
 
 var app = express();
 
@@ -28,14 +30,23 @@ app.engine(".html", ejs.__express);
 app.set('view engine', 'html');
 //app.set('view engine', 'ejs');
 
-//将public目录作为静态目录
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(multer({
+// 	dest: '/temp/'
+// }).array("file"));
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: false
 }));
+
+
+
 app.use(cookieParser());
+//将public目录作为静态目录
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 app.use(function(req, res, next) {
@@ -50,13 +61,12 @@ app.use(function(req, res, next) {
 //set router for controller
 controllerRouter.routerMap(app);
 
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	var err = new Error('Not Found');
 	err.status = 404;
 	next(err);
-}); 
+});
 
 
 

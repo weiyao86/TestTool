@@ -25,6 +25,7 @@
 	</div>
 
 	<blockquote>Result</blockquote>
+
 	<div id="gridpanel" class="panel panel-info">
 		<div class="panel-heading">
 			<div class="panel-title">
@@ -34,7 +35,12 @@
 				<a class="btn btn-link" type="button" href="/user/insertTempData"  target="_blank">InsertTemp</a>
 				<a class="btn btn-link" type="button" href="/user/exportExcel"  target="_blank">Export Excel</a>
 				<a class="btn btn-link" type="button" href="/user/export" target="_blank">Download</a>
-
+				<a class="btn btn-link" type="button"  data-action="upload">Upload</a>
+				<form id="uploadForm" method="post" enctype="multipart/form-data">  
+				 	<input type="file" name="example">
+					<!-- <a class="btn btn-link" type="button" href="javascript:;" data-action="upload">Upload</a> -->
+					<input type="submit" value="submit"/>
+				</form>
 			</div>
 		</div>
 

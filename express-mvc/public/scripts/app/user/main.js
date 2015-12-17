@@ -1,4 +1,4 @@
-require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "fader", "tabPanel", "blockUI", "jquery", "bootstrap", "domReady!"], function(ajax, globalConfig, Mustache, Grid) {
+require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fader", "tabPanel", "blockUI", "jquery", "bootstrap", "domReady!"], function(ajax, globalConfig, Mustache, Grid) {
 	var initBootstrap = {
 			init: function() { //init bootstrap reference
 				$("[data-toggle='popover']").popover();
@@ -23,6 +23,8 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "fader", "tabPa
 
 			self.$email = $("#filters_scope").find("[data-field='email']");
 
+			self.$btnUpload = $("#gridpanel [data-action='upload']");
+
 			self.$globalSearch = $("#global_search");
 
 		},
@@ -32,6 +34,22 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "fader", "tabPa
 
 			self.$email.on("blur keyup propertychange", function() {
 				$(this).popover("hide");
+			});
+
+			$("#uploadForm").ajaxForm({
+				url: globalConfig.paths.upload,
+				resetForm: false,
+				type: 'POST',
+				dataType: 'json',
+				iframe: true,
+				beforeSubmit: function() {
+					alert('abc');
+					return true;
+				},
+				success: function(rst) {
+					alert('success')
+					console.log(rst);
+				}
 			});
 
 		},
@@ -70,7 +88,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "fader", "tabPa
 						}
 					}
 				},
-				/*paging*/ 
+				/*paging*/
 				paging: "paging",
 				pagingTemplate: "paging_template",
 				urls: {
@@ -82,7 +100,10 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "fader", "tabPa
 				operator: {
 					addBtn: "user_add",
 					export: ""
-				}
+				},
+				/*modal*/
+				modalConfirm: "modal_confirm",
+				modalAlert: "modal_alert"
 			});
 			self.grid.load();
 		}
