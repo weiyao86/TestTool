@@ -31,6 +31,7 @@
 
 		upload: {
 			POST: function(req, res) {
+				console.log("ino")
 				uploadF(req, res, function(err) {
 					console.log(req.files)
 					var des_file = __appRoot + '/data/photo/' + req.files[0].originalname;

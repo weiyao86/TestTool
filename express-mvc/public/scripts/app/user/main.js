@@ -36,22 +36,31 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 				$(this).popover("hide");
 			});
 
-			$("#uploadForm").ajaxForm({
-				url: globalConfig.paths.upload,
-				resetForm: false,
-				type: 'POST',
-				dataType: 'json',
-				iframe: true,
-				beforeSubmit: function() {
-					alert('abc');
-					return true;
+			self.$btnUpload.on({
+				"click": function() {
+					$(this).val("");
+					console.log("click");
 				},
-				success: function(rst) {
-					alert('success')
-					console.log(rst);
+				"change": function(e) {
+					console.log($(this).val());
+
+					$("#uploadForm").ajaxSubmit({
+						url: globalConfig.paths.upload,
+						resetForm: false,
+						type: 'POST',
+						dataType: 'json',
+						iframe: true,
+						beforeSubmit: function() {
+							alert('abc');
+							return true;
+						},
+						success: function(rst) {
+							alert('success')
+							console.log(rst);
+						}
+					});
 				}
 			});
-
 		},
 
 		initComponent: function() {

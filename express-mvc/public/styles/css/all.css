@@ -19,3 +19,10 @@ body { padding-top: 70px; }
 .bg-active, .bg-active a { color: #fff; background-color: #337ab7 !important; }
 
 .form-inline .mg-t { margin: 10px 10px 10px 0; }
+
+.export-cls { position: relative; }
+
+.export-cls span { color: #fff; }
+
+.export-cls-file { position: absolute; top: 0; left: 0px; height: 100%; filter: alpha(opacity=0); opacity: 0; width: 100%; }
+.export-cls-file:hover { cursor: pointer; }

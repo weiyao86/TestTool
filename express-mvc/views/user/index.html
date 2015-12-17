@@ -35,12 +35,21 @@
 				<a class="btn btn-link" type="button" href="/user/insertTempData"  target="_blank">InsertTemp</a>
 				<a class="btn btn-link" type="button" href="/user/exportExcel"  target="_blank">Export Excel</a>
 				<a class="btn btn-link" type="button" href="/user/export" target="_blank">Download</a>
-				<a class="btn btn-link" type="button"  data-action="upload">Upload</a>
-				<form id="uploadForm" method="post" enctype="multipart/form-data">  
-				 	<input type="file" name="example">
-					<!-- <a class="btn btn-link" type="button" href="javascript:;" data-action="upload">Upload</a> -->
-					<input type="submit" value="submit"/>
-				</form>
+
+				<!-- <div class="upload-panel" type="button" href="javascript:;" data-action="upload">
+					<form id="uploadForm" method="post" enctype="multipart/form-data" class="upload">
+						<input type="file" name="example"></form>
+					<a class="btn btn-link" type="button"  data-action="upload">Upload</a>
+				</div>
+				 -->
+				<a class="export-cls btn btn-success">
+			        <form id="uploadForm" method="post" enctype="multipart/form-data">
+			            <span>Upload</span>
+			            <input type="file" name="example" class="export-cls-file" data-action="upload"/>
+			        </form>
+			    </a>
+
+
 			</div>
 		</div>
 
