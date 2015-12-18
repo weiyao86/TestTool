@@ -9,13 +9,13 @@
 
 	var multer = require('multer');
 	var uploadF = multer({
-		dest: __appRoot + '/tempFile/'
+		dest: __appRoot + '/tempFile'
 	}).array("example");
 
 	userController.actions = {
 		index: {
 			GET: function(req, res) {
-				watchTest();
+				//watchTest();
 				res.view();
 			}
 		},
@@ -31,19 +31,26 @@
 
 		upload: {
 			POST: function(req, res) {
-				console.log("ino")
+				var response = {},
+					folderPath = __appRoot + '/tempFile';
+
 				uploadF(req, res, function(err) {
-					console.log(req.files)
+					if (err) commonfun.handlerError(err, res);
 					var des_file = __appRoot + '/data/photo/' + req.files[0].originalname;
-					fs.readFile(req.files[0].path, function(err, data) {
-						fs.writeFile(des_file, data, function(err) {
-							if (err) console.log(err);
+					fs.readFile(req.files[0].path, function(err0, data) {
+						if (err0) commonfun.handlerError(err0, res);
+						fs.writeFile(des_file, data, function(err1) {
+							if (err1) commonfun.handlerError(err1, res);
 							else {
 								response = {
 									msg: "File uploaded successfully",
 									filename: req.files[0].originalname
 								}
 							}
+
+							//remove cache file
+							recursiveDelFile(folderPath);
+
 							res.json(response);
 						});
 					});
@@ -337,6 +344,20 @@
 			res.setHeader('Content-Disposition', 'attachment; filename*="utf8\'\'' + encodeURIComponent(filename) + '"');
 		} else {
 			res.setHeader('Content-Disposition', 'attachment; filename=' + new Buffer(filename).toString('binary'));
+		}
+	}
+
+	function recursiveDelFile(folderPath) {
+		if (fs.existsSync(folderPath)) {
+			fs.readdirSync(folderPath).forEach(function(file) {
+				var curPath = folderPath + '/' + file;
+				if (fs.statSync(curPath).isDirectory()) {
+					//recursive
+					recursiveDelFile(curPath);
+				} else {
+					fs.unlinkSync(curPath);
+				}
+			});
 		}
 	}
 

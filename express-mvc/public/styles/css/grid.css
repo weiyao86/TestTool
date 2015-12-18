@@ -40,10 +40,10 @@
 .loading .loading-c-12 { transform: rotate(330deg); -webkit-transform: rotate(330deg); }
 .loading .loading-c-12:before { animation-delay: -0.1s; -webkit-animation-delay: -0.1s; }
 
-@keyframes circle { 0%, 39%, 100% { opacity: 0; transform: scale(0.3); -webkit-transform: scale(0.3); }
-  40% { opacity: 1; transform: scale(1); -webkit-transform: scale(1); } }
-@-webkit-keyframes circle { 0%, 39%, 100% { opacity: 0; transform: scale(0.3); -webkit-transform: scale(0.3); }
-  40% { opacity: 1; transform: scale(1); -webkit-transform: scale(1); } }
+@keyframes circle { 0%, 9%, 100% { opacity: 0; transform: scale(0); -webkit-transform: scale(0); }
+  10% { opacity: 1; transform: scale(1); -webkit-transform: scale(1); } }
+@-webkit-keyframes circle { 0%, 9%, 100% { opacity: 0; transform: scale(0); -webkit-transform: scale(0); }
+  10% { opacity: 1; transform: scale(1); -webkit-transform: scale(1); } }
 .loading p { background: #fff; border-radius: 4px; line-height: 35px; display: none; }
 
 /** 分页相关 */

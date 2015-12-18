@@ -43,7 +43,6 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 				},
 				"change": function(e) {
 					console.log($(this).val());
-
 					$("#uploadForm").ajaxSubmit({
 						url: globalConfig.paths.upload,
 						resetForm: false,
@@ -51,12 +50,22 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 						dataType: 'json',
 						iframe: true,
 						beforeSubmit: function() {
+							$.blockUI({
+								css: {
+									border: "none",
+									left: "50%",
+									width: 50,
+									height: 50,
+									background: "transparent"
+								},
+								message: self.grid.initBlockMsg()
+							});
 							return true;
 						},
 						success: function(rst) {
-							alert('success')
-							console.log(rst);
-						}
+							$.unblockUI();
+							$.messageAlert(rst.msg + " : " + rst.filename);
+						},
 					});
 				}
 			});
@@ -79,7 +88,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					afterRender: null,
 					complete: null,
 					afterModalHidden: function() {
-						self.showTipSuccess();
+
 						self.$email.popover("hide");
 					},
 					operatorError: function(action, msg) {
@@ -103,11 +112,10 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					read: globalConfig.paths.loadUser,
 					create: globalConfig.paths.createUser,
 					update: globalConfig.paths.updateUser,
-					delete: globalConfig.paths.delUserUrl
+					destory: globalConfig.paths.delUserUrl
 				},
 				operator: {
-					addBtn: "user_add",
-					export: ""
+					addBtn: "user_add"
 				},
 				/*modal*/
 				modalConfirm: "modal_confirm",

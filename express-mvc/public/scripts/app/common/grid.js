@@ -22,12 +22,11 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			urls: {
 				read: '',
 				update: '',
-				delete: '',
+				destory: '',
 				create: ''
 			},
 			operator: {
-				addBtn: "user_add",
-				export: ""
+				addBtn: "user_add"
 			},
 			/*modal*/
 			modalConfirm: "modal_confirm",
@@ -74,17 +73,8 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			self.$modalConfirm = $("#" + self.opts.modalConfirm);
 			self.$modalAlert = $("#" + self.opts.modalAlert);
 
-			//loading 	
-			self.$blockMsg = null;
-			if (!$("#loading_animate").size()) {
-				self.$blockMsg = $("<div id='loading_animate' class='loading'><p class='text-center'>Loading...</p></div>");
-				var arr = [];
-				for (var i = 1; i <= 12; i++) {
-					var divStr = '<div class="loading-c-' + i + ' loading-child"></div>';
-					arr.push(divStr);
-				}
-				self.$blockMsg.append(arr.join('')).appendTo("body");
-			}
+			//loading
+			self.$blockMsg = self.initBlockMsg();
 		},
 
 		bindEvent: function() {
@@ -155,7 +145,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			});
 
 			self.$modalConfirm.on('click', "[data-field='sure']", function() {
-				self.delete();
+				self.destory();
 			});
 
 			self.$addBtn.on("click", function() {
@@ -178,6 +168,21 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			});
 		},
 
+		initBlockMsg: function() {
+			var self = this;
+			if (!$("#loading_animate").size()) {
+				self.$blockMsg = $("<div id='loading_animate' class='loading'><p class='text-center'>Loading...</p></div>");
+				var arr = [];
+				for (var i = 1; i <= 12; i++) {
+					var divStr = '<div class="loading-c-' + i + ' loading-child"></div>';
+					arr.push(divStr);
+				}
+				self.$blockMsg.append(arr.join('')).appendTo("body");
+			}
+			return $("#loading_animate");
+
+		},
+
 		load: function() {
 			var self = this;
 			self.paging.load();
@@ -198,7 +203,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 							border: "none",
 							width: 50,
 							height: 50,
-							background: "transparent",
+							background: "transparent"
 						},
 
 						message: self.$blockMsg
@@ -308,14 +313,14 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			});
 		},
 
-		delete: function() {
+		destory: function() {
 			var self = this,
 				id = self.$modalConfirm.data("id");
 
 			if (!id) return;
 
 			ajax.invoke({
-				url: self.opts.urls.delete,
+				url: self.opts.urls.destory,
 				contentType: "application/json",
 				data: JSON.stringify({
 					id: id
@@ -323,7 +328,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				success: function(rst) {
 					if (rst.msg) {
 						if ($.type(self.opts.callbacks.operatorError === "function")) {
-							self.opts.callbacks.operatorError.call(self, "delete", rst.msg);
+							self.opts.callbacks.operatorError.call(self, "destory", rst.msg);
 						}
 					} else {
 						self.load();
