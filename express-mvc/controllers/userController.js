@@ -25,7 +25,8 @@
 
 				var condition = this.condition,
 					filters = this.filters;
-				queryAll(res, condition, filters);
+				commonfun.watchFile('/areas/test-2');
+				commonfun.queryAll(res,user, condition, filters);
 			}
 		},
 
@@ -66,7 +67,7 @@
 
 						var scripts = fs.createReadStream(filepath);
 						var filename = "中文.js";
-						garbled(res, req, filename);
+						commonfun.garbled(res, req, filename);
 
 						scripts.pipe(res);
 
@@ -126,7 +127,7 @@
 					var result = nodeExcel.execute(conf);
 
 					var filename = "用户帐号文件.xlsx";
-					garbled(res, req, filename);
+					commonfun.garbled(res, req, filename);
 					res.end(result, 'binary');
 				});
 			}
@@ -202,7 +203,6 @@
 					arr.push({
 						email: "w@" + i + ".com",
 						password: i
-
 					});
 				}
 				user.remove({}, function(err) {
@@ -218,134 +218,44 @@
 		createUser: {
 			POST: function(req, res) {
 				var model = req.body,
-					params = {
+					content = {
 						email: model.email,
 						password: model.password
 					};
-
-				user.count({
-					email: params.email
-				}, function(err, count) {
-					if (err) return commonfun.handlerError(err, res);
-					if (count) {
-						res.json({
-							IsSuccess: true,
-							data: [],
-							msg: "此条记录已存在"
-						});
-					} else {
-						user.create(params, function(err) {
-							if (err) return commonfun.handlerError(err, res);
-							res.json({
-								IsSuccess: true,
-								data: [],
-								msg: ''
-							});
-						});
-					}
-				});
+				commonfun.insert(req, res, user, {
+					email: model.email
+				}, content);
 			}
 		},
 
 		updateUser: {
 			POST: function(req, res) {
 				var model = req.body,
-					id = model._id;
+					id = model._id,
+					condiction;
 				delete model["_id"];
-				user.update({
+				condiction = {
 					"_id": id
-				}, {
-					$set: model
-				}, function(err) {
-					if (err) return res.json({
-						IsSuccess: false,
-						msg: err
-					});
-					res.json({
-						IsSuccess: true,
-						data: "更新成功"
-					});
-				});
+				};
+
+				commonfun.update(req, res, user, condiction, model);
 			}
 		},
 
 		deleteUserByEmail: {
 			POST: function(req, res) {
 				var model = req.body,
-					id = model.id;
+					condiction = {
+						"_id": model._id
+					};
+					console.log(model)
 
-				user.remove({
-					_id: id
-				}, function(err) {
-					if (err) return res.json({
-						IsSuccess: false,
-						msg: err
-					});
-					res.json({
-						IsSuccess: true,
-						data: "删除成功"
-					});
-				});
+				commonfun.destory(req, res, user, condiction);
 			}
 		}
 	};
 
 
-	function queryAll(res, condition, filters) {
-		var limit = (filters && filters.limit) || 0,
-			idx = (filters && filters.pageIndex) || 1;
-
-		user.count(condition || {}, function(err, count) {
-			if (err) return handerError(err);
-
-			limit === 0 && (limit = count);
-
-			var query = user.find(condition || {}, '-__someElse', {
-				'sort': {
-					"_id": -1
-				}
-			});
-			query.skip(limit * (idx - 1)).limit(limit).exec(function(err, users) {
-				if (err) return commonfun.handlerError(err, res);
-				users = users.map(function(tag) {
-					return tag.toJSON();
-				});
-				return res.json({
-					IsSuccess: true,
-					data: users,
-					total: count
-				});
-			});
-
-		});
-	}
-
-	function watchTest() {
-		console.log('start Watch');
-
-		fs.watch(__appRoot + '/areas/test-2', function(event, filename) {
-			console.log('event is: ' + event);
-			if (filename) {
-				console.log('filename provided: ' + filename);
-			} else {
-				console.log('filename not provided');
-			}
-		});
-	}
-
-	//解决各浏览器文件名中文乱码问题,自定义文件名
-	function garbled(res, req, filename) {
-		var userAgent = (req.headers['user-agent'] || '').toLowerCase();
-		res.set('Content-Type', 'application/force-download;charset=utf-8');
-
-		if (userAgent.indexOf('msie') >= 0 || userAgent.indexOf('chrome') >= 0) {
-			res.setHeader('Content-Disposition', 'attachment; filename=' + encodeURIComponent(filename));
-		} else if (userAgent.indexOf('firefox') >= 0) {
-			res.setHeader('Content-Disposition', 'attachment; filename*="utf8\'\'' + encodeURIComponent(filename) + '"');
-		} else {
-			res.setHeader('Content-Disposition', 'attachment; filename=' + new Buffer(filename).toString('binary'));
-		}
-	}
 
 	function recursiveDelFile(folderPath) {
 		if (fs.existsSync(folderPath)) {

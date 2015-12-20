@@ -323,7 +323,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				url: self.opts.urls.destory,
 				contentType: "application/json",
 				data: JSON.stringify({
-					id: id
+					_id: id
 				}),
 				success: function(rst) {
 					if (rst.msg) {

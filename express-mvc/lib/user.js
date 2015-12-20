@@ -1,8 +1,5 @@
 var mongoose = require("mongoose"),
 	schema = new mongoose.Schema({
-		userId: {
-			type: String
-		},
 		email: {
 			type: String
 		},

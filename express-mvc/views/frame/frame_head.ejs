@@ -1,73 +1,15 @@
 <%- include('../shared/bootstrap_head')-%>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_brand">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a  href="#" class="navbar-brand">Node.js-MVC</a>
-		</div>
-		<div id="nav_brand" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="" data-toggle="dropdown" type="button" class="dropdown-toggle">
-						Menu
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="/user">用户列表</a>
-						</li>
-						<li>
-							<a href="/login">登录</a>
-						</li>
-						<li>
-							<a href="/noexist">No Page</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="">About</a>
-				</li>
-				<li class="dropdown">
-					<a href="" data-toggle="dropdown"  type="button" class="dropdown-toggle">
-						Help
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="/main/logout">Log out</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-			<form action="" class="navbar-form navbar-right">
-				<input type="text" id="global_search" class="form-control" placeholder="Search.." data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="输入字符串可查询"></form>
-			<div class="navbar-text navbar-right">
-				<kbd>当前帐户:</kbd>
-				<% if (viewbag.auth){ %>
-				<% for(item in viewbag.auth){%>
-				<kbd>
-					<%=item%>
-					=
-					<%=viewbag.auth[item] %></kbd>
-				<% }%>
-				<% } %></div>
-		</div>
-	</div>
-</nav>
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-3 col-md-2 sidebar">
 			<ul class="nav nav-sidebar" id="menu_left">
 				<li>
-					<a href="/user">用户列表</a>
+					<a href="/user">User</a>
 				</li>
 				<li>
-					<a href="/login">登录</a>
+					<a href="/photo">Photo</a>
 				</li>
 				<li>
 					<a href="/noexist">No Page</a>
