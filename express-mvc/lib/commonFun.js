@@ -1,4 +1,5 @@
-var fs = require("fs");
+var fs = require("fs"),
+	moment = require("moment");
 
 exports.commonfun = {
 	handlerError: function(err, res) {
@@ -7,7 +8,7 @@ exports.commonfun = {
 			msg: err
 		});
 	},
-	queryAll: function(res,model, condition, filters) {
+	queryAll: function(res, model, condition, filters) {
 		var limit = (filters && filters.limit) || 0,
 			idx = (filters && filters.pageIndex) || 1;
 
@@ -24,8 +25,18 @@ exports.commonfun = {
 			query.skip(limit * (idx - 1)).limit(limit).exec(function(err, docs) {
 				if (err) return commonfun.handlerError(err, res);
 				docs = docs.map(function(tag) {
-					return tag.toJSON();
+					var rst = tag.toJSON(),
+						paths = tag.schema.paths;
+
+					//嵌套过深则此处应该递归处理
+					for (var key in paths) {
+						if (paths[key].instance === "Date") {
+							rst[key] = moment(tag[key]).format("YYYY-MM-DD HH:mm:ss");
+						}
+					}
+					return rst;
 				});
+
 				return res.json({
 					IsSuccess: true,
 					data: docs,
@@ -36,7 +47,7 @@ exports.commonfun = {
 		});
 	},
 
-	insert: function(req, res,model, condiction, content) {
+	insert: function(req, res, model, condiction, content) {
 		model.count(condiction, function(err, count) {
 			if (err) return commonfun.handlerError(err, res);
 			if (count) {

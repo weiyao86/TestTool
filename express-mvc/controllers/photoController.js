@@ -24,9 +24,9 @@ photoController.actions = {
 		filters: [filters.photofilter],
 		POST: function(req, res) {
 			var condition = this.condition,
-					filters = this.filters;
+				filters = this.filters;
 
-				commonfun.queryAll(res,photo, condition, filters);
+			commonfun.queryAll(res, photo, condition, filters);
 		}
 	},
 
@@ -86,7 +86,7 @@ photoController.actions = {
 				});
 			});
 		}
-	}
+	},
 
 	// insert: {
 	// 	POST: function(req, res) {
@@ -115,17 +115,16 @@ photoController.actions = {
 	// 	}
 	// },
 
-	// destory: {
-	// 	POST: function(req, res) {
-	// 		var model = req.body,
-	// 			condiction = {
-	// 				"_id": model._id
-	// 			};
-	// 		console.log(model)
+	destory: {
+		POST: function(req, res) {
+			var model = req.body,
+				condiction = {
+					"_id": model._id
+				};
 
-	// 		commonfun.destory(req, res, user, condiction);
-	// 	}
-	// }
+			commonfun.destory(req, res, photo, condiction);
+		}
+	}
 };
 
 module.exports = photoController;
