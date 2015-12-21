@@ -208,7 +208,7 @@
 		// return selected object list
 		clearAllAppointScope: function() {
 
-			this.find("input,select,a,span,div,textarea").each(function(index, element) {
+			return this.find("input,select,a,span,div,textarea").each(function(index, element) {
 				var type, key = $(element).attr("data-field");
 				if (key == undefined)
 					return;
@@ -670,6 +670,21 @@
 				}
 				$taget.modal("hide");
 			});
+		},
+
+		initBlockMsg: function() {
+			var self = this;
+			if (!$("#loading_animate").size()) {
+				self.$blockMsg = $("<div id='loading_animate' class='loading'><p class='text-center'>Loading...</p></div>");
+				var arr = [];
+				for (var i = 1; i <= 12; i++) {
+					var divStr = '<div class="loading-c-' + i + ' loading-child"></div>';
+					arr.push(divStr);
+				}
+				self.$blockMsg.append(arr.join('')).appendTo("body");
+			}
+			return $("#loading_animate");
+
 		}
 	});
 

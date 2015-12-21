@@ -110,5 +110,13 @@ body {
 
 .export-cls {position: relative; }
 
-.export-cls span { color:#fff; }
+.export-cls span.white { color:#555; }
 .export-cls-file { position: absolute; top: 0; left: 0px; height: 100%; filter: alpha(opacity=0); opacity: 0; width: 100%;&:hover{cursor:pointer;}}
+
+.thumbnail-panel{
+    max-height:100px;
+    width:100%;
+    table-layout:fixed;
+    & a{border:none;}
+}
+

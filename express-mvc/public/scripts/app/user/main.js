@@ -58,7 +58,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 									height: 50,
 									background: "transparent"
 								},
-								message: self.grid.initBlockMsg()
+								message: $.initBlockMsg()
 							});
 							return true;
 						},

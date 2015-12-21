@@ -30,17 +30,10 @@
 		<div class="panel-heading">
 			<div class="panel-title">
 
-				<button class="btn btn-success" type="button"  id="addModal" data-field="add">Add</button>
+				<button class="btn btn-success" type="button" id="addModal" data-field="add">Add</button>
 				<a class="btn btn-link" type="button" href="/photo/insertTempData"  target="_blank">InsertTemp</a>
 				<a class="btn btn-link" type="button" href="/photo/exportExcel"  target="_blank">Export Excel</a>
 				<a class="btn btn-link" type="button" href="/photo/export" target="_blank">Download</a>
-				<a class="export-cls btn btn-success">
-					<form id="uploadForm" method="post" enctype="multipart/form-data">
-						<span>Upload</span>
-						<input type="file" name="example" class="export-cls-file" data-action="upload"/>	
-					</form>
-				</a>
-
 			</div>
 		</div>
 
@@ -130,14 +123,19 @@
 							<input type="text" data-field="fileName" class="form-control" value="" data-trigger="manual" data-toggle="popover" data-title="filename" data-content="" data-placement="top">	
 							<span class="input-group-btn">
 								<a class="export-cls btn btn-default">
-									<form id="uploadFile" method="post" enctype="multipart/form-data">
+									<form id="uploadPhoto" method="post" enctype="multipart/form-data">
 										<span class="white">Upload</span>
-										<input type="file" name="example" class="export-cls-file" data-action="upload"/>
+										<input type="file" name="example" class="export-cls-file" data-action="upload_photo"/>
 									</form>
 								</a>
 							</span>
 						</div>
 						<input type="hidden" data-field="_id"></div>
+					<div class="input-group thumbnail-panel text-center">
+						<a href="" class="thumbnail">
+							<img data-filed="file" data-img='thumbnail' src="" alt="Thumbnail" class="img-rounded center-block">
+						</a>
+					</div>
 					<div class="form-group">
 						<label for="">Note:</label>
 						<input type="text" data-field="note" class="form-control" value="" required></div>

@@ -30,34 +30,32 @@ photoController.actions = {
 		}
 	},
 
-	// upload: {
-	// 	POST: function(req, res) {
-	// 		var response = {},
-	// 			folderPath = __appRoot + '/tempFile';
+	upload: {
+		POST: function(req, res) {
+			var response = {};
 
-	// 		uploadF(req, res, function(err) {
-	// 			if (err) commonfun.handlerError(err, res);
-	// 			var des_file = __appRoot + '/data/photo/' + req.files[0].originalname;
-	// 			fs.readFile(req.files[0].path, function(err0, data) {
-	// 				if (err0) commonfun.handlerError(err0, res);
-	// 				fs.writeFile(des_file, data, function(err1) {
-	// 					if (err1) commonfun.handlerError(err1, res);
-	// 					else {
-	// 						response = {
-	// 							msg: "File uploaded successfully",
-	// 							filename: req.files[0].originalname
-	// 						}
-	// 					}
-
-	// 					//remove cache file
-	// 					recursiveDelFile(folderPath);
-
-	// 					res.json(response);
-	// 				});
-	// 			});
-	// 		});
-	// 	}
-	// },
+			uploadF(req, res, function(err) {
+				if (err) commonfun.handlerError(err, res);
+				console.log(req.files)
+				var des_file = __appRoot + '/tempFile/' + req.files[0].originalname;
+				fs.readFile(req.files[0].path, function(err0, data) {
+					if (err0) commonfun.handlerError(err0, res);
+					fs.writeFile(des_file, data, function(err1) {
+						if (err1) commonfun.handlerError(err1, res);
+						else {
+							response = {
+								msg: "File uploaded successfully",
+								filename: req.files[0].originalname
+							}
+						}
+						//IE下返回值 会被当作文件来下载
+						res.set('Content-Type', 'text/html;charset=utf-8');
+						res.json(response);
+					});
+				});
+			});
+		}
+	},
 
 	insertTempData: {
 		GET: function(req, res) {
@@ -88,18 +86,21 @@ photoController.actions = {
 		}
 	},
 
-	// insert: {
-	// 	POST: function(req, res) {
-	// 		var model = req.body,
-	// 			content = {
-	// 				email: model.email,
-	// 				password: model.password
-	// 			};
-	// 		commonfun.insert(req, res, user, {
-	// 			email: model.email
-	// 		}, content);
-	// 	}
-	// },
+	insert: {
+		POST: function(req, res) {
+			var model = req.body,
+				content = {
+					email: model.email,
+					password: model.password
+				};
+			commonfun.insert(req, res, user, {
+				email: model.email
+			}, content, function() {
+				var folderPath = __appRoot + '/tempFile';
+				commonfun.recursiveDelFile(folderPath);
+			});
+		}
+	},
 
 	// update: {
 	// 	POST: function(req, res) {

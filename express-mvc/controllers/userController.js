@@ -50,7 +50,7 @@
 							}
 
 							//remove cache file
-							recursiveDelFile(folderPath);
+							commonfun.recursiveDelFile(folderPath);
 
 							res.json(response);
 						});
@@ -254,21 +254,5 @@
 			}
 		}
 	};
-
-
-
-	function recursiveDelFile(folderPath) {
-		if (fs.existsSync(folderPath)) {
-			fs.readdirSync(folderPath).forEach(function(file) {
-				var curPath = folderPath + '/' + file;
-				if (fs.statSync(curPath).isDirectory()) {
-					//recursive
-					recursiveDelFile(curPath);
-				} else {
-					fs.unlinkSync(curPath);
-				}
-			});
-		}
-	}
 
 	module.exports = userController;

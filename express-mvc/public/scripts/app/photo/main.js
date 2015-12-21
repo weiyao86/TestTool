@@ -21,36 +21,33 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 		buildDom: function() {
 			var self = this;
 
-			self.$email = $("#filters_scope").find("[data-field='email']");
+			self.$editPanel = $("#modal_edit");
+			self.$edit = self.$editPanel.children();
 
-			self.$btnUpload = $("#gridpanel [data-action='upload']");
+			self.$btnUpload = self.$edit.find("[data-action='upload_photo']");
 
-			self.$globalSearch = $("#global_search");
+			self.$photo = self.$edit.find("[data-filed='file']");
 
 		},
 
 		bindEvent: function() {
 			var self = this;
-
-			self.$email.on("blur keyup propertychange", function() {
-				$(this).popover("hide");
-			});
-
 			self.$btnUpload.on({
 				"click": function() {
 					$(this).val("");
 					console.log("click");
 				},
 				"change": function(e) {
-					console.log($(this).val());
-					$("#uploadForm").ajaxSubmit({
-						url: globalConfig.paths.upload,
+					self.$edit.find("[data-field='fileName']").val($(this).val());
+
+					$("#uploadPhoto").ajaxSubmit({
+						url: globalConfig.paths.uploadPhoto,
 						resetForm: false,
 						type: 'POST',
 						dataType: 'json',
 						iframe: true,
 						beforeSubmit: function() {
-							$.blockUI({
+							self.$edit.block({
 								css: {
 									border: "none",
 									left: "50%",
@@ -58,13 +55,15 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 									height: 50,
 									background: "transparent"
 								},
-								message: self.grid.initBlockMsg()
+								message: $.initBlockMsg()
 							});
 							return true;
 						},
 						success: function(rst) {
-							$.unblockUI();
-							$.messageAlert(rst.msg + " : " + rst.filename);
+							var fileSrc=rst.filename;// globalConfig.host+rst.filename;
+							self.$edit.unblock();
+							// self.$editPanel.modal("hide");
+							// $.messageAlert(rst.msg + " : " + rst.filename);
 						},
 					});
 				}
@@ -94,7 +93,6 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					operatorError: function(action, msg) {
 						switch (action) {
 							case "create":
-								//self.$email.attr("data-content", msg).popover("show");
 								break;
 							case "update":
 								break;

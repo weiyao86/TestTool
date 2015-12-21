@@ -47,9 +47,12 @@ exports.commonfun = {
 		});
 	},
 
-	insert: function(req, res, model, condiction, content) {
+	insert: function(req, res, model, condiction, content,callback) {
 		model.count(condiction, function(err, count) {
 			if (err) return commonfun.handlerError(err, res);
+			if(callback && typeof callback === "function"){
+				callback.call(req, res);
+			}
 			if (count) {
 				res.json({
 					IsSuccess: true,
@@ -84,6 +87,7 @@ exports.commonfun = {
 			});
 		});
 	},
+
 	destory: function(req, res, model, condiction) {
 
 		model.remove(condiction, function(err) {
@@ -96,6 +100,23 @@ exports.commonfun = {
 				data: "删除成功"
 			});
 		});
+	},
+
+	recursiveDelFile: function(folderPath) {
+		var recursiveDelFile = function(folderPath) {
+			if (fs.existsSync(folderPath)) {
+				fs.readdirSync(folderPath).forEach(function(file) {
+					var curPath = folderPath + '/' + file;
+					if (fs.statSync(curPath).isDirectory()) {
+						//recursive
+						recursiveDelFile(curPath);
+					} else {
+						fs.unlinkSync(curPath);
+					}
+				});
+			}
+		}
+		recursiveDelFile(folderPath);
 	},
 
 	watchFile: function(filepath) {

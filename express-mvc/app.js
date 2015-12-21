@@ -46,7 +46,7 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 //将public目录作为静态目录
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname, 'tempFile')));
 
 
 app.use(function(req, res, next) {
