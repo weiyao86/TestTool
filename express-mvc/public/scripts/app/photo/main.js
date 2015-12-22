@@ -60,8 +60,9 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 							return true;
 						},
 						success: function(rst) {
-							var fileSrc=rst.filename;// globalConfig.host+rst.filename;
+							var fileSrc = rst.filename; // globalConfig.host+rst.filename;
 							self.$edit.unblock();
+							self.$photo.attr("src", fileSrc);
 							// self.$editPanel.modal("hide");
 							// $.messageAlert(rst.msg + " : " + rst.filename);
 						},

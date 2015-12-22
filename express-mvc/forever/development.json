@@ -1,0 +1,10 @@
+{
+	"uid": "app",
+	"append": true,
+	"watch": true,
+	"LOGFILE": "LOGFILE.log",
+	"OUTFILE": "OUTFILE.log",
+	"ERRFILE": "ERRFILE.log",
+	"script": "app.js",
+	"sourceDir": ""
+}
