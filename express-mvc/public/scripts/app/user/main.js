@@ -98,7 +98,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 								break;
 							case "update":
 								break;
-							case "delete":
+							case "destroy":
 								break;
 							default:
 								break;
@@ -112,7 +112,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					read: globalConfig.paths.loadUser,
 					create: globalConfig.paths.createUser,
 					update: globalConfig.paths.updateUser,
-					destory: globalConfig.paths.delUserUrl
+					destroy: globalConfig.paths.delUserUrl
 				},
 				operator: {
 					addBtn: "user_add"

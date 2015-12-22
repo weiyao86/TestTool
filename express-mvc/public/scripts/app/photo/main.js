@@ -38,7 +38,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					console.log("click");
 				},
 				"change": function(e) {
-					self.$edit.find("[data-field='fileName']").val($(this).val());
+					self.$edit.find("[data-field='filename']").val($(this).val());
 
 					$("#uploadPhoto").ajaxSubmit({
 						url: globalConfig.paths.uploadPhoto,
@@ -94,10 +94,12 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					operatorError: function(action, msg) {
 						switch (action) {
 							case "create":
+								$.messageAlert(msg);
 								break;
 							case "update":
+								$.messageAlert(msg);
 								break;
-							case "delete":
+							case "destroy":
 								break;
 							default:
 								break;
@@ -111,7 +113,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					read: globalConfig.paths.loadPhoto,
 					create: globalConfig.paths.insertPhoto,
 					update: globalConfig.paths.updatePhoto,
-					destory: globalConfig.paths.destoryPhoto
+					destroy: globalConfig.paths.destroyPhoto
 				},
 				operator: {
 					addBtn: "addModal"

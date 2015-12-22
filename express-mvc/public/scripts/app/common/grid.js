@@ -22,7 +22,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			urls: {
 				read: '',
 				update: '',
-				destory: '',
+				destroy: '',
 				create: ''
 			},
 			operator: {
@@ -97,7 +97,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 
 			self.$grid.on("click", "[data-field='update'],[data-field='del']", function() {
 				var field = $(this).attr("data-field"),
-					id = $(this).closest("tr").find("[data-field='_id']").html();
+					id = $(this).closest("tr").selectedAllAppointScope()["_id"];
 				switch (field) {
 					case "update":
 						self.$edit.prop("model", {
@@ -146,7 +146,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			});
 
 			self.$modalConfirm.on('click', "[data-field='sure']", function() {
-				self.destory();
+				self.destroy();
 			});
 
 			self.$addBtn.on("click", function() {
@@ -299,14 +299,14 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			});
 		},
 
-		destory: function() {
+		destroy: function() {
 			var self = this,
 				id = self.$modalConfirm.data("id");
 
 			if (!id) return;
 
 			ajax.invoke({
-				url: self.opts.urls.destory,
+				url: self.opts.urls.destroy,
 				contentType: "application/json",
 				data: JSON.stringify({
 					_id: id
@@ -314,7 +314,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				success: function(rst) {
 					if (rst.msg) {
 						if ($.type(self.opts.callbacks.operatorError === "function")) {
-							self.opts.callbacks.operatorError.call(self, "destory", rst.msg);
+							self.opts.callbacks.operatorError.call(self, "destroy", rst.msg);
 						}
 					} else {
 						self.load();

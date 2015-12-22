@@ -5,6 +5,7 @@ var gu = require("guthrie"),
 	commonfun = require(__appRoot + "/lib/commonfun").commonfun,
 	filters = require(__appRoot + '/lib/filters'),
 	photo = require(__appRoot + "/lib/photo").photo,
+	user = require(__appRoot + "/lib/user").user,
 	baseController = require("./mybaseController"),
 	photoController = gu.controller.inherit(baseController);
 
@@ -36,7 +37,7 @@ photoController.actions = {
 
 			uploadF(req, res, function(err) {
 				if (err) commonfun.handlerError(err, res);
-				console.log(req.files)
+
 				var des_file = __appRoot + '/tempFile/' + req.files[0].originalname;
 				fs.readFile(req.files[0].path, function(err0, data) {
 					if (err0) commonfun.handlerError(err0, res);
@@ -53,6 +54,16 @@ photoController.actions = {
 						res.json(response);
 					});
 				});
+			});
+		}
+	},
+
+	destroyAll: {
+		GET: function(req, res) {
+			photo.remove({}, function(err) {
+				if (err) return commonfun.handlerError(err, res);
+				res.send("<p>数据清空完毕<p>");
+				res.end();
 			});
 		}
 	},
@@ -88,41 +99,79 @@ photoController.actions = {
 
 	insert: {
 		POST: function(req, res) {
-			var model = req.body,
-				content = {
-					email: model.email,
-					password: model.password
-				};
-			commonfun.insert(req, res, user, {
-				email: model.email
-			}, content, function() {
-				var folderPath = __appRoot + '/tempFile';
-				commonfun.recursiveDelFile(folderPath);
+			var folderPath = __appRoot + '/tempFile',
+				photoFolder = __appRoot + "/data/photo",
+				model = req.body,
+				email = req.cookies["account"].email;
+
+			var callback = function(doc) {
+				var condiction = {
+						uid: email,
+						filename: model.filename
+					},
+					content = {
+						uid: email,
+						filename: model.filename,
+						note: model.note,
+						createBy: doc.nickname,
+						createDate: new Date()
+					};
+
+				commonfun.insert(req, res, photo, condiction, content, function() {
+					var src = folderPath + "/" + content.filename,
+						writeSrc = photoFolder + "/" + content.filename;
+
+					fs.readFile(src, function(err, data) {
+						if (err) return console.log("读取--" + src + "--文件错误！error:" + err);
+
+						fs.writeFile(writeSrc, data, function(err1) {
+							if (err1) return console.log("写入--" + writeSrc + "--文件错误！error:" + err1);
+							commonfun.recursiveDelFile(folderPath);
+						});
+					});
+				});
+			};
+
+			user.findOne({
+				email: email
+			}, function(err, doc) {
+				if (err) return commonfun.handlerError(err, res);
+				callback.call(this, doc);
 			});
+
 		}
 	},
 
-	// update: {
-	// 	POST: function(req, res) {
-	// 		var model = req.body,
-	// 			id = model._id,
-	// 			condiction;
-	// 		delete model["_id"];
-	// 		condiction = {
-	// 			"_id": id
-	// 		};
+	update: {
+		POST: function(req, res) {
+			var model = req.body,
+				email = req.cookies["account"].email,
+				uid = model.uid,
+				filename = model.filename,
+				condiction = {
+					uid: model.uid,
+					filename: model.filename
+				},
+				content = {
+					note: model.note,
+					filename: model.filename,
+					modifyBy:email,
+					modifyDate:new Date()
+				};
 
-	// 		commonfun.update(req, res, user, condiction, model);
-	// 	}
-	// },
+			commonfun.update(req, res, photo, condiction, content);
+		}
+	},
 
-	destory: {
+	destroy: {
 		POST: function(req, res) {
 			var model = req.body,
 				condiction = {
 					"_id": model._id
 				};
 
+				console.log(model._id)
+ 
 			commonfun.destory(req, res, photo, condiction);
 		}
 	}

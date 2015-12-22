@@ -12,7 +12,7 @@ var mongoose = require("mongoose"),
 		createDate: {
 			type: Date
 		},
-		creteBy:{
+		createBy:{
 			type:String
 		},modifyDate: {
 			type: Date

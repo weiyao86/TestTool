@@ -6,7 +6,7 @@ var mongoose = require("mongoose"),
 		password: {
 			type: String
 		},
-		name: {
+		nickname: {
 			type: String
 		}
 	}, {

@@ -198,10 +198,14 @@
 			GET: function(req, res) {
 
 				var arr = [],
-					len = 1500;
+					len = 1500,
+					names=["john","jack","shiry","lilei","hameimei"],
+					idx;
 				for (var i = len; i > 0; i--) {
+					idx =Math.floor(Math.random()*5);
 					arr.push({
 						email: "w@" + i + ".com",
+						nickname:names[idx],
 						password: i
 					});
 				}
