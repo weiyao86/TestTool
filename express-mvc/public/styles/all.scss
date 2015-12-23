@@ -106,17 +106,37 @@ body {
     margin: 10px 10px 10px 0;
 }
 
-
-
-.export-cls {position: relative; }
-
-.export-cls span.white { color:#555; }
-.export-cls-file { position: absolute; top: 0; left: 0px; height: 100%; filter: alpha(opacity=0); opacity: 0; width: 100%;&:hover{cursor:pointer;}}
-
-.thumbnail-panel{
-    max-height:100px;
-    width:100%;
-    table-layout:fixed;
-    & a{border:none;}
+.export-cls {
+    position: relative;
 }
 
+.export-cls span.white {
+    color: #555;
+}
+
+.export-cls-file {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    filter: alpha(opacity = 0);
+    opacity: 0;
+    width: 100%;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.thumbnail-panel {
+    width: 100%;
+    table-layout: fixed;
+
+    & a {
+        border: none;
+    }
+
+    & img {
+        max-height: 100px;
+    }
+}

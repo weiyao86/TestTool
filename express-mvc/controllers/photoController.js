@@ -149,16 +149,14 @@ photoController.actions = {
 				uid = model.uid,
 				filename = model.filename,
 				condiction = {
-					uid: model.uid,
-					filename: model.filename
+					_id: model._id
 				},
 				content = {
 					note: model.note,
-					filename: model.filename,
-					modifyBy:email,
-					modifyDate:new Date()
+					filename: filename,
+					modifyBy: email,
+					modifyDate: new Date()
 				};
-
 			commonfun.update(req, res, photo, condiction, content);
 		}
 	},
@@ -170,8 +168,8 @@ photoController.actions = {
 					"_id": model._id
 				};
 
-				console.log(model._id)
- 
+			console.log(model._id)
+
 			commonfun.destory(req, res, photo, condiction);
 		}
 	}

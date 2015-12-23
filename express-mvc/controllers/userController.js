@@ -26,7 +26,7 @@
 				var condition = this.condition,
 					filters = this.filters;
 				commonfun.watchFile('/areas/test-2');
-				commonfun.queryAll(res,user, condition, filters);
+				commonfun.queryAll(res, user, condition, filters);
 			}
 		},
 
@@ -51,7 +51,8 @@
 
 							//remove cache file
 							commonfun.recursiveDelFile(folderPath);
-
+							//IE下返回值 会被当作文件来下载
+							res.set('Content-Type', 'text/html;charset=utf-8');
 							res.json(response);
 						});
 					});
@@ -199,13 +200,13 @@
 
 				var arr = [],
 					len = 1500,
-					names=["john","jack","shiry","lilei","hameimei"],
+					names = ["john", "jack", "shiry", "lilei", "hameimei"],
 					idx;
 				for (var i = len; i > 0; i--) {
-					idx =Math.floor(Math.random()*5);
+					idx = Math.floor(Math.random() * 5);
 					arr.push({
 						email: "w@" + i + ".com",
-						nickname:names[idx],
+						nickname: names[idx],
 						password: i
 					});
 				}
@@ -252,7 +253,7 @@
 					condiction = {
 						"_id": model._id
 					};
-					console.log(model)
+				console.log(model)
 
 				commonfun.destory(req, res, user, condiction);
 			}

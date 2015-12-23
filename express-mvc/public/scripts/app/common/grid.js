@@ -13,6 +13,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				afterRender: null,
 				complete: null,
 				operatorError: null,
+				beforeModalShown: null,
 				afterModalHidden: null
 			},
 			"searchUrl": "",
@@ -129,19 +130,21 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 
 			self.$edit.on("shown.bs.modal", function(evt) {
 				var model = $(this).prop("model"),
-					$tr;
+					$tr, rst;
 				if (model.name === "update") {
 					$tr = self.$grid.find(">tbody>tr:eq(" + model.idx + ")");
-					var rst = $tr.selectedAllAppointScope();
+					rst = $tr.selectedAllAppointScope();
 					self.$edit.loadAppointScope(rst);
 				}
-
+				if ($.type(self.opts.callbacks.beforeModalShown === "function")) {
+					self.opts.callbacks.beforeModalShown.call(self, self, model.name, rst);
+				}
 			});
 
 			self.$edit.on("hidden.bs.modal", function() {
-				self.$edit.clearAllAppointScope().find("[data-img]").attr("src","");
+				self.$edit.clearAllAppointScope();
 				if ($.type(self.opts.callbacks.afterModalHidden === "function")) {
-					self.opts.callbacks.afterModalHidden.call(self);
+					self.opts.callbacks.afterModalHidden.call(self, self);
 				}
 			});
 

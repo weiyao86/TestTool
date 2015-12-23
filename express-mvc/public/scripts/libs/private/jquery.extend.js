@@ -131,7 +131,7 @@
 
 		loadAppointScope: function(data) {
 
-			this.find("input,select,a,span,div,textarea").each(function(index, element) {
+			this.find("input,select,a,span,div,textarea,img").each(function(index, element) {
 				var type, key = $(element).attr("data-field");
 				if (key == undefined)
 					return;
@@ -160,6 +160,8 @@
 					$(element).html(data[key]);
 				} else if (tagN == "TEXTAREA") {
 					$(element).text(data[key]);
+				} else if (tagN == "IMG") {
+					$(element).attr("src", data[key]);
 				}
 
 			});
@@ -169,37 +171,42 @@
 		selectedAllAppointScope: function() {
 
 			var resultObj = {};
-			this.find("input,select,a,span,div,textarea").each(function(index, element) {
-				var type, key = $(element).attr("data-field");
+			this.find("input,select,a,span,div,textarea,img").each(function(index, element) {
+				var type, $el = $(element),
+					key = $(element).attr("data-field");
+
 				if (key == undefined)
 					return;
-				if (element.tagName == "INPUT") {
-					type = $(element).attr("type");
+				var tagN = element.tagName.toUpperCase();
+				if (tagN == "INPUT") {
+					type = $el.attr("type");
 
 					switch (type) {
 						case "text":
-							resultObj[key] = $(element).val();
+							resultObj[key] = $el.val();
 							break;
 						case "checkbox":
-							resultObj[key] = $(element).is(":checked");
+							resultObj[key] = $el.is(":checked");
 							break;
 						case "hidden":
-							resultObj[key] = $(element).val();
+							resultObj[key] = $el.val();
 							break;
 						default:
 							break;
 					};
-				} else if (element.tagName == "SELECT") {
-					if ($(element).val().length == 0)
+				} else if (tagN == "SELECT") {
+					if ($el.val().length == 0)
 						resultObj[key] = "";
 					else
-						resultObj[key] = $(element).val(); // { "text": $(element).find("option:selected").text(), "value": $(element).val() };
-				} else if (element.tagName == "A") {
-					resultObj[key] = $(element).html();
-				} else if (element.tagName == "DIV" || element.tagName == "SPAN") {
-					resultObj[key] = $(element).html();
-				} else if (element.tagName == "TEXTAREA") {
-					resultObj[key] = $(element).val() || $(element).text();
+						resultObj[key] = $el.val(); // { "text": $el.find("option:selected").text(), "value": $el.val() };
+				} else if (tagN == "A") {
+					resultObj[key] = $el.html();
+				} else if (tagN == "DIV" || tagN == "SPAN") {
+					resultObj[key] = $el.html();
+				} else if (tagN == "TEXTAREA") {
+					resultObj[key] = $el.val() || $el.text();
+				} else if (tagN == "IMG") {
+					resultObj[key] = $el.attr("src");
 				}
 			});
 			return resultObj;
@@ -208,34 +215,37 @@
 		// return selected object list
 		clearAllAppointScope: function() {
 
-			return this.find("input,select,a,span,div,textarea").each(function(index, element) {
-				var type, key = $(element).attr("data-field");
+			return this.find("input,select,a,span,div,textarea,img").each(function(index, element) {
+				var type, $el = $(element),
+					key = $el.attr("data-field");
 				if (key == undefined)
 					return;
-				if (element.tagName == "INPUT") {
-					type = $(element).attr("type");
+				var tagN = element.tagName.toUpperCase();
+				if (tagN == "INPUT") {
+					type = $el.attr("type");
 
 					switch (type) {
 						case "text":
 						case "hidden":
-							$(element).val("");
+							$el.val("");
 							break;
 						case "checkbox":
-							$(element).attr("checked", false);
+							$el.attr("checked", false);
 							break;
 						default:
-							$(element).val("");
+							$el.val("");
 							break;
 					};
-				} else if (element.tagName == "SELECT") {
-					$(element).val("")
-				} else if (element.tagName == "DIV") {
-					$(element).html("");
-				} else if (element.tagName == "SPAN") {
-					$(element).html("");
-				} else if (element.tagName == "TEXTAREA") {
-					$(element).text("");
-					$(element).val("");
+				} else if (tagN == "SELECT") {
+					$el.val("")
+				} else if (tagN == "DIV") {
+					$el.html("");
+				} else if (tagN == "SPAN") {
+					$el.html("");
+				} else if (tagN == "TEXTAREA") {
+					$el.text("").val("");
+				} else if (tagN == "IMG") {
+					$el.attr("src", "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==");
 				}
 			});
 		},

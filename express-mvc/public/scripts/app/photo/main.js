@@ -26,7 +26,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 
 			self.$btnUpload = self.$edit.find("[data-action='upload_photo']");
 
-			self.$photo = self.$edit.find("[data-filed='file']");
+			self.$photo = self.$edit.find("[data-field='file']");
 
 		},
 
@@ -38,7 +38,11 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					console.log("click");
 				},
 				"change": function(e) {
-					self.$edit.find("[data-field='filename']").val($(this).val());
+					var reg = new RegExp(/\\(\w+\.\w+)$/);
+
+					var filename = (this.files && this.files[0].name) || $(this).val().match(reg)[1];
+
+					self.$edit.find("[data-field='filename']").val(filename);
 
 					$("#uploadPhoto").ajaxSubmit({
 						url: globalConfig.paths.uploadPhoto,
@@ -60,7 +64,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 							return true;
 						},
 						success: function(rst) {
-							var fileSrc = rst.filename; // globalConfig.host+rst.filename;
+							var fileSrc = "/" + rst.filename; // globalConfig.host+rst.filename;
 							self.$edit.unblock();
 							self.$photo.attr("src", fileSrc);
 							// self.$editPanel.modal("hide");
@@ -87,9 +91,13 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					beforeRender: null,
 					afterRender: null,
 					complete: null,
+					beforeModalShown: function(that, name, rowData) {
+						if (name === "update") {
+							that.$edit.find("img[data-field='file']").attr("src", rowData && "/photo/" + rowData.filename);
+						}
+					},
 					afterModalHidden: function() {
 
-						self.$email.popover("hide");
 					},
 					operatorError: function(action, msg) {
 						switch (action) {

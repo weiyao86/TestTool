@@ -27,5 +27,6 @@ body { padding-top: 70px; }
 .export-cls-file { position: absolute; top: 0; left: 0px; height: 100%; filter: alpha(opacity=0); opacity: 0; width: 100%; }
 .export-cls-file:hover { cursor: pointer; }
 
-.thumbnail-panel { max-height: 100px; width: 100%; table-layout: fixed; }
+.thumbnail-panel { width: 100%; table-layout: fixed; }
 .thumbnail-panel a { border: none; }
+.thumbnail-panel img { max-height: 100px; }
