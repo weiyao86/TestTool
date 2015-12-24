@@ -136,14 +136,14 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 					rst = $tr.selectedAllAppointScope();
 					self.$edit.loadAppointScope(rst);
 				}
-				if ($.type(self.opts.callbacks.beforeModalShown === "function")) {
+				if ($.type(self.opts.callbacks.beforeModalShown) === "function") {
 					self.opts.callbacks.beforeModalShown.call(self, self, model.name, rst);
 				}
 			});
 
 			self.$edit.on("hidden.bs.modal", function() {
 				self.$edit.clearAllAppointScope();
-				if ($.type(self.opts.callbacks.afterModalHidden === "function")) {
+				if ($.type(self.opts.callbacks.afterModalHidden) === "function") {
 					self.opts.callbacks.afterModalHidden.call(self, self);
 				}
 			});
@@ -262,7 +262,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				data: JSON.stringify(params),
 				success: function(rst) {
 					if (rst.msg) {
-						if ($.type(self.opts.callbacks.operatorError === "function")) {
+						if ($.type(self.opts.callbacks.operatorError) === "function") {
 							self.opts.callbacks.operatorError.call(self, "update", rst.msg);
 						}
 					} else {
@@ -287,7 +287,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				data: JSON.stringify(params),
 				success: function(rst) {
 					if (rst.msg) {
-						if ($.type(self.opts.callbacks.operatorError === "function")) {
+						if ($.type(self.opts.callbacks.operatorError) === "function") {
 							self.opts.callbacks.operatorError.call(self, "create", rst.msg);
 						}
 					} else {
@@ -316,7 +316,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 				}),
 				success: function(rst) {
 					if (rst.msg) {
-						if ($.type(self.opts.callbacks.operatorError === "function")) {
+						if ($.type(self.opts.callbacks.operatorError) === "function") {
 							self.opts.callbacks.operatorError.call(self, "destroy", rst.msg);
 						}
 					} else {

@@ -88,6 +88,24 @@ body {
     padding: 10px 20px;
 }
 
+blockquote {
+    background: #eee;
+    position: relative;
+    padding-left: 2em;
+    border: none;
+
+    &:before {
+        position: absolute;
+        content: "";
+        display: block;
+        border-style: solid;
+        border-color: #fff #eee #eee #fff;
+        top: 0;
+        left: 0;
+        border-width: 22px 12px 23px;
+    }
+}
+
 .sub-header {
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
@@ -139,4 +157,8 @@ body {
     & img {
         max-height: 100px;
     }
+}
+
+a:hover {
+    transition: all .3s ease;
 }

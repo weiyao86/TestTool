@@ -1,5 +1,10 @@
 var fs = require("fs"),
-	moment = require("moment");
+	moment = require("moment"),
+	multer = require('multer'),
+	tmepFoler = __appRoot + '/tempFile/',
+	uploadF = multer({
+		dest: tmepFoler
+	}).array("example");
 
 exports.commonfun = {
 	handlerError: function(err, res) {
@@ -47,10 +52,10 @@ exports.commonfun = {
 		});
 	},
 
-	insert: function(req, res, model, condiction, content,callback) {
+	insert: function(req, res, model, condiction, content, callback) {
 		model.count(condiction, function(err, count) {
 			if (err) return commonfun.handlerError(err, res);
-			if(callback && typeof callback === "function"){
+			if (callback && typeof callback === "function") {
 				callback.call(req, res);
 			}
 			if (count) {
@@ -72,7 +77,7 @@ exports.commonfun = {
 		});
 	},
 
-	update: function(req, res, model, condiction, content) {
+	update: function(req, res, model, condiction, content, callback) {
 
 		model.update(condiction, {
 			$set: content
@@ -81,6 +86,9 @@ exports.commonfun = {
 				IsSuccess: false,
 				msg: err
 			});
+			if (callback && typeof callback === "function") {
+				callback.call(req, res);
+			}
 			res.json({
 				IsSuccess: true,
 				data: "更新成功"
@@ -98,6 +106,49 @@ exports.commonfun = {
 			res.json({
 				IsSuccess: true,
 				data: "删除成功"
+			});
+		});
+	},
+
+	upload: function(req, res) {
+		var self = this,
+			response = {};
+
+		uploadF(req, res, function(err) {
+			if (err) self.handlerError(err, res);
+			var des_file = tmepFoler + req.files[0].originalname;
+			fs.readFile(req.files[0].path, function(err0, data) {
+				if (err0) self.handlerError(err0, res);
+				fs.writeFile(des_file, data, function(err1) {
+					if (err1) self.handlerError(err1, res);
+					else {
+						response = {
+							msg: "File uploaded successfully",
+							filename: req.files[0].originalname
+						}
+					}
+					//IE下返回值 会被当作文件来下载
+					res.set('Content-Type', 'text/html;charset=utf-8');
+					res.json(response);
+				});
+			});
+		});
+	},
+
+	writeFileAndRm: function(filename) {
+		var self = this,
+			folderPath = __appRoot + '/tempFile',
+			photoFolder = __appRoot + "/data/photo";
+
+		var src = folderPath + "/" + filename,
+			writeSrc = photoFolder + "/" + filename;
+
+		fs.readFile(src, function(err, data) {
+			if (err) return console.log("读取--" + src + "--文件错误！error:" + err);
+
+			fs.writeFile(writeSrc, data, function(err1) {
+				if (err1) return console.log("写入--" + writeSrc + "--文件错误！error:" + err1);
+				self.recursiveDelFile(folderPath);
 			});
 		});
 	},
