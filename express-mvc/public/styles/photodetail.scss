@@ -1,0 +1,54 @@
+$carouselH: 100%;
+$body_bg: url("/res/images/lg_bg.png") repeat #fff;
+$photo_bg: url("/res/images/carousel_bg.png") #fff;
+
+body {
+    background: $body_bg;
+}
+
+.carousel-custom {
+    height: 500px;
+    background: $photo_bg;
+
+    .carousel-inner {
+        height: $carouselH;
+
+        .item {
+            height: $carouselH;
+
+            img {
+                margin: 0 auto;
+                height: $carouselH;
+            }
+        }
+    }
+}
+
+.panel-custom {
+    position: relative;
+    background: transparent;
+    background: $body_bg;
+    z-index: 2;
+}
+
+.jumborton-custom {
+    color: #fff;
+}
+
+.pusher {
+    display: block;
+    height: 150px;
+}
+
+.foot-in {
+    position: fixed;
+    width: 100%;
+    color: #fff;
+    bottom: 0;
+    z-index: 1;
+
+    .foot-content {
+        background: #000;
+        height: 150px;
+    }
+}
