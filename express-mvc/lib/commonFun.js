@@ -145,7 +145,7 @@ exports.commonfun = {
 	writeFileAndRm: function(filename) {
 		var self = this,
 			folderPath = __appRoot + '/tempFile',
-			photoFolder = __appRoot + "/data/photo";
+			photoFolder = __appRoot + "/resource/data/photo";
 
 		var src = folderPath + "/" + filename,
 			writeSrc = photoFolder + "/" + filename;
