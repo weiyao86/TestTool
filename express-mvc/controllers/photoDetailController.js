@@ -15,8 +15,12 @@ photoDetailController.actions = {
 	},
 
 	read: {
+		filters: [filters.photofilter],
 		POST: function(req, res) {
-			commonfun.queryAll(res, photo);
+			var condition = this.condition,
+				filters = this.filters;
+
+			commonfun.queryAll(res, photo, condition, filters);
 		}
 	},
 

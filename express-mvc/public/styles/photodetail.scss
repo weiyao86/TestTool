@@ -1,54 +1,101 @@
 $carouselH: 100%;
-$body_bg: url("/res/images/lg_bg.png") repeat #fff;
-$photo_bg: url("/res/images/carousel_bg.png") #fff;
+$body_bg: url('/res/images/lg_bg.png') repeat #fff;
+$photo_bg: url('/res/images/carousel_bg.png') #fff;
 
-body {
+body
+{
     background: $body_bg;
 }
 
-.carousel-custom {
+.carousel-custom
+{
     height: 500px;
+
     background: $photo_bg;
-
-    .carousel-inner {
+    .carousel-inner
+    {
         height: $carouselH;
-
-        .item {
+        .item
+        {
             height: $carouselH;
-
-            img {
-                margin: 0 auto;
+            img
+            {
                 height: $carouselH;
+                margin: 0 auto;
             }
         }
     }
 }
 
-.panel-custom {
+@mixin delay-detail{
+    -webkit-transition: all .3s linear;
+                transition: all .3s linear;
+}
+.row-water-panel
+{
     position: relative;
-    background: transparent;
-    background: $body_bg;
-    z-index: 2;
+    .col-for-rowpanel
+    {
+        position: absolute;
+
+        @include delay-detail;
+        .thumbnail
+        {
+            position: relative;
+            cursor:pointer;
+            &:hover .detail-content{
+                top:4px;
+                opacity: .75;
+                @include delay-detail;
+            }
+        }
+        img
+        {
+            min-height: 200px;
+        }
+        .operator-info
+        {
+            line-height: 36px;
+
+            height: 36px;
+            margin-top: -36px;
+            padding-right: 20px;
+
+            text-align: right;
+
+            opacity: .75;
+            color: #fff;
+            background: #000;
+            span
+            {
+                margin: 0 5px;
+                &:hover
+                {
+                    color: #337ab7;
+                }
+            }
+        }
+        .detail-content
+        {
+            position: absolute;
+            top: 50%;
+            right: 4px;
+            bottom: 40px;
+            left: 4px;
+            opacity: 0;
+            background: #000;
+            overflow:auto;
+            padding:4px;
+            @include delay-detail;
+        }
+    }
 }
 
-.jumborton-custom {
-    color: #fff;
-}
 
-.pusher {
-    display: block;
-    height: 150px;
-}
-
-.foot-in {
-    position: fixed;
-    width: 100%;
-    color: #fff;
-    bottom: 0;
-    z-index: 1;
-
-    .foot-content {
-        background: #000;
-        height: 150px;
+.bs-modal-lg
+{
+    img
+    {
+        width: 100%;
     }
 }

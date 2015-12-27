@@ -8,13 +8,25 @@ require(["ajax", "globalConfig", "jquery", "bootstrap", "domReady!"], function(a
 			init: function() {
 				var self = this;
 				self.buildDom();
+				self.bindEvent();
 				self.activeMenuByCtrl();
 			},
 
 			buildDom: function() {
 				var self = this;
+				self.$navPanel = $("#nav_panel");
 				self.$menu = $("#menu_left");
 				self.$globalSearch = $("#global_search");
+			},
+
+			bindEvent: function() {
+				var self = this;
+				$(document).on('scroll', function(e) {
+					if ($(this).scrollTop() > 100) {
+						self.$navPanel.addClass("nav-custom");
+					} else
+						self.$navPanel.removeClass("nav-custom");
+				});
 			},
 
 			activeMenuByCtrl: function() {

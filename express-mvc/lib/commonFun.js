@@ -15,12 +15,18 @@ exports.commonfun = {
 	},
 	queryAll: function(res, model, condition, filters) {
 		var limit = (filters && filters.limit) || 0,
-			idx = (filters && filters.pageIndex) || 1;
+			idx = (filters && filters.pageIndex) || 1,
+			hasRecords = true;
 
 		model.count(condition || {}, function(err, count) {
 			if (err) return handerError(err);
 
 			limit === 0 && (limit = count);
+
+			//计算下一次查询是否还有数据
+			if (count <= limit * idx) {
+				hasRecords = false;
+			}
 
 			var query = model.find(condition || {}, '-__someElse', {
 				'sort': {
@@ -45,7 +51,8 @@ exports.commonfun = {
 				return res.json({
 					IsSuccess: true,
 					data: docs,
-					total: count
+					total: count,
+					hasRecords: hasRecords
 				});
 			});
 

@@ -9,6 +9,9 @@ var mongoose = require("mongoose"),
 		note: {
 			type: String
 		},
+		isFocusPhoto:{
+			type:Boolean
+		},
 		createDate: {
 			type: Date
 		},

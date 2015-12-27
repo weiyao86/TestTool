@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 $bodyTop: 70px;
+$body_bg: url("/res/images/lg_bg.png") repeat #fff;
 $setdeg-count: 12;
 
 %center {
@@ -10,6 +11,19 @@ $setdeg-count: 12;
     right: 0;
     bottom: 0;
     margin: auto;
+}
+%originTransition{
+       transition:all .5s ease;
+    -webkit-transition:all .5s ease;
+}
+
+.nav-custom-origin{
+    font-size:1em;
+    @extend %originTransition;
+}
+.nav-custom{
+    font-size:1.2em;
+   @extend %originTransition;
 }
 
 @mixin centerEl($width: null, $height: null) {
@@ -258,6 +272,36 @@ blockquote {
 @include min-screen(978px) {
     .loading p {
         // display: none;
-   
+    }
+}
+
+
+
+.panel-custom {
+    position: relative;
+    background: transparent;
+    background: $body_bg;
+    z-index: 2;
+}
+
+.jumborton-custom {
+    color: #fff;
+}
+
+.pusher {
+    display: block;
+    height: 150px;
+}
+
+.foot-in {
+    position: fixed;
+    width: 100%;
+    color: #fff;
+    bottom: 0;
+    z-index: 1;
+
+    .foot-content {
+        background: #000;
+        height: 150px;
     }
 }

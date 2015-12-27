@@ -361,6 +361,55 @@
 
 				});
 			}
+		},
+
+		/**
+		 * [waterfall description]瀑布流布局
+		 * @return {[type]} [description]
+		 */
+		waterfall: function() {
+			var $children = this.find(".col-for-rowpanel"),
+				w = $children.outerWidth(),
+				col = Math.floor(this.width() / $children.width()),
+				case_h = [],
+				sum = [],
+				step;
+
+			for (var i = 0; i < col; i++) {
+				case_h.push([]);
+				sum.push(0);
+			}
+
+			$.each($children, function(i) {
+				var m = i % col;
+				step = Math.floor(i / col);
+				$children.eq(i).css("left", w * m + "px");
+				try {
+					case_h[m].push($children.eq(i).outerHeight(true));
+				} catch (e) {
+					console.log('error');
+				}
+				if (!step) {
+					$children.eq(i).css("top", "0");
+				} else {
+					var num = 0;
+					for (var n = 0; n < step; n++) {
+						num += case_h[m][n];
+					}
+					$children.eq(i).css("top", num + "px");
+				}
+			});
+
+			$(case_h).each(function(i) {
+				$(case_h[i]).each(function(j) {
+					sum[i] += case_h[i][j];
+				});
+			});
+			$children.parent().css({
+				"height": sum.sort(function(a, b) {
+					return a < b ? a : -1
+				})[0] + "px"
+			});
 		}
 	});
 
@@ -682,20 +731,39 @@
 			});
 		},
 
-		initBlockMsg: function() {
-			var self = this;
-			if (!$("#loading_animate").size()) {
-				self.$blockMsg = $("<div id='loading_animate' class='loading'><p class='text-center'>Loading...</p></div>");
-				var arr = [];
-				for (var i = 1; i <= 12; i++) {
-					var divStr = '<div class="loading-c-' + i + ' loading-child"></div>';
-					arr.push(divStr);
-				}
-				self.$blockMsg.append(arr.join('')).appendTo("body");
+		initBlockMsg: function(init) {
+			var $blockMsg = $("<div class='loading'><p class='text-center'>Loading...</p></div>");
+			var arr = [];
+			for (var i = 1; i <= 12; i++) {
+				var divStr = '<div class="loading-c-' + i + ' loading-child"></div>';
+				arr.push(divStr);
 			}
-			return $("#loading_animate");
+			$blockMsg.append(arr.join(''));
+			return $blockMsg;
 
-		}
+		},
+
+		debounce: function(fun, wait, immediate) {
+			var timer;
+			return function() {
+				var context = this,
+					args = arguments;
+				var later = function() {
+					timer = null;
+					if (!immediate) {
+						fun.call(context, args);
+					}
+				}
+				var callNow = immediate && !timer;
+				clearTimeout(timer);
+				timer = setTimeout(later, wait);
+				if (callNow) {
+					fun.call(context, args);
+				}
+			};
+		},
+
+		dataBase64Img: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
 	});
 
 })(jQuery);
@@ -767,3 +835,11 @@
 		fx.elem.style.backgroundPosition = nowPosX[0] + ' ' + nowPosX[1];
 	};
 })(jQuery);
+
+window.console.prototype = {
+	log: function(msg) {
+		if (console.log) {
+			console.log(msg);
+		}
+	}
+}

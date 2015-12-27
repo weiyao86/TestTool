@@ -51,28 +51,55 @@ photoController.actions = {
 		GET: function(req, res) {
 			var accout = req.cookies["account"],
 				email = accout.email,
-				uid = accout.email; //pause replace uid
+				uid = accout.email, //pause replace uid
+				rootDirpath = __appRoot + "/resource/data",
+				len = 0,
+				hasfocus = false,
+				files = [],
+				focusFiles = [];
 
-			var arr = [],
-				len = 1500;
-			for (var i = len; i > 0; i--) {
-				arr.push({
-					uid: uid,
-					filename: i + '.jpg',
-					note: '我是第' + i + '张图的描述',
-					createDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
-					creteBy: email,
-					modifyDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
-					modifyBy: ''
+			fs.readdir(rootDirpath, function(err, file) {
+				var rst = [];
+				for (var i = 0; i < file.length; i++) {
+					var curPath = rootDirpath + '/' + file[i];
+					if (fs.statSync(curPath).isDirectory()) {
+						var fileArr = fs.readdirSync(curPath);
+						if (file[i] === "photo") {
+							hasfocus = false;
+						} else if (file[i] === "focus") {
+							hasfocus = true;
+						}
+						len += fileArr.length;
+						rst = rst.concat(callback(fileArr, hasfocus));
+						console.log(file[i] + '===' + hasfocus)
+					}
+				}
+				photo.remove({}, function(err) {
+					photo.create(rst, function(err) {
+						if (err) return commonfun.handlerError(err, res);
+						res.send("<p>" + len + "条数据插入成功<p>");
+						res.end();
+					});
 				});
-			}
-			photo.remove({}, function(err) {
-				photo.create(arr, function(err) {
-					if (err) return commonfun.handlerError(err, res);
-					res.send("<p>" + len + "条数据插入成功<p>");
-					res.end();
-				});
+
 			});
+			var callback = function(fileArr, hasfocus) {
+				var arr = [];
+
+				for (var i = fileArr.length; i > 0; i--) {
+					arr.push({
+						uid: uid,
+						filename: fileArr[i],
+						note: '我是第' + i + '张图的描述',
+						isFocusPhoto: hasfocus,
+						createDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
+						createBy: email,
+						modifyDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
+						modifyBy: ''
+					});
+				}
+				return arr;
+			}
 		}
 	},
 

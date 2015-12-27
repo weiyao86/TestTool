@@ -1,5 +1,6 @@
 	var gu = require("guthrie"),
-		user = require(__appRoot + "/lib/user").user;
+		user = require(__appRoot + "/lib/user").user,
+		maxAge = 1000*60*60*24*5;//过期时间5天
 
 	var loginController = gu.controller.create();
 	loginController.actions = {
@@ -52,14 +53,14 @@
 					if (doc) {
 						if (remeber) {
 							res.cookie("remeber", params, {
-								maxAge: 60 * 60 * 60 * 10
+								maxAge: maxAge
 							});
 						} else {
 							res.clearCookie("remeber");
 						}
 
 						res.cookie("account", params, {
-							maxAge: 60 * 60 * 60 * 10
+							maxAge: maxAge
 						});
 						res.redirect("/main");
 					} else {

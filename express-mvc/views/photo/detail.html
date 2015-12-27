@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-12">
 					<div class="carousel slide carousel-custom" id="carousel">
-						<script id="carousel_template" type="template">
+						<script id="carousel_template" type="text/template">
 							{{#Data}}
 								<ol class="carousel-indicators">
 									{{#list}}
@@ -17,7 +17,7 @@
 								<div class="carousel-inner" role="listbox">
 									{{#data}}
 										<div class="item {{cls}}">
-											<img src="photo/{{filename}}" alt="{{filename}}">	
+											<img src="/data/focus/{{filename}}" alt="{{filename}}" data-field="content">	
 											<div class="carousel-caption">{{filename}}</div>
 										</div>
 									{{/data}}
@@ -46,35 +46,56 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<!-- div.col-sm-6.col-md-3*12>a[href=#].thumbnail>img[src='/photo/test-3.jpg'] -->
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
-				<div class="col-sm-6 col-md-3"><a href="#" class="thumbnail"><img src="/photo/test-3.jpg" alt=""></a></div>
+			<div id="waterfull_content" class="row row-water-panel">
+
+				<!-- div.col-sm-6.col-md-3.col-for-rowpanel[data-toggle="modal"][data-target="#thumbnail_modal"]*12>a[href=javascript:;].thumbnail>img[src='/data/photo/$.jpg'] -->
+				<script id="waterfull_content_template" type="text/template">
+					{{#Data}}
+						{{#data}}
+						<div class="col-xs-12 col-sm-6 col-md-3 col-for-rowpanel" data-field="idx" >
+							<a class="thumbnail"><img  data-field="content" src="/data/photo/{{filename}}" alt="{{filename}}"><div class="operator-info"><span class="glyphicon glyphicon-thumbs-up"></span><span class="glyphicon glyphicon-heart"></span><span data-toggle="modal" data-target="#thumbnail_modal" class="glyphicon glyphicon-picture" title="查看大图"></span></div>
+
+								<div class="detail-content">
+									<div class="container-fulid">
+										<h3>标题</h3>
+										<p><label>Note:</label>{{note}}</p>
+										<p><label>CreateBy:</label>{{createBy}}</p>
+										<p><label>CreateDate:</label>{{createDate}}</p>
+									</div>
+
+								</div>
+							</a>
+						</div>
+						{{/data}}
+					{{/Data}}
+				</script>
+			</div>
 			</div>
 
 
-		</div>
-		<div class="row pusher">
-			<div class="col-sm-12 col-md-12">
-				<div class="jumborton"></div>
-			</div>
-		</div>
+		<%- include('../shared/footer')-%>
+	</div>
 
-		<div class="row foot-in">
-			<div class="col-sm-12 col-md-12">
-				<div class="jumborton foot-content">aaaaaaaaaaaaaaaaaaaaaa</div>
+	<!-- 图片放大图 -->
+	<div id="thumbnail_modal" class="modal fade bs-modal-lg" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+					<h3 class="modal-title">Title</h3>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<img data-field="modal-img" src="" alt=""></div>
+				</div>
+				<div class="modal-footer">
+					<h3 class="text-center">Footer</h3>
+				</div>
 			</div>
 		</div>
-</div>
+	</div>
+
 	<script type='text/javascript' src='/scripts/app/photo/detail.js'></script>
 	<%- include('../shared/bootstrap_footer')-%>
