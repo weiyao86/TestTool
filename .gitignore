@@ -6,7 +6,8 @@
 test2/node_modules
 demo/node_modules
 express-mvc/node_modules
-express-mvc/resource
+express-mvc/resource/photo
+express-mvc/resource/focus
 ext-demo/node_modules
 nodejs-express-mongodb-demo/node_modules
 optimizer/node_modules
