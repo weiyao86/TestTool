@@ -93,7 +93,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					complete: null,
 					beforeModalShown: function(that, name, rowData) {
 						if (name === "update") {
-							that.$edit.find("img[data-field='file']").attr("src", rowData && "/photo/" + rowData.filename);
+							that.$edit.find("img[data-field='file']").attr("src", rowData && "/data/photo/" + rowData.filename);
 						}
 					},
 					afterModalHidden: function() {
