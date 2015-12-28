@@ -8,7 +8,7 @@ demo/node_modules
 express-mvc/node_modules
 express-mvc/resource/data/photo
 express-mvc/resource/data/focus
-express-mvc/tempFile
+
 ext-demo/node_modules
 nodejs-express-mongodb-demo/node_modules
 optimizer/node_modules
