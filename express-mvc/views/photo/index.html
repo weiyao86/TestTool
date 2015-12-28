@@ -39,6 +39,7 @@
 			<div class="form-group pull-right mg-t">
 					<a class="btn btn-primary" data-toggle="tooltip" title="为空查询全部" data-action="search" role="button">Search</a>
 					<a class="btn btn-primary" data-toggle="tooltip" title="清空所有查询条件" data-action="clear">Clear</a>
+					<a class="btn btn-primary" data-toggle="tooltip" title="" id="testupload">Test</a>
 			</div>
 		</div>
 	</div>
@@ -148,12 +149,18 @@
 								<a class="export-cls btn btn-default">
 									<form id="uploadPhoto" method="post" enctype="multipart/form-data">
 										<span class="white">Upload</span>
-										<input type="file" name="example" class="export-cls-file" data-action="upload_photo"/>	
+										<input type="file" name="example" class="export-cls-file" data-action="upload_photo"/>
+										<input type="hidden" name="uploadFile" value="photo"/>
 									</form>
 								</a>
 							</span>
 						</div>
 						<input type="hidden" data-field="_id"></div>
+					<div data-field="progress_photo" class="progress" style="display:none;">
+						<div style="width:0%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" role="progressbar" class="progress-bar progress-bar-primary progress-bar-striped active">
+							0%
+						</div>
+					</div>
 					<div class="input-group thumbnail-panel text-center">
 						<a href="javascript:;" class="thumbnail">
 							<img data-field="file" src="" alt="Thumbnail" class="img-rounded center-block"></a>

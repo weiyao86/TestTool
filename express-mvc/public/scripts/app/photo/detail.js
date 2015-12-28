@@ -23,7 +23,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 			self.page = {
 				limit: 10,
 				pageIndex: 1,
-				isFocusPhoto:false,
+				isFocusPhoto: false,
 				hasRecords: true
 			};
 			//图片是否加载完成
@@ -63,8 +63,10 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 
 			ajax.invoke({
 				url: globalConfig.paths.loadPhotoDetail,
-				contentType:'application/json',
-				data:JSON.stringify({isFocusPhoto:true}),
+				contentType: 'application/json',
+				data: JSON.stringify({
+					isFocusPhoto: true
+				}),
 				beforeSend: function() {
 					self.$carousel.block({
 						css: {
@@ -139,7 +141,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 			});
 
 			//焦点图取前10张
-			rst.data.length = arr.length = 10;
+			rst.data.length = arr.length = arr.length > 10 ? 10 : arr.length;
 
 			rst["list"] = arr;
 

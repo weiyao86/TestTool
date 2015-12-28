@@ -8,11 +8,12 @@ body { background: url("/res/images/lg_bg.png") repeat #fff; }
 .row-water-panel { position: relative; }
 .row-water-panel .col-for-rowpanel { position: absolute; -webkit-transition: all .2s linear; transition: all .2s linear; }
 .row-water-panel .col-for-rowpanel .thumbnail { position: relative; cursor: pointer; }
+.row-water-panel .col-for-rowpanel .thumbnail:hover { box-shadow: 0 0 60px 5px rgba(125, 125, 125, 0.75); -webkit-box-shadow: 0 0 60px 5px rgba(125, 125, 125, 0.75); -webkit-transition: all .2s linear; transition: all .2s linear; }
 .row-water-panel .col-for-rowpanel .thumbnail:hover .detail-content { top: 4px; opacity: .75; -webkit-transition: all .2s linear; transition: all .2s linear; }
 .row-water-panel .col-for-rowpanel img { min-height: 200px; }
 .row-water-panel .col-for-rowpanel .operator-info { line-height: 36px; height: 36px; margin-top: -36px; padding-right: 20px; text-align: right; opacity: .75; color: #fff; background: #000; }
 .row-water-panel .col-for-rowpanel .operator-info span { margin: 0 5px; }
 .row-water-panel .col-for-rowpanel .operator-info span:hover { color: #337ab7; }
-.row-water-panel .col-for-rowpanel .detail-content { position: absolute; top: 50%; right: 4px; bottom: 40px; left: 4px; opacity: 0; background: #000; overflow: auto; padding: 4px; -webkit-transition: all .2s linear; transition: all .2s linear; }
+.row-water-panel .col-for-rowpanel .detail-content { position: absolute; top: 50%; right: 4px; bottom: 40px; left: 4px; opacity: 0; background: #000; color: #fff; overflow: hidden; padding: 4px; -webkit-transition: all .2s linear; transition: all .2s linear; }
 
 .bs-modal-lg img { width: 100%; }

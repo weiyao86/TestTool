@@ -11,6 +11,8 @@ var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 
+var session = require('express-session');
+
 var controllerRouter = require('./controllerRouter');
 // other requires
 var path = require('path');
@@ -42,7 +44,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-
+app.use(session({
+	secret: "nodeMvc"
+}));
 app.use(cookieParser());
 //将public目录作为静态目录
 app.use(express.static(path.join(__dirname, 'public')));
@@ -77,8 +81,8 @@ app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
 
 	//过滤静态文件
-	if(/data/.test(req.originalUrl)){
-		console.log(err+"-----"+req.originalUrl)
+	if (/data/.test(req.originalUrl)) {
+		console.log(err + "-----" + req.originalUrl)
 		return next();
 	}
 	//暴露错误信息

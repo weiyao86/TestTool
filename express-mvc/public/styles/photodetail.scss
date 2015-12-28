@@ -1,25 +1,22 @@
 $carouselH: 100%;
-$body_bg: url('/res/images/lg_bg.png') repeat #fff;
-$photo_bg: url('/res/images/carousel_bg.png') #fff;
+$body_bg: url("/res/images/lg_bg.png") repeat #fff;
+$photo_bg: url("/res/images/carousel_bg.png") #fff;
 
-body
-{
+body {
     background: $body_bg;
 }
 
-.carousel-custom
-{
+.carousel-custom {
     height: 500px;
-
     background: $photo_bg;
-    .carousel-inner
-    {
+
+    .carousel-inner {
         height: $carouselH;
-        .item
-        {
+
+        .item {
             height: $carouselH;
-            img
-            {
+
+            img {
                 height: $carouselH;
                 margin: 0 auto;
             }
@@ -27,56 +24,62 @@ body
     }
 }
 
-@mixin delay-detail{
+@mixin delay-detail {
     -webkit-transition: all .2s linear;
-                transition: all .2s linear;
+    transition: all .2s linear;
 }
-.row-water-panel
-{
+
+.row-water-panel {
     position: relative;
-    .col-for-rowpanel
-    {
+
+    .col-for-rowpanel {
         position: absolute;
 
         @include delay-detail;
-        .thumbnail
-        {
+
+        .thumbnail {
             position: relative;
-            cursor:pointer;
-            &:hover .detail-content{
-                top:4px;
-                opacity: .75;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 0 60px 5px rgba(125, 125, 125, 0.75);
+                -webkit-box-shadow: 0 0 60px 5px rgba(125, 125, 125, 0.75);
+
                 @include delay-detail;
+
+                .detail-content {
+                    top: 4px;
+                    opacity: .75;
+
+                    @include delay-detail;
+                }
             }
         }
-        img
-        {
+
+        img {
             min-height: 200px;
         }
-        .operator-info
-        {
-            line-height: 36px;
 
+        .operator-info {
+            line-height: 36px;
             height: 36px;
             margin-top: -36px;
             padding-right: 20px;
-
             text-align: right;
-
             opacity: .75;
             color: #fff;
             background: #000;
-            span
-            {
+
+            span {
                 margin: 0 5px;
-                &:hover
-                {
+
+                &:hover {
                     color: #337ab7;
                 }
             }
         }
-        .detail-content
-        {
+
+        .detail-content {
             position: absolute;
             top: 50%;
             right: 4px;
@@ -84,18 +87,17 @@ body
             left: 4px;
             opacity: 0;
             background: #000;
-            overflow:auto;
-            padding:4px;
+            color: #fff;
+            overflow: hidden;
+            padding: 4px;
+
             @include delay-detail;
         }
     }
 }
 
-
-.bs-modal-lg
-{
-    img
-    {
+.bs-modal-lg {
+    img {
         width: 100%;
     }
 }

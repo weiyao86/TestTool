@@ -12,6 +12,8 @@
     "ejs": "~2.3.3",
     "excel-export": "^0.4.1",
     "express": "~4.13.1",
+    "express-session": "^1.12.1",
+    "formidable": "^1.0.17",
     "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "~0.9.1",
     "grunt-contrib-watch": "~0.6.1",

@@ -9,11 +9,6 @@ var gu = require("guthrie"),
 	baseController = require("./mybaseController"),
 	photoController = gu.controller.inherit(baseController);
 
-var multer = require('multer');
-var uploadF = multer({
-	dest: __appRoot + '/tempFile'
-}).array("example");
-
 photoController.actions = {
 	index: {
 		GET: function(req, res) {
@@ -27,13 +22,22 @@ photoController.actions = {
 			var condition = this.condition,
 				filters = this.filters;
 
+			req.session["photo"] = 0;
+
 			commonfun.queryAll(res, photo, condition, filters);
 		}
 	},
 
 	upload: {
 		POST: function(req, res) {
-			commonfun.upload(req, res);
+			commonfun.uploadFormidable(req, res);
+			//commonfun.upload(req, res);
+		}
+	},
+
+	getFileProgess: {
+		POST: function(req, res) {
+			commonfun.getFileProgess(req, res);
 		}
 	},
 
@@ -71,7 +75,6 @@ photoController.actions = {
 						}
 						len += fileArr.length;
 						rst = rst.concat(callback(fileArr, hasfocus));
-						console.log(file[i] + '===' + hasfocus)
 					}
 				}
 				photo.remove({}, function(err) {
@@ -86,7 +89,7 @@ photoController.actions = {
 			var callback = function(fileArr, hasfocus) {
 				var arr = [];
 
-				for (var i = fileArr.length; i > 0; i--) {
+				for (var i = 0; i < fileArr.length; i++) {
 					arr.push({
 						uid: uid,
 						filename: fileArr[i],

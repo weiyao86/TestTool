@@ -28,16 +28,20 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 
 			self.$photo = self.$edit.find("[data-field='file']");
 
+			self.$progressPhoto = self.$edit.find("[data-field='progress_photo']");
+			self.timer = null;
+
 		},
 
 		bindEvent: function() {
 			var self = this;
+
 			self.$btnUpload.on({
 				"click": function() {
 					$(this).val("");
-					console.log("click");
 				},
 				"change": function(e) {
+
 					var reg = new RegExp(/\\(\w+\.\w+)$/);
 
 					var filename = (this.files && this.files[0].name) || $(this).val().match(reg)[1];
@@ -45,7 +49,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					self.$edit.find("[data-field='filename']").val(filename);
 
 					$("#uploadPhoto").ajaxSubmit({
-						url: globalConfig.paths.uploadPhoto,
+						url: globalConfig.paths.uploadPhoto + "?uploadFile=photo",
 						resetForm: false,
 						type: 'POST',
 						dataType: 'json',
@@ -61,17 +65,26 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 								},
 								message: $.initBlockMsg()
 							});
+
+							self.$progressPhoto.show().children().css({
+								"width": 0
+							});
+
 							return true;
 						},
 						success: function(rst) {
-							var fileSrc = "/" + rst.filename; // globalConfig.host+rst.filename;
+							var fileSrc = "/" + rst[0].filename; // globalConfig.host+rst.filename;
 							self.$edit.unblock();
 							self.$photo.attr("src", fileSrc);
-							// self.$editPanel.modal("hide");
-							// $.messageAlert(rst.msg + " : " + rst.filename);
 						},
 					});
+
+					self.listenerUpload();
 				}
+			});
+
+			$("#testupload").on("click", function() {
+				self.listenerUpload();
 			});
 		},
 
@@ -93,7 +106,11 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					complete: null,
 					beforeModalShown: function(that, name, rowData) {
 						if (name === "update") {
-							that.$edit.find("img[data-field='file']").attr("src", rowData && "/data/photo/" + rowData.filename);
+							var path = "/data/photo/" + rowData.filename;
+							if (rowData.isFocusPhoto.toLowerCase() == "true") {
+								path = "/data/focus/" + rowData.filename;
+							}
+							that.$edit.find("img[data-field='file']").attr("src", rowData && path);
 						}
 					},
 					afterModalHidden: function() {
@@ -131,6 +148,34 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 				modalAlert: "modal_alert"
 			});
 			self.grid.load();
+		},
+
+		listenerUpload: function() {
+			var self = this;
+
+			ajax.invoke({
+				type: "POST",
+				url: globalConfig.paths.getFileProgess,
+				data: {
+					uploadFile: 'photo'
+				},
+				success: function(rst) {
+					if (rst.progress == "100") {
+						self.$progressPhoto.hide();
+						clearTimeout(self.timer);
+					} else {
+						self.timer = setTimeout(function() {
+							self.listenerUpload();
+						}, 1 * 500);
+					}
+					self.$progressPhoto.children().css({
+						"width": rst.progress + '%'
+					}).html(rst.progress + '%');
+				},
+				failed: function(err) {
+					alert(err.reason);
+				}
+			});
 		}
 	};
 

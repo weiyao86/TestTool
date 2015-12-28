@@ -1,7 +1,12 @@
 var fs = require("fs"),
 	moment = require("moment"),
-	multer = require('multer'),
+	multer = require('multer'), //上传文件中间件
+	formidable = require('formidable'), //上传文件插件 可支持做进度条
 	tmepFoler = __appRoot + '/tempFile/',
+	upprogress = {
+		size: 0
+	},
+	temp,
 	uploadF = multer({
 		dest: tmepFoler
 	}).array("example");
@@ -117,9 +122,74 @@ exports.commonfun = {
 		});
 	},
 
+	getFileProgess: function(req, res) {
+		var self = this,
+			size = upprogress.size,
+			temp = 0;
+
+		if ("size" in upprogress) {
+			temp = size;
+			if (size == 100) {
+				delete upprogress.size;
+			}
+		}
+		res.json({
+			IsSuccess: true,
+			progress: temp
+		});
+	},
+
+	uploadFormidable: function(req, res) {
+		var self = this,
+			response = [];
+
+		upprogress.size = 0;
+		//创建表单上传
+		var form = new formidable.IncomingForm();
+		form.encoding = 'utf-8';
+		form.uploadDir = tmepFoler;
+		form.keepExtensions = true;
+		form.maxFiledsSize = 10 * 1024 * 1024 * 1024;
+
+		form.on("field", function(name, val) {});
+
+		form.on("error", function(err) {
+			console.log("file upload error" + err);
+		});
+
+		form.on("aborted", function() {
+			console.log("file upload aborted");
+		});
+
+
+		form.on("progress", function(bytesRecieved, bytesExpected) {
+			upprogress.size = Math.ceil((bytesRecieved / bytesExpected) * 100);
+		});
+
+		form.on("end", function(bytesRecieved, bytesExpected) {});
+
+		form.parse(req, function(err, fields, files) {
+			if (err) self.handlerError(err, res);
+			else {
+				var file;
+				for (var key in files) {
+					file = files[key];
+					response.push({
+						msg: "File uploaded successfully",
+						filename: file.name
+					});
+					fs.renameSync(file.path, tmepFoler + file.name);
+				}
+			}
+
+			res.set('Content-Type', 'text/html;charset=utf-8');
+			res.json(response);
+		});
+	},
+
 	upload: function(req, res) {
 		var self = this,
-			response = {};
+			response = [];
 
 		uploadF(req, res, function(err) {
 			if (err) self.handlerError(err, res);
@@ -129,10 +199,10 @@ exports.commonfun = {
 				fs.writeFile(des_file, data, function(err1) {
 					if (err1) self.handlerError(err1, res);
 					else {
-						response = {
+						response.push({
 							msg: "File uploaded successfully",
 							filename: req.files[0].originalname
-						}
+						});
 					}
 					//IE下返回值 会被当作文件来下载
 					res.set('Content-Type', 'text/html;charset=utf-8');
