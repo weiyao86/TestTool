@@ -14,6 +14,7 @@ photoController.actions = {
 		GET: function(req, res) {
 			res.view();
 		}
+		
 	},
 
 	read: {
