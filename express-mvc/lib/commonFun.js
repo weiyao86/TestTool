@@ -125,7 +125,7 @@ exports.commonfun = {
 	getFileProgess: function(req, res) {
 		var self = this,
 			size = upprogress.size,
-			temp = 0;
+			temp = 100;
 
 		if ("size" in upprogress) {
 			temp = size;

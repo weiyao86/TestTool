@@ -43,16 +43,15 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }));
 
-
-app.use(session({
-	secret: "nodeMvc"
-}));
-app.use(cookieParser());
 //将public目录作为静态目录
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'resource')));
 app.use(express.static(path.join(__dirname, 'tempFile')));
 
+app.use(session({
+	secret: "nodeMvc"
+}));
+app.use(cookieParser());
 
 app.use(function(req, res, next) {
 
@@ -65,8 +64,6 @@ app.use(function(req, res, next) {
 
 //set router for controller
 controllerRouter.routerMap(app);
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -81,8 +78,8 @@ app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
 
 	//过滤静态文件
-	if (/data/.test(req.originalUrl)) {
-		console.log(err + "-----" + req.originalUrl)
+	if (/data|res|scripts|styles/.test(req.originalUrl)) {
+		console.log("过滤静态文件,此处错误忽略！"+'-----'+err + "-----" + req.originalUrl)
 		return next();
 	}
 	//暴露错误信息

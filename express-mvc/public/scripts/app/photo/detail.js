@@ -128,6 +128,13 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 				cls = "active",
 				tempHtml;
 
+			//焦点图取前10张
+			data.length = data.length > 10 ? 10 : data.length;
+
+			data = data.sort(function() {
+				return Math.random() > 0.6 ? 1 : -1;
+			});
+
 			for (; i < data.length; i++) {
 				arr.push({
 					"idx": i,
@@ -136,14 +143,9 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 				data[i]["cls"] = cls;
 				cls = "";
 			}
-			rst.data = data.sort(function() {
-				return Math.random() > 0.6 ? 1 : -1;
-			});
-
-			//焦点图取前10张
-			rst.data.length = arr.length = arr.length > 10 ? 10 : arr.length;
-
+			arr.length = data.length;
 			rst["list"] = arr;
+			rst.data = data;
 
 			tempHtml = Mustache.render(self.carouselHtml, {
 				Data: rst

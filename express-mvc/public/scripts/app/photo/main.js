@@ -160,7 +160,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					uploadFile: 'photo'
 				},
 				success: function(rst) {
-					if (rst.progress == "100") {
+					if (rst.progress == 100) {
 						self.$progressPhoto.hide();
 						clearTimeout(self.timer);
 					} else {
