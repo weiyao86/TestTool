@@ -21,12 +21,15 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 		buildDom: function() {
 			var self = this;
 
+			self.$filtersScope=$("#filters_scope");
 			self.$editPanel = $("#modal_edit");
 			self.$edit = self.$editPanel.children();
 
 			self.$btnUpload = self.$edit.find("[data-action='upload_photo']");
 
 			self.$photo = self.$edit.find("[data-field='file']");
+
+			self.$isFocus=$("#focus_photo");
 
 			self.$progressPhoto = self.$edit.find("[data-field='progress_photo']");
 
@@ -96,6 +99,12 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 
 					self.$uploadForm.submit();
 				}
+			});
+
+			self.$isFocus.on("click","li a",function(e){
+				var $btn=$(this).closest("ul").prev();
+				$btn.find("[data-val]").html($(this).html());
+				$btn.find("[data-field='isFocusPhoto']").html($(this).attr("data-val"));
 			});
 
 		},

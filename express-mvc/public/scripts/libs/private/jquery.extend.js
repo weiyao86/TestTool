@@ -177,19 +177,26 @@
 
 				if (key == undefined)
 					return;
+				var html = $el.html(),
+					val = $el.val();
+				html == "true" && (html = true);
+				html == "false" && (html = false);
+				val == "true" && (val = true);
+				val == "false" && (val = false);
+				
 				var tagN = element.tagName.toUpperCase();
 				if (tagN == "INPUT") {
 					type = $el.attr("type");
 
 					switch (type) {
 						case "text":
-							resultObj[key] = $el.val();
+							resultObj[key] = val;
 							break;
 						case "checkbox":
 							resultObj[key] = $el.is(":checked");
 							break;
 						case "hidden":
-							resultObj[key] = $el.val();
+							resultObj[key] = val;
 							break;
 						default:
 							break;
@@ -198,13 +205,13 @@
 					if ($el.val().length == 0)
 						resultObj[key] = "";
 					else
-						resultObj[key] = $el.val(); // { "text": $el.find("option:selected").text(), "value": $el.val() };
+						resultObj[key] = val; // { "text": $el.find("option:selected").text(), "value": $el.val() };
 				} else if (tagN == "A") {
-					resultObj[key] = $el.html();
+					resultObj[key] = html;
 				} else if (tagN == "DIV" || tagN == "SPAN") {
-					resultObj[key] = $el.html();
+					resultObj[key] = html;
 				} else if (tagN == "TEXTAREA") {
-					resultObj[key] = $el.val() || $el.text();
+					resultObj[key] = val || $el.text();
 				} else if (tagN == "IMG") {
 					resultObj[key] = $el.attr("src");
 				}

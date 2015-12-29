@@ -21,21 +21,21 @@
 			<div class="form-group mg-t">
 				<div class="input-group">
 					<!-- <span>focus:</span> -->
-					<span class="input-group-addon">focus:</span>
-					<span class="input-group-addon"><input type="checkbox" class="check-addon"></span><!-- data-field="isFocusPhoto" -->
+					<span class="input-group-addon addon-right">focus:</span>
+					<!--<span class="input-group-addon"><input type="checkbox" data-field="isFocusPhoto" class="check-addon"></span>-->
 					<!-- Single button -->
-					<!-- <div class="btn-group">
-					  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    焦点图 <span class="caret"></span>
+					<div class="btn-group">
+					<button type="button"  class="btn btn-default dropdown-toggle addon-left" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span data-val="val">All</span><span data-field='isFocusPhoto' class="sr-only"></span> <span class="caret"></span>
 					  </button>
-					  <ul class="dropdown-menu">
-					    <li><a href="#">Yes</a></li>
+					  <ul class="dropdown-menu"  id="focus_photo">
+					    <li><a href="javascript:;" data-val="">All</a></li>
 					    <li role="separator" class="divider"></li>
-					    <li><a href="#">No</a></li>
+					    <li><a href="javascript:;" data-val="true">Yes</a></li>
+					    <li><a href="javascript:;" data-val="false">No</a></li>
 					  </ul>
-					</div> -->
+					</div>
 				</div>
-			</div>	
+			</div>
 			<div class="form-group pull-right mg-t">
 					<a class="btn btn-primary" data-toggle="tooltip" title="为空查询全部" data-action="search" role="button">Search</a>
 					<a class="btn btn-primary" data-toggle="tooltip" title="清空所有查询条件" data-action="clear">Clear</a>
