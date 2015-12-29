@@ -37,7 +37,7 @@ app.set('view engine', 'html');
 // }).array("file"));
 
 
-
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: false
@@ -79,7 +79,7 @@ app.use(function(err, req, res, next) {
 
 	//过滤静态文件
 	if (/data|res|scripts|styles/.test(req.originalUrl)) {
-		console.log("过滤静态文件,此处错误忽略！"+'-----'+err + "-----" + req.originalUrl)
+		console.log("过滤静态文件,此处错误忽略！" + '-----' + err + "-----" + req.originalUrl)
 		return next();
 	}
 	//暴露错误信息

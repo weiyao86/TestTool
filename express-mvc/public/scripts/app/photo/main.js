@@ -29,12 +29,58 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 			self.$photo = self.$edit.find("[data-field='file']");
 
 			self.$progressPhoto = self.$edit.find("[data-field='progress_photo']");
+
+			//upload form
+			self.$uploadForm = $("#uploadPhoto");
 			self.timer = null;
 
 		},
 
 		bindEvent: function() {
-			var self = this;
+			var self = this,
+				isUploadProperty = $.ajaxSettings.xhr().upload; //support h5 upload pertotype
+
+			self.$uploadForm.ajaxForm({
+				url: globalConfig.paths.uploadPhoto,
+				resetForm: false,
+				type: 'POST',
+				dataType: 'json',
+				beforeSend: function() {
+					self.$edit.block({
+						css: {
+							border: "none",
+							left: "50%",
+							width: 50,
+							height: 50,
+							background: "transparent"
+						},
+						message: $.initBlockMsg()
+					});
+
+					self.$progressPhoto.show().children().css({
+						"width": 0
+					});
+
+					if (!isUploadProperty) {
+						self.listenerUpload();
+					}
+				},
+				uploadProgress: function(event, position, total, percentComplete) {
+					var percentVal = percentComplete + '%';
+					self.$progressPhoto.children().css({
+						"width": percentVal
+					}).html(percentVal);
+				},
+				complete: function() {
+					self.$progressPhoto.hide();
+				},
+
+				success: function(rst) {
+					var fileSrc = "/" + rst[0].filename;
+					self.$edit.unblock();
+					self.$photo.attr("src", fileSrc);
+				}
+			});
 
 			self.$btnUpload.on({
 				"click": function() {
@@ -48,44 +94,10 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 
 					self.$edit.find("[data-field='filename']").val(filename);
 
-					$("#uploadPhoto").ajaxSubmit({
-						url: globalConfig.paths.uploadPhoto + "?uploadFile=photo",
-						resetForm: false,
-						type: 'POST',
-						dataType: 'json',
-						iframe: true,
-						beforeSubmit: function() {
-							self.$edit.block({
-								css: {
-									border: "none",
-									left: "50%",
-									width: 50,
-									height: 50,
-									background: "transparent"
-								},
-								message: $.initBlockMsg()
-							});
-
-							self.$progressPhoto.show().children().css({
-								"width": 0
-							});
-
-							return true;
-						},
-						success: function(rst) {
-							var fileSrc = "/" + rst[0].filename; // globalConfig.host+rst.filename;
-							self.$edit.unblock();
-							self.$photo.attr("src", fileSrc);
-						},
-					});
-
-					self.listenerUpload();
+					self.$uploadForm.submit();
 				}
 			});
 
-			$("#testupload").on("click", function() {
-				self.listenerUpload();
-			});
 		},
 
 		initComponent: function() {
