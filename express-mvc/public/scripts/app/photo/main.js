@@ -21,7 +21,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 		buildDom: function() {
 			var self = this;
 
-			self.$filtersScope=$("#filters_scope");
+			self.$filtersScope = $("#filters_scope");
 			self.$editPanel = $("#modal_edit");
 			self.$edit = self.$editPanel.children();
 
@@ -29,7 +29,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 
 			self.$photo = self.$edit.find("[data-field='file']");
 
-			self.$isFocus=$("#focus_photo");
+			self.$isFocus = $("#focus_photo");
 
 			self.$progressPhoto = self.$edit.find("[data-field='progress_photo']");
 
@@ -101,8 +101,8 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 				}
 			});
 
-			self.$isFocus.on("click","li a",function(e){
-				var $btn=$(this).closest("ul").prev();
+			self.$isFocus.on("click", "li a", function(e) {
+				var $btn = $(this).closest("ul").prev();
 				$btn.find("[data-val]").html($(this).html());
 				$btn.find("[data-field='isFocusPhoto']").html($(this).attr("data-val"));
 			});
@@ -128,7 +128,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					beforeModalShown: function(that, name, rowData) {
 						if (name === "update") {
 							var path = "/data/photo/" + rowData.filename;
-							if (rowData.isFocusPhoto.toLowerCase() == "true") {
+							if (rowData.isFocusPhoto == true || rowData.isFocusPhoto == "true") {
 								path = "/data/focus/" + rowData.filename;
 							}
 							that.$edit.find("img[data-field='file']").attr("src", rowData && path);
