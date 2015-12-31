@@ -76,6 +76,9 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 
 			//loading
 			self.$blockMsg = $.initBlockMsg();
+
+			//response data
+			self.data = [];
 		},
 
 		bindEvent: function() {
@@ -98,12 +101,16 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 
 			self.$grid.on("click", "[data-field='update'],[data-field='del']", function() {
 				var field = $(this).attr("data-field"),
-					id = $(this).closest("tr").selectedAllAppointScope()["_id"];
+					ids = $(this).closest("tr").attr("data-val");
+				if (ids) {
+					ids = JSON.parse(ids);
+				}
+
 				switch (field) {
 					case "update":
 						self.$edit.prop("model", {
 							"name": "update",
-							"idx": $(this).closest("tr").index()
+							"ids": ids
 						}).modal({
 							backdrop: true, //默认,是否显示背景,值为static时点击背景无效
 							keyboard: true, //默认,点击esc消失
@@ -111,7 +118,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 						});
 						break;
 					case "del":
-						self.$modalConfirm.data("id", id).modal({
+						self.$modalConfirm.data("ids", ids).modal({
 							backdrop: 'static'
 						}).find("[data-field='tip_info']").html("Confirm delete the record?");
 						break;
@@ -131,15 +138,18 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			self.$edit.on("shown.bs.modal", function(evt) {
 				var model = $(this).prop("model"),
 					$tr, rst;
+
 				if (model.name === "update") {
-					$tr = self.$grid.find(">tbody>tr:eq(" + model.idx + ")");
-					rst = $tr.selectedAllAppointScope();
+					if($.isEmptyObject(model.ids))return self.log("未设置更新参数！");
+					console.log(model.ids)
+					rst = self.findDataByIds(model.ids);
 					self.$edit.loadAppointScope(rst);
 				}
 				if ($.type(self.opts.callbacks.beforeModalShown) === "function") {
 					self.opts.callbacks.beforeModalShown.call(self, self, model.name, rst);
 				}
 			});
+
 
 			self.$edit.on("hidden.bs.modal", function() {
 				self.$edit.clearAllAppointScope();
@@ -157,6 +167,29 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 					"name": "create"
 				}).modal("show");
 			});
+		},
+
+		findDataByIds: function(ids) {
+			var self = this,
+				i = 0,
+				data=self.data.data,
+				len = data.length,
+				j,
+				flag;
+
+			for (; i < len; i++) {
+				flag = true;
+				for (j in ids) {
+					if (data[i][j] != ids[j]) {
+						flag = false;
+					}
+				}
+				if (flag) {
+					return data[i];
+				}
+			}
+			return {};
+
 		},
 
 		initComponent: function() {
@@ -225,8 +258,10 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 			var self = this,
 				tempHtml;
 
+			self.data = rst;
+
 			if (typeof self.opts.callbacks.beforeRender === "function") {
-				self.opts.callbacks.beforeRender.call(self, rst);
+				self.opts.callbacks.beforeRender.call(self, self.data);
 			};
 
 			tempHtml = Mustache.render(self.template, {
@@ -243,7 +278,7 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 		afterRender: function() {
 			var self = this;
 			if (typeof self.opts.callbacks.afterRender === "function") {
-				self.opts.callbacks.afterRender.call(self);
+				self.opts.callbacks.afterRender.call(self, self.data);
 			}
 		},
 
@@ -304,16 +339,14 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 
 		destroy: function() {
 			var self = this,
-				id = self.$modalConfirm.data("id");
+				ids = self.$modalConfirm.data("ids");
 
-			if (!id) return;
+			if ($.isEmptyObject(ids)) return;
 
 			ajax.invoke({
 				url: self.opts.urls.destroy,
 				contentType: "application/json",
-				data: JSON.stringify({
-					_id: id
-				}),
+				data: JSON.stringify(ids),
 				success: function(rst) {
 					if (rst.msg) {
 						if ($.type(self.opts.callbacks.operatorError) === "function") {
@@ -347,6 +380,12 @@ define(["paging", "ajax", "mustache", "blockUI", "jqExtend", "jquery"], function
 		toggleActive: function($target) {
 			var self = this;
 			$target.siblings(".bg-active").removeClass("bg-active").end().addClass("bg-active");
+		},
+
+		log:function(msg){
+			if(window.console && window.console.log){
+				window.console.log(msg);
+			}
 		}
 	};
 	return Grid;

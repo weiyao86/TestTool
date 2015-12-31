@@ -95,6 +95,7 @@ photoController.actions = {
 						filename: fileArr[i],
 						note: '我是第' + i + '张图的描述',
 						isFocusPhoto: hasfocus,
+						sort:i,
 						createDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
 						createBy: email,
 						modifyDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),

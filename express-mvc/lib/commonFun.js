@@ -35,6 +35,7 @@ exports.commonfun = {
 
 			var query = model.find(condition || {}, '-__someElse', {
 				'sort': {
+					"sort":1,
 					"_id": -1
 				}
 			});

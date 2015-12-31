@@ -12,6 +12,9 @@ var mongoose = require("mongoose"),
 		isFocusPhoto:{
 			type:Boolean
 		},
+		sort:{
+			type:Number
+		},
 		createDate: {
 			type: Date
 		},
