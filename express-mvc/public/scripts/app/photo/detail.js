@@ -118,6 +118,34 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 					$.messageAlert(err.reason);
 				}
 			});
+
+			//预请求下一组图片
+			var prePhotos = $.extend({}, self.page, {
+				pageIndex: self.page.pageIndex + 1
+			});
+			self.preMainPhoto(prePhotos);
+		},
+
+		preMainPhoto: function(params) {
+
+			var self = this;
+			ajax.invoke({
+				url: globalConfig.paths.loadPhotoDetail,
+				data: params,
+				success: function(rst) {
+					var img;
+					$.each(rst.data, function(idx, val) {
+						img = new Image();
+						img.onload = function() {
+							//console.log(val+'=========='+this.src);
+						}
+						img.src = '/data/photo/' + val.filename;
+					});
+				},
+				failed: function(err) {
+					consloe.log(err.reason)
+				}
+			});
 		},
 
 		render: function(rst) {
@@ -203,6 +231,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 					}
 					self.page.pageIndex++;
 					self.mainContent(self.page);
+
 				};
 				if (!self.loadGlobalFlag) {
 					setTimeout(later, 300);
