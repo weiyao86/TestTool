@@ -1,4 +1,4 @@
-.nav-custom-origin, .nav-custom { transition: all .5s ease; -webkit-transition: all .5s ease; }
+.nav-custom-origin, .nav-custom, .scroll-top { transition: all .5s ease; -webkit-transition: all .5s ease; }
 
 .nav-custom-origin { font-size: 1em; }
 
@@ -95,10 +95,20 @@ blockquote:before { position: absolute; content: ""; display: block; border-styl
 .pusher { display: block; height: 150px; }
 
 .foot-in { position: fixed; width: 100%; color: #fff; bottom: 0; z-index: 1; }
-.foot-in .foot-content { background: #000; height: 150px; }
+.foot-in .foot-content { background: #222; height: 150px; text-align: center; }
+.foot-in .foot-content div { padding: 50px 0; }
+.foot-in .foot-content a { color: #fff; }
+.foot-in .send-email { font-size: 1.5em; }
 
 input.check-addon[type="checkbox"], input.check-addon[type="radio"] { margin: 4px 0; }
 
 .addon-right { border-radius: 4px 0 0 4px; }
 
 .addon-left { border-radius: 0 4px 4px 0; }
+
+.no-padding { padding: 0; }
+
+.pipe { margin: 0 5px; color: #CCC; }
+
+.scroll-top { position: fixed; bottom: 150px; display: none; color: #666; right: 2px; z-index: 2; font-size: 3em; cursor: pointer; }
+.scroll-top:hover { color: #fff; }

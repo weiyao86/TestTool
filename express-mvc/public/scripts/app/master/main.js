@@ -2,6 +2,9 @@ require(["ajax", "globalConfig", "jquery", "bootstrap", "domReady!"], function(a
 	var initBootstrap = {
 			init: function() { //init bootstrap reference
 				$("[data-toggle='popover']").popover();
+				$("[data-toggle='tooltip']").tooltip({
+					placement: 'bottom'
+				});
 			}
 		},
 		main = {
@@ -16,17 +19,35 @@ require(["ajax", "globalConfig", "jquery", "bootstrap", "domReady!"], function(a
 				var self = this;
 				self.$navPanel = $("#nav_panel");
 				self.$menu = $("#menu_left");
+				self.$scrollTop = $(".scroll-top");
 				self.$globalSearch = $("#global_search");
 			},
 
 			bindEvent: function() {
 				var self = this;
-				$(document).on('scroll', function(e) {
+				$(window).on('scroll', function(e) {
 					if ($(this).scrollTop() > 100) {
 						self.$navPanel.addClass("nav-custom");
 					} else
 						self.$navPanel.removeClass("nav-custom");
+					self.showScrollGlyph();
 				});
+
+				self.$scrollTop.on("click", function() {
+					$("html,body").animate({"scrollTop":0});
+				});
+
+			},
+
+
+			showScrollGlyph: function() {
+				var self = this,
+					scrollTop = $(window).scrollTop();
+				if (scrollTop > 200) {
+					self.$scrollTop.show();
+				} else {
+					self.$scrollTop.hide();
+				}
 			},
 
 			activeMenuByCtrl: function() {

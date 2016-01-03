@@ -186,6 +186,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 			self.preLoad($("img"), progess);
 		},
 
+
 		scrollload: function(timer) {
 			var self = this,
 				winH = $(window).height(),
@@ -225,7 +226,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 					// console.log("success");
 				},
 				always: function(isbroker, $images, $proper, $broker) {
-					if (typeof fun === "function") {
+					if (typeof fun === "function" && $img.size()) {
 						fun.call(self);
 					}
 					if (progess == undefined) return;

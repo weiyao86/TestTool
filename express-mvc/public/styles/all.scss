@@ -301,11 +301,22 @@ blockquote {
     z-index: 1;
 
     .foot-content {
-        background: #000;
+        background: #222;
         height: 150px;
+        text-align:center;div{padding:50px 0;}
+        a{color:#fff;}
+    }
+    .send-email{
+        font-size:1.5em;
     }
 }
 
 input.check-addon[type="checkbox"],input.check-addon[type="radio"]{margin:4px 0;}
 .addon-right{border-radius:4px 0 0 4px;}
 .addon-left{border-radius:0 4px 4px 0;}
+
+.no-padding{
+    padding:0;
+}
+.pipe{margin: 0 5px;color: #CCC;}
+.scroll-top{position:fixed;bottom:150px;display:none;color:#666;right:2px;z-index:2;font-size:3em;cursor:pointer; @extend %originTransition;&:hover{color:#fff;}}

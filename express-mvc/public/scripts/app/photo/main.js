@@ -1,13 +1,5 @@
 require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fader", "tabPanel", "blockUI", "jquery", "bootstrap", "domReady!"], function(ajax, globalConfig, Mustache, Grid) {
-	var initBootstrap = {
-			init: function() { //init bootstrap reference
-				$("[data-toggle='popover']").popover();
-				$("[data-toggle='tooltip']").tooltip({
-					placement: 'bottom'
-				});
-			}
-		},
-		Main = function() {
+	var Main = function() {
 			this.init();
 		};
 	Main.prototype = {
@@ -36,6 +28,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 			//upload form
 			self.$uploadForm = $("#uploadPhoto");
 			self.timer = null;
+			self.dataSort={};
 
 		},
 
@@ -123,7 +116,11 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 				callbacks: {
 					beforeSend: null,
 					beforeRender: null,
-					afterRender: null,
+					afterRender: function(rst){
+						self.dataSort=$.map(rst.data,function(val,idx){
+							return [idx];
+						});
+					},
 					complete: null,
 					beforeModalShown: function(that, name, rowData) {
 						if (name === "update") {
@@ -199,8 +196,6 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 			});
 		}
 	};
-
-	initBootstrap.init();
 
 	new Main();
 });
