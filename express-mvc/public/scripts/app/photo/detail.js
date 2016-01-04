@@ -48,6 +48,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 			}, 300));
 
 			$(window).on("scroll", function() {
+
 				self.scrollload(timer);
 			});
 		},
@@ -98,7 +99,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 				url: globalConfig.paths.loadPhotoDetail,
 				data: params,
 				beforeSend: function() {
-					self.$waterFall.block({
+					$.blockUI({
 						css: {
 							border: "none",
 							width: 50,
@@ -109,7 +110,8 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 					});
 				},
 				complete: function() {
-					self.$waterFall.unblock();
+					//self.$waterFall.unblock();
+					$.unblockUI();
 				},
 				success: function(rst) {
 					self.renderMaincontent(rst);

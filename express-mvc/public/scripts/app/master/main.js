@@ -20,6 +20,8 @@ require(["ajax", "globalConfig", "jquery", "bootstrap", "domReady!"], function(a
 				self.$navPanel = $("#nav_panel");
 				self.$menu = $("#menu_left");
 				self.$scrollTop = $(".scroll-top");
+				//global dropdown
+				self.$dropDown = $(".dropdown-menu");
 				self.$globalSearch = $("#global_search");
 			},
 
@@ -34,7 +36,16 @@ require(["ajax", "globalConfig", "jquery", "bootstrap", "domReady!"], function(a
 				});
 
 				self.$scrollTop.on("click", function() {
-					$("html,body").animate({"scrollTop":0});
+					$("html,body").animate({
+						"scrollTop": 0
+					});
+				});
+
+				self.$dropDown.on("click", ">li", function() {
+					var $this = $(this),
+						$btnSelect = $this.siblings("[data-toggle='dropdown']"),
+						$val = $btnSelect.find("span[data-val]");
+
 				});
 
 			},

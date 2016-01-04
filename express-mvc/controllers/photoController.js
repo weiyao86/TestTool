@@ -95,7 +95,7 @@ photoController.actions = {
 						filename: fileArr[i],
 						note: '我是第' + i + '张图的描述',
 						isFocusPhoto: hasfocus,
-						sort:i,
+						sort: i,
 						createDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
 						createBy: email,
 						modifyDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
@@ -155,6 +155,8 @@ photoController.actions = {
 					note: model.note,
 					filename: filename,
 					modifyBy: email,
+					isFocusPhoto: model.isFocusPhoto,
+					sort: model.sort,
 					modifyDate: new Date()
 				};
 			commonfun.update(req, res, photo, condiction, content, function() {
