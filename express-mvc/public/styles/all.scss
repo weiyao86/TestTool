@@ -186,7 +186,11 @@ blockquote {
     border-radius: 100%;
     transition: all .75s ease;
 }
-
+.loading{
+    top:50%;
+    left:50%;
+    margin:-30px 0 0 -30px;
+}
 .loading, .loading-child {
     @extend %loading-center;
 
@@ -312,7 +316,7 @@ blockquote {
 }
 
 input.check-addon[type="checkbox"],input.check-addon[type="radio"]{margin:4px 0;}
-.addon-right{border-radius:4px 0 0 4px;}
+// .addon-right{border-radius:4px 0 0 4px;}
 .addon-left{border-radius:0 4px 4px 0;}
 
 .no-padding{
@@ -320,3 +324,8 @@ input.check-addon[type="checkbox"],input.check-addon[type="radio"]{margin:4px 0;
 }
 .pipe{margin: 0 5px;color: #CCC;}
 .scroll-top{position:fixed;bottom:150px;display:none;color:#666;right:2px;z-index:2;font-size:3em;cursor:pointer; @extend %originTransition;&:hover{color:#fff;}}
+
+.sort-photo{
+    height:150px;
+    overflow:auto;
+}

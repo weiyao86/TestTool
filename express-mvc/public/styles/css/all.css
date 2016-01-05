@@ -43,6 +43,8 @@ blockquote:before { position: absolute; content: ""; display: block; border-styl
 /** loading css */
 .loading, .loading-child { position: absolute; top: 0; left: 0; width: 30px; height: 30px; border-radius: 100%; transition: all .75s ease; }
 
+.loading { top: 50%; left: 50%; margin: -30px 0 0 -30px; }
+
 .loading, .loading-child { width: 60px; height: 60px; transition: none; }
 
 .loading-child { width: 100%; height: 100%; }
@@ -102,8 +104,6 @@ blockquote:before { position: absolute; content: ""; display: block; border-styl
 
 input.check-addon[type="checkbox"], input.check-addon[type="radio"] { margin: 4px 0; }
 
-.addon-right { border-radius: 4px 0 0 4px; }
-
 .addon-left { border-radius: 0 4px 4px 0; }
 
 .no-padding { padding: 0; }
@@ -112,3 +112,5 @@ input.check-addon[type="checkbox"], input.check-addon[type="radio"] { margin: 4p
 
 .scroll-top { position: fixed; bottom: 150px; display: none; color: #666; right: 2px; z-index: 2; font-size: 3em; cursor: pointer; }
 .scroll-top:hover { color: #fff; }
+
+.sort-photo { height: 150px; overflow: auto; }

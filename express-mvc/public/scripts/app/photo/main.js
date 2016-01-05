@@ -1,7 +1,7 @@
 require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fader", "tabPanel", "blockUI", "jquery", "bootstrap", "domReady!"], function(ajax, globalConfig, Mustache, Grid) {
 	var Main = function() {
-			this.init();
-		};
+		this.init();
+	};
 	Main.prototype = {
 		init: function() {
 			var self = this;
@@ -27,8 +27,11 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 
 			//upload form
 			self.$uploadForm = $("#uploadPhoto");
+
+			self.$dropdownSort = $("#sort_photo");
+			self.dropdownTemplate = $("#sort_photo_template").html();
 			self.timer = null;
-			self.dataSort={};
+			self.dataSort = {};
 
 		},
 
@@ -116,10 +119,11 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 				callbacks: {
 					beforeSend: null,
 					beforeRender: null,
-					afterRender: function(rst){
-						self.dataSort=$.map(rst.data,function(val,idx){
+					afterRender: function(rst) {
+						self.dataSort = $.map(rst.data, function(val, idx) {
 							return [idx];
 						});
+						self.loadSort();
 					},
 					complete: null,
 					beforeModalShown: function(that, name, rowData) {
@@ -130,6 +134,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 							}
 							that.$edit.find("img[data-field='file']").attr("src", rowData && path);
 						}
+						self.loadSort();
 					},
 					afterModalHidden: function() {
 
@@ -166,6 +171,44 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 				modalAlert: "modal_alert"
 			});
 			self.grid.load();
+		},
+
+		loadSort: function() {
+			var self = this;
+
+			ajax.invoke({
+				type: "POST",
+				url: globalConfig.paths.loadPhoto,
+				success: function(rst) {
+					self.renderSort(rst);
+				},
+				failed: function(err) {
+					alert(err.reason);
+				}
+			});
+		},
+
+		renderSort: function(rst) {
+			var self = this,
+				arr = [],
+				maxSort,
+				template;
+
+			$.each(rst.data, function(idx, val) {
+				arr.push(val.sort);
+			});
+
+			$.uniqueArr(arr);
+			console.log(arr);
+
+			rst["maxSort"] = arr[arr.length - 1];
+			rst["data"] = arr;
+
+			template = Mustache.render(self.dropdownTemplate, {
+				Data: rst
+			});
+
+			self.$dropdownSort.html(template);
 		},
 
 		listenerUpload: function() {

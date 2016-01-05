@@ -93,9 +93,9 @@ photoController.actions = {
 					arr.push({
 						uid: uid,
 						filename: fileArr[i],
-						note: '我是第' + i + '张图的描述',
+						note: '我是第' + (i + 1) + '张图的描述',
 						isFocusPhoto: hasfocus,
-						sort: i,
+						sort: i + 1,
 						createDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
 						createBy: email,
 						modifyDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),

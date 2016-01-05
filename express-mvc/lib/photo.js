@@ -9,22 +9,25 @@ var mongoose = require("mongoose"),
 		note: {
 			type: String
 		},
-		isFocusPhoto:{
-			type:Boolean
+		isFocusPhoto: {
+			type: Boolean,
+			default: false
 		},
-		sort:{
-			type:Number
+		sort: {
+			type: Number,
+			default: 1
 		},
 		createDate: {
 			type: Date
 		},
-		createBy:{
-			type:String
-		},modifyDate: {
+		createBy: {
+			type: String
+		},
+		modifyDate: {
 			type: Date
 		},
-		modifyBy:{
-			type:String
+		modifyBy: {
+			type: String
 		}
 
 	}, {

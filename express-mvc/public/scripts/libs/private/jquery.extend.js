@@ -183,7 +183,7 @@
 				html == "false" && (html = false);
 				val == "true" && (val = true);
 				val == "false" && (val = false);
-				
+
 				var tagN = element.tagName.toUpperCase();
 				if (tagN == "INPUT") {
 					type = $el.attr("type");
@@ -770,7 +770,25 @@
 			};
 		},
 
-		dataBase64Img: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+		dataBase64Img: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",
+
+		uniqueArr: function(result) {
+			var arr = [],
+				i = 1,
+				j = 0,
+				el;
+			result.sort(function(a, b) {
+				return a - b;
+			});
+			for (; el = result[i]; i++) {
+				if (el === result[i - 1]) {
+					j = arr.push(i);
+				}
+			}
+			while (j--) {
+				result.splice(arr[j], 1);
+			}
+		}
 	});
 
 })(jQuery);

@@ -21,10 +21,10 @@
 			<div class="form-group mg-t">
 				<div class="input-group">
 					<!-- <span>focus:</span> -->
-					<span class="input-group-addon addon-right">focus:</span>
+					<span class="input-group-addon">focus:</span>
 					<!--<span class="input-group-addon"><input type="checkbox" data-field="isFocusPhoto" class="check-addon"></span>-->
 					<!-- Single button -->
-					<div class="btn-group">
+					<div class="dropdown">
 					<button type="button"  class="btn btn-default dropdown-toggle addon-left" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span data-val="val">All</span><span data-field='isFocusPhoto' class="sr-only"></span> <span class="caret"></span>
 					  </button>
 					  <ul class="dropdown-menu"  id="focus_photo">
@@ -171,29 +171,33 @@
 						<input type="text" data-field="note" class="form-control" value="" required>
 					</div>
 					<div class="form-group">
-						<label for="">Sort:</label>
+						<div class="input-group">
+							<span class="input-group-addon">Sort:</span>
 							<div class="dropdown">
-								<button type="button"  class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<button type="button"  class="btn btn-default dropdown-toggle  addon-left" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<span data-val="val">Last-sort</span>
 									<span data-field='sort' class="sr-only"></span>
 									<span class="caret"></span>
 								</button>
-								<ul class="dropdown-menu"  id="sort_photo">
-									<li>
-										<a href="javascript:;" data-val="">Last-sort</a>
-									</li>
-									<li role="separator" class="divider"></li>
-									<li>
-										<a href="javascript:;" data-val="1">1</a>
-									</li>
-									<li>
-										<a href="javascript:;" data-val="2">2</a>
-									</li>
+								<ul class="dropdown-menu sort-photo"  id="sort_photo">
+									<script id="sort_photo_template" type="text/template">
+										{{#Data}}
+											<li>
+												<a href="javascript:;" data-val="{{maxSort}}">{{maxSort}}</a>
+											</li>
+											<li role="separator" class="divider"></li>
+												{{#data}}
+													<li>
+														<a href="javascript:;" data-val="{{.}}">{{.}}</a>
+													</li>
+												{{/data}}
+										{{/Data}}
+									</script>
 								</ul>
 							</div>
+						</div>
 					</div>
 					<div class="form-group">
-						<label for="">FocusPhoto:</label>
 						<div class="input-group">
 							<span class="input-group-addon">FocusPhoto:</span>
 							<span class="input-group-addon"><input type="checkbox" data-field="isFocusPhoto" class="form-control"></span>

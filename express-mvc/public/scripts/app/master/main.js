@@ -41,11 +41,14 @@ require(["ajax", "globalConfig", "jquery", "bootstrap", "domReady!"], function(a
 					});
 				});
 
-				self.$dropDown.on("click", ">li", function() {
+				self.$dropDown.on("click", "li", function() {
 					var $this = $(this),
-						$btnSelect = $this.siblings("[data-toggle='dropdown']"),
+						$btnSelect = $this.closest(".dropdown-menu").siblings("[data-toggle='dropdown']"),
 						$val = $btnSelect.find("span[data-val]");
-
+					if ($val.size()) {
+						var val = $this.find("[data-val]").html();
+						$val.html(val);
+					}
 				});
 
 			},

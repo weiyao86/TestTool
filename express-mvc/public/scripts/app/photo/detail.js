@@ -102,8 +102,6 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 					$.blockUI({
 						css: {
 							border: "none",
-							width: 50,
-							height: 50,
 							background: "transparent"
 						},
 						message: $.initBlockMsg()
