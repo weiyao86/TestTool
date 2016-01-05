@@ -201,7 +201,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 			$.uniqueArr(arr);
 			console.log(arr);
 
-			rst["maxSort"] = arr[arr.length - 1];
+			rst["maxSort"] = arr[arr.length - 1] + 1;
 			rst["data"] = arr;
 
 			template = Mustache.render(self.dropdownTemplate, {
