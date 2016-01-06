@@ -159,9 +159,9 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 			//焦点图取前10张
 			data.length = data.length > 10 ? 10 : data.length;
 
-			data = data.sort(function() {
-				return Math.random() > 0.6 ? 1 : -1;
-			});
+			// data = data.sort(function() {
+			// 	return Math.random() > 0.6 ? 1 : -1;
+			// });
 
 			for (; i < data.length; i++) {
 				arr.push({
@@ -211,7 +211,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 		firstLoad: function() {
 			var self = this,
 				progess = self.createProgress();
-			self.preLoad($("img"), progess);
+			self.preLoad($("img").filter("[src!='']"), progess);
 		},
 
 
@@ -249,7 +249,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 				progress: function(isbroker, $images, $proper, $broker) {
 					speed = ($proper.length + $broker.length) / $images.length * 100;
 					var len = $proper.length + $broker.length;
-					console.log("共" + $images.length + "张图片，正在加载第" + len + "张" + $images[len - 1].src);
+					// console.log("共" + $images.length + "张图片，正在加载第" + len + "张" + $images[len - 1].src);
 				},
 				done: function($that) {
 					// console.log("success");
@@ -283,8 +283,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 						$(val).attr("src", $.dataBase64Img);
 						$(val).attr("src", "/res/images/car1.gif");
 					});
-					console.log(arr.join("\n\t"));
-
+					console.log("fail:" + arr.join("\n\t"));
 				}
 			});
 		},

@@ -96,13 +96,6 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					self.$uploadForm.submit();
 				}
 			});
-
-			self.$isFocus.on("click", "li a", function(e) {
-				var $btn = $(this).closest("ul").prev();
-				$btn.find("[data-val]").html($(this).html());
-				$btn.find("[data-field='isFocusPhoto']").html($(this).attr("data-val"));
-			});
-
 		},
 
 		initComponent: function() {
@@ -128,13 +121,14 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					complete: null,
 					beforeModalShown: function(that, name, rowData) {
 						if (name === "update") {
+
 							var path = "/data/photo/" + rowData.filename;
 							if (rowData.isFocusPhoto == true || rowData.isFocusPhoto == "true") {
 								path = "/data/focus/" + rowData.filename;
 							}
 							that.$edit.find("img[data-field='file']").attr("src", rowData && path);
 						}
-						self.loadSort();
+						self.loadSort(name, rowData);
 					},
 					afterModalHidden: function() {
 
@@ -173,14 +167,14 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 			self.grid.load();
 		},
 
-		loadSort: function() {
+		loadSort: function(name, rowData) {
 			var self = this;
 
 			ajax.invoke({
 				type: "POST",
 				url: globalConfig.paths.loadPhoto,
 				success: function(rst) {
-					self.renderSort(rst);
+					self.renderSort(name, rowData, rst);
 				},
 				failed: function(err) {
 					alert(err.reason);
@@ -188,9 +182,10 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 			});
 		},
 
-		renderSort: function(rst) {
+		renderSort: function(name, rowData, rst) {
 			var self = this,
 				arr = [],
+				$btn = self.$dropdownSort.siblings("button"),
 				maxSort,
 				template;
 
@@ -198,8 +193,9 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 				arr.push(val.sort);
 			});
 
+			//sort and unique
 			$.uniqueArr(arr);
-			console.log(arr);
+			arr.length == 0 && arr.push(1);
 
 			rst["maxSort"] = arr[arr.length - 1] + 1;
 			rst["data"] = arr;
@@ -209,6 +205,12 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 			});
 
 			self.$dropdownSort.html(template);
+			var lifirst = self.$dropdownSort.children().first().children().html();
+			name == "create" && $btn.find("[data-val='val']").html(lifirst);
+			if (name == "update") {
+				$btn.find("[data-val='val']").html(rowData.sort);
+				$btn.find("[data-field='sort']").html(rowData.sort);
+			}
 		},
 
 		listenerUpload: function() {

@@ -144,7 +144,7 @@
 							$(element).val(data[key]);
 							break;
 						case "checkbox":
-							$(element).attr("checked", data[key]);
+							$(element).prop("checked", data[key]);
 							break;
 						case "hidden":
 							$(element).val(data[key]);
@@ -237,7 +237,7 @@
 							$el.val("");
 							break;
 						case "checkbox":
-							$el.attr("checked", false);
+							$el.prop("checked", false);
 							break;
 						default:
 							$el.val("");

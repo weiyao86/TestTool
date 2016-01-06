@@ -35,7 +35,7 @@ exports.commonfun = {
 
 			var query = model.find(condition || {}, '-__someElse', {
 				'sort': {
-					"sort":1,
+					"sort": 1,
 					"_id": -1
 				}
 			});
@@ -68,9 +68,6 @@ exports.commonfun = {
 	insert: function(req, res, model, condiction, content, callback) {
 		model.count(condiction, function(err, count) {
 			if (err) return commonfun.handlerError(err, res);
-			if (callback && typeof callback === "function") {
-				callback.call(req, res);
-			}
 			if (count) {
 				res.json({
 					IsSuccess: true,
@@ -80,6 +77,9 @@ exports.commonfun = {
 			} else {
 				model.create(content, function(err) {
 					if (err) return commonfun.handlerError(err, res);
+					if (callback && typeof callback === "function") {
+						callback.call(req, res);
+					}
 					res.json({
 						IsSuccess: true,
 						data: [],
@@ -213,22 +213,34 @@ exports.commonfun = {
 		});
 	},
 
-	writeFileAndRm: function(filename) {
+	writeFileAndRm: function(filename, isFocus) {
 		var self = this,
 			folderPath = __appRoot + '/tempFile',
-			photoFolder = __appRoot + "/resource/data/photo";
+			photoFolder = __appRoot + "/resource/data/photo",
+			focusFolder = __appRoot + "/resource/data/focus",
+			folder = photoFolder;
+
+		isFocus && (folder = focusFolder);
 
 		var src = folderPath + "/" + filename,
-			writeSrc = photoFolder + "/" + filename;
+			photoFile = photoFolder + "/" + filename,
+			writeSrc = folder + "/" + filename;
 
-		fs.readFile(src, function(err, data) {
-			if (err) return console.log("读取--" + src + "--文件错误！error:" + err);
+		if (fs.existsSync(src))
+			fs.renameSync(src, writeSrc);
+		else {
+			if (fs.existsSync(photoFile))
+				fs.renameSync(photoFile, writeSrc);
+		}
 
-			fs.writeFile(writeSrc, data, function(err1) {
-				if (err1) return console.log("写入--" + writeSrc + "--文件错误！error:" + err1);
-				self.recursiveDelFile(folderPath);
-			});
-		});
+		// fs.readFile(src, function(err, data) {
+		// 	if (err) return console.log("读取--" + src + "--文件错误！error:" + err);
+
+		// 	fs.writeFile(writeSrc, data, function(err1) {
+		// 		if (err1) return console.log("写入--" + writeSrc + "--文件错误！error:" + err1);
+		// 		self.recursiveDelFile(folderPath);//删除临时目录,并发时会有问题
+		// 	});
+		// });
 	},
 
 	recursiveDelFile: function(folderPath) {

@@ -123,12 +123,14 @@ photoController.actions = {
 						uid: email,
 						filename: model.filename,
 						note: model.note,
+						sort: model.sort,
+						isFocusPhoto: model.isFocusPhoto,
 						createBy: doc.nickname,
 						createDate: new Date()
 					};
 
 				commonfun.insert(req, res, photo, condiction, content, function() {
-					commonfun.writeFileAndRm(content.filename);
+					commonfun.writeFileAndRm(content.filename, content.isFocusPhoto);
 				});
 			};
 
@@ -160,7 +162,7 @@ photoController.actions = {
 					modifyDate: new Date()
 				};
 			commonfun.update(req, res, photo, condiction, content, function() {
-				commonfun.writeFileAndRm(content.filename);
+				commonfun.writeFileAndRm(content.filename, content.isFocusPhoto);
 			});
 		}
 	},

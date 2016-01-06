@@ -43,11 +43,12 @@ require(["ajax", "globalConfig", "jquery", "bootstrap", "domReady!"], function(a
 
 				self.$dropDown.on("click", "li", function() {
 					var $this = $(this),
+						$curTag = $this.find("[data-val]"),
 						$btnSelect = $this.closest(".dropdown-menu").siblings("[data-toggle='dropdown']"),
 						$val = $btnSelect.find("span[data-val]");
 					if ($val.size()) {
-						var val = $this.find("[data-val]").html();
-						$val.html(val);
+						$val.html($curTag.html());
+						$val.siblings("[data-field].sr-only").html($curTag.attr("data-val"));
 					}
 				});
 
