@@ -44,7 +44,7 @@ body {
             &:hover {
                 box-shadow: 0 0 60px 5px rgba(125, 125, 125, 0.75);
                 -webkit-box-shadow: 0 0 60px 5px rgba(125, 125, 125, 0.75);
-
+                text-decoration:none;
                 @include delay-detail;
 
                 .detail-content {

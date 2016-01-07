@@ -1,4 +1,4 @@
-require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", "jqform", "fader", "tabPanel", "blockUI", "jquery", "bootstrap", "domReady!"], function(ajax, globalConfig, Mustache, Grid) {
+require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", "imageLoaded", "jqform", "fader", "tabPanel", "blockUI", "jquery", "bootstrap", "domReady!"], function(ajax, globalConfig, Mustache, Grid) {
 	var Main = function() {
 		this.init();
 	};
@@ -9,6 +9,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 			self.buildDom();
 			self.bindEvent();
 			self.load();
+			self.initComponent();
 		},
 
 		buildDom: function() {
@@ -42,6 +43,25 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 				self.$modalImg.attr("src", src);
 			});
 
+			self.$waterFall.on("click", "[data-action]", function() {
+				var action = $(this).attr("data-action"),
+					$img = $(this).closest("a").find("[data-field='content']");
+
+				switch (action) {
+					case "zhan":
+						break;
+					case "love":
+						break;
+					case "fullscreen":
+						var highResolutionImage = $img.data('high-res-img');
+						self.viewer.show($img.attr("src"), highResolutionImage);
+						break;
+					default:
+						break;
+
+				}
+			});
+
 
 			$(window).on("resize", $.debounce(function() {
 				self.initWaterFall();
@@ -57,6 +77,18 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 			var self = this;
 			self.carousel();
 			self.mainContent(self.page);
+		},
+
+		initComponent: function() {
+			var self = this;
+			self.viewer = ImageViewer();
+
+			// $('.gallery-items').click(function() {
+			// 	var imgSrc = this.src,
+			// 		highResolutionImage = $(this).data('high-res-img');
+
+			// 	viewer.show(imgSrc, highResolutionImage);
+			// });
 		},
 
 		carousel: function() {
@@ -266,9 +298,10 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 						if (counter <= speed) {
 							progess.$barpanel.width((counter++) + "%");
 						} else if (speed == 100) {
-							progess.$modal.fadeOut(function() {
-								progess.$barpanel.parent().remove();
+
+							progess.$barpanel.parent().fadeOut("slow", function() {
 								$(this).remove();
+								progess.$modal.remove();
 							});
 							counter = 0;
 							clearInterval(clear);
@@ -290,14 +323,15 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "imageLoaded", 
 
 		createProgress: function() {
 			var self = this,
-				$progess = $("<div><div id='rect' style='background:#ccc; height: 30%; width: 0%;overflow:hidden;color:white;border-radius:4px;text-align:center;box-shadow:0 0 20px;'></div></div>");
+				$progess = $("<div><div id='rect' style='background:#ccc; height: 5px; width: 0%;overflow:hidden;color:white;border-radius:4px;text-align:center;box-shadow:0 0 20px;'></div></div>");
 			$progess.css({
 				width: "100%",
-				height: "20px",
+				height: "5px",
 				position: "fixed",
 				top: "70%",
 				left: 0,
 				"border-radius": "4px",
+				background: "#222",
 				"z-index": 10000
 			}).appendTo("body");
 

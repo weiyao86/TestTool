@@ -1,6 +1,7 @@
 	<%- include('../shared/bootstrap_head')-%>	
 	<!-- load css -->	
 	<link rel="stylesheet" href="/styles/css/photodetail.css">
+	<link rel="stylesheet" href="/styles/css/imageviewer.css">
 
 	<div class="container-fluid">
 		<div class="panel panel-custom">
@@ -53,14 +54,30 @@
 					{{#Data}}
 						{{#data}}
 						<div class="col-xs-12 col-sm-6 col-md-3 col-for-rowpanel" data-field="idx" >
-							<a class="thumbnail"><img  data-field="content" src="/data/photo/{{filename}}" alt="{{filename}}"><div class="operator-info"><span class="glyphicon glyphicon-thumbs-up"></span><span class="glyphicon glyphicon-heart"></span><span data-toggle="modal" data-target="#thumbnail_modal" class="glyphicon glyphicon-picture" title="查看大图"></span></div>
+							<a class="thumbnail">
+								<img  data-field="content" data-high-res-src="/data/photo/{{filename}}" src="/data/photo/{{filename}}" alt="{{filename}}">
+								<div class="operator-info">
+									<span data-action="zhan" class="glyphicon glyphicon-thumbs-up"></span>
+									<span data-action="love" class="glyphicon glyphicon-heart"></span>
+									<span data-toggle="modal" data-target="#thumbnail_modal" class="glyphicon glyphicon-picture" title="查看大图"></span>
+									 <span data-action="fullscreen" class="glyphicon glyphicon-fullscreen" title="全屏"></span>
+								</div>
 
 								<div class="detail-content">
 									<div class="container-fulid">
 										<h3>标题</h3>
-										<p><label>Note:</label>{{note}}</p>
-										<p><label>CreateBy:</label>{{createBy}}</p>
-										<p><label>CreateDate:</label>{{createDate}}</p>
+										<p>
+											<label>Note:</label>
+											{{note}}
+										</p>
+										<p>
+											<label>CreateBy:</label>
+											{{createBy}}
+										</p>
+										<p>
+											<label>CreateDate:</label>
+											{{createDate}}
+										</p>
 									</div>
 
 								</div>
