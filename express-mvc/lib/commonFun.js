@@ -226,9 +226,11 @@ exports.commonfun = {
 			photoFile = photoFolder + "/" + filename,
 			writeSrc = folder + "/" + filename;
 
-		if (fs.existsSync(src))
+		if (fs.existsSync(src)) {
 			fs.renameSync(src, writeSrc);
-		else {
+
+
+		} else {
 			if (fs.existsSync(photoFile))
 				fs.renameSync(photoFile, writeSrc);
 		}

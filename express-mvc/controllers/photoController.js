@@ -6,6 +6,7 @@ var gu = require("guthrie"),
 	filters = require(__appRoot + '/lib/filters'),
 	photo = require(__appRoot + "/lib/photo").photo,
 	user = require(__appRoot + "/lib/user").user,
+
 	baseController = require("./mybaseController"),
 	photoController = gu.controller.inherit(baseController);
 
@@ -13,6 +14,46 @@ photoController.actions = {
 	index: {
 		GET: function(req, res) {
 			res.view();
+		}
+	},
+
+	delay: {
+		GET: function(req, res) {
+			setTimeout(function() {}, 20 * 10000);
+		}
+	},
+
+	thumbImg: {
+		GET: function(req, res) {
+			var writeSrc = __appRoot + "/resource/data/photo/T2.jpg",
+				waterSrc = __appRoot + "/resource/data/photo/3.jpg",
+				watermarkImg = __appRoot + "/resource/data/photo/nopic.png";
+			//thumb
+			// gm(writeSrc).thumb(150, 150, __appRoot + "/resource/data/photo/T33.jpg", function() {
+			// 	res.send("done");
+			// });
+
+
+			function addWaterMark(srcImg, watermarkImg, destImg, alpha, position) {
+				var composite = spawn('gm', ['composite', '-gravity', position, '-dissolve', alpha, watermarkImg, srcImg, destImg]);
+				composite.on('exit', function(code) {
+					console.log(arguments);
+
+				});
+			}
+			addWaterMark(writeSrc, watermarkImg, waterSrc, 50, "Center");
+			//webimg(writeSrc).markText("我是水印").markPos(5); //.fontSize(50).fontColor("#ff8800").watermark(waterSrc);
+			//console.log((webimg({}).captcha()).getStr());
+
+
+			// gm(writeSrc).size(function(err) {
+			// 	if (err) return console.log(err);
+			// 	console.log(arguments);
+			// 	res.send(arguments)
+			// });
+
+
+			// res.send("done");
 		}
 	},
 

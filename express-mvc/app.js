@@ -84,7 +84,7 @@ app.use(function(err, req, res, next) {
 	}
 	//暴露错误信息
 	console.log(err);
-	res.redirect('/noexist');
+	//res.redirect('/noexist');
 });
 
 
