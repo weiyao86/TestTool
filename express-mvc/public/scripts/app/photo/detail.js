@@ -53,7 +53,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 					case "love":
 						break;
 					case "fullscreen":
-						var highResolutionImage = $img.data('high-res-img');
+						var highResolutionImage = $img.data('high-res-src');
 						self.viewer.show($img.attr("src"), highResolutionImage);
 						break;
 					default:

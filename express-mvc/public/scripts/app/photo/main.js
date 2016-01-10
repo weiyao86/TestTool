@@ -75,9 +75,11 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 				},
 
 				success: function(rst) {
-					var fileSrc = "/" + rst[0].filename;
+					var fileSrc = "/" + rst[0].imgguid;
 					self.$edit.unblock();
 					self.$photo.attr("src", fileSrc);
+					self.$edit.find("[data-field='imgguid']").val(rst[0].imgguid);
+					$("#global_search").val(rst[0].imgguid);
 				}
 			});
 
@@ -122,11 +124,12 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					beforeModalShown: function(that, name, rowData) {
 						if (name === "update") {
 
-							var path = "/data/photo/" + rowData.filename;
+							var path = "/data/photo/" + rowData.imgguid;
 							if (rowData.isFocusPhoto == true || rowData.isFocusPhoto == "true") {
-								path = "/data/focus/" + rowData.filename;
+								path = "/data/focus/" + rowData.imgguid;
 							}
 							that.$edit.find("img[data-field='file']").attr("src", rowData && path);
+
 						}
 						self.loadSort(name, rowData);
 					},

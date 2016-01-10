@@ -65,6 +65,7 @@
 					<tr>
 						<th>uid</th>
 						<th>filename</th>
+						<th>imgguid</th>
 						<th>note</th>
 						<th>isFocus</th>
 						<th>sort</th>
@@ -81,6 +82,7 @@
 							<tr data-val='{"_id":"{{_id}}"}'>
 								<td><span  data-field="uid">{{uid}}</span></td>
 								<td><span  data-field="filename">{{filename}}</span></td>
+								<td><span  data-field="imgguid">{{imgguid}}</span></td>
 								<td><span  data-field="note">{{note}}</span></td>
 								<td><span  data-field="isFocusPhoto">{{isFocusPhoto}}</span></td>
 								<td><span  data-field="sort">{{sort}}</span></td>
@@ -170,6 +172,7 @@
 					<div class="input-group thumbnail-panel text-center">
 						<a href="javascript:;" class="thumbnail">
 							<img data-field="file" src="" alt="Thumbnail" class="img-rounded center-block"></a>
+							<input type="hidden" data-field="imgguid">
 					</div>
 					<div class="form-group">
 						<label for="">Note:</label>

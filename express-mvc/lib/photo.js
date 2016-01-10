@@ -6,6 +6,9 @@ var mongoose = require("mongoose"),
 		filename: {
 			type: String
 		},
+		imgguid:{
+			type:String
+		},
 		note: {
 			type: String
 		},

@@ -76,10 +76,10 @@ exports.commonfun = {
 					msg: "此条记录已存在"
 				});
 			} else {
-				model.create(content, function(err) {
+				model.create(content, function(err, doc) {
 					if (err) return commonfun.handlerError(err, res);
 					if (callback && typeof callback === "function") {
-						callback.call(req, res);
+						callback.call(this, req, res, doc);
 					}
 					res.json({
 						IsSuccess: true,
@@ -93,15 +93,15 @@ exports.commonfun = {
 
 	update: function(req, res, model, condiction, content, callback) {
 
-		model.update(condiction, {
+		model.findOneAndUpdate(condiction, {
 			$set: content
-		}, function(err) {
+		}, function(err, doc) {
 			if (err) return res.json({
 				IsSuccess: false,
 				msg: err
 			});
 			if (callback && typeof callback === "function") {
-				callback.call(req, res);
+				callback.call(this, req, res, doc);
 			}
 			res.json({
 				IsSuccess: true,
@@ -176,11 +176,14 @@ exports.commonfun = {
 				var file;
 				for (var key in files) {
 					file = files[key];
+					var ext = file.name.match(/(\.\w+)$/)[1],
+						imgguid = (new Date()).getTime() + ext;
 					response.push({
 						msg: "File uploaded successfully",
-						filename: file.name
+						filename: file.name,
+						imgguid: imgguid
 					});
-					fs.renameSync(file.path, tmepFoler + file.name);
+					fs.renameSync(file.path, tmepFoler + imgguid);
 				}
 			}
 
@@ -201,9 +204,13 @@ exports.commonfun = {
 				fs.writeFile(des_file, data, function(err1) {
 					if (err1) self.handlerError(err1, res);
 					else {
+						var filename = req.files[0].originalname,
+							ext = filename.match(/(\.\w+)$/)[1],
+							imgguid = (new Date()).getTime() + ext;
 						response.push({
 							msg: "File uploaded successfully",
-							filename: req.files[0].originalname
+							filename: filename,
+							imgguid: imgguid
 						});
 					}
 					//IE下返回值 会被当作文件来下载
@@ -214,59 +221,62 @@ exports.commonfun = {
 		});
 	},
 
-	writeFileAndRm: function(filename, isFocus) {
+	writeFileAndRm: function(filename, isFocus, imgguid) {
 		var self = this,
 			folderPath = __appRoot + '/tempFile',
 			photoFolder = __appRoot + "/resource/data/photo",
 			focusFolder = __appRoot + "/resource/data/focus",
 			originPath = __appRoot + "/resource/data/photoOrigin/" + filename,
+			watermarkImg = __appRoot + "/resource/data/waterImg/water.png",
 			folder = photoFolder;
 
-		isFocus && (folder = focusFolder);
+
+		if (isFocus) {
+			folder = focusFolder;
+		}
 
 		var src = folderPath + "/" + filename,
-			photoFile = photoFolder + "/" + filename,
-			writeSrc = folder + "/" + filename;
-
-		var watermarkImg = __appRoot + "/resource/data/waterImg/water.png";
-
+			photoFile = photoFolder + "/" + imgguid,
+			focusFile = focusFolder + "/" + imgguid,
+			dest = folder + "/" + imgguid;
 
 		//从临时文件夹移动到目标文件夹
 		if (fs.existsSync(src)) {
-			fs.renameSync(src, writeSrc);
+			//add
+			src = src;
 		} else {
-			if (fs.existsSync(photoFile))
-				fs.renameSync(photoFile, writeSrc);
+			//update
+			if (fs.existsSync(photoFile)) {
+				src = photoFile;
+			} else if (fs.existsSync(focusFile)) {
+				src = focusFile;
+			} else {
+				return console.log("------------Image is not found!--------------");
+			}
 		}
+		console.log(dest);
+		fs.renameSync(src, dest);
 
 		//添加水印在右下方
-		operatorImg.addWaterMark(writeSrc, watermarkImg, writeSrc, 85, "SouthEast", function() {
+		operatorImg.addWaterMark(dest, watermarkImg, dest, 85, "SouthEast", function() {
 			//将原图保存到、photoOrigin目录下
 			var writer = fs.createWriteStream(originPath),
-				reader=fs.createReadStream(writeSrc);
-
-			// origin.on('pipe', function(src) {
-			// 	console.log('正在导流到');
-			// });
+				reader = fs.createReadStream(dest);
 			writer.on('finish', function(src) {
 				console.log('原图保存完成');
-				operatorImg.resizeImgWithFullArgs(writeSrc, writeSrc, 100, 300, undefined, '', function() {
+				//缩略图
+				operatorImg.resizeImgWithFullArgs(dest, dest, 100, 300, undefined, '', function() {
 					console.log('目标文件压缩完成');
 				});
 			});
 			reader.pipe(writer);
 		});
 
-
-		//缩略图
-		//operatorImg.resizeImgWithFullArgs(writeSrc, writeSrc, 100, 300, undefined, 'png', function() {});
-
-
 		// fs.readFile(src, function(err, data) {
 		// 	if (err) return console.log("读取--" + src + "--文件错误！error:" + err);
 
-		// 	fs.writeFile(writeSrc, data, function(err1) {
-		// 		if (err1) return console.log("写入--" + writeSrc + "--文件错误！error:" + err1);
+		// 	fs.writeFile(dest, data, function(err1) {
+		// 		if (err1) return console.log("写入--" + dest + "--文件错误！error:" + err1);
 		// 		self.recursiveDelFile(folderPath);//删除临时目录,并发时会有问题
 		// 	});
 		// });

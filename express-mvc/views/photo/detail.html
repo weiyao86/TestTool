@@ -18,7 +18,7 @@
 								<div class="carousel-inner" role="listbox">
 									{{#data}}
 										<div class="item {{cls}}">
-											<img src="/data/focus/{{filename}}" alt="{{filename}}" data-field="content">	
+											<img src="/data/focus/{{imgguid}}" alt="{{imgguid}}" data-field="content">	
 											<div class="carousel-caption">{{filename}}</div>
 										</div>
 									{{/data}}
@@ -55,7 +55,7 @@
 						{{#data}}
 						<div class="col-xs-12 col-sm-6 col-md-3 col-for-rowpanel" data-field="idx" >
 							<a class="thumbnail">
-								<img  data-field="content" data-high-res-src="/data/photo/{{filename}}" src="/data/photo/{{filename}}" alt="{{filename}}">
+								<img  data-field="content" data-high-res-src="/data/photoOrigin/{{imgguid}}" src="/data/photo/{{imgguid}}" alt="{{imgguid}}">
 								<div class="operator-info">
 									<span data-action="zhan" class="glyphicon glyphicon-thumbs-up"></span>
 									<span data-action="love" class="glyphicon glyphicon-heart"></span>

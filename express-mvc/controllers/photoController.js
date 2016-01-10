@@ -35,7 +35,7 @@ photoController.actions = {
 			// });
 
 
-			operatorImg.addWaterMark(writeSrc, watermarkImg, writeSrc,85, "SouthEast");
+			operatorImg.addWaterMark(writeSrc, watermarkImg, writeSrc, 85, "SouthEast");
 			//webimg(writeSrc).markText("我是水印").markPos(5); //.fontSize(50).fontColor("#ff8800").watermark(waterSrc);
 			//console.log((webimg({}).captcha()).getStr());
 
@@ -91,11 +91,18 @@ photoController.actions = {
 			var accout = req.cookies["account"],
 				email = accout.email,
 				uid = accout.email, //pause replace uid
-				rootDirpath = __appRoot + "/resource/data",
+				rootDirpath = __appRoot + "/resource/importData",
+				photoPath = __appRoot + "/resource/data/photo",
+				focusPath = __appRoot + "/resource/data/focus",
 				len = 0,
-				hasfocus = false,
+				focus = {
+					hasfocus: false,
+					src: ''
+				},
 				files = [],
 				focusFiles = [];
+
+
 
 			fs.readdir(rootDirpath, function(err, file) {
 				var rst = [];
@@ -104,12 +111,13 @@ photoController.actions = {
 					if (fs.statSync(curPath).isDirectory()) {
 						var fileArr = fs.readdirSync(curPath);
 						if (file[i] === "photo") {
-							hasfocus = false;
+							focus.hasfocus = false;
 						} else if (file[i] === "focus") {
-							hasfocus = true;
+							focus.hasfocus = true;
 						}
+						focus.src = curPath;
 						len += fileArr.length;
-						rst = rst.concat(callback(fileArr, hasfocus));
+						rst = rst.concat(callback(fileArr, focus));
 					}
 				}
 				photo.remove({}, function(err) {
@@ -121,15 +129,30 @@ photoController.actions = {
 				});
 
 			});
-			var callback = function(fileArr, hasfocus) {
-				var arr = [];
+			var callback = function(fileArr, focus) {
+				var arr = [],
+					src = focus.hasfocus ? focusPath : photoPath,
+					writer, reader;
 
 				for (var i = 0; i < fileArr.length; i++) {
+					var filename = fileArr[i],
+						ext = filename.match(/(\.\w+)$/)[1],
+						imgguid = (new Date()).getTime() + ext;
+
+
+					writer = fs.createWriteStream(src + '/' + imgguid);
+					reader = fs.createReadStream(focus.src + '/' + filename);
+					reader.on('finish', function(err) {
+						console.log(err);
+					})
+					reader.pipe(writer);
+
 					arr.push({
 						uid: uid,
-						filename: fileArr[i],
+						filename: filename,
+						imgguid: imgguid,
 						note: '我是第' + (i + 1) + '张图的描述',
-						isFocusPhoto: hasfocus,
+						isFocusPhoto: focus.hasfocus,
 						sort: i + 1,
 						createDate: moment(new Date()).format('YYYY-MM-DD HH:mm:ss'),
 						createBy: email,
@@ -150,13 +173,18 @@ photoController.actions = {
 				email = req.cookies["account"].email;
 
 			var callback = function(doc) {
+				var filename = model.filename,
+					ext = filename.match(/(\.\w+)$/)[1],
+					imgguid = (new Date()).getTime() + ext,
+					clientName = model.imgguid;
 				var condiction = {
 						uid: email,
-						filename: model.filename
+						filename: filename
 					},
 					content = {
 						uid: email,
-						filename: model.filename,
+						filename: filename,
+						imgguid: imgguid,
 						note: model.note,
 						sort: model.sort,
 						isFocusPhoto: model.isFocusPhoto,
@@ -164,9 +192,8 @@ photoController.actions = {
 						createDate: new Date()
 					};
 
-				commonfun.insert(req, res, photo, condiction, content, function() {
-					
-					commonfun.writeFileAndRm(content.filename, content.isFocusPhoto);
+				commonfun.insert(req, res, photo, condiction, content, function(req, res, doc) {
+					commonfun.writeFileAndRm(clientName, content.isFocusPhoto, imgguid);
 				});
 			};
 
@@ -186,19 +213,24 @@ photoController.actions = {
 				email = req.cookies["account"].email,
 				uid = model.uid,
 				filename = model.filename,
+				ext = filename.match(/(\.\w+)$/)[1],
+				imgguid = (new Date()).getTime() + ext,
+				clientName = model.imgguid,
 				condiction = {
 					_id: model._id
 				},
 				content = {
 					note: model.note,
 					filename: filename,
+					imgguid: clientName,
 					modifyBy: email,
 					isFocusPhoto: model.isFocusPhoto,
 					sort: model.sort,
 					modifyDate: new Date()
 				};
-			commonfun.update(req, res, photo, condiction, content, function() {
-				commonfun.writeFileAndRm(content.filename, content.isFocusPhoto);
+
+			commonfun.update(req, res, photo, condiction, content, function(req, res, doc) {
+				commonfun.writeFileAndRm(clientName, content.isFocusPhoto, clientName);
 			});
 		}
 	},
