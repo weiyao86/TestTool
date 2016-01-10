@@ -6,6 +6,7 @@ var gu = require("guthrie"),
 	filters = require(__appRoot + '/lib/filters'),
 	photo = require(__appRoot + "/lib/photo").photo,
 	user = require(__appRoot + "/lib/user").user,
+	operatorImg = require(__appRoot + "/lib/operatorImg"),
 
 	baseController = require("./mybaseController"),
 	photoController = gu.controller.inherit(baseController);
@@ -25,23 +26,16 @@ photoController.actions = {
 
 	thumbImg: {
 		GET: function(req, res) {
-			var writeSrc = __appRoot + "/resource/data/photo/T2.jpg",
-				waterSrc = __appRoot + "/resource/data/photo/3.jpg",
-				watermarkImg = __appRoot + "/resource/data/photo/nopic.png";
+			var writeSrc = __appRoot + "/resource/data/photo/8.jpg",
+				waterSrc = __appRoot + "/resource/data/photo/water.jpg",
+				watermarkImg = __appRoot + "/resource/data/photo/logo.png";
 			//thumb
 			// gm(writeSrc).thumb(150, 150, __appRoot + "/resource/data/photo/T33.jpg", function() {
 			// 	res.send("done");
 			// });
 
 
-			function addWaterMark(srcImg, watermarkImg, destImg, alpha, position) {
-				var composite = spawn('gm', ['composite', '-gravity', position, '-dissolve', alpha, watermarkImg, srcImg, destImg]);
-				composite.on('exit', function(code) {
-					console.log(arguments);
-
-				});
-			}
-			addWaterMark(writeSrc, watermarkImg, waterSrc, 50, "Center");
+			operatorImg.addWaterMark(writeSrc, watermarkImg, writeSrc,85, "SouthEast");
 			//webimg(writeSrc).markText("我是水印").markPos(5); //.fontSize(50).fontColor("#ff8800").watermark(waterSrc);
 			//console.log((webimg({}).captcha()).getStr());
 
@@ -171,6 +165,7 @@ photoController.actions = {
 					};
 
 				commonfun.insert(req, res, photo, condiction, content, function() {
+					
 					commonfun.writeFileAndRm(content.filename, content.isFocusPhoto);
 				});
 			};

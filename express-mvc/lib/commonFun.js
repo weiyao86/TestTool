@@ -3,6 +3,7 @@ var fs = require("fs"),
 	multer = require('multer'), //上传文件中间件
 	formidable = require('formidable'), //上传文件插件 可支持做进度条
 	tmepFoler = __appRoot + '/tempFile/',
+	operatorImg = require(__appRoot + "/lib/operatorImg"), //操作图像
 	upprogress = {
 		size: 0
 	},
@@ -218,6 +219,7 @@ exports.commonfun = {
 			folderPath = __appRoot + '/tempFile',
 			photoFolder = __appRoot + "/resource/data/photo",
 			focusFolder = __appRoot + "/resource/data/focus",
+			originPath = __appRoot + "/resource/data/photoOrigin/" + filename,
 			folder = photoFolder;
 
 		isFocus && (folder = focusFolder);
@@ -226,14 +228,39 @@ exports.commonfun = {
 			photoFile = photoFolder + "/" + filename,
 			writeSrc = folder + "/" + filename;
 
+		var watermarkImg = __appRoot + "/resource/data/waterImg/water.png";
+
+
+		//从临时文件夹移动到目标文件夹
 		if (fs.existsSync(src)) {
 			fs.renameSync(src, writeSrc);
-
-
 		} else {
 			if (fs.existsSync(photoFile))
 				fs.renameSync(photoFile, writeSrc);
 		}
+
+		//添加水印在右下方
+		operatorImg.addWaterMark(writeSrc, watermarkImg, writeSrc, 85, "SouthEast", function() {
+			//将原图保存到、photoOrigin目录下
+			var writer = fs.createWriteStream(originPath),
+				reader=fs.createReadStream(writeSrc);
+
+			// origin.on('pipe', function(src) {
+			// 	console.log('正在导流到');
+			// });
+			writer.on('finish', function(src) {
+				console.log('原图保存完成');
+				operatorImg.resizeImgWithFullArgs(writeSrc, writeSrc, 100, 300, undefined, '', function() {
+					console.log('目标文件压缩完成');
+				});
+			});
+			reader.pipe(writer);
+		});
+
+
+		//缩略图
+		//operatorImg.resizeImgWithFullArgs(writeSrc, writeSrc, 100, 300, undefined, 'png', function() {});
+
 
 		// fs.readFile(src, function(err, data) {
 		// 	if (err) return console.log("读取--" + src + "--文件错误！error:" + err);

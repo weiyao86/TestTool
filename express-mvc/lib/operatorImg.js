@@ -85,13 +85,35 @@ function resizeImgWithArgs(srcImg, destImg, size) {
  * @param height    缩放后的图片高度
  * @param imgFormat 缩放后的图片格式
  */
-function resizeImgWithFullArgs(srcImg, destImg, quality, width, height, imgFormat) {
-	gm(srcImg).resize(width, height).quality(quality).setFormat(imgFormat).write(destImg, function(err) {
-		if (err) {
-			return handler(err);
+function resizeImgWithFullArgs(srcImg, destImg, quality, width, height, imgFormat,callback) {
+	gm(srcImg).size(function(e, val) {
+		if(e) return handler(e);
+		var ratio = val.width/val.height;
+		if(!width && !height){
+			width=val.width;
+			height=val.height;
 		}
+		else if(width && !height){
+			height=width/ratio;
+		}else if(height){
+			width=height * ratio;
+		}
+		if(width>val.width){
+			width=val.width;
+		}
+		if(height>val.height){
+			height=val.height;
+		}
+		gm(srcImg).resize(width, height).quality(quality).setFormat("png").write(destImg, function(err) {
+			if (err) {
+				return handler(err);
+			}
+			typeof callback === "function" && callback.call();
+		});
 	});
 }
+
+
 
 /**
  * 添加水印
@@ -101,12 +123,16 @@ function resizeImgWithFullArgs(srcImg, destImg, quality, width, height, imgForma
  * @param alpha     透明度，0~100(为0表示全透明，100不透明)
  * @param position  水印位置，NorthWest, North, NorthEast, West, Center,East, SouthWest, South, or SouthEast
  */
-function addWaterMark(srcImg, watermarkImg, destImg, alpha, position) {
+function addWaterMark(srcImg, watermarkImg, destImg, alpha, position,callback) {
 	var composite = spawn('gm', ['composite', '-gravity', position, '-dissolve', alpha, watermarkImg, srcImg, destImg]);
 	composite.on('exit', function(code) {
+		console.log('---------水印添加完成！---------')
+		typeof callback === "function" && callback.call();
 
 	});
 }
+
+
 
 exports.config = config;
 exports.resizeCurrentImg = resizeCurrentImg;
