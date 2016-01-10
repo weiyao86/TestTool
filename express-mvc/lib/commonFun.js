@@ -13,6 +13,14 @@ var fs = require("fs"),
 	}).array("example");
 
 exports.commonfun = {
+	randomWord: function() {
+		var arr = [0,1, 2, 3, 4, 5, 6, 7, 8, 9,'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+		arr = arr.concat((new Date()).getTime());
+		arr.sort(function() {
+			return Math.random() > 0.5;
+		});
+		return arr.join('');
+	},
 	handlerError: function(err, res) {
 		return res.json({
 			IsSuccess: false,
@@ -177,7 +185,7 @@ exports.commonfun = {
 				for (var key in files) {
 					file = files[key];
 					var ext = file.name.match(/(\.\w+)$/)[1],
-						imgguid = (new Date()).getTime() + ext;
+						imgguid = self.randomWord() + ext;
 					response.push({
 						msg: "File uploaded successfully",
 						filename: file.name,
@@ -206,7 +214,7 @@ exports.commonfun = {
 					else {
 						var filename = req.files[0].originalname,
 							ext = filename.match(/(\.\w+)$/)[1],
-							imgguid = (new Date()).getTime() + ext;
+							imgguid = self.randomWord() + ext;
 						response.push({
 							msg: "File uploaded successfully",
 							filename: filename,
@@ -228,6 +236,7 @@ exports.commonfun = {
 			focusFolder = __appRoot + "/resource/data/focus",
 			originPath = __appRoot + "/resource/data/photoOrigin/" + filename,
 			watermarkImg = __appRoot + "/resource/data/waterImg/water.png",
+			ext = filename.match(/\.(\w+)$/)[1] || '',
 			folder = photoFolder;
 
 
@@ -254,7 +263,6 @@ exports.commonfun = {
 				return console.log("------------Image is not found!--------------");
 			}
 		}
-		console.log(dest);
 		fs.renameSync(src, dest);
 
 		//添加水印在右下方
@@ -265,13 +273,12 @@ exports.commonfun = {
 			writer.on('finish', function(src) {
 				console.log('原图保存完成');
 				//缩略图
-				operatorImg.resizeImgWithFullArgs(dest, dest, 100, 300, undefined, '', function() {
+				operatorImg.resizeImgWithFullArgs(dest, dest, 100, 300, undefined, ext, function() {
 					console.log('目标文件压缩完成');
 				});
 			});
 			reader.pipe(writer);
 		});
-
 		// fs.readFile(src, function(err, data) {
 		// 	if (err) return console.log("读取--" + src + "--文件错误！error:" + err);
 

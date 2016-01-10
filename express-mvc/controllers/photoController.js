@@ -91,6 +91,7 @@ photoController.actions = {
 			var accout = req.cookies["account"],
 				email = accout.email,
 				uid = accout.email, //pause replace uid
+				tempFolder = __appRoot + '/tempFile',
 				rootDirpath = __appRoot + "/resource/importData",
 				photoPath = __appRoot + "/resource/data/photo",
 				focusPath = __appRoot + "/resource/data/focus",
@@ -103,6 +104,8 @@ photoController.actions = {
 				focusFiles = [];
 
 
+			commonfun.recursiveDelFile(photoPath);
+			commonfun.recursiveDelFile(focusPath);
 
 			fs.readdir(rootDirpath, function(err, file) {
 				var rst = [];
@@ -130,22 +133,36 @@ photoController.actions = {
 
 			});
 			var callback = function(fileArr, focus) {
-				var arr = [],
-					src = focus.hasfocus ? focusPath : photoPath,
-					writer, reader;
+				var arr = [];
 
 				for (var i = 0; i < fileArr.length; i++) {
 					var filename = fileArr[i],
 						ext = filename.match(/(\.\w+)$/)[1],
-						imgguid = (new Date()).getTime() + ext;
+						imgguid = commonfun.randomWord() + ext;
+
+					//流成功
+					// (function(filename, imgguid, focus) {
+					// 	var writer = fs.createWriteStream(tempFolder + '/' + imgguid);
+					// 	var reader = fs.createReadStream(focus.src + '/' + filename);
+					// 	var callbackStream = function(imgguid, hasfocus) {
+					// 		writer.on('finish', function(err) {
+					// 			commonfun.writeFileAndRm(imgguid, hasfocus, imgguid)
+					// 		});
+					// 	};
+					// 	callbackStream(imgguid, focus.hasfocus);
+					// 	reader.pipe(writer);
+
+					// })(filename, imgguid, focus);
 
 
-					writer = fs.createWriteStream(src + '/' + imgguid);
-					reader = fs.createReadStream(focus.src + '/' + filename);
-					reader.on('finish', function(err) {
-						console.log(err);
-					})
-					reader.pipe(writer);
+					//同步方法代码更简洁，不知错误如何处理？
+					(function(filename, imgguid, focus) {
+						var data = fs.readFileSync(focus.src + '/' + filename);
+						fs.writeFileSync(tempFolder + '/' + imgguid, data);
+						commonfun.writeFileAndRm(imgguid, focus.hasfocus, imgguid)
+					})(filename, imgguid, focus);
+
+
 
 					arr.push({
 						uid: uid,
@@ -175,7 +192,7 @@ photoController.actions = {
 			var callback = function(doc) {
 				var filename = model.filename,
 					ext = filename.match(/(\.\w+)$/)[1],
-					imgguid = (new Date()).getTime() + ext,
+					imgguid = commonfun.randomWord() + ext,
 					clientName = model.imgguid;
 				var condiction = {
 						uid: email,
@@ -214,7 +231,7 @@ photoController.actions = {
 				uid = model.uid,
 				filename = model.filename,
 				ext = filename.match(/(\.\w+)$/)[1],
-				imgguid = (new Date()).getTime() + ext,
+				imgguid = commonfun.randomWord() + ext,
 				clientName = model.imgguid,
 				condiction = {
 					_id: model._id

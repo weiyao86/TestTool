@@ -54,7 +54,6 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 						break;
 					case "fullscreen":
 						var highResolutionImage = $img.data('high-res-src');
-						
 						self.viewer.show($img.attr("src"), highResolutionImage);
 						break;
 					default:
@@ -172,7 +171,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 						img.onload = function() {
 							//console.log(val+'=========='+this.src);
 						}
-						img.src = '/data/photo/' + val.filename;
+						img.src = '/data/photo/' + val.imgguid;
 					});
 				},
 				failed: function(err) {
