@@ -155,7 +155,7 @@ photoController.actions = {
 					// })(filename, imgguid, focus);
 
 
-					//同步方法代码更简洁，不知错误如何处理？
+					//同步方法代码更简洁，（异步代码又不简洁了）
 					(function(filename, imgguid, focus) {
 						var data = fs.readFileSync(focus.src + '/' + filename);
 						fs.writeFileSync(tempFolder + '/' + imgguid, data);
