@@ -1,4 +1,6 @@
 require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", "imageLoaded", "jqform", "fader", "tabPanel", "blockUI", "jquery", "bootstrap", "domReady!"], function(ajax, globalConfig, Mustache, Grid) {
+
+	console.log("win:domread")
 	var Main = function() {
 		this.init();
 	};
@@ -9,7 +11,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 			self.buildDom();
 			self.bindEvent();
 			self.load();
-			self.initComponent();
+			//self.initComponent();
 		},
 
 		buildDom: function() {
@@ -54,6 +56,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 						break;
 					case "fullscreen":
 						var highResolutionImage = $img.data('high-res-src');
+						if (!self.viewer) self.viewer = ImageViewer();
 						self.viewer.show($img.attr("src"), highResolutionImage);
 						break;
 					default:
@@ -81,7 +84,6 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 
 		initComponent: function() {
 			var self = this;
-			self.viewer = ImageViewer();
 
 			// $('.gallery-items').click(function() {
 			// 	var imgSrc = this.src,
@@ -165,11 +167,11 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 				url: globalConfig.paths.loadPhotoDetail,
 				data: params,
 				success: function(rst) {
-					var img;
+					//var img;
 					$.each(rst.data, function(idx, val) {
-						img = new Image();
+						var img = new Image();
 						img.onload = function() {
-							//console.log(val+'=========='+this.src);
+							console.log('==========' + this.src);
 						}
 						img.src = '/data/photo/' + val.imgguid;
 					});
@@ -314,7 +316,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 					$broken.each(function(idx, val) {
 						arr.push(val.src);
 						$(val).attr("src", $.dataBase64Img);
-						$(val).attr("src", "/res/images/car1.gif");
+						$(val).attr("src", "/res/images/nopic.png");
 					});
 					console.log("fail:" + arr.join("\n\t"));
 				}

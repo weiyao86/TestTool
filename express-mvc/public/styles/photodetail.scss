@@ -17,7 +17,6 @@ body {
             height: $carouselH;
 
             img {
-                height: $carouselH;
                 margin: 0 auto;
             }
         }
@@ -57,7 +56,7 @@ body {
         }
 
         img {
-            min-height: 200px;
+            min-height: 50px;
         }
 
         .operator-info {
@@ -95,9 +94,6 @@ body {
         }
     }
 }
-
-.bs-modal-lg {
-    img {
-        width: 100%;
-    }
+.bs-modal-lg{
+    img{max-width:100%;}
 }

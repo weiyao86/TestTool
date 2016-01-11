@@ -237,8 +237,8 @@ exports.commonfun = {
 			originPath = __appRoot + "/resource/data/photoOrigin/" + filename,
 			watermarkImg = __appRoot + "/resource/data/waterImg/water.png",
 			ext = filename.match(/\.(\w+)$/)[1] || '',
-			folder = photoFolder;
-
+			folder = photoFolder,
+			isNew = true;
 
 		if (isFocus) {
 			folder = focusFolder;
@@ -262,24 +262,34 @@ exports.commonfun = {
 			} else {
 				return console.log("------------Image is not found!--------------");
 			}
+			isNew = false;
 		}
 		fs.renameSync(src, dest);
+		if (!isNew) return;
 
-		//添加水印在右下方
-		operatorImg.addWaterMark(dest, watermarkImg, dest, 85, "SouthEast", function() {
-			//将原图保存到、photoOrigin目录下
-			var writer = fs.createWriteStream(originPath),
-				reader = fs.createReadStream(dest);
+		//将原图保存到、photoOrigin目录下
+		var writer = fs.createWriteStream(originPath),
+			reader = fs.createReadStream(dest);
 
-			writer.on('finish', function(src) {
-				console.log('原图保存完成');
-				//缩略图
-				operatorImg.resizeImgWithFullArgs(dest, dest, 100, 300, undefined, ext, function() {
-					console.log('目标文件压缩完成');
+		writer.on('finish', function() {
+			console.log('原图保存完成---' + originPath);
+			//添加水印在右下方
+			operatorImg.addWaterMark(originPath, watermarkImg, originPath, 85, "SouthEast", function() {
+				console.log('原图水印完成加载---' + originPath);
+			});
+
+			//缩略图
+			operatorImg.resizeImgWithFullArgs(dest, dest, 100, undefined, 500, ext, function() {
+				console.log('目标文件压缩完成---' + dest);
+				operatorImg.addWaterMark(dest, watermarkImg, dest, 85, "SouthEast", function() {
+					console.log('压缩图水印完成加载---' + dest);
 				});
 			});
-			reader.pipe(writer);
+
 		});
+		reader.pipe(writer);
+
+
 		// fs.readFile(src, function(err, data) {
 		// 	if (err) return console.log("读取--" + src + "--文件错误！error:" + err);
 
