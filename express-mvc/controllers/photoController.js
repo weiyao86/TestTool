@@ -141,26 +141,25 @@ photoController.actions = {
 						imgguid = commonfun.randomWord() + ext;
 
 					//流成功
-					// (function(filename, imgguid, focus) {
-					// 	var writer = fs.createWriteStream(tempFolder + '/' + imgguid);
-					// 	var reader = fs.createReadStream(focus.src + '/' + filename);
-					// 	var callbackStream = function(imgguid, hasfocus) {
-					// 		writer.on('finish', function(err) {
-					// 			commonfun.writeFileAndRm(imgguid, hasfocus, imgguid)
-					// 		});
-					// 	};
-					// 	callbackStream(imgguid, focus.hasfocus);
-					// 	reader.pipe(writer);
+					(function(filename, imgguid, focus) {
+						var writer = fs.createWriteStream(tempFolder + '/' + imgguid);
+						var reader = fs.createReadStream(focus.src + '/' + filename);
+						var callbackStream = function(imgguid, hasfocus) {
+							writer.on('finish', function(err) {
+								commonfun.writeFileAndRm(imgguid, hasfocus, imgguid)
+							});
+						};
+						callbackStream(imgguid, focus.hasfocus);
+						reader.pipe(writer);
 
-					// })(filename, imgguid, focus);
-
+					})(filename, imgguid, focus);
 
 					//同步方法代码更简洁，（异步代码又不简洁了）
-					(function(filename, imgguid, focus) {
-						var data = fs.readFileSync(focus.src + '/' + filename);
-						fs.writeFileSync(tempFolder + '/' + imgguid, data);
-						commonfun.writeFileAndRm(imgguid, focus.hasfocus, imgguid)
-					})(filename, imgguid, focus);
+					// (function(filename, imgguid, focus) {
+					// 	var data = fs.readFileSync(focus.src + '/' + filename);
+					// 	fs.writeFileSync(tempFolder + '/' + imgguid, data);
+					// 	commonfun.writeFileAndRm(imgguid, focus.hasfocus, imgguid)
+					// })(filename, imgguid, focus);
 
 
 
