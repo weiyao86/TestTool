@@ -30,6 +30,9 @@ body {
 .table-middle {
     display: table-cell;
     vertical-align: middle;
+    -webkit-perspective:800px;
+    -moz-perspective:800px;
+    perspective:800px;
 }
 
 .form-signin {
@@ -40,9 +43,25 @@ body {
     font-size: 14px;
     position: relative;
     z-index: 2;
+    // -webkit-transform:rotate(-180deg);
+    // -moz-transform:rotate(-180deg);
+    // transform:rotate(-180deg);
+
+    animation:pulse 2s infinite;
 
     .form-signin-heading {
         margin-bottom: 10px;
+    }
+}
+@keyframes pulse{
+    0% {
+        box-shadow:0 0 1px #008aff;//008aff
+    }
+    50% {
+        box-shadow:0 0 8px #008aff;
+    }
+    100% {
+        box-shadow:0 0 1px #008aff;
     }
 }
 
