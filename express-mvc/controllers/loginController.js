@@ -1,6 +1,6 @@
 	var gu = require("guthrie"),
 		user = require(__appRoot + "/lib/user").user,
-		maxAge = 1000*60*60*24*5;//过期时间5天
+		maxAge = 1000 * 60 * 60 * 24 * 5; //过期时间5天
 
 	var loginController = gu.controller.create();
 	loginController.actions = {
@@ -36,8 +36,7 @@
 
 				user.create(params, function(err, doc) {
 					if (err) return res.send(err);
-					console.log(params);
-					res.redirect("register?success=1");
+					res.send("创建成功!<br/>用户名:" + params.email + "<br/>密码:" + params.password);
 				});
 			}
 		},

@@ -16,38 +16,49 @@
 	<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<script type="text/javascript">
+		require(["jquery","domReady!"],function(){
+			$(".text-recover").on("click",function(){
+				$(".dock-center").toggleClass('flipped');
+			});
+
+		});
+	</script>
 </head>
 <body>
 
-<div class="content">
-	<div class="container login">
-		<div class="table-middle">
-			<form action="/login/signin" method="post" class="form-signin">
-				<h3 class="form-signin-heading">用户登录</h3>
-				<input type="email" name="email" class="form-control" placeholder="Email address" value="<%= email %>
-				" required autofocus>
-				<input type="password" name="password" class="form-control" placeholder="Password" required >
-				<div class="checkbox">
-					<label for="re_ck">
-						<input id='re_ck' type="checkbox" name="remeber">Remeber me</label>
-				</div>
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-			</form>
-			<!-- <form action="/login/save" method="post" class="form-signin">
-				<h3 class="form-signin-heading">用户注册</h3>
-				<input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
-				<input type="password" name="password" class="form-control" placeholder="Password" required >
-				<div class="checkbox">
-					<label for="re_ck">
-						<input id='re_ck' type="checkbox" name="remeber" value="Remeber me">Remeber me</label>
-				</div>
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-			</form> -->
+<div id='content' class="content">
+	<div class="container-fluid login">
+			<div class="center-block dock-center">
+				<form id="login" action="/login/signin" method="post" class="form-signin">
+					<h3 class="form-signin-heading">用户登录</h3>
+					<input type="email" name="email" class="form-control" placeholder="Email address" value="<%= email %>
+					" required autofocus>
+					<input type="password" name="password" class="form-control" placeholder="Password" required >
+					<div class="checkbox">
+						<label for="re_ck">
+							<input id='re_ck' type="checkbox" name="remeber">Remeber me</label>
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+					<a class="text-recover"><em>Register</em></a>
+				</form>
+				<form id="recover" action="/login/save" method="post" class="form-signin">
+					<h3 class="form-signin-heading">用户注册</h3>
+					<input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+					<input type="password" name="password" class="form-control" placeholder="Password" required >
+					<div class="checkbox">
+						<label for="re_ck_register">
+							<input id='re_ck_register' type="checkbox" name="remeber" value="Remeber me">Remeber me</label>
+					</div>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+					<a class="text-recover"><em>Login</em></a>
+				</form>
+			</div>
 			<div class="login-clip"></div>
-		</div>
 	</div>
+
 </div>
-<div class="flag">用户登录</div>
+<div class="flag"><a href="https://github.com/weiyao86/TestTool/tree/master/express-mvc" target="_blank">github</a> </div>
 
 </body>
 </html>
