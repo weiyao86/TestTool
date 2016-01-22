@@ -53,6 +53,11 @@ $setdeg-count: 12;
 body {
     padding-top: $bodyTop;
 }
+.center-test{
+    z-index:9999;
+    border:1px solid red;
+    @include centerEl(null,null);
+}
 
 .content {
     width: 100%;

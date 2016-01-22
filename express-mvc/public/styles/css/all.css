@@ -6,6 +6,8 @@
 
 body { padding-top: 70px; }
 
+.center-test { z-index: 9999; border: 1px solid red; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
 .content { width: 100%; height: 100%; position: relative; box-shadow: inset 0 0 30px 10px rgba(0, 0, 0, 0.5); }
 
 .sidebar { display: none; }

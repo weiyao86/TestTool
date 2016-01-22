@@ -7,8 +7,8 @@
 
 		//设置页面中viewbag值
 		this.viewbag().auth = {
-			email: req.cookies.account.email,
-			pwd: req.cookies.account.password
+			email: req.cookies.account.email
+				//pwd: req.cookies.account.password
 		};
 		next();
 	});
