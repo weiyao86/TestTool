@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>操作git遇到的问题</title>
-</head>
-<body>
+####操作git遇到的问题
+
 	<p>使用github desktop工具--github我在家里改</p>
 	<p>解决文件名过长问题:git config --system core.longpaths true</p>
 	<p>设置全局昵称:git config --global user.name "weiyao86"</p>
@@ -104,5 +99,3 @@
 　　例如，你可以运行如下命令获取对config命令的手册页帮助:
 　　$ git help config
 	</pre>
-</body>
-</html>
