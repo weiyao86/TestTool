@@ -1,12 +1,10 @@
-####操作git遇到的问题
+#操作git遇到的问题
 
-	<p>使用github desktop工具--github我在家里改</p>
-	<p>解决文件名过长问题:git config --system core.longpaths true</p>
-	<p>设置全局昵称:git config --global user.name "weiyao86"</p>
-	<p>
-		设置全局邮箱:git config --global user.email "wei.yaoisnull@gmail.com"
-	</p>
-	<p>提交步骤:</p>
+>使用github desktop工具--github我在家里改</p>
+>解决文件名过长问题:git config --system core.longpaths true
+>设置全局昵称:git config --global user.name "weiyao86"
+>设置全局邮箱:git config --global user.email "wei.yaoisnull@gmail.com"
+>提交步骤:</p>
 	<dt>step 1:</dt>
     <dd>建本地仓库然后:git init</dd>
     <dt>step 2:</dt>
