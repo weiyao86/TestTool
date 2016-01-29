@@ -6,12 +6,12 @@
 *   设置全局邮箱:git config --global user.email "wei.yaoisnull@gmail.com"
 *   提交步骤:
     1.  *建本地仓库然后:git init*
-    *   *新建一个文件加入本地仓库: git add test.txt*
-    *   *提交到本地仓库: git commit -m "提交的说明"*
-    *   *建立与github的联系: git remote add origin https://github.com/weiyao86/TestTool.git*
-    *   *push到远程: git push -u origin master*
-    *   *push过程出现问题: git pull origin master  -- 步骤三 ---  git push origin master*
-    *   *出现orign exists问题: git remote rm origin  --  git remote add origin https://github.com/weiyao86/TestTool.git  --git push -u origin master*
+    +   *新建一个文件加入本地仓库: git add test.txt*
+    +   *提交到本地仓库: git commit -m "提交的说明"*
+    +   *建立与github的联系: git remote add origin https://github.com/weiyao86/TestTool.git*
+    +   *push到远程: git push -u origin master*
+    +   *push过程出现问题: git pull origin master  -- 步骤三 ---  git push origin master*
+    +   *出现orign exists问题: git remote rm origin  --  git remote add origin https://github.com/weiyao86/TestTool.git  --git push -u origin master*
     
     **以上仅简单粗暴解决部分问题,后期使用跟进,待续!**
 ---
