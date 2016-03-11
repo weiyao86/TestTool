@@ -1,0 +1,24 @@
+%center{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
+.center{
+	@extend %center;
+}
+.wrap{
+	@extend %center;
+	background:#ff8800;
+	.wrap-child{
+		background:#f00;
+		border:20px solid #333;
+		border-radius:80%;
+		box-shadow:0 0 60px 5px rgba(0,0,0,.75);
+		width:300px;
+		height:305px;
+		transform:translate(50%,50%);
+		margin:-150px 0 0 -150px;
+}
+}
