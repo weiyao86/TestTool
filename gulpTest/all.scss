@@ -11,14 +11,18 @@
 .wrap{
 	@extend %center;
 	background:#ff8800;
+	color:#000;
+	font-size:30px;
+	font-weight:bold;
+	text-shadow:5px 0 55px rgba(100, 255, 50, 0.85);
 	.wrap-child{
 		background:#f00;
-		border:20px solid #333;
-		border-radius:80%;
+		position:absolute;
+		top:50%;
+		left:50%;
+		border:10px solid #333;
+		border-radius:4px;
 		box-shadow:0 0 60px 5px rgba(0,0,0,.75);
-		width:300px;
-		height:305px;
-		transform:translate(50%,50%);
-		margin:-150px 0 0 -150px;
+		transform:translate(-50%,-50%);
 }
 }
