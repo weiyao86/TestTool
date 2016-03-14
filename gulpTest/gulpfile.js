@@ -1,3 +1,4 @@
+var fs = require("fs");
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
@@ -5,15 +6,23 @@ var rename = require('gulp-rename');
 var minifycss = require('gulp-minify-css');
 var minifyhtml = require('gulp-minify-html');
 var concat = require('gulp-concat');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
 
 var watchCss = gulp.watch('./styles/*.css');
+
+var dateFormat = require('dateformat');
+var now = new Date();
+var dateTime = dateFormat(now, "isoDateTime");
+var comments = "/* build date: " + dateTime + " */ \n";
 //build sass
 gulp.task("sass", function() {
 	//.pipe(sass({outputStyle: 'extend'})compressed
 	gulp.src('./*.scss')
 		.pipe(sass().on('error', sass.logError))
+		.pipe(postcss([autoprefixer]))
 		.pipe(gulp.dest('./styles'))
 		.pipe(livereload());
 });
@@ -28,9 +37,10 @@ gulp.task("uglify", function() {
 
 //合并压缩css
 gulp.task("minify-css", ["sass"], function() {
-	return gulp.src('./styles/*.css')
+	return gulp.src('./styles/all.css')
 		.pipe(concat('all.css'))
 		.pipe(minifycss())
+		.pipe(postcss([autoprefixer]))
 		.pipe(gulp.dest('./release/styles'));
 });
 
@@ -75,4 +85,13 @@ gulp.task("watch", function(cb) {
 
 
 
-gulp.task('default', ["minify-html", "minify-css", "uglify"]);
+gulp.task('default', ["minify-html", "minify-css", "uglify"], function() {
+
+
+	fs.readFile('./release/js/custom.min.js', function(err, data) {
+		fs.writeFile('./release/js/custom.min.js', comments + ' ' + data, function(err1) {
+			console.log(arguments);
+		});
+	});
+
+});
