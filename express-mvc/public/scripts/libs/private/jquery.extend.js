@@ -852,7 +852,6 @@
 
 			fx.unit = [end[1], end[3]];
 			fx.bgPosReady = true;
-			var s = "|asdfasdfsl;kjfaskl;fjs";
 		}
 
 		var nowPosX = [];
