@@ -304,6 +304,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 							progess.$barpanel.parent().fadeOut("slow", function() {
 								$(this).remove();
 								progess.$modal.remove();
+								progess.$loading.hide();
 							});
 							counter = 0;
 							clearInterval(clear);
@@ -338,7 +339,8 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 			}).appendTo("body");
 
 
-			var $modal = $("<div></div>");
+			var $modal = $("<div></div>"),
+				$loading = $("[data-action='loading']");
 			$modal.css({
 				top: 0,
 				left: 0,
@@ -350,9 +352,11 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 				"z-index": 9999
 			}).appendTo("body");
 
+			$loading.fadeIn();
 			return {
 				$modal: $modal,
-				$barpanel: $progess.children()
+				$barpanel: $progess.children(),
+				$loading: $loading
 			}
 		},
 

@@ -39,6 +39,7 @@ body {
         .thumbnail {
             position: relative;
             cursor: pointer;
+            overflow:hidden;
 
             &:hover {
                 box-shadow: 0 0 60px 5px rgba(125, 125, 125, 0.75);
@@ -52,15 +53,16 @@ body {
 
                     @include delay-detail;
                 }
+
+                img{
+                    transition:.3s ease;
+                    transform:scale(1.1);
+                }
             }
         }
 
         img {
             min-height: 50px;
-            // &:hover{
-            //     transition:.3s ease;
-            //     transform:scale(1.1);
-            // }
         }
 
         .operator-info {
