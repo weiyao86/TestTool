@@ -378,40 +378,44 @@
 			var $children = this.find(".col-for-rowpanel"),
 				w = $children.outerWidth(),
 				col = Math.floor(this.width() / $children.width()),
-				step, rows_h = [];
+				case_h = [],
+				sum = [],
+				step;
+
+			for (var i = 0; i < col; i++) {
+				case_h.push([]);
+				sum.push(0);
+			}
 
 			$.each($children, function(i) {
-				var m = i % col,
-					li_h = $(this).outerHeight(true);
+				var m = i % col;
 				step = Math.floor(i / col);
-
+				$children.eq(i).css("left", w * m + "px");
+				try {
+					case_h[m].push($children.eq(i).outerHeight(true));
+				} catch (e) {
+					console.log('error');
+				}
 				if (!step) {
-					$children.eq(i).css({
-						"top": "0",
-						"left": $children.outerWidth(true) * m
-					});
-					rows_h.push(li_h);
+					$children.eq(i).css("top", "0");
 				} else {
-
-					//取第上一行图片的最小高度
-					var min_height = Math.min.apply(null, rows_h);
-					//取出最小高度的图片索引
-					var min_index = rows_h.indexOf(min_height);
-
-					$children.eq(i).css({
-						"top": min_height,
-						"left": $children.eq(min_index).position().left
-					});
-					rows_h[min_index] = min_height + li_h;
+					var num = 0;
+					for (var n = 0; n < step; n++) {
+						num += case_h[m][n];
+					}
+					$children.eq(i).css("top", num + "px");
 				}
 			});
 
-			var rst_height = rows_h.sort(function(a, b) {
-				return a < b ? a : -1;
+			$(case_h).each(function(i) {
+				$(case_h[i]).each(function(j) {
+					sum[i] += case_h[i][j];
+				});
 			});
-
 			$children.parent().css({
-				"height": rst_height[0]
+				"height": sum.sort(function(a, b) {
+					return a < b ? a : -1
+				})[0] + "px"
 			});
 		}
 	});
