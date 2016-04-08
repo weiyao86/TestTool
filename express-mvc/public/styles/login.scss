@@ -42,10 +42,11 @@ body {
     bottom: 0;
     margin: auto;
 }
-@mixin cross-browser($key,$val){
+@mixin cross-browser($key:null,$val:null){
     -ms-#{$key}:$val;
     -webkit-#{$key}:$val;
     -moz-#{$key}:$val;
+    -o-#{$key}:$val;
     #{$key}:$val;
 }
 
@@ -82,13 +83,13 @@ body {
 }
 @keyframes pulse{
     0% {
-        box-shadow: 0 0 1px rgb(255, 255, 255);//008aff
+        @include cross-browser(box-shadow,0 0 1px rgb(255, 255, 255));
     }
     50% {
-        box-shadow: 0 0 5px rgb(255, 255, 255);
+         @include cross-browser(box-shadow,0 0 5px rgb(255, 255, 255));
     }
     100% {
-        box-shadow: 0 0 1px rgb(255, 255, 255);
+         @include cross-browser(box-shadow,0 0 1px rgb(255, 255, 255));
     }
 }
 #login{
@@ -114,10 +115,9 @@ body {
 }
 
 .login-clip {
-    // box-shadow: inset 0 0 0 2px rgba(105, 202, 98, 0.5);
     width: 340px;
     height: 340px;
-    animation:pulse 4s infinite;
+     @include cross-browser(animation,pulse 4s infinite);
 }
 
 .login-clip, .login-clip:after, .login-clip:before {
@@ -130,38 +130,32 @@ body {
     content: '';
     width: 360px;
     height: 360px;
-    animation: clip 8s linear infinite;
-    -webkit-animation: clip 8s linear infinite;
-    box-shadow: inset 0 0 0 4px rgb(105, 202, 98);
-    -webkit-box-shadow: inset 0 0 0 4px rgb(105, 202, 98);
+    @include cross-browser(animation,clip 8s linear infinite);
+    @include cross-browser(box-shadow,inset 0 0 0 4px rgb(105, 202, 98));
 }
 
 .login-clip:before {
-    animation-delay: -4s;
-    -webkit-animation-delay: -4s;
+    @include cross-browser(animation-delay,-4s);
 }
 
 @mixin clip($width, $height) {
     0%, 100% {
-        clip: rect(0px, $width, 4px, 0px);
-        -webkit-clip: rect(0px, $width, 4px, 0px);
+    @include cross-browser(clip,rect(0px, $width, 4px, 0px));
     }
 
     25% {
-        clip: rect(0px, 4px, $width, 0px);
-        -webkit-clip: rect(0px, 4px, $width, 0px);
+    @include cross-browser(clip,rect(0px, 4px, $width, 0px));
     }
 
     50% {
-        clip: rect($height - 4, $width, $width, 0px);
-        -webkit-clip: rect($height - 4, $width, $width, 0px);
+    @include cross-browser(clip,rect($height - 4, $width, $width, 0px));
     }
 
     75% {
-        clip: rect(0px, $width, $height, $height - 4);
-        -webkit-clip: rect(0px, $width, $height, $height - 4);
+    @include cross-browser(clip,rect(0px, $width, $height, $height - 4));
     }
 }
+
 
 @keyframes clip {
     @include clip(360px, 360px);
