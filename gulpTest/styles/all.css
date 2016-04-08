@@ -179,5 +179,9 @@ html, body {
     opacity: 0; } }
 
 .page.slideIn {
-  -webkit-animation: slideInd .5s linear;
-          animation: slideInd .5s linear; }
+  -webkit-animation: slideInd .2s linear;
+          animation: slideInd .2s linear; }
+
+.page.slideOut {
+  -webkit-animation: slideOutd .2s linear;
+          animation: slideOutd .2s linear; }

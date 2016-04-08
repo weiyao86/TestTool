@@ -219,20 +219,19 @@ html,body{
 @keyframes slideOutd {
     from {
         transform: translate3d(0, 0, 0);
-        // left:0;
         opacity: 1;
     }
     to {
         transform: translate3d(100%, 0, 0);
-         // left:100%;
         opacity: 0;
     }
 }
 
 .page.slideIn {
-    animation: slideInd .5s linear;
+    animation: slideInd .2s linear;
+    //forwards会引起ios中滚动条无法滚动 animation: slideInd .5s forwards;
 }
 
-// .page.slideOut {
-//     animation: slideOutd .2s linear;
-// }
+.page.slideOut {
+    animation: slideOutd .2s linear;
+}

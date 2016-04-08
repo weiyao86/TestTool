@@ -376,91 +376,91 @@
 		 */
 		waterfall: function() {
 			//一：按索引排列图片
-			var $children = this.find(".col-for-rowpanel"),
-				w = $children.outerWidth(),
-				col = Math.floor(this.width() / $children.width()),
-				case_h = [],
-				sum = [],
-				row;
+			// var $children = this.find(".col-for-rowpanel"),
+			// 	w = $children.outerWidth(true),
+			// 	col = Math.ceil(this.outerWidth(true) / $children.outerWidth(true)),
+			// 	case_h = [],
+			// 	sum = [],
+			// 	row;
 
-			for (var i = 0; i < col; i++) {
-				case_h.push([]);
-				sum.push(0);
-			}
+			// console.log(this.outerWidth(true) + '===' + $children.outerWidth(true));
 
-			$.each($children, function(i) {
-				var m = i % col;
-				row = Math.floor(i / col);
-				$(this).css("left", w * m + "px");
-				try {
-					case_h[m].push($(this).outerHeight(true));
-				} catch (e) {
-					console.log('error');
-				}
-				if (!row) {
-					$(this).css("top", "0");
-				} else {
-					var num = 0;
-					for (var n = 0; n < row; n++) {
-						num += case_h[m][n];
-					}
-					$(this).css("top", num + "px");
-				}
-			});
+			// for (var i = 0; i < col; i++) {
+			// 	case_h.push([]);
+			// 	sum.push(0);
+			// }
 
-			$(case_h).each(function(i) {
-				$(case_h[i]).each(function(j) {
-					sum[i] += case_h[i][j];
-				});
-			});
-			$children.parent().css({
-				"height": sum.sort(function(a, b) {
-					return a < b ? a : -1
-				})[0] + "px"
-			});
-
-
-			//二：按照一行图片中高度最低的图片依次往下排，在bootstrap中使用会破坏原有的媒体查询设置
-			// var contentW = this.width(),
-			// 	$cases = this.find(".col-for-rowpanel"),
-			// 	li_w = $cases.outerWidth(true),
-			// 	cell = Math.ceil(contentW / li_w);
-			// var step, rows_h = [];
-			// $.each($cases, function(i) {
-			// 	var m = i % cell,
-			// 		li_h = $(this).outerHeight(true);
-			// 	step = Math.floor(i / cell);
-			// 	console.log(li_w + '===' + contentW);
-			// 	if (!step) {
-			// 		$cases.eq(i).css({
-			// 			"width": li_w,
-			// 			"top": "0",
-			// 			"left": li_w * m
-			// 		});
-			// 		rows_h.push(li_h);
-			// 	} else {
-			// 		//取上一行图片的最小高度
-			// 		var min_height = Math.min.apply(rows_h, rows_h);
-			// 		//取出最小高度的图片索引
-			// 		var min_index = rows_h.indexOf(min_height);
-
-			// 		$(this).css({
-			// 			"width": li_w,
-			// 			"top": min_height,
-			// 			"left": li_w * min_index
-			// 		});
-			// 		rows_h[min_index] = min_height + li_h;
-
+			// $.each($children, function(i) {
+			// 	var m = i % col;
+			// 	row = Math.floor(i / col);
+			// 	$(this).css("left", w * m + "px");
+			// 	try {
+			// 		case_h[m].push($(this).outerHeight(true));
+			// 	} catch (e) {
+			// 		console.log('error');
 			// 	}
+			// 	if (!row) {
+			// 		$(this).css("top", "0");
+			// 	} else {
+			// 		var num = 0;
+			// 		for (var n = 0; n < row; n++) {
+			// 			num += case_h[m][n];
+			// 		}
+			// 		$(this).css("top", num + "px");
+			// 	}
+			// });
 
+			// $(case_h).each(function(i) {
+			// 	$(case_h[i]).each(function(j) {
+			// 		sum[i] += case_h[i][j];
+			// 	});
+			// });
+			// $children.parent().css({
+			// 	"height": sum.sort(function(a, b) {
+			// 		return a < b ? a : -1
+			// 	})[0] + "px"
 			// });
 
 
-			// var rst_height = rows_h.sort(function(a, b) {
-			// 	return a < b ? a : -1;
-			// });
+			//二：按照一行图片中高度最低的图片依次往下排，在bootstrap中使用会破坏原有的媒体查询设置\
+			//?现在可以了？why?"left": li_w * m 试下来是left定位不准 造成，看后续效果
+			var contentW = this.outerWidth(true),
+				$cases = this.find(".col-for-rowpanel"),
+				li_w = $cases.outerWidth(true),
+				cell = Math.ceil(contentW / li_w);
+			var step, rows_h = [];
+			$.each($cases, function(i) {
+				var m = i % cell,
+					li_h = $(this).outerHeight(true);
+				step = Math.floor(i / cell);
+				if (!step) {
+					$cases.eq(i).css({
+						// "width": li_w,
+						"top": "0",
+						"left": li_w * m
+					});
+					rows_h.push(li_h);
+				} else {
+					//取上一行图片的最小高度
+					var min_height = Math.min.apply(rows_h, rows_h);
+					//取出最小高度的图片索引
+					var min_index = rows_h.indexOf(min_height);
 
-			// $cases.parent().css("height", rst_height[0]);
+					$(this).css({
+						// "width": li_w,
+						"top": min_height,
+						"left": li_w * min_index
+					});
+					rows_h[min_index] = min_height + li_h;
+				}
+			});
+
+
+			var rst_height = rows_h.sort(function(a, b) {
+				return a < b ? a : -1;
+			});
+
+			$cases.parent().css("height", rst_height[0]);
 
 		}
 	});
