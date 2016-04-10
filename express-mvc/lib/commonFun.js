@@ -229,14 +229,21 @@ exports.commonfun = {
 		});
 	},
 
-	writeFileAndRm: function(filename, isFocus, imgguid) {
+	/**
+	 * [writeFileAndRm description]
+	 * @param  {[type]}  filename [旧图名]
+	 * @param  {Boolean} isFocus  [是否焦点图]
+	 * @param  {[type]}  imgguid  [新图名]
+	 * @return {[type]}           [description]
+	 */
+	writeFileAndRm: function(oldfilename, isFocus, newfilename) {
 		var self = this,
 			folderPath = __appRoot + '/tempFile',
 			photoFolder = __appRoot + "/resource/data/photo",
 			focusFolder = __appRoot + "/resource/data/focus",
-			originPath = __appRoot + "/resource/data/photoOrigin/" + filename,
+			originPath = __appRoot + "/resource/data/photoOrigin/" + newfilename,
 			watermarkImg = __appRoot + "/resource/data/waterImg/water.png",
-			ext = filename.match(/\.(\w+)$/)[1] || '',
+			ext = oldfilename.match(/\.(\w+)$/)[1] || '',
 			folder = photoFolder,
 			isNew = true;
 
@@ -244,10 +251,10 @@ exports.commonfun = {
 			folder = focusFolder;
 		}
 
-		var src = folderPath + "/" + filename,
-			photoFile = photoFolder + "/" + imgguid,
-			focusFile = focusFolder + "/" + imgguid,
-			dest = folder + "/" + imgguid;
+		var src = folderPath + "/" + oldfilename,
+			photoFile = photoFolder + "/" + newfilename,
+			focusFile = focusFolder + "/" + newfilename,
+			dest = folder + "/" + newfilename;
 
 		//从临时文件夹移动到目标文件夹
 		if (fs.existsSync(src)) {
