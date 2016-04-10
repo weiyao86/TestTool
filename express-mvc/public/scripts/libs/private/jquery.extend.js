@@ -374,7 +374,10 @@
 		 * [waterfall description]瀑布流布局
 		 * @return {[type]} [description]
 		 */
-		waterfall: function() {
+		waterfall: function(opts) {
+			var opts = $.extend(true, {
+				isAdaptiveWidth: true
+			}, opts);
 			//一：按索引排列图片
 			// var $children = this.find(".col-for-rowpanel"),
 			// 	w = $children.outerWidth(true),
@@ -430,24 +433,28 @@
 				cell = Math.ceil(contentW / li_w);
 			var step, rows_h = [];
 			$.each($cases, function(i) {
-				var m = i % cell,
-					li_h = $(this).outerHeight(true);
+				var $that_li = $(this),
+					m = i % cell,
+					li_h = $that_li.outerHeight(true);
 				step = Math.floor(i / cell);
+
+				!opts.isAdaptiveWidth && $that_li.css({
+					"width": li_w
+				});
 				if (!step) {
-					$cases.eq(i).css({
-						// "width": li_w,
+					$that_li.css({
 						"top": "0",
 						"left": li_w * m
 					});
-					rows_h.push(li_h);
+					opts.isAdaptiveWidth &&
+						rows_h.push(li_h);
 				} else {
 					//取上一行图片的最小高度
 					var min_height = Math.min.apply(rows_h, rows_h);
 					//取出最小高度的图片索引
 					var min_index = rows_h.indexOf(min_height);
 
-					$(this).css({
-						// "width": li_w,
+					$that_li.css({
 						"top": min_height,
 						"left": li_w * min_index
 					});

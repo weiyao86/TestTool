@@ -317,7 +317,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 					$broken.each(function(idx, val) {
 						arr.push(val.src);
 						$(val).attr("src", $.dataBase64Img);
-						$(val).attr("src", "/res/images/nopic.png");
+						$(val).attr("src", "/res/images/nopic.jpg");
 					});
 					console.log("fail:" + arr.join("\n\t"));
 				}
