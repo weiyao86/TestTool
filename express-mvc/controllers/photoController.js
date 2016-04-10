@@ -191,7 +191,6 @@ photoController.actions = {
 			var callback = function(doc) {
 				var filename = model.filename,
 					ext = filename.match(/(\.\w+)$/)[1],
-					imgguid = commonfun.randomWord() + ext,
 					clientName = model.imgguid;
 				var condiction = {
 						uid: email,
@@ -200,7 +199,7 @@ photoController.actions = {
 					content = {
 						uid: email,
 						filename: filename,
-						imgguid: imgguid,
+						imgguid: clientName,
 						note: model.note,
 						sort: model.sort,
 						isFocusPhoto: model.isFocusPhoto,
@@ -209,7 +208,7 @@ photoController.actions = {
 					};
 
 				commonfun.insert(req, res, photo, condiction, content, function(req, res, doc) {
-					commonfun.writeFileAndRm(clientName, content.isFocusPhoto, imgguid);
+					commonfun.writeFileAndRm(clientName, content.isFocusPhoto, clientName);
 				});
 			};
 
@@ -230,7 +229,6 @@ photoController.actions = {
 				uid = model.uid,
 				filename = model.filename,
 				ext = filename.match(/(\.\w+)$/)[1],
-				imgguid = commonfun.randomWord() + ext,
 				clientName = model.imgguid,
 				condiction = {
 					_id: model._id
