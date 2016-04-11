@@ -23,9 +23,9 @@ body {
     }
 }
 
-@mixin delay-detail {
-    -webkit-transition: all .2s linear;
-    transition: all .2s linear;
+@mixin delay-detail($time:.2s) {
+    -webkit-transition: all $time linear;
+    transition: all $time linear;
 }
 
 .row-water-panel {
@@ -33,14 +33,15 @@ body {
 
     .col-for-rowpanel {
         position: absolute;
+        top:0;
+        left:0;
 
-        @include delay-detail;
+        @include delay-detail(.75s);
 
         .thumbnail {
             position: relative;
             cursor: pointer;
             overflow:hidden;
-            
 
             &:hover {
                 box-shadow: 0 0 60px 5px rgba(125, 125, 125, 0.75);
