@@ -6,7 +6,7 @@ body { background: url("/res/images/lg_bg.png") repeat #fff; }
 
 .carousel-custom .carousel-inner .item { height: 100%; }
 
-.carousel-custom .carousel-inner .item img { margin: 0 auto; }
+.carousel-custom .carousel-inner .item img { margin: 0px auto; }
 
 .row-water-panel { position: relative; }
 
