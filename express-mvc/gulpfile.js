@@ -11,7 +11,7 @@ var autoprefixer = require('autoprefixer');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
 var rjs = require('gulp-requirejs');
-// var amdOptimize = require('amd-optimize');
+var amdOptimize = require('amd-optimize');
 
 var watchCss = gulp.watch('./public/styles/*.css');
 
@@ -101,28 +101,20 @@ gulp.task("rjs", function() {
 		};
 
 
+
 	config["out"] = 'master.min.js';
 	config["include"] = ['app/master/main.js'];
 	config["exclude"] = ["bootstrap", "globalConfig", "jquery"];
 
-	rjs(config, sg).pipe(uglify()).pipe(gulp.dest('./public/release/scripts/'));
+	//一
+	return gulp.src(baseUrl + "app/master/main.js")
+		.pipe(amdOptimize("app/master/main", config))
+		.pipe(concat("master.min.js"))
+		.pipe(uglify())
+		.pipe(gulp.dest('./public/release/scripts/'));
 
-	// config["out"] = 'photo.min.js';
-	// config["include"] = ['app/photo/main.js'];
-	// config["exclude"] = ["bootstrap", "globalConfig", "jquery"];
-
+	//二
 	// rjs(config).pipe(uglify()).pipe(gulp.dest('./public/release/scripts/'));
-	// for (var key in scriptsList) {
-
-	// 	config["out"] = key + '.min.js';
-	// 	config["include"] = [scriptsList[key]];
-	// 	config["exclude"] = ["bootstrap", "globalConfig", "jquery"];
-	// 	console.log(config + '===' + config["out"] + '====' + scriptsList);
-
-	// 	rjs(config).pipe(gulp.dest('./public/release/scripts/'));
-
-	// 	// rjs(config).pipe(uglify()).pipe(gulp.dest('./public/release/scripts/'));
-	// }
 });
 
 
