@@ -442,19 +442,18 @@
 					"width": li_w
 				});
 				if (!step) {
-					$that_li.css({
+					$that_li.animate({
 						"top": "0",
 						"left": li_w * m
 					});
-					opts.isAdaptiveWidth &&
-						rows_h.push(li_h);
+					rows_h.push(li_h);
 				} else {
 					//取上一行图片的最小高度
 					var min_height = Math.min.apply(rows_h, rows_h);
 					//取出最小高度的图片索引
 					var min_index = rows_h.indexOf(min_height);
 
-					$that_li.css({
+					$that_li.animate({
 						"top": min_height,
 						"left": li_w * min_index
 					});

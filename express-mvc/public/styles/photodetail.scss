@@ -33,10 +33,8 @@ body {
 
     .col-for-rowpanel {
         position: absolute;
-        top:0;
-        left:0;
-
-        @include delay-detail(.75s);
+        top:120%;
+        left:50%;
 
         .thumbnail {
             position: relative;

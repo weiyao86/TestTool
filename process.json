@@ -1,0 +1,22 @@
+{
+	"apps": [{
+		"name": "express-mvc",
+		"port": "8888",
+		"script": "app.js",
+		"cwd": "express-mvc/",
+		"log_date_format": "YYYY-MM-DD HH:mm Z",
+		"error_file": "",
+		"out_file": "",
+		"env": {
+			"NODE_ENV": "development"
+		},
+		"env_production": {
+			"NODE_ENV": "production"
+		},
+		"exec_mode": "cluster"
+	}, {
+		"name": "test",
+		"script": "app.js",
+		"cwd": "ext-demo/"
+	}]
+}
