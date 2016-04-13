@@ -1,6 +1,12 @@
+	<% viewbag.pageCode="photo" %>
 	<%- include('../frame/frame_head')-%>	
 	<!-- load css -->	
-	<link rel="stylesheet" href="/styles/css/grid.css">	
+	<% if(viewbag.isLocal) {%>
+		<link rel="stylesheet" href="/styles/css/all.css">
+		<link rel="stylesheet" href="/styles/css/grid.css">	
+	<%} else {%>
+		<link rel="stylesheet" href="/release/styles/photo.min.css">
+	<% }%>
 	<!-- <h1>delay</h1>
 	<script type='text/javascript' src='/photo/delay'></script> -->
 	<!-- <h1>看不见我</h1> -->
@@ -221,6 +227,6 @@
 		</div>
 	</div>
 
-	<script type='text/javascript' src='/scripts/app/photo/main.js'></script>
-
+	<!-- <script type='text/javascript' src='/scripts/app/photo/main.js'></script> -->
+	<script type='text/javascript' src='/scripts/app/boots.js'></script>
 	<%- include('../frame/frame_footer')-%>	

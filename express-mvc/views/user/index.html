@@ -1,6 +1,14 @@
+	<% viewbag.pageCode="user" %>
 	<%- include('../frame/frame_head')-%>	
+
 	<!-- load css -->	
-	<link rel="stylesheet" href="/styles/css/grid.css">	
+	<% if(viewbag.isLocal) {%>
+		<link rel="stylesheet" href="/styles/css/all.css">
+		<link rel="stylesheet" href="/styles/css/grid.css">	
+	<%} else {%>
+		<link rel="stylesheet" href="/release/styles/user.min.css">	
+	<% }%>
+	
 
 	<blockquote>Condition</blockquote>
 
@@ -148,6 +156,12 @@
 	</div>
 	</div>
 
+	<script type='text/javascript' src='/scripts/app/boots.js'></script>
+
+<!-- 	<% if(viewbag.isLocal) {%>
 	<script type='text/javascript' src='/scripts/app/user/main.js'></script>
+	<%} else {%>
+	<script type='text/javascript' src='/scripts/app/user/main.js'></script>
+	<% }%> -->
 
 	<%- include('../frame/frame_footer')-%>	

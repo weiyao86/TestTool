@@ -1,24 +1,36 @@
 var fs = require("fs");
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var minifycss = require('gulp-minify-css');
+var sass = require('gulp-sass'); //预处理css
+var uglify = require('gulp-uglify'); //压缩
+var rename = require('gulp-rename'); //重命名
+// var minifycss = require('gulp-minify-css');
+var cleanCss = require('gulp-clean-css');
 var minifyhtml = require('gulp-minify-html');
-var concat = require('gulp-concat');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var watch = require('gulp-watch');
-var livereload = require('gulp-livereload');
-var rjs = require('gulp-requirejs');
-var amdOptimize = require('amd-optimize');
-
+var concat = require('gulp-concat'); //合并
+var postcss = require('gulp-postcss'); //为autoprefixer服务
+var autoprefixer = require('autoprefixer'); //为css自动添加前缀
+var watch = require('gulp-watch'); //实时监听
+var livereload = require('gulp-livereload'); //实时刷新网页需配合chrome插件
+var rjs = require('gulp-requirejs'); //针对amd规范压缩 将所有依赖文件合并到一个文件与amd-optimize相似
+var amdOptimize = require('amd-optimize'); //针对amd规范压缩，需要concat合并到一个文件
+var requirejs = require('requirejs'); //针对require规范压缩
+var copy = require('copy-to'); //复制对象功能
+var copyFile = require('gulp-copy'); //复制文件功能
+var async = require('async'); //async.series 实现队列形式，串联所有回调
+var ginsert = require("gulp-insert");
 var watchCss = gulp.watch('./public/styles/*.css');
 
 var dateFormat = require('dateformat');
 var now = new Date();
 var dateTime = dateFormat(now, "isoDateTime");
 var comments = "/* build date: " + dateTime + " */ \n";
+
+var util = {
+	log: function(text) {
+		console.log("| ");
+		console.log("| >>" + text);
+	}
+};
 //build sass
 gulp.task("sass", function() {
 	//.pipe(sass({outputStyle: 'extend'})extend/compressed/compact
@@ -42,11 +54,66 @@ gulp.task("uglify", function() {
 });
 
 //合并压缩css
-gulp.task("minify-css", ["sass"], function() {
-	return gulp.src('./styles/all.css')
-		.pipe(concat('all.css'))
-		.pipe(minifycss())
-		.pipe(gulp.dest('./release/styles'));
+gulp.task("minify-css", ["sass"], function(callback) {
+	var baseCssUrl = "./public/styles/css/",
+		releaseUrl = "./public/release/styles/",
+		cssList = {
+			login: {
+				originFile: ["all.css", "login.css"],
+				outFile: "login.min.css"
+			},
+			main: {
+				originFile: ["all.css"],
+				outFile: "main.min.css"
+			},
+			user: {
+				originFile: ["all.css", "grid.css"],
+				outFile: "user.min.css"
+			},
+			photo: {
+				originFile: ["all.css", "grid.css"],
+				outFile: "photo.min.css"
+			},
+			photoDetail: {
+				originFile: ["all.css", "imageviewer.css", "photodetail.css"],
+				outFile: "photoDetail.min.css"
+			}
+		},
+		list = [];
+
+	for (var key in cssList) {
+		(function(cssList, key) {
+			var cssFiles = cssList[key].originFile.map(function(val) {
+				return baseCssUrl + val;
+			});
+
+			list.push(function(cb) {
+				gulp.src(cssFiles)
+					.pipe(concat(cssList[key].outFile))
+					.pipe(cleanCss({
+						keepSpecialComments: 0,
+						compatibility: 'ie8'
+					}))
+					.pipe(ginsert.transform(function(contents, file) {
+						util.log("Uglify Css success for path:" + file.path);
+						return comments + contents;
+					}))
+					.pipe(gulp.dest(releaseUrl))
+					.on("error", function(err) {
+						cb(err);
+					})
+					.on("end", function() {
+						cb(null);
+					});
+			});
+		})(cssList, key);
+	}
+
+	async.series(list, function(err) {
+		if (err) console.log(err);
+		util.log(">>-----------------------------------------------------------uglify css complete");
+		callback();
+	});
 });
 
 //合并压缩html
@@ -64,17 +131,42 @@ gulp.task('rebuild', function() {
 		.pipe(gulp.dest('./styles'));
 });
 
-gulp.task("rjs", function() {
-	//一次只能做一个压缩任务  WHY？？还没找到方法同时做多个任务
+//压缩requirejs
+gulp.task("rjs", function(callback) {
 	var baseUrl = "./public/scripts/",
 		scriptsList = {
-			master: "app/master/main.js",
-			photo: "app/photo/main.js",
-			photoDetail: "app/photo/detail.js",
-			user: "app/user/main.js"
+			master: {
+				originFile: "app/master/main.js",
+				outFile: "master.min.js"
+			},
+			photo: {
+				originFile: "app/photo/main.js",
+				outFile: "photo.min.js"
+			},
+			photoDetail: {
+				originFile: "app/photo/detail.js",
+				outFile: "detail.min.js"
+			},
+			user: {
+				originFile: "app/user/main.js",
+				outFile: "user.min.js"
+			}
 		},
 		config = {
 			"baseUrl": baseUrl,
+			"optimize": "uglify",
+			"exclude": ["bootstrap", "globalConfig", "jquery"],
+			"preserveLicenseComments": false, //注释
+			"onBuildWrite": function(moduleName, path, contents) {
+				console.log("--正在处理模块：" + moduleName + ">>path:-" + path);
+				return contents;
+			},
+			"onModuleBundleComplete": function(data) {
+				//最后一个js文件为主入口文件[buildJsFile]
+				var buildJsFile = data.included[data.included.length - 1],
+					log = ' Uglifying script file >> ' + buildJsFile;
+				util.log(log);
+			},
 			"paths": {
 				"jquery": "libs/jquery-1.11.3",
 				"bootstrap": "libs/bootstrap",
@@ -100,24 +192,60 @@ gulp.task("rjs", function() {
 			}
 		};
 
-
-
-	config["out"] = 'master.min.js';
-	config["include"] = ['app/master/main.js'];
-	config["exclude"] = ["bootstrap", "globalConfig", "jquery"];
-
 	//一
-	return gulp.src(baseUrl + "app/master/main.js")
-		.pipe(amdOptimize("app/master/main", config))
-		.pipe(concat("master.min.js"))
-		.pipe(uglify())
-		.pipe(gulp.dest('./public/release/scripts/'));
+	// return gulp.src(baseUrl + "app/master/main.js")
+	// 	.pipe(amdOptimize("app/master/main", config))
+	// 	.pipe(concat("master.min.js"))
+	// 	.pipe(uglify())
+	// 	.pipe(gulp.dest('./public/release/scripts/'));
 
 	//二
 	// rjs(config).pipe(uglify()).pipe(gulp.dest('./public/release/scripts/'));
+	// 
+	// 三 requirejs
+	var list = [],
+		keepScope = function(sf) {
+			sf.include = sf.originFile;
+			sf.out = function(text) {
+				fs.writeFile("./public/release/scripts/" + sf.outFile, comments + text, function(err) {
+					if (err) {
+						util.log(err);
+					}
+					util.log(sf.outFile + "     --->> success!")
+				});
+			};
+			list.push(function(cb) {
+				requirejs.optimize(sf, function(str) {
+					cb(null);
+				}, function(err) {
+					cb(err);
+				});
+			});
+		};
+	for (var key in scriptsList) {
+		var sf = scriptsList[key];
+		copy(config).to(sf);
+		keepScope(sf);
+	}
+	async.series(list, function(err, result) {
+		if (err) util.log("async.series:" + err);
+		util.log(">>-----------------------------------------------------------uglify js complete");
+		callback();
+	});
 });
 
 
+//复制文件
+gulp.task("copy", ["minify-css", "rjs"], function(cb) {
+	gulp.src("./public/res/**/")
+		.pipe(copyFile('./public/release/', {
+			prefix: 1
+		}))
+		.on("end", function() {
+			util.log(">>-----------------------------------------------------------文件复制完成");
+			cb(null);
+		});
+});
 
 // watchCss.on('change', function(event) {
 // 	console.log('file ' + event.path + ' was' + event.type + ' ,runing tasks...');
@@ -144,14 +272,6 @@ gulp.task("watch", function(cb) {
 });
 
 
-
-gulp.task('default', ["minify-html", "minify-css", "uglify"], function() {
-
-
-	// fs.readFile('./release/js/custom.min.js', function(err, data) {
-	// 	fs.writeFile('./release/js/custom.min.js', comments + ' ' + data, function(err1) {
-	// 		console.log(arguments);
-	// 	});
-	// });
+gulp.task('default', ["minify-css", "copy", "rjs"], function() {
 
 });

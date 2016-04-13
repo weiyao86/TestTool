@@ -10,6 +10,7 @@
 			email: req.cookies.account.email
 				//pwd: req.cookies.account.password
 		};
+		this.viewbag().isLocal = false;
 		next();
 	});
 
