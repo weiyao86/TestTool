@@ -58,7 +58,6 @@ photoController.actions = {
 				filters = this.filters;
 
 			req.session["photo"] = 0;
-
 			commonfun.queryAll(res, photo, condition, filters);
 		}
 	},

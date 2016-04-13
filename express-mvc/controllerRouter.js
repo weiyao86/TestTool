@@ -5,7 +5,7 @@
 	mongoose.connect(uri);
 	var db = mongoose.connection;
 	db.on('error', function() {
-		console.log('connection error');
+		console.log('mongodb connection error');
 	});
 
 	function routerMap(app) {

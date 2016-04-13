@@ -3,6 +3,7 @@
 		maxAge = 1000 * 60 * 60 * 24 * 5; //过期时间5天
 
 	var loginController = gu.controller.create();
+
 	loginController.actions = {
 
 		filter: [function(req, res, next) {
@@ -14,6 +15,7 @@
 					params = {
 						email: (cookie.email || '').trim()
 					};
+				this.viewbag().pageCode = {};
 
 				res.view(params);
 			}
