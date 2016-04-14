@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="/styles/css/bootstrap.css">
 	<link rel="stylesheet" href="/styles/css/all.css">
 	<link rel="stylesheet" href="/styles/css/login.css">
+	<script src="/scripts/libs/socket.io.js"></script>
 	<% viewbag.pageCode="login" %>
 	<%- include("../config/requireConfig")-%>
 	<%- include("../config/globalConfig")-%>
@@ -16,8 +17,15 @@
 	<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
+
 	<script type="text/javascript">
-		require(["jquery","domReady!"],function(){
+		var s=io.connect("http://localhost:8002");
+    		s.on("news",function(data){
+    			console.log(data);
+    			s.emit('myEvent',{my:'data'});
+    	});
+
+    	require(["jquery","domReady!"],function(){
 			$(".text-recover").on("click",function(){
 				$(".dock-center").toggleClass('flipped');
 			});
@@ -31,7 +39,7 @@
 	<div class="container-fluid login">
 			<div class="center-block dock-center">
 				<form id="login" action="/login/signin" method="post" class="form-signin">
-					<h3 class="form-signin-heading">用户登录454</h3>
+					<h3 class="form-signin-heading">用户登录</h3>
 					<input type="email" name="email" class="form-control" placeholder="Email address" value="<%= email %>
 					" required autofocus>
 					<input type="password" name="password" class="form-control" placeholder="Password" required >

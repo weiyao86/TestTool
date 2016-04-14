@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="javascripts/socket.io.js"></script>
+    <script src="javascripts/jquery-1.11.3.js"></script>
+    <script src="javascripts/require.js"></script>
+    <script>
+    	window.onload=function(){
+
+    		var s=io.connect("10.0.0.164:8005/index");
+
+    		var $template=$("#template").hide();
+    		function setContent(data){
+    				$template.find("p:first").html(data.title);
+    				$template.find("p:last").html(data.content);
+
+    				var temp = $template.clone().html();
+    				$(".body").append(temp).scrollTop(9999999);
+    		}
+
+    		//注册事件
+    		s.on('servercall',function(data){
+    			setContent(data);
+    		});
+
+    		s.on('server',function(data){
+    				setContent(data);
+    		});
+    		var auth=new Date().getTime();
+    		$(document).on("keypress",function(e){
+    			if(e.ctrlKey && e.which == 13 || e.which == 10){
+
+    				//通知服务端
+					s.emit('client',{auth: auth+ '说:', content:$("#msg").val()});
+					$("#msg").val('');
+    			}
+    		});
+
+    		$("#btn").on("click",function(){
+    			//通知服务端
+					s.emit('client',{auth: auth+ '说:', content:$("#msg").val()});
+					$("#msg").val('');
+    		})
+    	}
+    </script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div class="wrap">
+    	<div class="head">Socket.io.js</div>
+    	<div class="body">
+    	</div>
+    	<div class="bottom">
+    		<textarea name="" placeholder="说点什么……。ctrl+enter 发送信息" id="msg" cols="30" rows="10"></textarea>
+    	</div>
+    </div>
+    <input type="button" id="btn" value="submit">
+    <div id='template'>
+    	<p class="title">aafad</p>
+    	<p class="content">fdadsadf</p>
+    </div>
+
+  </body>
+</html>

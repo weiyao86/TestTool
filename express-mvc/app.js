@@ -89,6 +89,23 @@ app.use(function(err, req, res, next) {
 
 
 // Fire up server 监听端口
-app.listen(8002, function() {
-	console.log('Express server listening on port: ' + 8002);
+// app.listen(8002, function() {
+// 	console.log('Express server listening on port: ' + 8002);
+// });
+
+
+//socket.io
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+server.listen(8002, function() {
+	console.log("app start:8002 success!");
+});
+
+io.on("connection", function(s) {
+	s.emit('news', {
+		hello: 'world--' + (Math.random() * (100 - 20 + 1) - 20)
+	});
+	s.on('myEvent', function(data) {
+		console.log(data);
+	});
 });

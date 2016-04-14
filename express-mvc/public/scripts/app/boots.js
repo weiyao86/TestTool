@@ -1,22 +1,22 @@
 var loadScriptPaths = {
-	master: {
-		development: ["app/master/main.js"],
-		release: ["master.min.js"]
+	"master": {
+		"development": ["app/master/main.js"],
+		"release": ["master.min.js"]
 	},
 
-	photo: {
-		development: ["app/photo/main.js"],
-		release: ["photo.min.js"]
+	"photo": {
+		"development": ["app/photo/main.js"],
+		"release": ["photo.min.js"]
 	},
 
-	photoDetail: {
-		development: ["app/photo/detail.js"],
-		release: ["detail.min.js"]
+	"photoDetail": {
+		"development": ["app/photo/detail.js"],
+		"release": ["detail.min.js"]
 	},
 
-	user: {
-		development: ["app/user/main.js"],
-		release: ["user.min.js"]
+	"user": {
+		"development": ["app/user/main.js"],
+		"release": ["user.min.js"]
 	}
 };
 

@@ -18,12 +18,16 @@ var copy = require('copy-to'); //复制对象功能
 var copyFile = require('gulp-copy'); //复制文件功能
 var async = require('async'); //async.series 实现队列形式，串联所有回调
 var ginsert = require("gulp-insert");
+var jslint = require("gulp-jslint");
 var watchCss = gulp.watch('./public/styles/*.css');
 
 var dateFormat = require('dateformat');
 var now = new Date();
 var dateTime = dateFormat(now, "isoDateTime");
 var comments = "/* build date: " + dateTime + " */ \n";
+
+//加载所有package.json中的插件如：gulp-minify-html  ==> $.minifyHtml
+//var $=require("gulp-load-plugins");
 
 var util = {
 	log: function(text) {
@@ -51,6 +55,32 @@ gulp.task("uglify", function() {
 		.pipe(uglify())
 		.pipe(rename('custom.min.js'))
 		.pipe(gulp.dest('./release/js'));
+});
+
+
+//这玩意不搞个strict模式就没法用……。
+gulp.task("jslint", function() {
+	return gulp.src(["./public/scripts/app/**/*.js"])
+		.pipe(jslint({
+			node: true,
+			evil: true,
+			nomen: true,
+			global: ['$'],
+			predef: [],
+			reporter: 'default',
+			edition: '2014-07-08',
+			errorsOnly: false
+				// reporter: function(evt) {
+				// 	var msg = ' ' + evt.file;
+				// 	if (evt.pass) {
+				// 		msg = '[PASS]' + msg;
+				// 	} else {
+				// 		msg = '[FAIL]' + msg;
+				// 	}
+				// 	util.log(msg);
+				// }
+		}));
+
 });
 
 //合并压缩css
