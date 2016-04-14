@@ -25,22 +25,22 @@
     			setContent(data);
     		});
 
-    		s.on('server',function(data){
+    		s.on('message',function(data){
     				setContent(data);
     		});
     		var auth=new Date().getTime();
+
     		$(document).on("keypress",function(e){
     			if(e.ctrlKey && e.which == 13 || e.which == 10){
-
     				//通知服务端
-					s.emit('client',{auth: auth+ '说:', content:$("#msg").val()});
+					s.emit('say',{auth: auth+ '说:', content:$("#msg").val()});
 					$("#msg").val('');
     			}
     		});
 
     		$("#btn").on("click",function(){
     			//通知服务端
-					s.emit('client',{auth: auth+ '说:', content:$("#msg").val()});
+					s.emit('say',{auth: auth+ '说:', content:$("#msg").val()});
 					$("#msg").val('');
     		})
     	}

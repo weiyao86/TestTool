@@ -66,20 +66,25 @@ server.listen(8005, function() {
 });
 
 
-var clientList = [];
+var clientList = {};
 io.of('index').on("connection", function(s) {
 
 	var call = ["你好", "你说什么？", "见你到很高兴", "时候不早了", "赶紧回家吃饭吧", "下班了", "你是谁？"];
 	console.log(s.client.conn.remoteAddress);
-	clientList.push(s.client.conn.remoteAddress);
+	clientList[s.client.conn.remoteAddress] = s;
 
 
-	s.on('client', function(data) {
+	s.on('say', function(data) {
 		console.log('ip:' + s.client.conn.remoteAddress);
-		s.emit('server', {
-			title: val,
-			content: data.content
-		});
+
+
+		for (var key in clientList) {
+			console.log(key + "说:")
+			clientList[key].emit('message', {
+				title: key + "说:",
+				content: data.content
+			});
+		}
 
 
 		// setTimeout(function() {
