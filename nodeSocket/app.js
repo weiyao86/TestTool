@@ -75,18 +75,15 @@ io.of('index').on("connection", function(s) {
 
 
 	s.on('say', function(data) {
-		console.log('ip:' + s.client.conn.remoteAddress);
-
+		var ip = 'ip--' + s.client.conn.remoteAddress.replace(/(\:)?.+(\:)/, '');
 
 		for (var key in clientList) {
-			console.log(key + "说:")
+			console.log(key + "说:---" + ip)
 			clientList[key].emit('message', {
-				title: key + "说:",
+				title: ip + "说:",
 				content: data.content
 			});
 		}
-
-
 		// setTimeout(function() {
 		// 	s.emit('servercall', {
 		// 		title: "服务端说:",

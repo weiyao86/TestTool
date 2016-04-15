@@ -5,6 +5,6 @@ a { color: #00B7FF; }
 .body { position: relative; overflow: auto; -webkit-overflow-scrolling: touch; height: 400px; margin: 0 50px; border: 1px solid #ccc; border-radius: 4px; }
 .body p { margin: 2px 0; text-indent: 2em; }
 .body .title { color: #f00; background: #ccc; line-height: 30px; font-size: 16px; font-weight: bold; }
-.body .content { background: #ddd; line-height: 30px; }
+.body .content { background: #ddd; line-height: 30px; word-break: break-all; }
 .bottom { position: absolute; top: 436px; bottom: 5px; left: 50px; right: 50px; border: 2px solid #580; border-radius: 4px; }
 .bottom textarea { width: 100%; height: 100%; border: none; padding: 0; resize: none; }

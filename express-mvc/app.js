@@ -49,7 +49,9 @@ app.use(express.static(path.join(__dirname, 'resource')));
 app.use(express.static(path.join(__dirname, 'tempFile')));
 
 app.use(session({
-	secret: "nodeMvc"
+	secret: "nodeMvc",
+	resave: true,
+	saveUninitialized: true
 }));
 app.use(cookieParser());
 

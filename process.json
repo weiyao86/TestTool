@@ -4,18 +4,26 @@
 		"script": "app.js",
 		"cwd": "express-mvc/",
 		"log_date_format": "YYYY-MM-DD HH:mm Z",
-		"error_file": "",
-		"out_file": "",
+		"error_file": "pm2-log/error.log",
+		"out_file": "pm2-log/out.log",
+		"ignore_watch": ["pm2-log/"],
+		"watch": false,
 		"env": {
 			"NODE_ENV": "development"
 		},
 		"env_production": {
 			"NODE_ENV": "production"
 		},
+		"instances": "max",
 		"exec_mode": "cluster"
 	}, {
-		"name": "test",
+		"name": "mysocket",
 		"script": "app.js",
-		"cwd": "ext-demo/"
+		"cwd": "nodeSocket/",
+		"error_file": "pm2-log/error.log",
+		"out_file": "pm2-log/out.log",
+		"ignore_watch": ["pm2-log/"],
+		"watch": true,
+		"exec_mode": "fork"
 	}]
 }
