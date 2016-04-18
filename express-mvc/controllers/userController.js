@@ -10,7 +10,7 @@
 	userController.actions = {
 		index: {
 			GET: function(req, res) {
-				//watchTest();
+
 				res.view();
 			}
 		},

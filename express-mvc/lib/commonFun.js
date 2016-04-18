@@ -281,14 +281,14 @@ exports.commonfun = {
 		writer.on('finish', function() {
 			console.log('原图保存完成---' + originPath);
 			//添加水印在右下方
-			operatorImg.addWaterMark(originPath, watermarkImg, originPath, 85, "SouthEast", function() {
+			operatorImg.addWaterMark(originPath, watermarkImg, originPath, 20, "Center", function() {
 				console.log('原图水印完成加载---' + originPath);
 			});
 
 			//缩略图
 			operatorImg.resizeImgWithFullArgs(dest, dest, 100, undefined, 500, ext, function() {
 				console.log('目标文件压缩完成---' + dest);
-				operatorImg.addWaterMark(dest, watermarkImg, dest, 85, "SouthEast", function() {
+				operatorImg.addWaterMark(dest, watermarkImg, dest, 20, "Center", function() {
 					console.log('压缩图水印完成加载---' + dest);
 				});
 			});

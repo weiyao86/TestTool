@@ -7,14 +7,14 @@
 		"error_file": "pm2-log/error.log",
 		"out_file": "pm2-log/out.log",
 		"ignore_watch": ["pm2-log/"],
-		"watch": false,
+		"watch": true,
 		"env": {
 			"NODE_ENV": "development"
 		},
 		"env_production": {
 			"NODE_ENV": "production"
 		},
-		"instances": "max",
+		"instances": "1",
 		"exec_mode": "cluster"
 	}, {
 		"name": "mysocket",
@@ -23,7 +23,7 @@
 		"error_file": "pm2-log/error.log",
 		"out_file": "pm2-log/out.log",
 		"ignore_watch": ["pm2-log/"],
-		"watch": true,
+		"watch": ["view/"],
 		"exec_mode": "fork"
 	}]
 }

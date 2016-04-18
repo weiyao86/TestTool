@@ -8,5 +8,5 @@
 				res.view();
 			}
 		}
-	}
+	};
 	module.exports = noexistController;
