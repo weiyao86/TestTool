@@ -5,7 +5,7 @@ var path = require('path');
 var fs = require('fs');
 var async = require('async');
 var cheerio = require('cheerio');
-
+var child_process = require('child_process');
 
 function start(fn) {
 
@@ -104,16 +104,11 @@ router.post('/photoStart', function(req, res) {
 
 	var urls = req.body.urls;
 
-	// request("10.0.0.164:8010", function(err, res, body) {
-	// 	if (!err && res.statusCode == 200) {
-	// 		console.log("saysaysay2000")
-	// 		res.json({
-	// 			"Success": urls
-	// 		});
-	// 	}
-	// });
+	clientSocket();
 
-
+	res.json({
+			"Success": urls
+	});
 	// start(function() {
 	// 	console.log('i am come in');
 	// 	res.json({
@@ -121,5 +116,19 @@ router.post('/photoStart', function(req, res) {
 	// 	});
 	// });
 });
+
+function clientSocket(){
+console.log('abcdddd')
+	var child = child_process.fork();
+
+
+	var io=require("socket.io-client");
+
+
+	var socket =io.connect("localhost:8010");//,{forceNew:true}
+	// console.log(process)
+	// socket.emit("sayphoto",{filename:"index.js"});
+	child.send('socket',socket);
+}
 
 module.exports = router;

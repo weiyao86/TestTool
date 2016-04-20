@@ -21,11 +21,16 @@ io.on("connection", function(s) {
 
 	//photo
 	s.on('sayphoto', function(data) {
-		console.log('sayphoto');
+		console.log(data);
 		s.emit('messagephoto', {
 			filename: "server.js"
 		});
 	});
+
+	process.on("message",function(m,socket){
+		console.log('sssssssssssssssssssss')
+		socket.emit("sayphoto",{filename:"index.js"});
+	})
 
 });
 

@@ -25,7 +25,7 @@
 	<script>
 		
 		$(function() {
-			var s=io.connect("10.0.0.164:8010"); //服务器地址
+			var s=io.connect("localhost:8010"); //服务器地址
 			var $out = $("#out_file"),
 				$template = $("#template").hide(),
 				getRgb = function() {
@@ -46,30 +46,31 @@
 				};
 
 			$("#btn_start").on("click", function() {
-				// var urls = $("#urls").val() || $("#urls").text();
-				// urls = {
-				// 	urls: urls.split(',')
-				// };
-				// $.ajax({
-				// 	type: "post",
-				// 	async: false,
-				// 	url: "/photoStart",
-				// 	contentType: "application/json",
-				// 	dataType: 'json',
-				// 	data: JSON.stringify(urls),
-				// 	success: function(data) {
-				// 		alert(data.Success.join('\n\t'));
-				// 	},
-				// 	error: function() {}
-				// });
+				var urls = $("#urls").val() || $("#urls").text();
+				urls = {
+					urls: urls.split(',')
+				};
+				$.ajax({
+					type: "post",
+					async: false,
+					url: "/photoStart",
+					contentType: "application/json",
+					dataType: 'json',
+					data: JSON.stringify(urls),
+					success: function(data) {
+						alert(data.Success.join('\n\t'));
+					},
+					error: function() {}
+				});
 
-				s.emit('sayphoto');
+				//s.emit('sayphoto');
 			});
 
 			//注册事件
     		
 
     		s.on('messagephoto',function(data){
+    			alert('messagephoto')
     			setContent(data);
     		});
 
