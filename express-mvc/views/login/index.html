@@ -22,7 +22,7 @@
 		var s=io.connect("http://localhost:8002");
     		s.on("news",function(data){
     			console.log(data);
-    			s.emit('myEvent',{my:'data'});
+    			s.emit('myEvent',{my:'socket.io.test'});
     	});
 
     	require(["jquery","domReady!"],function(){

@@ -18,7 +18,7 @@ var copy = require('copy-to'); //复制对象功能
 var copyFile = require('gulp-copy'); //复制文件功能
 var async = require('async'); //async.series 实现队列形式，串联所有回调
 var ginsert = require("gulp-insert");
-var jslint = require("gulp-jslint");
+// var jslint = require("gulp-jslint");
 var watchCss = gulp.watch('./public/styles/*.css');
 
 var dateFormat = require('dateformat');

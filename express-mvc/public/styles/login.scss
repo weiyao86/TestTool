@@ -55,10 +55,21 @@ body {
     display: table;
     width: 100%;
     height: 100%;
-    background: url("/res/images/lg_bg.png") repeat scroll center center / cover #fff;
-    background: url("/res/images/lg_bg.png") repeat center #fff \9;
+    background: url("/res/images/bg-new.jpg") repeat scroll center center  / cover #fff;
+    background: url("/res/images/bg-new.jpg") no-repeat scroll center #fff \9;
+    animation:scale 60s ease-out 10s infinite;
 }
-
+@keyframes scale{
+    0% {
+        background-size:100% 100%;
+    }
+    30% {
+        background-size:150% 150%;
+    }
+    100% {
+        background-size:100% 100%;
+    }
+}
 .dock-center{
     width:320px;
     height:315px;

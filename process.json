@@ -7,7 +7,7 @@
 		"error_file": "pm2-log/error.log",
 		"out_file": "pm2-log/out.log",
 		"ignore_watch": ["pm2-log/"],
-		"watch": true,
+		"watch": false,
 		"env": {
 			"NODE_ENV": "development"
 		},
@@ -22,8 +22,8 @@
 		"cwd": "nodeSocket/",
 		"error_file": "pm2-log/error.log",
 		"out_file": "pm2-log/out.log",
-		"ignore_watch": ["pm2-log/"],
-		"watch": ["view/"],
+		"ignore_watch": ["pm2-log/", "resource/", "node_modules/"],
+		"watch": true,
 		"exec_mode": "fork"
 	}]
 }
