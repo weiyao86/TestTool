@@ -5,5 +5,5 @@
 
 express-mvc/resource
 express-mvc/tempFile
-nodeSocket/resource
+
 **/node_modules
