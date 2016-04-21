@@ -27,7 +27,7 @@ var reptile = {
 		// 		acquireData(body, fn);
 		// 	}
 		// });
-		// http://jandan.net/pic/page-7500#comments
+		// http://jandan.net/pic/page-7500#comments 456
 		var self = this,
 			list = [];
 		self.initFolder();
