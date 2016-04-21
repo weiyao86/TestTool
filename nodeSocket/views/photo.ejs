@@ -43,7 +43,7 @@
 	<script>
 
 		$(function() {
-			var s=io.connect("localhost:8005"); //服务器地址
+			var s = io.connect("localhost:8005"); //服务器地址
 			var $out = $("#out_file"),
 				$template = $("#template").hide(),
 				getRgb = function() {
@@ -63,15 +63,22 @@
 					return "#" + rgb;
 				};
 
-			s.on("connect",function(){
+			s.on("connect", function() {
 				alert("支持socket,放心的开扒吧");
 			});
-		    s.on('event', function(data){alert(data)});
-		    s.on('disconnect', function(){alert("disconnect")});
+			s.on('event', function(data) {
+				alert(data)
+			});
+			s.on('disconnect', function() {
+				alert("disconnect")
+			});
 
 			$("#btn_start").on("click", function() {
-				$(this).prop("disabled",true);
-				s.emit('sayphoto');
+				$(this).prop("disabled", true);
+				s.emit('sayphoto', {
+					native: $native.val(),
+					thumbnails: $thumbnails.val()
+				});
 
 				// var urls = $("#urls").val() || $("#urls").text();
 				// urls = {
@@ -93,24 +100,29 @@
 			});
 
 			//注册事件
-			s.on('end',function(data){
-    			$("#btn_start").prop("disabled",false);
-    			$cur.html(data);
-    		});
+			s.on('end', function(data) {
+				$("#btn_start").prop("disabled", false);
+				$cur.html(data);
+			});
 
-    		s.on('messagephoto',function(data){
-    			setContent(data);
-    		});
+			s.on('messagephoto', function(data) {
+				setContent(data);
+			});
 
-    		var $cur_url=$("#cur_url"),$cur=$("#cur"),$context=$("#context");
+			var $cur_url = $("#cur_url"),
+				$cur = $("#cur"),
+				$context = $("#context"),
+				$native = $("#native"),
+				$thumbnails = $("#thumbnails");
+
 			function setContent(data) {
 
-				$context.val($context.val()+"<br>"+data.originAddress);
+				$context.val($context.val() + "\n\t" + data.originAddress);
 				$cur_url.html(data.originAddress);
 				// $cur.html(data.filename);
 				$template.find("p").css("background", getRgb());
-				$template.find("img").attr("src",data.nowAddress);
-				$template.find("span").html(data.originAddress+"<br>"+data.nowAddress+"<br>"+data.filename);
+				$template.find("img").attr("src", data.nowAddress);
+				$template.find("span").html(data.originAddress + "<br>" + data.nowAddress + "<br>" + data.filename);
 				var temp = $template.clone().html();
 				$out.append(temp).scrollTop(9999999);
 			}
@@ -120,8 +132,12 @@
 </head>
 <body>
 
-	<textarea class="textarea" name="" id="context" cols="30" rows="10" placeholder="输入地址，多个地址逗号分隔"></textarea>
+	<textarea class="textarea" name="" id="context" cols="30" rows="10" placeholder="显示下载图片地址"></textarea>
 	<input type="button" id="btn_start" value="开始">
+	<div class="txt-group">
+		<em>原图保存地址：</em><input id="native" type="text">
+		<em>缩略图保存地址：</em><input id="thumbnails" type="text">
+	</div>
 	<div class="process">
 		<span>正在保存图片：<em id="cur_url"></em></span><span id="cur"></span>
 	</div>

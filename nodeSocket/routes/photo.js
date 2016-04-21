@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var fs = require('fs');
 
 
 /* GET home page. */
@@ -16,11 +15,7 @@ router.post('/photoStart', function(req, res) {
 	});
 });
 
-if (!fs.existsSync(__appRoot + '/resource')) {
-	fs.mkdirSync(__appRoot + '/resource');
-	fs.mkdirSync(__appRoot + '/resource/origin');
-	fs.mkdirSync(__appRoot + '/resource/small');
-}
+
 
 // fs.createWriteStream('../resource/');
 // var getIoclient = (function() {

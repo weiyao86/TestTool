@@ -12,6 +12,7 @@ io.on("connection", function(s) {
 		reptile.callbacks.writedone = function(data) {
 			s.emit('messagephoto', data);
 		};
+		reptile.outFolder(data);
 		reptile.start(function() {
 			console.log("---------------success------------------");
 			s.emit('end', "------complete------");

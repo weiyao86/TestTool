@@ -11,6 +11,20 @@ var reptile = {
 		writedone: null
 	},
 
+	outFolder: function(data) {
+		var self = this,
+			nativeFolder = data.native,
+			thumbnailsFolder = data.thumbnails;
+
+		!fs.existsSync(data.native) && (data.native = false);
+		!fs.existsSync(data.thumbnails) && (data.thumbnails = false);
+
+		self.saveFolder = {
+			nativeFolder: data.native,
+			thumbnailsFolder: data.thumbnails
+		};
+	},
+
 	initFolder: function() {
 		var self = this;
 		if (!fs.existsSync('../resource')) {
@@ -127,7 +141,13 @@ var reptile = {
 				console.log('err:' + err);
 				return false;
 			}
-			request(uri).pipe(fs.createWriteStream('../resource/' + filename)).on('close', fn);
+			request(uri).pipe(fs.createWriteStream('../resource/' + filename)).on('close', function() {
+				fn();
+			});
+			// if (self.saveFolder.nativeFolder)
+			// 	request(uri).pipe(fs.createWriteStream(self.saveFolder.nativeFolder + '/' + filename));
+			// if (self.saveFolder.thumbnailsFolder)
+			// 	request(uri).pipe(fs.createWriteStream(self.saveFolder.thumbnailsFolder + '/' + filename));
 		});
 	},
 
