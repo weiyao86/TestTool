@@ -1,4 +1,4 @@
-global.ufo = 'ufo';
+global.__appRoot = __dirname;
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');

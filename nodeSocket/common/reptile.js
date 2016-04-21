@@ -10,6 +10,16 @@ var reptile = {
 	callbacks: {
 		writedone: null
 	},
+
+	initFolder: function() {
+		var self = this;
+		if (!fs.existsSync(__appRoot + '/resource')) {
+			fs.mkdirSync(__appRoot + '/resource');
+			fs.mkdirSync(__appRoot + '/resource/origin');
+			fs.mkdirSync(__appRoot + '/resource/small');
+		}
+	},
+
 	start: function(fn) {
 		//煎蛋网
 		// request("http://jandan.net/ooxx", function(err, res, body) {
@@ -20,6 +30,7 @@ var reptile = {
 		// http://jandan.net/pic/page-7500#comments
 		var self = this,
 			list = [];
+		self.initFolder();
 
 		// for (var i = 1500; i <= 1500; i++) { //1956
 		// 	var url = "http://jandan.net/ooxx/page-" + i + "#comments";
@@ -53,6 +64,7 @@ var reptile = {
 			fn();
 		});
 	},
+
 	acquireData: function(body, fn) {
 		var self = this,
 			$ = cheerio.load(body),
@@ -105,6 +117,7 @@ var reptile = {
 			fn();
 		});
 	},
+
 	downloadImg: function(uri, filename, fn) {
 		var self = this;
 		request.head(uri, function(err, res, body) {
@@ -117,10 +130,12 @@ var reptile = {
 			request(uri).pipe(fs.createWriteStream('../resource/' + filename)).on('close', fn);
 		});
 	},
+
 	getName: function(address) {
 		var filename = path.basename(address);
 		return filename;
 	},
+
 	sendClient: function(data) {
 		console.log('no no');
 	}

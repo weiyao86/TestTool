@@ -101,6 +101,10 @@ photoController.actions = {
 				},
 				files = [],
 				focusFiles = [];
+			!fs.existsSync(tempFolder) && fs.mkdirSync(tempFolder);
+			!fs.existsSync(rootDirpath) && fs.mkdirSync(rootDirpath);
+			!fs.existsSync(photoPath) && fs.mkdirSync(photoPath);
+			!fs.existsSync(focusPath) && fs.mkdirSync(focusPath);
 
 
 			commonfun.recursiveDelFile(photoPath);
