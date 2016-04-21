@@ -13,10 +13,10 @@ var reptile = {
 
 	initFolder: function() {
 		var self = this;
-		if (!fs.existsSync(__appRoot + '/resource')) {
-			fs.mkdirSync(__appRoot + '/resource');
-			fs.mkdirSync(__appRoot + '/resource/origin');
-			fs.mkdirSync(__appRoot + '/resource/small');
+		if (!fs.existsSync('../resource')) {
+			fs.mkdirSync('../resource');
+			fs.mkdirSync('../resource/origin');
+			fs.mkdirSync('../resource/small');
 		}
 	},
 
