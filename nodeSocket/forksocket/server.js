@@ -1,37 +1,22 @@
 var server = require('http').createServer();
 var io = require('socket.io')(server);
+var reptile = require('../common/reptile.js').reptile;
 
 /**/
 
-var clientList = {};
+
 io.on("connection", function(s) {
-	clientList[s.client.conn.remoteAddress] = s;
-
-	s.on('say', function(data) {
-		var ip = 'ip--' + s.client.conn.remoteAddress.replace(/(\:)?.+(\:)/, '');
-		console.log(ip);
-		for (var key in clientList) {
-			console.log(key + "说:---" + ip);
-			clientList[key].emit('message', {
-				title: ip + "说:",
-				content: data.content
-			});
-		}
-	});
-
 	//photo
+
 	s.on('sayphoto', function(data) {
-		console.log(data);
-		s.emit('messagephoto', {
-			filename: "server.js"
+		reptile.callbacks.writedone = function(data) {
+			s.emit('messagephoto', data);
+		};
+		reptile.start(function() {
+			console.log("---------------success------------------");
+			s.emit('end', "------complete------");
 		});
 	});
-
-	process.on("message",function(m,socket){
-		console.log('sssssssssssssssssssss')
-		socket.emit("sayphoto",{filename:"index.js"});
-	})
-
 });
 
 server.listen(8010, function() {
