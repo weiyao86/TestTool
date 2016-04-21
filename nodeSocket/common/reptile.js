@@ -46,32 +46,24 @@ var reptile = {
 			list = [];
 		self.initFolder();
 
-		// for (var i = 1500; i <= 1500; i++) { //1956
-		// 	var url = "http://jandan.net/ooxx/page-" + i + "#comments";
-		// 	(function(url) {
-		// 		list.push(function(cb) {
-		// 			console.log(url)
-		// 			request(url, function(err, res, body) {
-		// 				if (!err && res.statusCode == 200) {
-		// 					self.acquireData(body, cb);
-		// 				}
-		// 			});
-		// 		});
-		// 	})(url);
-		// }
-
-		for (var i = 7500; i <= 7500; i++) { //8905
-			var url = "http://jandan.net/pic/page-" + i + "#comments";
-			(function(url) {
-				list.push(function(cb) {
-					console.log(url)
-					request(url, function(err, res, body) {
-						if (!err && res.statusCode == 200) {
-							self.acquireData(body, cb);
-						}
-					});
+		function letUrl(url) {
+			list.push(function(cb) {
+				console.log('--------------------------------' + url + '--------------------------------');
+				request(url, function(err, res, body) {
+					if (!err && res.statusCode == 200) {
+						self.acquireData(body, cb);
+					}
 				});
-			})(url);
+			});
+		}
+		for (var i = 1500; i <= 1956; i++) { //1956
+			var url = "http://jandan.net/ooxx/page-" + i + "#comments";
+			letUrl(url);
+		}
+
+		for (var i = 7500; i <= 8905; i++) { //8905
+			var url = "http://jandan.net/pic/page-" + i + "#comments";
+			letUrl(url);
 		}
 		async.series(list, function(err) {
 			if (err) return console.log(err);
@@ -97,7 +89,7 @@ var reptile = {
 			var filename = self.getName(val);
 			series.push(function(callback) {
 				self.downloadImg(val, 'origin/' + filename, function() {
-					console.log(filename + '  done');
+
 					if (typeof self.callbacks.writedone === "function") {
 						self.callbacks.writedone.call(self, {
 							originAddress: val,
@@ -114,7 +106,7 @@ var reptile = {
 			var filename = self.getName(val);
 			series.push(function(callback) {
 				self.downloadImg(val, 'small/' + filename, function() {
-					console.log(filename + '  done');
+
 					if (typeof self.callbacks.writedone === "function") {
 						self.callbacks.writedone.call(self, {
 							originAddress: val,
@@ -134,30 +126,38 @@ var reptile = {
 
 	downloadImg: function(uri, filename, fn) {
 		var self = this;
-		request.head(uri, function(err, res, body) {
-			// console.log('content-type:', res.headers['content-type']); //这里返回图片的类型
-			// console.log('content-length:', res.headers['content-length']); //图片大小
-			if (err) {
-				console.log('err:' + err);
-				return false;
+		try {
+			console.log(uri);
+			if (!uri.trim().length) {
+				console.log('你报错了...' + uri);
+				return fn();
 			}
-			request(uri).pipe(fs.createWriteStream('../resource/' + filename)).on('close', function() {
+		} catch (err) {
+			console.log(err + '你报错了...' + uri);
+			return fn();
+		}
+
+		request.head(uri, function(err, res, body) {
+			if (err) {
+				console.log('err:' + err + '-----uri---' + uri);
 				fn();
-			});
-			// if (self.saveFolder.nativeFolder)
-			// 	request(uri).pipe(fs.createWriteStream(self.saveFolder.nativeFolder + '/' + filename));
-			// if (self.saveFolder.thumbnailsFolder)
-			// 	request(uri).pipe(fs.createWriteStream(self.saveFolder.thumbnailsFolder + '/' + filename));
+			} else {
+				// console.log('content-type:', res.headers['content-type']); //这里返回图片的类型
+				// console.log('content-length:', res.headers['content-length']); //图片大小
+				request(uri).pipe(fs.createWriteStream('../resource/' + filename)).on("error", function(err) {
+					console.log("request-error:" + err);
+					fn();
+				}).on('close', function() {
+					console.log('done----' + uri + '------done')
+					fn();
+				});
+			}
 		});
 	},
 
 	getName: function(address) {
 		var filename = path.basename(address);
 		return filename;
-	},
-
-	sendClient: function(data) {
-		console.log('no no');
 	}
 };
 exports.reptile = reptile;

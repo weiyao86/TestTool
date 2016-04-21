@@ -120,6 +120,7 @@ io.on("connection", function(s) {
 
 	ioclient.on("connect", function() {
 		console.log("connect success!");
+		// ioclient.emit("sayphoto", {});
 	});
 
 	//8005 ==> 8010  == > 8005  一个回路完成

@@ -16,6 +16,10 @@ router.post('/photoStart', function(req, res) {
 });
 
 
+// var request = require('request');
+// request("http://ww2.sinaimg.cn/large/006b7bQngw1euuaprk3dnj30c80l9mziss.jpg").on('error', function(err) {
+// 	console.log('err')
+// });
 
 // fs.createWriteStream('../resource/');
 // var getIoclient = (function() {

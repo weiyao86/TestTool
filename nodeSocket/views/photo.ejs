@@ -105,8 +105,10 @@
 				$cur.html(data);
 			});
 
+			var num=0;$total=$("#total");
 			s.on('messagephoto', function(data) {
 				setContent(data);
+				$total.html('当前第'+(num++)+'张图');
 			});
 
 			var $cur_url = $("#cur_url"),
@@ -139,7 +141,7 @@
 		<em>缩略图保存地址：</em><input id="thumbnails" type="text">
 	</div>
 	<div class="process">
-		<span>正在保存图片：<em id="cur_url"></em></span><span id="cur"></span>
+		<span>正在保存图片：<em id="cur_url"></em></span><span id="cur"></span><span id="total"></span>
 	</div>
 	<div id="out_file" class="out-file">
 
