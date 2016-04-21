@@ -107,7 +107,7 @@ router.post('/photoStart', function(req, res) {
 	clientSocket();
 
 	res.json({
-			"Success": urls
+		"Success": urls
 	});
 	// start(function() {
 	// 	console.log('i am come in');
@@ -116,19 +116,25 @@ router.post('/photoStart', function(req, res) {
 	// 	});
 	// });
 });
+clientSocket();
 
-function clientSocket(){
-console.log('abcdddd')
-	var child = child_process.fork();
-
-
-	var io=require("socket.io-client");
+function clientSocket() {
+	console.log('abcdddd')
+		// var cp = child_process.fork();
 
 
-	var socket =io.connect("localhost:8010");//,{forceNew:true}
+	var io = require("socket.io-client");
+
+
+	var socket = io.connect("localhost:8010"); //,{forceNew:true}
+	socket.on("connect", function() {
+		console.log("connect");
+	});
 	// console.log(process)
-	// socket.emit("sayphoto",{filename:"index.js"});
-	child.send('socket',socket);
+	socket.emit("sayphoto", {
+		filename: "index.js"
+	});
+	// child_process.send('socket', socket);
 }
 
 module.exports = router;
