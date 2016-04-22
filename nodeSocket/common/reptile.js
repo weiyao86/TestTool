@@ -5,6 +5,7 @@ var async = require('async');
 var cheerio = require('cheerio');
 var child_process = require('child_process');
 var clientIo = require("socket.io-client");
+var logger = require('./log4js.js').logforName('reptile');
 
 var reptile = {
 	callbacks: {
@@ -48,8 +49,10 @@ var reptile = {
 
 		function letUrl(url) {
 			list.push(function(cb) {
-				console.log('--------------------------------' + url + '--------------------------------');
-				request(url, function(err, res, body) {
+				logger.info('--------------------------------' + url + '--------------------------------');
+				request(url, {
+					timeout: 30 * 1000
+				}, function(err, res, body) {
 					if (!err && res.statusCode == 200) {
 						self.acquireData(body, cb);
 					}
@@ -66,7 +69,7 @@ var reptile = {
 			letUrl(url);
 		}
 		async.series(list, function(err) {
-			if (err) return console.log(err);
+			if (err) return logger.info(err);
 			fn();
 		});
 	},
@@ -102,53 +105,57 @@ var reptile = {
 			});
 		});
 
-		small.forEach(function(val) {
-			var filename = self.getName(val);
-			series.push(function(callback) {
-				self.downloadImg(val, 'small/' + filename, function() {
+		// small.forEach(function(val) {
+		// 	var filename = self.getName(val);
+		// 	series.push(function(callback) {
+		// 		self.downloadImg(val, 'small/' + filename, function() {
 
-					if (typeof self.callbacks.writedone === "function") {
-						self.callbacks.writedone.call(self, {
-							originAddress: val,
-							nowAddress: 'origin/' + filename,
-							filename: filename
-						});
-					}
-					callback();
-				});
-			});
-		});
+		// 			if (typeof self.callbacks.writedone === "function") {
+		// 				self.callbacks.writedone.call(self, {
+		// 					originAddress: val,
+		// 					nowAddress: 'origin/' + filename,
+		// 					filename: filename
+		// 				});
+		// 			}
+		// 			callback();
+		// 		});
+		// 	});
+		// });
+		// 
+		// 
 		async.series(series, function(err) {
-			if (err) console.log("async.series:" + err);
+			if (err) logger.info("async.series:" + err);
 			fn();
 		});
 	},
 
 	downloadImg: function(uri, filename, fn) {
 		var self = this;
-		try {
-			console.log(uri);
-			if (!uri.trim().length) {
-				console.log('你报错了...' + uri);
-				return fn();
-			}
-		} catch (err) {
-			console.log(err + '你报错了...' + uri);
+		if (!uri || !uri.trim().length) {
+			logger.info('你报错了...' + uri);
 			return fn();
 		}
 
 		request.head(uri, function(err, res, body) {
 			if (err) {
-				console.log('err:' + err + '-----uri---' + uri);
+				logger.info('err:' + err + '-----uri---' + uri);
 				fn();
 			} else {
-				// console.log('content-type:', res.headers['content-type']); //这里返回图片的类型
-				// console.log('content-length:', res.headers['content-length']); //图片大小
-				request(uri).pipe(fs.createWriteStream('../resource/' + filename)).on("error", function(err) {
-					console.log("request-error:" + err);
+				// logger.info('content-type:', res.headers['content-type']); //这里返回图片的类型
+				// logger.info('content-length:', res.headers['content-length']); //图片大小
+				request(uri, {
+					timeout: 30 * 1000
+				}, function(err) {
+					if (err && err.code == "ETIMEDOUT") {
+						fn();
+						logger.info('你报错了ETIMEDOUT...' + err);
+						return false;
+					}
+				}).pipe(fs.createWriteStream('../resource/' + filename)).on("error", function(err) {
+					logger.info(err.code + "--request-error:" + err);
 					fn();
 				}).on('close', function() {
-					console.log('done----' + uri + '------done')
+					logger.info(uri + '------done');
 					fn();
 				});
 			}
@@ -160,4 +167,9 @@ var reptile = {
 		return filename;
 	}
 };
+
+//捕获所有的异常
+process.on('uncaughtException', function(err) {
+	logger.info('logger--uncaughtException:-----' + err);
+});
 exports.reptile = reptile;

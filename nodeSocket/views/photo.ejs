@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>爬图</title>
+    <title>爬图-仍有bug未处理</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="javascripts/socket.io.js"></script>
 	<script src="./javascripts/jquery-1.11.3.js"></script>
@@ -43,7 +43,8 @@
 	<script>
 
 		$(function() {
-			var s = io.connect("localhost:8005"); //服务器地址
+
+			var s = io.connect("localhost:8005",{forceNew:true}); //服务器地址
 			var $out = $("#out_file"),
 				$template = $("#template").hide(),
 				getRgb = function() {
@@ -53,24 +54,26 @@
 
 					rgb = colorList[ran];
 					colorList.sort(function() {
-						return Math.random() > 0.6
+						return Math.random() > 0.6;
 					});
 					rgb += colorList[ran];
 					colorList.sort(function() {
-						return Math.random() > 0.6
+						return Math.random() > 0.6;
 					});
 					rgb += colorList[ran];
 					return "#" + rgb;
 				};
 
 			s.on("connect", function() {
-				alert("支持socket,放心的开扒吧");
+				console.log("支持socket,放心的开扒吧");
 			});
-			s.on('event', function(data) {
-				alert(data)
+
+			s.on('reconnect', function(data) {
+				console.log('*************************reconnect*************************');
 			});
 			s.on('disconnect', function() {
-				alert("disconnect")
+				s.socket.reconnect();
+				alert("disconnect");
 			});
 
 			$("#btn_start").on("click", function() {
@@ -109,6 +112,7 @@
 			s.on('messagephoto', function(data) {
 				setContent(data);
 				$total.html('当前第'+(num++)+'张图');
+				document.title='第'+(num++)+'张图正在下载………'
 			});
 
 			var $cur_url = $("#cur_url"),

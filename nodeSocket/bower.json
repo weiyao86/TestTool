@@ -1,0 +1,24 @@
+{
+  "name": "bower-test",
+  "description": "desc",
+  "main": "jquery-test",
+  "authors": [
+    "weiyao86 <weiyaoisnull@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "js"
+  ],
+  "homepage": "https://github.com/weiyao86/TestTool",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}

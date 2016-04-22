@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -33,7 +33,7 @@ app.use('/', photo);
 
 //捕获所有的异常
 process.on('uncaughtException', function(err) {
-	console.log(err);
+	console.log('uncaughtException:-----' + err);
 });
 //try catch所无法做到的：捕捉异步回调中出现的异常
 app.use(function(req, res, next) {
@@ -50,6 +50,7 @@ app.use(function(req, res, next) {
 	d.add(res);
 	d.run(next);
 });
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -137,5 +138,7 @@ io.on("connection", function(s) {
 		s.emit("end", data);
 	});
 });
+
+
 
 module.exports = app;

@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-
 /* GET home page. */
 router.get('/photo', function(req, res, next) {
 	res.render('photo', {
@@ -15,11 +14,15 @@ router.post('/photoStart', function(req, res) {
 	});
 });
 
-
+// console.log(logger);
 // var request = require('request');
-// request("http://ww2.sinaimg.cn/large/006b7bQngw1euuaprk3dnj30c80l9mziss.jpg").on('error', function(err) {
-// 	console.log('err')
-// });
+// request("http://10.255.255.1", {
+// 		timeout: 1500
+// 	},
+// 	function(err) {
+// 		console.log(err)
+// 		console.log(err.code)
+// 	});
 
 // fs.createWriteStream('../resource/');
 // var getIoclient = (function() {
