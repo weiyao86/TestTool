@@ -31,6 +31,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 			};
 			//图片是否加载完成
 			self.loadGlobalFlag = false;
+			self.rotatePad = 0;
 
 		},
 
@@ -71,9 +72,29 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 			}, 300));
 
 			$(window).on("scroll", function() {
-
 				self.scrollload(timer);
 			});
+
+			$(window).on("orientationchange", function(e) {
+				var winH = $(window).height(),
+					scrHeight = $(window).scrollTop(),
+					docHeight = $(document).height();
+
+				$("#global_search").val(winH + '---' + scrHeight + '---' + docHeight + '==' + $(document).width());
+				// winH + scrHeight == docHeight
+				switch (window.orientation) {
+					case -90:
+					case 90:
+						self.rotatePad = 20;
+						break;
+					case 0:
+					case 180:
+						break;
+					default:
+						break;
+
+				};
+			})
 		},
 
 		load: function() {
@@ -254,7 +275,8 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 				winH = $(window).height(),
 				scrHeight = $(window).scrollTop(),
 				docHeight = $(document).height();
-			if (winH + scrHeight == docHeight) {
+
+			if (winH + scrHeight - self.rotatePad == docHeight) {
 				if (timer) {
 					clearTimeout(timer);
 				}

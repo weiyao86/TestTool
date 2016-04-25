@@ -75,6 +75,11 @@ app.use(function(req, res, next) {
 	next(err);
 });
 
+//捕获所有的异常
+process.on('uncaughtException', function(err) {
+	console.log('uncaughtException:-----' + err);
+});
+
 app.use(function(err, req, res, next) {
 
 	res.status(err.status || 500);
