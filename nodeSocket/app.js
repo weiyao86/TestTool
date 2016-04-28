@@ -9,9 +9,11 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var photo = require('./routes/photo');
 var domain = require('domain');
+var log4js = require('./common/log4js.js');
 
 var app = express();
 
+var loggerFile = log4js.use(app);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -98,21 +100,21 @@ server.listen(8005, function() {
 });
 
 var clientIo = require("socket.io-client");
-var clientList = {};
+//var clientList = {};
 
 io.on("connection", function(s) {
-	clientList[s.client.conn.remoteAddress] = s;
+	//clientList[s.client.conn.remoteAddress] = s;
 	//方法－：8005 当前服务器聊天室
-	s.on('say', function(data) {
-		var ip = 'ip--' + s.client.conn.remoteAddress.replace(/(\:)?.+(\:)/, '');
-		for (var key in clientList) {
-			console.log(key + "说:---" + ip);
-			clientList[key].emit('message', {
-				title: ip + "说:",
-				content: data.content
-			});
-		}
-	});
+	// s.on('say', function(data) {
+	// 	var ip = 'ip--' + s.client.conn.remoteAddress.replace(/(\:)?.+(\:)/, '');
+	// 	for (var key in clientList) {
+	// 		console.log(key + "说:---" + ip);
+	// 		clientList[key].emit('message', {
+	// 			title: ip + "说:",
+	// 			content: data.content
+	// 		});
+	// 	}
+	// });
 
 	//方法二：8010 服务器  通过中转服务（端口8010）
 	var ioclient = clientIo.connect("http://localhost:8010", {
@@ -140,5 +142,7 @@ io.on("connection", function(s) {
 });
 
 
-
+//启动服务 8010 socket.io
+var serverfile = require('./forksocket/server.js');
+loggerFile.info('启动服务 8010 socket.io');
 module.exports = app;

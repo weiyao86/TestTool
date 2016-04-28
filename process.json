@@ -20,6 +20,7 @@
 		"name": "mysocket",
 		"script": "app.js",
 		"cwd": "nodeSocket/",
+		"log_date_format": "YYYY-MM-DD HH:mm Z",
 		"error_file": "pm2-log/error.log",
 		"out_file": "pm2-log/out.log",
 		"ignore_watch": ["pm2-log/", "resource/", "node_modules/"],

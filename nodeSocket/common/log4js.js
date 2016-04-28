@@ -4,7 +4,7 @@ log4js.configure({
 		type: 'console'
 	}, {
 		type: 'dateFile', //文件输出
-		filename: '../logs/access.log',
+		filename: './logs/access.log',
 		maxLogSize: 1024, //当超过maxLogSize大小时，会自动生成一个新文件
 		backups: 3,
 		category: 'reptile'
@@ -14,7 +14,7 @@ log4js.configure({
 		normal: 'INFO'
 	}
 });
-var loggerFile = log4js.getLogger('app');
+var loggerFile = log4js.getLogger('reptile');
 
 exports.logger = loggerFile;
 exports.logforName = function(name) {
@@ -27,4 +27,5 @@ exports.use = function(app) {
 		leval: 'INFO',
 		format: ':method :url'
 	}));
+	return loggerFile;
 };

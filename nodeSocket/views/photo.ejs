@@ -40,11 +40,12 @@
 			zoom:1;
 		}
 	</style>
+<%- include('config')-%>
 	<script>
 
 		$(function() {
 
-			var s = io.connect("localhost:8005",{forceNew:true}); //服务器地址
+			var s = io.connect(configParams.localIp,{forceNew:true}); //服务器地址
 			var $out = $("#out_file"),
 				$template = $("#template").hide(),
 				getRgb = function() {
@@ -72,8 +73,8 @@
 				console.log('*************************reconnect*************************');
 			});
 			s.on('disconnect', function() {
-				s.socket.reconnect();
-				alert("disconnect");
+				s.io.reconnect();
+				console.log("disconnect");
 			});
 
 			$("#btn_start").on("click", function() {
@@ -111,8 +112,12 @@
 			var num=0;$total=$("#total");
 			s.on('messagephoto', function(data) {
 				setContent(data);
-				$total.html('当前第'+(num++)+'张图');
-				document.title='第'+(num++)+'张图正在下载………'
+				var n=num++;
+				$total.html('当前第'+n+'张图');
+				document.title='第'+n+'张图正在下载………';
+				setTimeout(function(){
+					$out.children().size() > 22 && $out.children(":lt(20)").remove();
+				},80);
 			});
 
 			var $cur_url = $("#cur_url"),

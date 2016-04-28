@@ -28,10 +28,10 @@ var reptile = {
 
 	initFolder: function() {
 		var self = this;
-		if (!fs.existsSync('../resource')) {
-			fs.mkdirSync('../resource');
-			fs.mkdirSync('../resource/origin');
-			fs.mkdirSync('../resource/small');
+		if (!fs.existsSync('./resource')) {
+			fs.mkdirSync('./resource');
+			fs.mkdirSync('./resource/origin');
+			fs.mkdirSync('./resource/small');
 		}
 	},
 
@@ -53,7 +53,10 @@ var reptile = {
 				request(url, {
 					timeout: 30 * 1000
 				}, function(err, res, body) {
-					if (!err && res.statusCode == 200) {
+					if (err && err.code == "ETIMEDOUT") {
+						logger.info('你报错了ETIMEDOUT...' + err);
+						cb();
+					} else if (!err && res.statusCode == 200) {
 						self.acquireData(body, cb);
 					}
 				});
@@ -137,10 +140,7 @@ var reptile = {
 		}
 
 		request.head(uri, function(err, res, body) {
-			if (err) {
-				logger.info('err:' + err + '-----uri---' + uri);
-				fn();
-			} else {
+			if (!err && res.statusCode == 200) {
 				// logger.info('content-type:', res.headers['content-type']); //这里返回图片的类型
 				// logger.info('content-length:', res.headers['content-length']); //图片大小
 				request(uri, {
@@ -151,13 +151,16 @@ var reptile = {
 						logger.info('你报错了ETIMEDOUT...' + err);
 						return false;
 					}
-				}).pipe(fs.createWriteStream('../resource/' + filename)).on("error", function(err) {
+				}).pipe(fs.createWriteStream('./resource/' + filename)).on("error", function(err) {
 					logger.info(err.code + "--request-error:" + err);
 					fn();
 				}).on('close', function() {
 					logger.info(uri + '------done');
 					fn();
 				});
+			} else {
+				logger.info('err:' + err + '-----uri---' + uri);
+				fn();
 			}
 		});
 	},

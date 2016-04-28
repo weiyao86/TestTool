@@ -4,8 +4,22 @@ var reptile = require('../common/reptile.js').reptile;
 
 /**/
 
-
+var clientList = {};
 io.on("connection", function(s) {
+	clientList[s.client.conn.remoteAddress] = s;
+
+	//聊天室
+	s.on('say', function(data) {
+		var ip = 'ip--' + s.client.conn.remoteAddress.replace(/(\:)?.+(\:)/, '');
+		for (var key in clientList) {
+			console.log(key + "说:---" + ip);
+			clientList[key].emit('message', {
+				title: ip + "说:",
+				content: data.content
+			});
+		}
+	});
+
 	//photo
 
 	s.on('sayphoto', function(data) {
@@ -23,6 +37,7 @@ io.on("connection", function(s) {
 server.listen(8010, function() {
 	console.log("socket start:8010 success!");
 });
+module.exports = server;
 
 // var server = require('http').createServer();
 // var io = require('socket.io')(server);
