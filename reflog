@@ -1,0 +1,147 @@
+[33m96c2fbc[m HEAD@{0}: commit: check in x
+[33m0275a6d[m HEAD@{1}: commit: all check in
+[33me1bb7cc[m HEAD@{2}: commit: all check in
+[33m89b85d4[m HEAD@{3}: pull -v: Merge made by the 'recursive' strategy.
+[33m95195c5[m HEAD@{4}: commit: emitter
+[33m1539d93[m HEAD@{5}: commit: reptile.js--success
+[33mefdd51b[m HEAD@{6}: pull -v: Fast-forward
+[33ma245fb4[m HEAD@{7}: commit: coping
+[33m1a80cdd[m HEAD@{8}: commit: reptile
+[33m7aae430[m HEAD@{9}: commit: test
+[33mc37d1cc[m HEAD@{10}: commit: drive mkdir
+[33mda324dd[m HEAD@{11}: commit: reptile
+[33m26bfbdf[m HEAD@{12}: commit: feo
+[33m5ead50b[m HEAD@{13}: pull -v: Fast-forward
+[33mec065e7[m HEAD@{14}: commit: add nodesocket
+[33m33218e9[m HEAD@{15}: commit: del nodesocket
+[33m339269b[m HEAD@{16}: commit (merge): merge
+[33m289f5cf[m HEAD@{17}: commit: io
+[33m6097c56[m HEAD@{18}: reset: moving to HEAD^
+[33mfddf120[m HEAD@{19}: commit: photo
+[33m6097c56[m HEAD@{20}: commit: 爬图制作（project--nodesocket）
+[33mb24a5de[m HEAD@{21}: commit: watermark alpha change 20
+[33m90327fa[m HEAD@{22}: commit: socket.io.js
+[33mfe69d4e[m HEAD@{23}: pull -v: Fast-forward
+[33mfe3b929[m HEAD@{24}: commit: socket.io.js
+[33mb81584b[m HEAD@{25}: commit: socket.io.js 测试聊天室
+[33m668f0bf[m HEAD@{26}: pull -v: Fast-forward
+[33m96440e7[m HEAD@{27}: commit: gulp 压缩js(采用requirejs,async可以拿到所有异步串联执行完毕后的回调)
+[33m1b963d9[m HEAD@{28}: reset: moving to 1b963d9
+[33mec98945[m HEAD@{29}: reset: moving to HEAD^
+[33m1b963d9[m HEAD@{30}: pull -v: Fast-forward
+[33m04f85e6[m HEAD@{31}: commit: r.js test
+[33mee66ea4[m HEAD@{32}: commit: css
+[33ma42e876[m HEAD@{33}: pull -v: Fast-forward
+[33m6c01fa2[m HEAD@{34}: commit: teset
+[33m05f8627[m HEAD@{35}: commit: fix
+[33m9005489[m HEAD@{36}: pull -v: Fast-forward
+[33mcd2f5c6[m HEAD@{37}: commit: photo detail
+[33m09470e5[m HEAD@{38}: commit: scroll mobile
+[33mf667681[m HEAD@{39}: commit: center
+[33m8e8f3e2[m HEAD@{40}: pull -v: Fast-forward
+[33m1b2d0fd[m HEAD@{41}: commit: test **/test
+[33m6672077[m HEAD@{42}: pull -v: Fast-forward
+[33m2a3b882[m HEAD@{43}: commit: 微信UI
+[33m6752287[m HEAD@{44}: commit: del
+[33mcf37440[m HEAD@{45}: commit: coo
+[33ma0863a6[m HEAD@{46}: commit: weui
+[33m9e90e50[m HEAD@{47}: pull -v: Fast-forward
+[33m2eda0c0[m HEAD@{48}: pull -v: Fast-forward
+[33m9ed424d[m HEAD@{49}: rebase finished: returning to refs/heads/master
+[33m9ed424d[m HEAD@{50}: pull --progress --rebase --prune origin master: checkout 9ed424d5d30eac8001ab614554e6b4845182dbf1
+[33ma4a9477[m HEAD@{51}: commit: i forget change things?
+[33m258cebb[m HEAD@{52}: commit: 登录背景调整,与注册集成在一起
+[33mb446e0a[m HEAD@{53}: commit: work
+[33m1c9d56f[m HEAD@{54}: commit: work
+[33m397cbc5[m HEAD@{55}: pull -v: Fast-forward
+[33m7f59123[m HEAD@{56}: commit: add img
+[33m3d65458[m HEAD@{57}: pull -v: Fast-forward
+[33m057e3cb[m HEAD@{58}: commit: del
+[33ma4c6ffa[m HEAD@{59}: pull -v: Fast-forward
+[33m4de15c9[m HEAD@{60}: pull -v: Fast-forward
+[33m4cb623e[m HEAD@{61}: pull -v: Fast-forward
+[33m7e50cf8[m HEAD@{62}: commit: add photoorigin folder
+[33mbb4dd65[m HEAD@{63}: commit: image
+[33m4eecd11[m HEAD@{64}: pull -v: Merge made by the 'recursive' strategy.
+[33me32865f[m HEAD@{65}: commit: test
+[33md3c9224[m HEAD@{66}: pull -v: Fast-forward
+[33m881b7fc[m HEAD@{67}: commit: 加入图片处理类（水印，缩放）
+[33m2972d91[m HEAD@{68}: commit: imageview 图片全屏平移放大
+[33me729005[m HEAD@{69}: commit: fix use del
+[33m2312a76[m HEAD@{70}: commit: work
+[33mbd21b22[m HEAD@{71}: commit: work
+[33mbd8368a[m HEAD@{72}: commit: 添加图下拉框排序
+[33md6b33bf[m HEAD@{73}: commit: work 下拉框更新
+[33me6e3301[m HEAD@{74}: pull -v: Fast-forward
+[33me255ff3[m HEAD@{75}: commit: work
+[33m36a0f2a[m HEAD@{76}: pull -v: Fast-forward
+[33m99d9ea2[m HEAD@{77}: commit: work
+[33me0bdf82[m HEAD@{78}: pull -v: Fast-forward
+[33m1cb2831[m HEAD@{79}: pull -v: Fast-forward
+[33m06624f3[m HEAD@{80}: commit: tempFile
+[33m2520a41[m HEAD@{81}: pull -v: Merge made by the 'recursive' strategy.
+[33m4e91af5[m HEAD@{82}: commit (merge): del sass-cache
+[33meb3cff5[m HEAD@{83}: commit: success
+[33m6370251[m HEAD@{84}: reset: moving to 6370251
+[33ma837cf6[m HEAD@{85}: pull -v: Fast-forward
+[33m78d3363[m HEAD@{86}: reset: moving to HEAD^
+[33m6370251[m HEAD@{87}: reset: moving to HEAD^
+[33m610cff5[m HEAD@{88}: commit (merge): delete sass-cache
+[33m6370251[m HEAD@{89}: reset: moving to 6370251
+[33ma837cf6[m HEAD@{90}: commit: ww
+[33m78d3363[m HEAD@{91}: reset: moving to HEAD^
+[33m6370251[m HEAD@{92}: commit: 图片上传进度条根据后台整理
+[33m78d3363[m HEAD@{93}: pull -v: Fast-forward
+[33m17b504d[m HEAD@{94}: commit: photo detail page
+[33m19b1633[m HEAD@{95}: pull -v: Merge made by the 'recursive' strategy.
+[33m869ed71[m HEAD@{96}: commit: fix
+[33m98aeb06[m HEAD@{97}: commit: node-mvc commit
+[33m8227402[m HEAD@{98}: pull -v: Fast-forward
+[33m98a42dd[m HEAD@{99}: commit: add .bat
+[33m45839e7[m HEAD@{100}: reset: moving to 45839e73d6594171584af1f769f484a62ae0e918
+[33md4072fa[m HEAD@{101}: reset: moving to HEAD^
+[33m45839e7[m HEAD@{102}: pull -v: Fast-forward
+[33md4072fa[m HEAD@{103}: commit: add upload for photo edit modal
+[33m2bed736[m HEAD@{104}: pull -v: Fast-forward
+[33mae8dfdf[m HEAD@{105}: reset: moving to ae8dfdf
+[33mb275e57[m HEAD@{106}: reset: moving to HEAD^
+[33mae8dfdf[m HEAD@{107}: commit: add data/photo/....
+[33mb275e57[m HEAD@{108}: pull -v: Fast-forward
+[33mda7b003[m HEAD@{109}: commit: config file upload success
+[33m81d95f0[m HEAD@{110}: pull -v: Fast-forward
+[33me050fc3[m HEAD@{111}: commit: grid.js
+[33m73f4b85[m HEAD@{112}: commit: loading
+[33m5c4d88e[m HEAD@{113}: commit: loading animation
+[33m50856f2[m HEAD@{114}: commit: 导出excel
+[33m7735120[m HEAD@{115}: pull -v: Fast-forward
+[33m2bf3c17[m HEAD@{116}: commit: fix grid
+[33mec7c82f[m HEAD@{117}: commit: fix grid
+[33mdb1a153[m HEAD@{118}: pull: Fast-forward
+[33mf4c4c57[m HEAD@{119}: commit: update lanauage
+[33m5441632[m HEAD@{120}: commit: css文件放入styles/css目录
+[33m276fe9f[m HEAD@{121}: commit: 文件下载
+[33maf3736d[m HEAD@{122}: commit: //add
+[33mf0b6735[m HEAD@{123}: commit: 跳转页框
+[33m56b715c[m HEAD@{124}: commit: update work space
+[33m29a061c[m HEAD@{125}: pull -v: Fast-forward
+[33m0980007[m HEAD@{126}: commit: move directory
+[33m3b90087[m HEAD@{127}: pull -v: Fast-forward
+[33mb4852fd[m HEAD@{128}: commit (merge): 150
+[33m65f75dc[m HEAD@{129}: commit: 550
+[33m020a835[m HEAD@{130}: commit: update css and js and html
+[33m083eb4e[m HEAD@{131}: commit: update custom.css
+[33m6632e60[m HEAD@{132}: commit: update look
+[33m2ac7ead[m HEAD@{133}: commit: gui submit
+[33m8cf178f[m HEAD@{134}: commit: modified readme.html
+[33m51622b3[m HEAD@{135}: commit: 我笑了
+[33m7daa359[m HEAD@{136}: pull -v origin master:master: fast-forward
+[33m5f7a287[m HEAD@{137}: commit: look
+[33mb670590[m HEAD@{138}: commit: 有三个文件从公司提交
+[33m5b3f8fd[m HEAD@{139}: pull -v: Fast-forward
+[33mc6bd94f[m HEAD@{140}: pull: Fast-forward
+[33m169aa25[m HEAD@{141}: pull: Fast-forward
+[33m3773234[m HEAD@{142}: commit: update
+[33mba740ea[m HEAD@{143}: commit: app.js update
+[33mbc93348[m HEAD@{144}: commit: express-mvc
+[33m3c4a9ae[m HEAD@{145}: commit: commit all
+[33mc193b04[m HEAD@{146}: commit (initial): :octocat: Added .gitattributes
