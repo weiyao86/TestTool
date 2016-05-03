@@ -1,0 +1,67 @@
+﻿<!-- history list template -->
+
+<div id="tis-history" class="history-list">
+
+    <!-- title -->
+    <h4 class="dialog-head">
+        <label>{{120}}</label><span data-action="close">╳</span>
+    </h4>
+
+    <!-- table header -->
+    <div class="grid-wrap">
+        <table class="grid">
+            <thead>
+                <tr>
+                    <th style="width: 20px;">
+                        <input type="checkbox" data-action="check-all" />
+                    </th>
+                    <th style="width: 40px;">{{113}}</th>
+                    <th style="width: 60px;">{{114}}</th>
+                    <th style="width: 80px;">{{115}}</th>
+                    <th style="width: 40px;">{{116}}</th>
+                    <th style="width: 40px;">{{117}}</th>
+                    <th style="width: 60px;">{{118}}</th>
+                    <th style="width: 80px;">{{119}}</th>
+                    <th style="width: 130px;">{{109}}</th>
+                    <th style="width: 90px;">{{110}}</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <!-- table body -->
+    <div class="grid-wrap history-grid-wrap">
+        <table class="grid" id="history-manager-gird">
+            <tbody data-action="body">
+                <script type="text/template" data-action="list-tpl">
+                    {-{#records}-}
+                        <tr data-id="{-{Id}-}" data-rownumber="{-{rowNumber}-}">
+                            <td style="width: 20px;"><input type="checkbox" data-action="check" /></td>
+                            <td style="width: 40px;" data-field="{-{rowNumber}-}">{-{rowNumber}-}</td>
+                            <td style="width: 60px;" data-field="{-{BrandDesc}-}">{-{BrandDesc}-}</td>
+                            <td style="width: 80px;" data-field="{-{CatalogCode}-}">{-{CatalogCode}-}</td>
+                            <td style="width: 40px;" data-field="{-{Year}-}">{-{Year}-}</td>
+                            <td style="width: 40px;" data-field="{-{ModelCode}-}">{-{ModelCode}-}</td>
+                            <td style="width: 60px;" data-field="{-{GroupCode}-}">{-{GroupCode}-}</td>
+                            <td style="width: 80px;" data-field="{-{ImageCode}-}">{-{ImageCode}-}</td>
+                            <td style="width: 130px;" data-field="{-{Date}-}">{-{Date}-}</td>
+                            <td style="width: 90px;">
+                                <a class="text-decoration" 
+                                   data-action="view" 
+                                   data-params="DealerGroup=sgmw&BrandCode={-{BrandCode}-}&CatalogCode={-{CatalogCode}-}&Year=&ModelCode=&GroupCode={-{GroupCode}-}&ImageCode={-{ImageCode}-}">{{112}}</a>
+                                <a class="text-decoration" data-action="destroy">{{111}}</a>
+                            </td>
+                        </tr>
+                    {-{/records}-}
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- table footer -->
+    <div class="btn-left">
+        <a class="btn-default" data-action="delete-checked">{{111}}</a>
+    </div>
+</div>
+
+

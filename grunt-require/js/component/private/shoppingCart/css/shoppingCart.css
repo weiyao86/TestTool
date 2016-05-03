@@ -1,0 +1,37 @@
+﻿.page-header .shopping-cart-block { width: 320px; }
+.page-header .shopping-cart-block .no-data-info { margin: 20px auto; line-height: 1.5em; padding: 0 10px; text-indent: 1.5em; }
+.page-header .shopping-cart-block .has-data { display: block; }
+.page-header .shopping-cart-block .goods-list-title { height: 28px; padding: 0 5px; background-color: #f1f0f0; line-height: 28px; font-weight: bold; color: #555; }
+.page-header .shopping-cart-block .goods-list { margin: 0; max-height: 215px; padding: 5px 0; /* border:1px solid #f1f0f0; */ overflow: auto; }
+.page-header .shopping-cart-block .goods-item { padding: 2px 5px; border-top: 1px dashed #f0f0f0; }
+.page-header .shopping-cart-block .goods-item:first-child { border-top-width: 0; }
+
+.page-header .shopping-cart-block .tips-box{display:none;border-bottom:1px dashed #f0f0f0;height:40px;line-height:40px; width:98%;overflow:hidden;word-break:break-all; margin:0 auto;word-wrap:break-word;color:#2581c4;}
+.page-header .shopping-cart-block .tips-box .tips-content{padding-left:5px;}
+.page-header .shopping-cart-block .tips-box .tips-img{ background: url(../images/icon.png) no-repeat -217px -114px #fff;float:left;width:16px;height:14px;margin-top:14px;}
+
+.clearfix:after,.clearfix:before{display:table;content:"";}
+.clearfix:after{clear:both;}
+.clearfix{*zoom:1;}
+
+
+.page-header .shopping-cart-block .goods-info { display: block; width: 100px; }
+.page-header .shopping-cart-block .goods-info .code { display: block; line-height: 18px; color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.page-header .shopping-cart-block .goods-info .name { display: block; line-height: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.page-header .shopping-cart-block .goods-number { display: block; float: left; width: 50px; line-height: 40px; text-align: center; }
+.page-header .shopping-cart-block .goods-number .number { /* font-weight:bold; */ color: #333; }
+.page-header .shopping-cart-block .goods-action { line-height: 40px; padding-left: 5px; }
+.page-header .shopping-cart-block .goods-action .del { display: inline-block; vertical-align: middle; width: 16px; height: 19px; background: url(../images/goods_del_bg.png) no-repeat -16px 0px; line-height: 0px; text-indent: -9999em; overflow: hidden; }
+.page-header .shopping-cart-block .goods-action .del:hover { background-position: 0px 0px; }
+.page-header .shopping-cart-block .total { padding: 4px 5px; background-color: #f1f0f0; line-height: 22px; }
+.page-header .shopping-cart-block .total .number { color: #f00; padding: 0 5px; }
+.page-header .shopping-cart-block .total-goods-number { display: inline-block; margin-right: 10px; }
+.page-header .shopping-cart-block .total-cost { display: inline-block; }
+.page-header .shopping-cart-block .btn-goto-shoppingcart { display: block; margin-top: 2px; height: 28px; background-color: #2581c4; border-radius: 3px; line-height: 28px; color: #fff; text-align: center; text-decoration: none; }
+.page-header .shopping-cart-block .btn-goto-shoppingcart:hover { background-color: #2c93de; }
+.page-header .shopping-cart-block .operation-qty-shop { width: 86px; background-color: #eae8e8;display:inline-block;vertical-align:middle; }
+.page-header .shopping-cart-block .operation-qty-shop a,.page-header .shopping-cart-block .operation-qty-shop b {background-image: url(../images/icon.png);background-repeat: no-repeat; width: 18px; height: 22px;float: left; }
+.page-header .shopping-cart-block .operation-qty-shop a {border-style:solid;border-color:#c7c7c7;border-width:1px 0 1px 1px; background-position: -18px -238px; }
+.page-header .shopping-cart-block .operation-qty-shop b { border-style:solid;border-color:#c7c7c7;border-width:1px 1px 1px 0; background-position: -36px -238px; }
+.page-header .shopping-cart-block .operation-qty-shop input { width: 46px; height: 22px; border: 1px solid #aaaaaa; float: left; text-align: center; }
+.page-header .shopping-cart-block .subtotal{color:#f00; display:inline-block;vertical-align:middle;width:50px; padding:0 5px 0 20px; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}

@@ -1,0 +1,28 @@
+﻿.history-list {
+    width: 800px;
+    height: 413px;
+    background-color: #fff;
+    border-radius: 5px;
+    border-bottom: 1px solid #d0d0d0;
+    overflow: hidden;
+    display: none;
+    border: 1px solid #CCC;
+}
+
+.history-list .btn-left {
+    margin-top: 5px;
+}
+
+.history-list .btn-left a {
+    margin: 10px 0 0 10px;
+}
+
+.history-list .grid-wrap {
+    width: 780px;
+    margin: 0 auto;
+}
+
+.history-grid-wrap {
+    height: 300px;
+    overflow-y: auto !important;
+}

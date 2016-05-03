@@ -1,0 +1,62 @@
+﻿<!-- bookmark list template -->
+<div id="tis-bookmark" class="bookmark-list">
+    
+    <!-- title -->
+    <h4 class="dialog-head">
+        <label>{{109}}</label>
+        <span data-action="close">╳</span>
+    </h4>
+
+    <!-- table header -->
+    <div class="grid-wrap">
+        <table class="grid">
+            <thead>
+                <tr>
+                    <th style="width: 20px;">
+                        <input type="checkbox" data-action="check-all" />
+                    </th>
+                    <th style="width: 120px;">{{106}}</th>
+                    <th style="width: 80px;">{{110}}</th>
+                    <th style="width: 80px;">{{111}}</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    
+    <!-- table body -->
+    <div class="grid-wrap bookmark-grid-wrap">
+        <table class="grid" id="bookmark-manager-grid">
+            <tbody data-action="body">
+                 <script type="text/template" data-action="list-tpl" >
+                    {-{#records}-}
+                        <tr data-id="{-{Id}-}">
+                            <td style="width: 20px;">
+                                <input type="checkbox" data-action="check" />
+                            </td>
+                            <td style="width: 120px;" data-field="{-{Description}-}">
+                                {-{Description}-}
+                            </td>
+                            <td style="width: 80px;" data-field="{-{CreateDate}-}">
+                                {-{Date}-}
+                            </td>
+                            <td style="width: 80px;">
+                                <a class="text-decoration" 
+                                   data-action="view" 
+                                   data-params="DealerGroup=sgmw&BrandCode={-{BrandCode}-}&CatalogCode={-{CatalogCode}-}&Year=&ModelCode=&GroupCode={-{GroupCode}-}&ImageCode={-{ImageCode}-}">{{113}}</a>
+                                <a class="text-decoration" data-action="destroy" >{{112}}</a>
+                            </td>
+                        </tr>
+                    {-{/records}-}
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- table footer-->
+    <div class="btn-left">
+        <a class="btn-default" data-action="delete-checked">{{112}}</a>
+    </div>
+
+</div>
+
+

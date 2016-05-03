@@ -1,0 +1,11 @@
+﻿{
+   "paths": {
+            "../style/release/header.min.css": ["../style/all.css", "../style/header.css", "../style/epcBar.css", "../style/common.css", "../style/jquery-ui.css"],
+            "../style/release/catalog.min.css": ["../style/catalog.css", "../style/usage.css", "../style/easyui.css", "../style/combobox.css"],
+            "../style/release/detail.min.css": ["../style/detail.css", "../style/dialog.css"],
+            "../style/release/order.min.css": ["../style/order.css"],
+            "../style/release/orderManager.min.css": ["../style/orderManager.css"],
+            "../style/release/print.min.css": ["../style/print.css"],
+            "../style/release/shoppingCart.min.css": ["../style/shoppingCart.css"]
+         }
+}

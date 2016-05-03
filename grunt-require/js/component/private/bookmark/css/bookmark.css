@@ -1,0 +1,94 @@
+﻿.bookmark-add {
+    width: 450px;
+    height: 150px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: hidden;
+    display: none;
+}
+
+.bookmark-add .dialog-head {
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+
+.bookmark-add .btn-center {
+    margin-top: 20px;
+}
+
+.bookmark-add .btn-center a {
+    margin: 0 5px;
+}
+
+.dialog-head {
+    height: 36px;
+    width: 100%;
+    border-bottom: 1px solid #d0d0d0;
+    background-image: url(../images/search_head_bg.png);
+    background-repeat: repeat-x;
+    line-height: 36px;
+    margin: 0 0 10px 0;
+    font-family: 'Microsoft YaHei';
+}
+
+.dialog-head label {
+    display: block;
+    float: left;
+    margin-left: 10px;
+}
+
+.dialog-head span {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #c0bfbf;
+    background-color: #005ea7;
+    display: block;
+    margin: -1px 0 0 -1px;
+    float: right;
+    cursor: pointer;
+    border-radius: 0 3px 0 0 !important;
+    *position: absolute;
+    font-size: 20px;
+    color: #ccc;
+}
+
+.dialog-head span:hover {
+    color: #fff;
+}
+
+.bookmark-add span {
+    margin-left: 10px;
+}
+
+.bookmark-add input {
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    overflow: hidden;
+    width: 320px;
+    height: 24px;
+}
+
+.bookmark-list {
+    width: 600px;
+    height: 413px;
+    background-color: #fff;
+    border-radius: 5px;
+    border-bottom: 1px solid #d0d0d0;
+    overflow: hidden;
+    display: none;
+    border: 1px solid #CCC;
+}
+
+.bookmark-list .btn-left{
+    margin-top: 5px;
+}
+
+.bookmark-list .grid-wrap {
+    width: 580px;
+    margin: 0 auto;
+}
+
+.bookmark-list .btn-left a{
+    margin: 10px 0 0 10px;
+}

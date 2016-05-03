@@ -1,0 +1,45 @@
+﻿
+<div id="shopping-cart-scope" class="nav-detail-box">
+    <div class="box-arrow"><div class="box-arrow-cont"></div></div>
+    <div id="shopping-cart" class="shopping-cart-block">
+         <script type="text/template" data-action="list-tpl">
+			    <div {-{#Total}-} style="display:none" {-{/Total}-} class="no-data" data-area="nodata">
+				    <p class="no-data-info">{{101}}</p>
+			    </div>
+
+			    <div {-{^Total}-} style="display:none" {-{/Total}-} class="has-data" data-area="hasdata">
+				    <div class="goods-list-title">{{100}}</div>
+                  
+				    <ul class="goods-list" data-field="part-scope">
+					    {-{#Details}-}
+					    <li class="goods-item clearfix" data-id="{-{PartNumber}-}" data-unitpkg-qty="{-{UnitPkgQty}-}">
+						    <span class="goods-info">
+                               <span title="{-{PartNumber}-}" class="code">{-{PartNumber}-}</span>
+				               <span class="name" title="{-{Description}-}">{-{Description}-}</span>
+                            </span>
+						    <!--<span class="goods-number">
+                                <span title="{-{Qty}-}{{106}}" class="number">{-{Qty}-}</span>
+                            </span>-->
+                            <span class="operation-qty-shop">
+                                    <a data-action="decrease-qty"></a>
+                                    <input type="text" data-action="blur" value="{-{Qty}-}" maxlength="5"/><b data-action="increase-qty"></b>
+                            </span>
+                            <span class="subtotal" {-{^IsShowPrice}-}style="visibility:hidden;"{-{/IsShowPrice}-} title="{-{PartSubtotal}-}">{-{PartSubtotal}-}</span>
+						    <span class="goods-action">
+                                 <a class="del" href="javascript:void(0);" data-action="destory" data-partNo="{-{Qty}-}"></a></span>
+					    </li>
+                        {-{/Details}-}
+				    </ul>
+                     <div class="tips-box" data-action="tips">
+                                <span class="tips-img"></span>
+                                <span class="tips-content" data-field="content"></span>
+                    </div>
+				    <div style="" class="total">
+					    <span class="total-goods-number">{{102}}<span id="goods-num" class="number">{-{Total}-}</span>{{103}}</span>
+	                    <span {-{^IsShowPrice}-} style="display: none;" {-{/IsShowPrice}-} class="cost">{{104}}<span class="number">{-{Currency}-}{-{Amount}-}</span></span>
+					    <a class="btn-goto-shoppingcart" data-action="toDetail" href="javascript:;">{{113}}</a>
+				    </div>
+			    </div>
+        </script>
+    </div>
+</div>
