@@ -1,6 +1,6 @@
 #操作git遇到的问题
 
-###使用github desktop工具--github我在家里改**
+###使用github desktop工具--github**
 *   解决文件名过长问题:git config --system core.longpaths true*
 *   设置全局昵称:git config --global user.name "weiyao86"
 *   设置全局邮箱:git config --global user.email "wei.yaoisnull@gmail.com"
