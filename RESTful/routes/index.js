@@ -34,10 +34,31 @@ router.post('/addUser', function(req, res, next) {
 
 router.get('/:id', function(req, res, next) {
 	var u = user['user' + req.params.id];
-	res.render("index", {
-		title: "user",
-		users: u
+
+	var fs = require('fs'),
+		path = require('path'),
+		folder = "D:/Work-git/WebTest";
+	fs.readdir(folder, function(err, files) {
+		if (err) console.log('读取文件目录失败：' + err);
+		var menus = [];
+		files.forEach(function(val) {
+			var stat = fs.statSync(folder + '/' + val);
+			if (stat.isFile()) {
+				if (path.extname(val) == '.html') {
+					menus.push(val);
+				}
+			}
+		});
+
+		res.render("menu", {
+			title: "show menu",
+			users: u,
+			menu: menus
+		});
 	});
+
+
+
 });
 
 
