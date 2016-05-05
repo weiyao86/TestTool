@@ -39,7 +39,7 @@ router.get('/:id', function(req, res, next) {
 
 	var fs = require('fs'),
 		path = require('path'),
-		folder = "D:/Work-git/WebTest";
+		folder = "D:/MySpace/webDemo"; //D:/Work-git/WebTest
 	fs.readdir(folder, function(err, files) {
 		if (err) console.log('读取文件目录失败：' + err);
 		var menus = [];
@@ -52,8 +52,9 @@ router.get('/:id', function(req, res, next) {
 			}
 		});
 
-		var url = "http://localhost/WebTest/menu.html",
-			localUrl = "D:/Work-git/WebTest/menu.html";
+
+		var url = "http://localhost/webDemo/menu.html", //D:\MySpace\webDemo
+			localUrl = "D:/MySpace/webDemo/menu.html";
 		request(url, {
 			timeout: 30 * 1000
 		}, function(err, rqres, body) {
@@ -67,10 +68,10 @@ router.get('/:id', function(req, res, next) {
 				var list = [];
 
 				menus.forEach(function(val) {
-					if (val.indexOf('js常用函数') == 0) console.log('<li><a href=' + val + '>' + val + '</a></li>');
+					if (val.indexOf('js常用函数') == 0) console.log('<li><a href="' + val + '">' + val + '</a></li>');
 
 
-					list.push('<li><a href=' + val + '>' + val + '</a></li>');
+					list.push('<li><a href="' + val + '">' + val + '</a></li>');
 				});
 				$menu.empty().append(list.join(''));
 
