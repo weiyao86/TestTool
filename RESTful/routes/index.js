@@ -39,22 +39,42 @@ router.get('/:id', function(req, res, next) {
 
 	var fs = require('fs'),
 		path = require('path'),
-		folder = "D:/MySpace/webDemo"; //D:/Work-git/WebTest
+		url = "http://localhost/WebTest/menu.html", //D:\MySpace\webDemo
+		localUrl = "D:/Work-git/WebTest/menu.html", //待更改菜单页
+		folder = "D:/Work-git/WebTest"; //D:/Work-git/WebTest--D:/Work-git/WebTest
+
 	fs.readdir(folder, function(err, files) {
 		if (err) console.log('读取文件目录失败：' + err);
-		var menus = [];
-		files.forEach(function(val) {
-			var stat = fs.statSync(folder + '/' + val);
-			if (stat.isFile()) {
-				if (path.extname(val) == '.html') {
-					menus.push(val);
-				}
-			}
-		});
+		var menus = [],
+			recursive = function(files, folderPath) {
 
+				files.forEach(function(val) {
+					var fp = folderPath + '/' + val;
+					try {
+						var stat = fs.statSync(fp);
+						if (stat.isFile()) {
+							if (path.extname(val) == '.html') {
+								menus.push(val);
+							}
+						} else if (stat.isDirectory()) {
 
-		var url = "http://localhost/webDemo/menu.html", //D:\MySpace\webDemo
-			localUrl = "D:/MySpace/webDemo/menu.html";
+							var subfiles = fs.readdirSync(fp);
+							var sub = {
+								title: val,
+								subfiles: subfiles
+							};
+							menus.push(sub);
+						}
+					} catch (e) {
+						//console.log(e);
+					}
+				});
+			};
+
+		recursive(files, folder);
+
+		fs.writeFileSync("D:/Work-git/WebTest/menus.text", menus);
+
 		request(url, {
 			timeout: 30 * 1000
 		}, function(err, rqres, body) {
@@ -68,10 +88,27 @@ router.get('/:id', function(req, res, next) {
 				var list = [];
 
 				menus.forEach(function(val) {
-					if (val.indexOf('js常用函数') == 0) console.log('<li><a href="' + val + '">' + val + '</a></li>');
+					if (typeof val === "object") {
+						var recursiveObj = function(subObj) {
+							var title = subObj.title,
+								subfiles = subObj.subfiles,
+								tempFiles = [];
+							subfiles.forEach(function(f) {
+								if (path.extname(f) == ".html") {
+									var str = "<dd><a href='./" + title + "/" + f + "'>" + f + "</a></dd>";
+									tempFiles.push(str);
+								}
+							});
+							if (tempFiles.length) {
+								list.push('<li><dl><dt>' + title + '</dt>' + tempFiles.join('') + '</dl></li>');
 
+							}
+						};
+						recursiveObj(val);
+					} else {
+						list.push('<li><a href="' + val + '">' + val + '</a></li>');
+					}
 
-					list.push('<li><a href="' + val + '">' + val + '</a></li>');
 				});
 				$menu.empty().append(list.join(''));
 
