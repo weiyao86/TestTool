@@ -22,7 +22,9 @@ var path = require('path');
 
 var app = express();
 
+var log4js = require('./lib/log4js.js');
 
+var loggerFile = log4js.use(app);
 // configure middleware
 app.set('views', __dirname + '/views');
 app.set('rootDir', __dirname);
@@ -77,6 +79,7 @@ app.use(function(req, res, next) {
 
 //捕获所有的异常
 process.on('uncaughtException', function(err) {
+	loggerFile.info('uncaughtException:-----' + err);
 	console.log('uncaughtException:-----' + err);
 });
 
@@ -86,11 +89,11 @@ app.use(function(err, req, res, next) {
 
 	//过滤静态文件
 	if (/data|res|scripts|styles/.test(req.originalUrl)) {
-		console.log("过滤静态文件,此处错误忽略！" + '-----' + err + "-----" + req.originalUrl);
+		loggerFile.info("过滤静态文件,此处错误忽略！" + '-----' + err + "-----" + req.originalUrl);
 		return next();
 	}
 	//暴露错误信息
-	console.log(err);
+	loggerFile.info(err);
 	//res.redirect('/noexist');
 });
 
@@ -105,7 +108,7 @@ app.use(function(err, req, res, next) {
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 server.listen(8002, function() {
-	console.log("app start:8002 success!");
+	loggerFile.info("app start:8002 success!");
 });
 
 io.on("connection", function(s) {

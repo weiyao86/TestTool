@@ -14,3 +14,65 @@
 .page-cur {
     max-width: 120px;
 }
+.ck_switch {
+  appearance: none;
+  position: relative;
+  width: 52px;
+  height: 32px;
+  border: 1px solid #DFDFDF;
+  outline: 0;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background: #DFDFDF;
+}
+.ck_switch:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #FDFDFD;
+  transition: transform .3s;
+}
+.ck_switch:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  transition: transform .3s;
+}
+.ck_switch:checked {
+  border-color: #04BE02;
+  background-color: #04BE02;
+}
+
+input[type="checkbox"].ck_switch:focus {
+  outline: 0;
+  // outline: 5px auto -webkit-focus-ring-color;
+  // outline-offset: -2px;
+}
+.ck_switch:checked:before {
+          transform: scale(0);
+            outline: 0;
+             appearance: none;
+}
+.ck_switch:checked:after {
+          transform: translateX(20px);
+            outline: 0;
+             appearance: none;
+}
+
+
+.thumb-close{
+  position:absolute;right:0;top:10px;transition: transform .3s;
+&:hover{
+  transform: rotate(90deg);
+}
+}

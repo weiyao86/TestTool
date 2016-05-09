@@ -4,6 +4,7 @@ var fs = require("fs"),
 	formidable = require('formidable'), //上传文件插件 可支持做进度条
 	tmepFoler = __appRoot + '/tempFile/',
 	operatorImg = require(__appRoot + "/lib/operatorImg"), //操作图像
+	log4js = require(__appRoot + '/lib/log4js.js').logforName('photo'),
 	upprogress = {
 		size: 0
 	},
@@ -164,11 +165,11 @@ exports.commonfun = {
 		form.on("field", function(name, val) {});
 
 		form.on("error", function(err) {
-			console.log("file upload error" + err);
+			log4js.info("file upload error" + err);
 		});
 
 		form.on("aborted", function() {
-			console.log("file upload aborted");
+			log4js.info("file upload aborted");
 		});
 
 
@@ -267,7 +268,7 @@ exports.commonfun = {
 			} else if (fs.existsSync(focusFile)) {
 				src = focusFile;
 			} else {
-				return console.log("------------Image is not found!--------------");
+				return log4js.info("------------Image is not found!--------------");
 			}
 			isNew = false;
 		}
@@ -279,17 +280,17 @@ exports.commonfun = {
 			reader = fs.createReadStream(dest);
 
 		writer.on('finish', function() {
-			console.log('原图保存完成---' + originPath);
+			log4js.info('原图保存完成---' + originPath);
 			//添加水印在右下方
 			operatorImg.addWaterMark(originPath, watermarkImg, originPath, 20, "Center", function() {
-				console.log('原图水印完成加载---' + originPath);
+				log4js.info('原图水印完成加载---' + originPath);
 			});
 
 			//缩略图
 			operatorImg.resizeImgWithFullArgs(dest, dest, 100, undefined, 500, ext, function() {
-				console.log('目标文件压缩完成---' + dest);
+				log4js.info('目标文件压缩完成---' + dest);
 				operatorImg.addWaterMark(dest, watermarkImg, dest, 20, "Center", function() {
-					console.log('压缩图水印完成加载---' + dest);
+					log4js.info('压缩图水印完成加载---' + dest);
 				});
 			});
 
@@ -298,10 +299,10 @@ exports.commonfun = {
 
 
 		// fs.readFile(src, function(err, data) {
-		// 	if (err) return console.log("读取--" + src + "--文件错误！error:" + err);
+		// 	if (err) return log4js.info("读取--" + src + "--文件错误！error:" + err);
 
 		// 	fs.writeFile(dest, data, function(err1) {
-		// 		if (err1) return console.log("写入--" + dest + "--文件错误！error:" + err1);
+		// 		if (err1) return log4js.info("写入--" + dest + "--文件错误！error:" + err1);
 		// 		self.recursiveDelFile(folderPath);//删除临时目录,并发时会有问题
 		// 	});
 		// });
@@ -325,14 +326,14 @@ exports.commonfun = {
 	},
 
 	watchFile: function(filepath) {
-		console.log('start Watch');
+		log4js.info('start Watch');
 
 		fs.watch(__appRoot + filepath, function(event, filename) {
-			console.log('event is: ' + event);
+			log4js.info('event is: ' + event);
 			if (filename) {
-				console.log('filename provided: ' + filename);
+				log4js.info('filename provided: ' + filename);
 			} else {
-				console.log('filename not provided');
+				log4js.info('filename not provided');
 			}
 		});
 	},

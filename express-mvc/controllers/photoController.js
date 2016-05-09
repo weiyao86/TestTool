@@ -7,6 +7,7 @@ var gu = require("guthrie"),
 	photo = require(__appRoot + "/lib/photo").photo,
 	user = require(__appRoot + "/lib/user").user,
 	operatorImg = require(__appRoot + "/lib/operatorImg"),
+	log4js = require(__appRoot + '/lib/log4js.js').logforName('photo'),
 
 	baseController = require("./mybaseController"),
 	photoController = gu.controller.inherit(baseController);
@@ -193,7 +194,6 @@ photoController.actions = {
 
 			var callback = function(doc) {
 				var filename = model.filename,
-					ext = filename.match(/(\.\w+)$/)[1],
 					clientName = model.imgguid;
 				var condiction = {
 						uid: email,
@@ -209,9 +209,11 @@ photoController.actions = {
 						createBy: doc.nickname,
 						createDate: new Date()
 					};
-
 				commonfun.insert(req, res, photo, condiction, content, function(req, res, doc) {
-					commonfun.writeFileAndRm(clientName, content.isFocusPhoto, clientName);
+					if (clientName) commonfun.writeFileAndRm(clientName, content.isFocusPhoto, clientName);
+					else {
+						log4js.info('图片为空－无需压缩');
+					}
 				});
 			};
 
@@ -231,7 +233,6 @@ photoController.actions = {
 				email = req.cookies["account"].email,
 				uid = model.uid,
 				filename = model.filename,
-				ext = filename.match(/(\.\w+)$/)[1],
 				clientName = model.imgguid,
 				condiction = {
 					_id: model._id
@@ -247,7 +248,10 @@ photoController.actions = {
 				};
 
 			commonfun.update(req, res, photo, condiction, content, function(req, res, doc) {
-				commonfun.writeFileAndRm(clientName, content.isFocusPhoto, clientName);
+				if (clientName) commonfun.writeFileAndRm(clientName, content.isFocusPhoto, clientName);
+				else {
+					log4js.info('图片为空－无需压缩');
+				}
 			});
 		}
 	},
@@ -259,7 +263,7 @@ photoController.actions = {
 					"_id": model._id
 				};
 
-			console.log(model._id)
+			log4js.info(model._id);
 
 			commonfun.destory(req, res, photo, condiction);
 		}

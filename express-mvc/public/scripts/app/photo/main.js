@@ -27,6 +27,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 
 			//upload form
 			self.$uploadForm = $("#uploadPhoto");
+			self.$clearThumbnail = $("#clear_thumbnail");
 
 			self.$dropdownSort = $("#sort_photo");
 			self.dropdownTemplate = $("#sort_photo_template").html();
@@ -63,6 +64,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					if (!isUploadProperty) {
 						self.listenerUpload();
 					}
+					self.$clearThumbnail.hide();
 				},
 				uploadProgress: function(event, position, total, percentComplete) {
 					var percentVal = percentComplete + '%';
@@ -80,6 +82,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 					self.$photo.attr("src", fileSrc);
 					self.$edit.find("[data-field='imgguid']").val(rst[0].imgguid);
 					$("#global_search").val(rst[0].imgguid);
+					self.$clearThumbnail.show();
 				}
 			});
 
@@ -97,6 +100,13 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 
 					self.$uploadForm.submit();
 				}
+			});
+
+			self.$clearThumbnail.on("click", function() {
+				self.$photo.attr("src", $.dataBase64Img);
+				self.$edit.find("[data-field='imgguid']").val('');
+				self.$edit.find("[data-field='filename']").val('');
+				self.$clearThumbnail.hide();
 			});
 		},
 
@@ -209,10 +219,14 @@ require(["ajax", "globalConfig", "mustache", "grid", "jqExtend", "jqform", "fade
 
 			self.$dropdownSort.html(template);
 			var lifirst = self.$dropdownSort.children().first().children().html();
-			name == "create" && $btn.find("[data-val='val']").html(lifirst);
-			if (name == "update") {
-				$btn.find("[data-val='val']").html(rowData.sort);
-				$btn.find("[data-field='sort']").html(rowData.sort);
+			if (name == "create") {
+				$btn.find("[data-val='val']").
+				add($btn.find("[data-field='sort']")).
+				html(lifirst);
+			} else if (name == "update") {
+				$btn.find("[data-val='val']").
+				add($btn.find("[data-field='sort']")).
+				html(rowData.sort);
 			}
 		},
 
