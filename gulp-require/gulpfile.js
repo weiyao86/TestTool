@@ -16,6 +16,7 @@ var watchCss = gulp.watch('./styles/*.css');
 var dateFormat = require('dateformat');
 var now = new Date();
 var dateTime = dateFormat(now, "isoDateTime");
+var pkg = require('./package.json');
 var comments = "/* build date: " + dateTime + " */ \n";
 //build sass
 gulp.task("sass", function() {
@@ -94,4 +95,147 @@ gulp.task('default', ["minify-html", "minify-css", "uglify"], function() {
 		});
 	});
 
+});
+
+
+
+/**
+ * 2016/5/10 根据weiui做的测试
+ */
+var http = require('http');
+var browserSync = require('browser-sync'); // 浏览器同步测试…… http://www.browsersync.cn/docs/gulp/
+var nano = require('gulp-cssnano'); //css压缩
+var header = require('gulp-header'); //添加信息在头部
+var releaseFolder = './release';
+var banner = [
+	'/*!',
+	' * Wei.Yao v<%= pkg.version %> (<%= pkg.homepage %>)',
+	' * Copyright <%= new Date().getFullYear() %> Tencent, Inc.',
+	' * Licensed under the <%= pkg.license %> license',
+	' */',
+	''
+].join('\n');
+
+//编译sass
+gulp.task('build:sass', function() {
+	return gulp.src('./*.scss')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(postcss([autoprefixer]))
+		.pipe(header(banner, {
+			pkg: pkg
+		}))
+		.pipe(gulp.dest('./public/styles'))
+		.pipe(browserSync.reload({
+			stream: true
+		}))
+		.on('end', function() {
+			console.log('build:sass success!');
+		});
+	// .pipe(nano())
+	// .pipe(rename(function(path) {
+	// 	console.log(path.basename);
+	// 	path.basename += '.min';
+
+	// }))
+	// .pipe(gulp.dest('./public/styles'))
+	// .pipe(browserSync.reload({
+	// 	stream: true
+	// })).on('end', function() {
+	// 	console.log('build:sass success!');
+	// });
+});
+
+//uglify javascript
+gulp.task("build:js", function() {
+	// gulp.src('styles/(**/*.?(css|*))|*.?(css|*)')
+	return gulp.src(['public/js/*.js', 'public/js/**/*.js'], {
+			base: 'public'
+		})
+		.pipe(uglify())
+		.pipe(rename(function(path) {
+			if (path.basename.indexOf('.min') < 0)
+				path.basename += '.min';
+		}))
+		.pipe(gulp.dest(releaseFolder))
+		.pipe(browserSync.reload({
+			stream: true
+		}))
+		.on('end', function() {
+			console.log('build:js success!');
+		});
+});
+//uglify css
+gulp.task("build:css", ['build:sass'], function() {
+	return gulp.src(['public/styles/*.css', 'public/styles/**/*.css'], {
+			base: 'public'
+		})
+		.pipe(nano())
+		.pipe(rename(function(path) {
+			if (path.basename.indexOf('.min') < 0)
+				path.basename += '.min';
+		}))
+		.pipe(gulp.dest(releaseFolder))
+		.pipe(browserSync.reload({
+			stream: true
+		}))
+		.on('end', function() {
+			console.log('build:css success!');
+		});
+});
+
+//合并压缩html
+gulp.task("build:html", function() {
+	return gulp.src('./view/*.html')
+		.pipe(minifyhtml())
+		.pipe(gulp.dest('./view'));
+});
+
+//复制文件到release文件夹
+gulp.task("build:assets", ['build:css'], function() {
+	//所有public下的文件
+	// gulp.src(['public/*.?(jpg|png|gif|js)', 'public/**/*.?(jpg|png|gif|css)'], {
+	// 		base: 'public'
+	// 	})
+	// 	.pipe(gulp.dest(releaseFolder));
+	// 	-------------------------------------
+	//针对部分文件
+	return gulp.src(['public/**/*.?(jpg|png|gif)'], {
+			base: 'public'
+		})
+		.pipe(gulp.dest(releaseFolder))
+		.on('end', function() {
+			console.log('build:assets success!');
+		});
+});
+
+
+gulp.task('build:watch', function() {
+	gulp.watch('./*.scss', ['build:css']);
+});
+
+
+gulp.task("build:start", ['build:assets', 'build:js', 'build:html'], function() {
+	console.log("全部完成!");
+});
+
+
+
+//通过browser-sync在浏览器中查看，无需另建服务器
+gulp.task('server', function() {
+	var p = 8050;
+	browserSync.init({
+		server: {
+			baseDir: ""
+		},
+		ui: {
+			port: p,
+			weinre: {
+				port: p + 2
+			}
+		},
+		port: p,
+		startPath: '/view/index.html'
+	});
+
+	gulp.start('build:watch');
 });
