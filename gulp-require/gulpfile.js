@@ -128,6 +128,10 @@ gulp.task('build:sass', function() {
 		.pipe(browserSync.reload({
 			stream: true
 		}))
+		.on("error", function(e) {
+			console.log(e.message);
+			this.emit('end');
+		})
 		.on('end', function() {
 			console.log('build:sass success!');
 		});
@@ -160,6 +164,10 @@ gulp.task("build:js", function() {
 		.pipe(browserSync.reload({
 			stream: true
 		}))
+		.on("error", function(e) {
+			console.log(e.message);
+			this.emit('end');
+		})
 		.on('end', function() {
 			console.log('build:js success!');
 		});
@@ -178,6 +186,10 @@ gulp.task("build:css", ['build:sass'], function() {
 		.pipe(browserSync.reload({
 			stream: true
 		}))
+		.on("error", function(e) {
+			console.log(e.message);
+			this.emit('end');
+		})
 		.on('end', function() {
 			console.log('build:css success!');
 		});
@@ -187,7 +199,15 @@ gulp.task("build:css", ['build:sass'], function() {
 gulp.task("build:html", function() {
 	return gulp.src('./view/*.html')
 		.pipe(minifyhtml())
-		.pipe(gulp.dest('./view'));
+		.pipe(gulp.dest('./view'))
+		.pipe(browserSync.reload({
+			stream: true
+		})).on("error", function(e) {
+			console.log(e.message)
+		})
+		.on("end", function() {
+			console.log("build:html success!")
+		});
 });
 
 //复制文件到release文件夹
@@ -203,6 +223,10 @@ gulp.task("build:assets", ['build:css'], function() {
 			base: 'public'
 		})
 		.pipe(gulp.dest(releaseFolder))
+		.on("error", function(e) {
+			console.log(e.message);
+			this.emit('end');
+		})
 		.on('end', function() {
 			console.log('build:assets success!');
 		});
@@ -210,7 +234,13 @@ gulp.task("build:assets", ['build:css'], function() {
 
 
 gulp.task('build:watch', function() {
-	gulp.watch('./*.scss', ['build:css']);
+	var gw = gulp.watch(['./*.scss', './view/*.html'], ['build:css']);
+	gw.on('change', function(event) {
+		console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+	});
+	var gs = gulp.watch('./public/**/*.css', function(event) {
+		console.log('File2 ' + event.path + ' was ' + event.type + ', running tasks...');
+	});
 });
 
 

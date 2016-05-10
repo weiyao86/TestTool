@@ -43,7 +43,7 @@ html, body {
 
 .bd.fixed_middle {
   position: absolute;
-  border: 1px solid #f8c;
+  border: 1px solid #ddd;
   top: 64px;
   bottom: 55px;
   left: 0;
