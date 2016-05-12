@@ -1,0 +1,13 @@
+{        
+    "request": {                                    
+        "method": "GET",                        
+        "urlPattern": "/tree/tree.*"
+    },                                      
+    "response": {                                   
+        "status": 200,                          
+        "bodyFileName": "tree.json",
+        "headers": {
+            "Content-Type": "application/json;charset=UTF-8"
+        }
+    }                                            
+}

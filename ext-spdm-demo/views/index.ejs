@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ext Tree DEMO</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- load css -->
+	<link rel="stylesheet" type="text/css" media="all" href="/resources/ext-theme-gray/ext-theme-gray-all.css" />
+
+	<!-- load scripts -->
+	<script type="text/javascript" src="/extjs/bootstrap.js"></script>
+	<script type="text/javascript" src="/extjs/ext-lang-zh_CN.js"></script>
+
+	<!-- load app.js -->
+	<script type="text/javascript">
+
+		    Ext.define("DEMO.globalConfig", {
+		        statics: {
+		        	path:'http://localhost:8080/servision-spdm-web',
+		            nopicName:'no-img.png',
+		            namespace: "DEMO"
+		        }
+		    });
+
+			Ext.define("DEMO.extjsConfig", {
+				statics : {
+					pageCode : "index",
+					appFolder : "javascripts",
+					uxFolder : "extjs/ux",
+					pages : {
+						"index" : {
+							controller : "tree.tree",
+							viewport : "tree.viewport"
+						}
+					}
+				}
+			});
+
+	</script>
+<script type="text/javascript" src="/javascripts/extApp.js"></script>
+  </head>
+  <body>
+Index.ejs
+  </body>
+</html>

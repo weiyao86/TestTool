@@ -1,0 +1,44 @@
+[{
+        expanded: true,
+        text:'root',
+        id:'a',
+        leaf:false,
+        children: [{
+            text: "detention",
+            operatorType:'1',
+            id:'b',
+            leaf: true
+        }, {
+            text: "homework",
+            expanded: true,
+            operatorType:'1',
+            id:'c',
+            children: [{
+                text: "book report",
+                operatorType:'2',
+                id:'d',
+                leaf: true
+            }, {
+                text: "alegrbra",
+                leaf: false,
+                operatorType:'2',
+                id:'e',
+                children: [{
+                    text: "book report1",
+                    operatorType:'3',
+                    id:'f',
+                    leaf: true
+                }, {
+                    text: "alegrbra2",
+                    operatorType:'3',
+                    id:'g',
+                    leaf: true
+                }]
+            }]
+        }, {
+            text: "buy lottery tickets",
+            operatorType:'1',
+            id:'ha',
+            leaf: true
+        }]
+    }]

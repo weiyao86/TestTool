@@ -1,0 +1,16 @@
+[{
+	"id": "a977846e-9aa3-5fd7-a70c-28707380eb16",
+	"text": "标准名称管理",
+	"leaf": false,
+	"children": [{
+		"id": "f88763e6-2c88-6c04-11a6-13bba955d6a4",
+		"text": "标准名称管理",
+		"leaf": true,
+		"children": null
+	}, {
+		"id": "user-manage",
+		"text": "用户管理",
+		"leaf": true,
+		"children": null
+	}]
+}]

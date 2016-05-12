@@ -85,10 +85,12 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 				switch (window.orientation) {
 					case -90:
 					case 90:
-						self.rotatePad = 20;
+						self.rotatePad = 0;
+						// alert($(window).width() + '=' + $(window).scrollTop() + $(document).height());
 						break;
 					case 0:
 					case 180:
+						// alert($(window).width() + '=' + $(window).scrollTop() + $(document).height());
 						break;
 					default:
 						break;
@@ -273,13 +275,12 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 		scrollload: function(timer) {
 			var self = this,
 				winH = $(window).height(),
-				scrHeight = $(window).scrollTop(),
+				scrTop = $(window).scrollTop(),
 				docHeight = $(document).height();
 
-			if (winH + scrHeight - self.rotatePad == docHeight) {
-				if (timer) {
-					clearTimeout(timer);
-				}
+			var str = winH + '=' + scrTop + '=' + docHeight;
+			$("#global_search").val(str);
+			if (scrTop + winH == docHeight) {
 				var later = function() {
 					if (!self.page.hasRecords) {
 						self.loadGlobalFlag = true;
@@ -290,7 +291,8 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 
 				};
 				if (!self.loadGlobalFlag) {
-					setTimeout(later, 300);
+					clearTimeout(timer);
+					timer = setTimeout(later, 300);
 				}
 			}
 		},

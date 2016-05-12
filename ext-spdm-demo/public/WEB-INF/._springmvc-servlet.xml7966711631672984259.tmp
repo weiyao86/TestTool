@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.1.xsd">
+
+	<context:annotation-config />
+	<cache:annotation-driven  cache-manager="defaultCacheManager"/>
+	<context:component-scan base-package="com.servision.spdm.web.controller" />
+	<aop:aspectj-autoproxy/>
+
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter" >
+                <property name="features">
+                	<array>
+                		<value>WriteMapNullValue</value>
+                	</array>
+                </property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	<mvc:resources location="/css/" mapping="/css/**"/>
+	<mvc:resources location="/js/" mapping="/js/**"/>
+	<mvc:resources location="/style/" mapping="/style/**"/>
+	<mvc:resources location="/imgs/" mapping="/imgs/**"/>
+	<mvc:resources location="/image/" mapping="/image/**"/>
+	<mvc:resources location="/helpdocs/" mapping="/helpdocs/**"/>
+	<mvc:resources location="/min/" mapping="/min/**"/>
+	<mvc:resources location="/favicon.ico" mapping="/favicon.ico"/>
+	<mvc:resources location="/wro/" mapping="/wro/**"/>
+	<mvc:resources location="/resources/" mapping="/resources/**"/>
+	
+	<bean class="com.servision.spdm.web.ServletContextInit" init-method="init">
+		<property name="restPath" value="${rest.path}"></property>
+		<property name="ftpPath" value="${ftp.path}"></property>
+	</bean>
+	
+	<mvc:view-controller path="/index" view-name="/master/index"/>
+
+	<!-- ViewResolver -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="zh_CN" />
+    </bean>
+    
+   <!--  <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+    	<property name=""></property>
+    
+    </bean> -->
+    
+</beans>
