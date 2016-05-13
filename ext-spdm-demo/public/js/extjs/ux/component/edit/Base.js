@@ -12,7 +12,7 @@ Ext.define("Ext.ux.component.edit.Base", {
     width: 450,
     maxHeight: 500,
     bodyStyle: {
-        background: '#fff',
+        background: '#fff'
     },
     bodyPadding: '10 10 5 10',
     dockedItems: [{
@@ -45,8 +45,10 @@ Ext.define("Ext.ux.component.edit.Base", {
             btnSave = me.down("toolbar > button[action=save]"),
             btnCancel = me.down("toolbar > button[action=cancel]");
 
-        btnSave.on("click", Ext.Function.bind(me.doSave, me));
-        btnCancel.on("click", Ext.Function.bind(me.doCancel, me));
+        if (btnSave && btnCancel) {
+            btnSave.on("click", Ext.Function.bind(me.doSave, me));
+            btnCancel.on("click", Ext.Function.bind(me.doCancel, me));
+        }
     },
 
     doSave: function() {

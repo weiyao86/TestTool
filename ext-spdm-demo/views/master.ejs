@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Master</title>
+	<title>HPSPDM</title>
 		<!-- load css -->
 	<link rel="stylesheet" type="text/css" media="all" href="/resources/ext-theme-gray/ext-theme-gray-all.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="/style/all.css" />
@@ -23,6 +23,17 @@
 	<script type="text/javascript" src="/js/app/app.js"></script>
 </head>
 <body>
-	master
+<script id="header_template" type="text/template">
+	<h1 class="header-logo">浩配主数据管理系统</h1>
+		<ul class="header-userinfo">
+		<li><span>登录时间：</span><label>2016/5/13</label></li>
+		<li><span>用户：</span><label>HPSPDM.header.data.username</label></li>
+		<li><span>角色：</span><label>管理员、文件工具员</label></li>
+		</ul>
+		<ol class="header-operation">
+		<li><a data-action="change-password"><s class="operation-lock"></s><span>修改密码</span></a></li>
+		<li><a data-action="logout"><s class="operation-logout"></s><span>退出</span></a></li>
+		</ol>
+</script>
 </body>
 </html>

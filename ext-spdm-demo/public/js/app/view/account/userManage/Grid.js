@@ -1,7 +1,7 @@
-Ext.define('SPDM.view.account.userManage.Grid', {
+Ext.define('HPSPDM.view.account.userManage.Grid', {
 	extend: 'Ext.ux.component.grid.Grid',
 	alias: 'widget.userGrid',
-	store: 'SPDM.store.account.Users',
+	store: 'HPSPDM.store.account.Users',
 	rownumberer: true,
 	tbar: [{
 		xtype: 'button',

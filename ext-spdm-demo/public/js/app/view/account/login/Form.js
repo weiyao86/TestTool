@@ -1,4 +1,4 @@
-Ext.define('SPDM.view.account.login.Form', {
+Ext.define('HPSPDM.view.account.login.Form', {
 	extend: 'Ext.panel.Panel',
 	alias: 'widget.loginform',
 	requires: ['Ext.ux.plugin.VerifyCodeField'],
@@ -62,7 +62,7 @@ Ext.define('SPDM.view.account.login.Form', {
 			allowBlank : false,
 			blankText : '验证码不能为空',
 			regex: /[a-zA-Z0-9]+/,
-			codeImgUrl : SPDM.globalConfig.path + '/index/verifycode.png'
+			codeImgUrl : HPSPDM.globalConfig.path + '/index/verifycode.png'
 		},*/
 			{
 				xtype: 'checkbox',

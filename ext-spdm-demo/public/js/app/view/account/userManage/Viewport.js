@@ -1,8 +1,9 @@
-Ext.define('SPDM.view.account.userManage.Viewport', {
+Ext.define('HPSPDM.view.account.userManage.Viewport', {
 	extend: 'Ext.ux.component.viewport.Base',
 	requires: [
-		'SPDM.view.account.userManage.Form',
-		'SPDM.view.account.userManage.Grid'
+		'HPSPDM.view.account.userManage.Edit',
+		'HPSPDM.view.account.userManage.Form',
+		'HPSPDM.view.account.userManage.Grid'
 	],
 	defaults: {
 		border: false

@@ -1,5 +1,4 @@
-﻿
-Ext.define('Ext.ux.controller.Base', {
+﻿Ext.define('Ext.ux.controller.Base', {
     extend: 'Ext.app.Controller',
 
     init: function () {

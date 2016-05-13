@@ -5,8 +5,8 @@ Ext.define("Ext.ux.component.window.ImageViewer", {
         'Ext.ux.component.field.ImageField'
     ],
     title: '查看大图',
-    width: 900,
-    height: 500,
+    width: 560,
+    height: 578,
     closable: true,
     modal: true,
     resizable: false,
@@ -24,8 +24,8 @@ Ext.define("Ext.ux.component.window.ImageViewer", {
             align: 'middel'
         },
         border: false,
-        width: 870,
-        height: 450,
+        width: 548,
+        height: 548,
         items: [{
             xtype: 'imagefield',
             isClick: false,
@@ -36,6 +36,7 @@ Ext.define("Ext.ux.component.window.ImageViewer", {
         var me = this;
 
         Ext.apply(me.items[0].items[0], config);
+        
         this.callParent(arguments);
     }
 });

@@ -1,6 +1,6 @@
 [{
-	"id": "a977846e-9aa3-5fd7-a70c-28707380eb16",
-	"text": "标准名称管理",
+	"id": "a",
+	"text": "用户管理",
 	"leaf": false,
 	"children": [{
 		"id": "f88763e6-2c88-6c04-11a6-13bba955d6a4",
@@ -10,6 +10,22 @@
 	}, {
 		"id": "user-manage",
 		"text": "用户管理",
+		"leaf": true,
+		"children": null
+	}]
+
+}, {
+	"id": "b",
+	"text": "供应商管理",
+	"leaf": false,
+	"children": [{
+		"id": "suppliersInfo",
+		"text": "供应商信息",
+		"leaf": true,
+		"children": null
+	}, {
+		"id": "suppliersInfoPart",
+		"text": "供应商配件",
 		"leaf": true,
 		"children": null
 	}]

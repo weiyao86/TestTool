@@ -90,7 +90,7 @@ Ext.define('Ext.ux.component.field.AddressField', {
             item = {
                 action: 'province',
                 title: ' 省 份 ',
-                url: SPDM.globalConfig.restpath + '/base-data/country/province',
+                url: EPCM.globalConfig.restpath + '/base-data/country/province',
                 listeners: {
                     afterrender: function() {
                         var that = this;
@@ -185,7 +185,7 @@ Ext.define('Ext.ux.component.field.AddressField', {
             item = {
                 action: 'city',
                 title: ' 城 市 ',
-                url: SPDM.globalConfig.restpath + '/base-data/country/province/{0}/city',
+                url: EPCM.globalConfig.restpath + '/base-data/country/province/{0}/city',
                 listeners: {
                     afterrender: function() {
                         var that = this;
@@ -264,7 +264,7 @@ Ext.define('Ext.ux.component.field.AddressField', {
             item = {
                 action: 'area',
                 title: ' 县 区 ',
-                url: SPDM.globalConfig.restpath + '/base-data/country/province/city/{0}/area',
+                url: EPCM.globalConfig.restpath + '/base-data/country/province/city/{0}/area',
                 listeners: {
                     afterrender: function() {
                         var that = this;

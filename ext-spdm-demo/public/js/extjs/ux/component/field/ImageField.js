@@ -7,11 +7,12 @@
         disableFormats: true
     }],
     fieldCls: Ext.baseCSSPrefix + 'form-image-field',
+    url: null,
     cdnPath: null,
     value: null,
     noImgFile: null,
     error: true,
-    nopicPath:'',
+    nopicPath: '',
     initEvents: function() {
         var me = this;
 
@@ -22,14 +23,6 @@
 
     doClick: function(e, o) {
         this.fireEvent('click', this, e);
-    },
-
-    setValue: function(v) {
-        var me = this;
-
-        me.callParent(arguments);
-        me.error = true;
-        me.loadImage();
     },
 
     onRender: function() {
@@ -43,11 +36,15 @@
             type: 'hidden',
             name: name
         });
+
+        me.error = true;
+        me.loadImage();
     },
 
     loadImage: function() {
         var me = this,
             img = Ext.fly(new Image());
+
         img.on('load', function() {
             me.error = false;
             me.handlerSuccess(this);
@@ -65,9 +62,9 @@
             single: true
         });
 
-        if (me.value) {
+        if (me.value || me.url) {
             img.set({
-                src: me.cdnPath + '/' + me.cdnFolder + '/' + me.value
+                src: me.url ? me.url : me.cdnPath + '/' + me.cdnFolder + '/' + me.value
             });
         } else {
             me.loadNoImage();
@@ -77,13 +74,16 @@
     handlerSuccess: function(that) {
         var me = this,
             parentSize = me.up().getSize(),
-            rawSize = me.calculateAspectRatioFit(that.width, that.height, parentSize.width, parentSize.height);
+            rawSize = me.scalingDownCalc(that.width, that.height, parentSize.width, parentSize.height);
 
         me.setSrc(that.src);
+
         me.setSize({
             width: rawSize.width,
             height: rawSize.height
         });
+
+        Ext.fly(me.el.dom.parentElement.parentElement).setTop(rawSize.top);
     },
 
     loadNoImage: function() {
@@ -99,12 +99,35 @@
         });
     },
 
-    calculateAspectRatioFit: function(srcWidth, srcHeight, maxWidth, maxHeight) {
-        var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+    scalingDownCalc: function(iW, iH, mW, mH) {
+        var newW, newH, top, left;
+
+        if (iH / iW >= mH / mW) {
+            if (iH > mH) {
+                newH = mH;
+                newW = (iW * mH) / iH;
+            } else {
+                newW = iW;
+                newH = iH;
+            }
+        } else {
+            if (iW > mW) {
+                newW = mW;
+                newH = (iH * mW) / iW;
+            } else {
+                newW = iW;
+                newH = iH;
+            }
+        }
+
+        top = (mH - newH) / 2;
+        left = (mW - newW) / 2;
 
         return {
-            width: srcWidth * ratio,
-            height: srcHeight * ratio
+            width: newW,
+            height: newH,
+            top: top,
+            left: left
         };
     },
 

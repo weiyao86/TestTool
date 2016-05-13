@@ -9,7 +9,6 @@ Ext.define('Ext.ux.component.field.SelectorField', {
 
         me.callParent(arguments);
     },
-
     onTriggerClick: function(argument) {
         var me = this;
 
@@ -30,7 +29,8 @@ Ext.define('Ext.ux.component.field.SelectorField', {
                     readUrl: me.readUrl,
                     fields: me.getStoreFields(),
                     columns: me.columns,
-                    paramFields: me.paramFields
+                    paramFields: me.paramFields,
+                    searchInputConfig: me.searchInputConfig
                 }]
             });
 

@@ -1,11 +1,10 @@
-﻿Ext.define('SPDM.controller.master.Frame', {
+﻿Ext.define('HPSPDM.controller.master.Frame', {
 	extend: 'Ext.app.Controller',
 	model: ['master.Menu'],
 	requires: [
-		'Ext.util.ajax',
+		'Ext.util.common',
 		'Ext.util.pingyin',
-		'Ext.ux.plugin.TabCloseMenu',
-		'SPDM.view.account.changePassword.Form'
+		'Ext.ux.plugin.TabCloseMenu'
 	],
 	stores: [
 		'master.CascadingMenu',
@@ -23,6 +22,11 @@
 		var me = this;
 
 		me.control({
+			"viewport": {
+				afterrender: function() {
+					// me.addTab('home', '首&nbsp;&nbsp;页', false);
+				}
+			},
 			"#header-panel": {
 				afterrender: me.headerRender
 			},
@@ -30,7 +34,17 @@
 				render: me.loadCascadingMenu
 			},
 			"#tree-menu": {
-				render: me.loadTreeMenu
+				render: me.loadTreeMenu,
+				fastOpen: function(tree, codes) {
+					var result = me.getFastRecords(tree, codes);
+
+					if (result.records.length > 0) {
+						me.loadMultiplePage(result.records, 0);
+					}
+					if (result.notExistCodes.length) {
+						Ext.Msg.alert('提示', '您选择的菜单编码: ' + result.notExistCodes.join(',') + '未能找到对应的模块!');
+					}
+				}
 			},
 			"treepanel[action=main-menu]": {
 				itemclick: function(that, record) {
@@ -65,6 +79,9 @@
 					case 'logout':
 						me.logoutSys();
 						break;
+					case 'epc-index':
+						me.toEpcIndex();
+						break;
 					default:
 						break;
 				}
@@ -75,24 +92,66 @@
 		);
 	},
 
+	getFastRecords: function(tree, codes) {
+		var me = this,
+			records = [],
+			notExistCodes = [],
+			arrCodes = codes.split(',');
+
+		Ext.each(arrCodes, function(code) {
+			var record = tree.getRootNode().findChild('code', code, true);
+			if (record) {
+				records.push(record);
+			} else {
+				notExistCodes.push(code);
+			}
+		});
+
+		return {
+			notExistCodes: notExistCodes,
+			records: records
+		};
+	},
+
 	logoutSys: function() {
 		var me = this;
 
-		Ext.Msg.confirm('提示', '您确认退出当前系统?', function(btn) {
+		Ext.Msg.confirm('提示', '您确认退出系统?', function(btn) {
 			if (btn === 'yes') {
 				Ext.util.ajax({
-					url: SPDM.globalConfig.path + '/account/logout',
-					success: function(root) {
-						window.location.href = SPDM.globalConfig.path;
+					url: HPSPDM.globalConfig.path + '/logout',
+					method: 'POST',
+					disableCaching: true,
+					success: function(res) {
+						window.location.href = res.result;
+					},
+					failure: function(res) {
+						Ext.Msg.alert('提示', res.message);
 					}
 				})
 			}
 		});
 	},
 
+	toEpcIndex: function() {
+		var win = window.open('/');
+
+		Ext.util.ajax({
+			url: HPSPDM.globalConfig.path + '/logout/toEpc',
+			method: 'POST',
+			disableCaching: true,
+			success: function(res) {
+				win.location.href = res.result ? res.result : HPSPDM.globalConfig.path + '/epcError';
+			},
+			failure: function(res) {
+				Ext.Msg.alert('提示', res.message);
+			}
+		})
+	},
+
 	showChangePassword: function() {
 		var me = this,
-			changePwdWindow = Ext.create('SPDM.view.account.changePassword.Form');
+			changePwdWindow = Ext.create('HPSPDM.view.account.changePassword.Form');
 
 		changePwdWindow.show();
 	},
@@ -148,89 +207,117 @@
 		});
 	},
 
-	loadPage: function(record) {
+	loadMultiplePage: function(records, index) {
+		var me = this;
+
+		if (index < records.length) {
+			me.loadPage(records[index], function() {
+				index++;
+				me.loadMultiplePage(records, index);
+			});
+		}
+	},
+
+	loadPage: function(record, callback) {
 		if (!record.get('leaf')) return;
 
 		var me = this,
+			id = record.get('id'),
+			text = record.get('text'),
 			url = record.get("url");
 
 		if (Ext.isString(url) && url.length > 0) {
 			me.openWindow(url);
-		} else {
-			me.addTab(record);
+		} else if (me.isExistConfig(id)) {
+			me.addTab(id, text, true, callback);
 		}
 	},
 
-	addTab: function(record) {
+	addTab: function(id, title, closable, callback) {
 		var me = this,
-			id = record.get("id"),
-			title = record.get('text'),
 			tabs = Ext.getCmp('tabs'),
 			tab = Ext.getCmp("tab_" + id),
+			pageConfig = me.getTabPage(id);
+
+		// 当前模块已经打开, 则激活
+		if (tab) {
+			tabs.setActiveTab(tab);
+			if (typeof callback === 'function') {
+				callback.apply();
+			}
+			return;
+		}
+
+		if (me.isLoaded) {
+			me.isLoaded = false;
+			tabs.add({
+				title: title,
+				id: "tab_" + id,
+				items: [],
+				layout: "fit",
+				closable: closable,
+				closeAction: "destroy",
+				listeners: {
+					afterrender: function() {
+						var tab = this;
+
+						me.loadTabFinish(pageConfig, tab, function() {
+							me.isLoaded = true;
+							tab.setLoading(false);
+							if (typeof callback === 'function') {
+								callback.apply();
+							}
+						});
+					}
+				}
+			}).show();
+		}
+	},
+
+	isExistConfig: function(id) {
+		var me = this,
 			pageConfig = me.getTabPage(id);
 
 		if (typeof pageConfig === "undefined") {
 			if (console && console.log) {
 				console.log("未配置page 信息, 请到extjsConfig 配置controller view, id:" + id);
 			}
-			return;
+			return false;
 		}
-
-		if (tab) {
-			tabs.setActiveTab(tab);
-			return;
-		}
-
-		if (!me.isLoaded) return;
-
-		me.isLoaded = false;
-
-		tabs.add({
-			title: title,
-			id: "tab_" + id,
-			controllerId: '11',
-			items: [],
-			layout: "fit",
-			closable: true,
-			closeAction: "destroy",
-			listeners: {
-				afterrender: function() {
-					me.loadTabFinish(pageConfig, this);
-				}
-			}
-		}).show();
+		return true;
 	},
 
-	loadTabFinish: function(pageConfig, tab) {
+	loadTabFinish: function(pageConfig, tab, callback) {
 		var me = this;
 
 		tab.setLoading(tab.title + ', 加载中...');
 
 		setTimeout(function() {
-			me.loadController(pageConfig, tab);
+			me.loadController(pageConfig, tab, callback);
 		}, 10);
 	},
 
-	loadController: function(pageConfig, tab) {
+	loadController: function(pageConfig, tab, callback) {
 		var me = this,
 			viewportName = pageConfig.viewport,
 			controllerName = pageConfig.controller,
 			viewport = me.createViewport(viewportName, controllerName),
-			controllerClassName = SPDM.app.getModuleClassName(controllerName, "controller");
+			controllerClassName = HPSPDM.app.getModuleClassName(controllerName, "controller");
 
 		Ext.require(controllerClassName, function() {
 			var controller = me.getController(controllerName);
 			tab.controllerId = controller.id;
 			tab.add(viewport);
-			tab.setLoading(false);
-			me.isLoaded = true;
+			if (typeof callback === 'function') {
+				callback.apply();
+			}
 		});
 	},
 
 	createViewport: function(viewportName, controllerName) {
 		var me = this,
 			viewportId = me.buildViewportId(controllerName),
-			viewportClassName = SPDM.app.getModuleClassName(viewportName, "view");
+			viewportClassName = HPSPDM.app.getModuleClassName(viewportName, "view");
 
 		return Ext.create(viewportClassName, {
 			id: viewportId
@@ -253,8 +340,8 @@
 	destroyController: function(controllerId) {
 		var me = this;
 
-		SPDM.app.eventbus.unlisten(controllerId);
-		SPDM.app.controllers.remove({
+		HPSPDM.app.eventbus.unlisten(controllerId);
+		HPSPDM.app.controllers.remove({
 			id: controllerId
 		});
 	},
@@ -262,13 +349,13 @@
 	getTabPage: function(id) {
 		var me = this;
 
-		return SPDM.extjsConfig.pages[id];
+		return HPSPDM.extjsConfig.pages[id];
 	},
 
 	getController: function(controllerName) {
 		var me = this;
 
-		return SPDM.app.getController(controllerName);
+		return HPSPDM.app.getController(controllerName);
 	},
 
 	getControllerId: function(component) {

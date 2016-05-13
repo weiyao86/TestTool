@@ -1,4 +1,4 @@
-Ext.define('SPDM.view.account.changePassword.Form', {
+Ext.define('HPSPDM.view.account.changePassword.Form', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.changepasswordform',
 	title: '密码修改',
@@ -36,7 +36,7 @@ Ext.define('SPDM.view.account.changePassword.Form', {
 			params = me.getParams();
 
 		Ext.util.ajax({
-			url: SPDM.globalConfig.path + '/account/change-pwd',
+			url: HPSPDM.globalConfig.path + '/account/change-pwd',
 			method: 'POST',
 			jsonData: params,
 			beforerequest: function() {

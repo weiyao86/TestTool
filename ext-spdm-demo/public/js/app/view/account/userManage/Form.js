@@ -1,4 +1,4 @@
-Ext.define('SPDM.view.account.userManage.Form', {
+Ext.define('HPSPDM.view.account.userManage.Form', {
 	extend: 'Ext.ux.component.filter.Query',
 	alias: 'widget.userForm',
 	requires: ['Ext.ux.component.combo.BaseCombo'],
@@ -15,6 +15,7 @@ Ext.define('SPDM.view.account.userManage.Form', {
 			fieldLabel: '状态',
 			name: '',
 			value: '2',
+			displayFormat: '',
 			localData: [{
 				name: '全部',
 				code: '2'

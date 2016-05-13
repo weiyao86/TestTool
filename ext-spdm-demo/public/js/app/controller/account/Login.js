@@ -1,4 +1,4 @@
-Ext.define('SPDM.controller.account.Login', {
+Ext.define('HPSPDM.controller.account.Login', {
 	extend: 'Ext.app.Controller',
 	init: function() {
 		var me = this;
@@ -59,12 +59,12 @@ Ext.define('SPDM.controller.account.Login', {
 				window.location.href = '/master';
 			}, 3 * 1000);
 			// Ext.Ajax.request({
-			// 	url: SPDM.globalConfig.path + '/account/auth',
+			// 	url: HPSPDM.globalConfig.path + '/account/auth',
 			// 	jsonData: me.formatParams(params),
 			// 	success: function(response){
 			// 		loginFormPanel.setLoading(false);
 			// 		var root = Ext.decode(response.responseText);
-			// 		window.location.href =  SPDM.globalConfig.path;
+			// 		window.location.href =  HPSPDM.globalConfig.path;
 			// 	},
 			// 	failure: function(form, action){
 			// 		loginFormPanel.setLoading(false);

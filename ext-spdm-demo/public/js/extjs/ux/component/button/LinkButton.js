@@ -12,6 +12,7 @@ Ext.define('Ext.ux.component.button.LinkButton', {
     title: null,
     defaultParams: {},
     stopEvent: true,
+    target: '_blank',
     initComponent: function() {
         'use strict';
         var me = this;
@@ -50,6 +51,7 @@ Ext.define('Ext.ux.component.button.LinkButton', {
         if (el && el.dom) {
             el.dom.href = path;
             el.dom.title = me.title;
+            el.dom.target = me.target;
         }
     },
     handler: function(e, el, eOpts) {

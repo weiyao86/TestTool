@@ -1,317 +1,407 @@
 ﻿Ext.define('Ext.ux.controller.CRUD', {
-	extend: 'Ext.ux.controller.Base',
-	editMode: ["create", "update"],
-	editView: null,
-	actions: {
-		'read': '读取',
-		'create': '创建',
-		'update': '更新',
-		'destroy': '删除'
-	},
-	advancedQueryParams: [],
+  extend: 'Ext.ux.controller.Base',
+  editMode: ["create", "update"],
+  editView: null,
+  actions: {
+    'read': '读取',
+    'create': '创建',
+    'update': '更新',
+    'destroy': '删除'
+  },
+  advancedQueryParams: [],
 
-	viewportReady: function() {
-		var me = this;
+  viewportReady: function () {
+    var me = this;
 
-		me.createControl();
-		me.initStoreEvent();
-		me.createExportForm();
+    me.createControl();
+    me.initStoreEvent();
+    me.createExportForm();
 
-		if (Ext.isFunction(me.controllerReady)) {
-			me.controllerReady.apply(me, []);
-		}
-	},
+    if (Ext.isFunction(me.controllerReady)) {
+      me.controllerReady.apply(me, []);
+    }
+  },
 
-	createControl: function() {
-		var me = this,
-			selectors = {},
-			viewportId = me.getViewportId();
+  createControl: function () {
+    var me = this,
+      selectors = {},
+      viewportId = me.getViewportId();
 
-		selectors["#" + viewportId + " > form[itemId=query-form]"] = {
-			queryRecord: function() {
+    selectors["#" + viewportId + " > form[itemId=query-form]"] = {
+      queryRecord: function () {
+        me.readRecord();
+      },
+      advancedQuery: function () {
+        me.openAdvancedQueryWindow();
+      }
+    };
 
-				me.readRecord();
-			},
-			advancedQuery: function() {
-				me.openAdvancedQueryWindow();
-			}
-		};
+    selectors["#" + viewportId + " > grid[itemId=grid-list]"] = {
+      createRecord: function () {
+        me.onCreateRecord();
+      },
+      updateRecord: function () {
+        me.onUpdateRecord();
+      },
+      destroyRecord: function (params) {
+        me.destroyRecord(params);
+      },
+      exportRecord: function (that) {
+        me.exportRecord(that);
+      }
+    };
 
-		selectors["#" + viewportId + " > grid[itemId=grid-list]"] = {
-			createRecord: function() {
-				me.onCreateRecord();
-			},
-			updateRecord: function() {
-				me.onUpdateRecord();
-			},
-			destroyRecord: function(params) {
-				me.destroyRecord(params);
-			},
-			exportRecord: function(that) {
-				me.exportRecord(that);
-			}
-		};
+    me.control(selectors);
+  },
 
-		me.control(selectors);
-	},
+  initStoreEvent: function () {
+    var me = this,
+      store = me.getGrid().getStore();
 
-	initStoreEvent: function() {
-		var me = this,
-			store = me.getGrid().getStore();
+    store.on("beforeload", function (that) {
+      me.addStoreFilters(that);
+    });
+    store.on("aftersuccess", function (operation) {
+      me.handlerSuccess(operation);
+    });
+    store.on("aftererror", function (operation, response) {
+      me.handlerError(operation, response);
+    });
+  },
 
-		store.on("beforeload", function(that) {
-			me.addStoreFilters(that);
-		});
-		store.on("aftersuccess", function(operation) {
-			me.handlerSuccess(operation);
-		});
-		store.on("aftererror", function(operation, response) {
-			me.handlerError(operation, response);
-		});
-	},
+  addStoreFilters: function (store) {
+    var me = this,
+      queryForm = me.getQuery(),
+      params = queryForm.getFilters();
 
-	addStoreFilters: function(store) {
-		var me = this,
-			queryForm = me.getQuery(),
-			params = queryForm.getFilters();
+    store.proxy.extraFilters = params;
+  },
 
-		store.proxy.extraFilters = params;
-	},
+  onCreateRecord: function () {
+    var me = this;
 
-	onCreateRecord: function() {
-		var me = this;
+    me.openEditWindow(me.editMode[0]);
+  },
 
-		me.openEditWindow(me.editMode[0]);
-	},
+  onUpdateRecord: function () {
+    var me = this;
 
-	onUpdateRecord: function() {
-		var me = this;
+    me.openEditWindow(me.editMode[1]);
+  },
 
-		me.openEditWindow(me.editMode[1]);
-	},
+  openEditWindow: function (editMode) {
+    var me = this,
+      selection = me.getGridSelection(),
+      record = selection.length > 0 ? selection[0] : {};
 
-	openEditWindow: function(editMode) {
-		var me = this,
-			selection = me.getGridSelection(),
-			record = selection.length > 0 ? selection[0] : {};
+    me.createEditWindow(editMode);
+    me.setEditFormRecord(editMode);
+    me.initEditWindowEvent();
+    me.editWindow.show();
+  },
 
-		me.createEditWindow(editMode);
-		me.setEditFormRecord(editMode);
-		me.initEditWindowEvent();
-		me.editWindow.show();
-	},
+  createEditWindow: function (editMode) {
+    var me = this,
+      className;
 
-	createEditWindow: function(editMode) {
-		var me = this,
-			className;
+    if (Ext.isString(me.editView)) {
+      className = me.editView;
+    } else {
+      className = me.getViewClassPath() + ".Edit";
+    }
 
-		if (Ext.isString(me.editView)) {
-			className = me.editView;
-		} else {
-			className = me.getViewClassPath() + ".Edit";
-		}
+    me.editWindow = Ext.create(className, {
+      editMode: editMode
+    });
+  },
 
-		me.editWindow = Ext.create(className, {
-			editMode: editMode
-		});
-	},
+  setEditFormRecord: function (editMode) {
+    var me = this,
+      selection = me.getGridSelection(),
+      record = selection.length > 0 ? selection[0] : {};
 
-	setEditFormRecord: function(editMode) {
-		var me = this,
-			selection = me.getGridSelection(),
-			record = selection.length > 0 ? selection[0] : {};
+    if (editMode === "update") {
+      if (me.editWindow.setRecord) {
+        me.editWindow.setRecord(record);
+      }
+    }
+  },
 
-		if (editMode === "update") {
-			if (me.editWindow.setRecord) {
-				me.editWindow.setRecord(record);
-			}
-		}
-	},
+  initEditWindowEvent: function () {
+    var me = this;
 
-	initEditWindowEvent: function() {
-		var me = this;
+    me.editWindow.on("dosave", function (params) {
 
-		me.editWindow.on("dosave", function(params) {
-			me.doSave(params);
-		});
-	},
+      if (this.formSubmit) {
+        me.formSubmit();
+      } else {
+        me.ajaxSubmit(params);
+      }
+    });
+  },
 
-	openAdvancedQueryWindow: function() {
-		var me = this,
-			config = me.config.advancedSearch,
-			advancedQuery = Ext.create("Ext.ux.component.filter.AdvancedQuery", {
-				propertyUrl: config.propertyUrl,
-				operatorUrl: config.operatorUrl,
-				advancedQueryParams: me.advancedQueryParams,
-				listeners: {
-					doQuery: function(params) {
-						me.doAdvancedQuery(params);
-					}
-				}
-			});
+  openAdvancedQueryWindow: function () {
+    var me = this,
+      config = me.config.advancedSearch,
+      advancedQuery = Ext.create("Ext.ux.component.filter.AdvancedQuery", {
+        propertyUrl: config.propertyUrl,
+        operatorUrl: config.operatorUrl,
+        advancedQueryParams: me.advancedQueryParams,
+        listeners: {
+          doQuery: function (params) {
+            me.doAdvancedQuery(params);
+          }
+        }
+      });
 
-		advancedQuery.show();
-	},
+    advancedQuery.show();
+  },
 
-	doAdvancedQuery: function(params) {
-		var me = this;
+  doAdvancedQuery: function (params) {
+    var me = this;
 
-		me.advancedQueryParams = params;
-		me.readRecord(params);
-	},
+    me.advancedQueryParams = params;
+    me.readRecord(params);
+  },
 
-	doSave: function(params) {
-		var me = this,
-			editMode = me.editWindow.editMode;
+  formSubmit: function () {
+    var me = this,
+      store = me.getGrid().getStore(),
+      editMode = me.editWindow.editMode,
+      form = me.editWindow.down('form').getForm(),
+      items = form.getFields().items;
 
-		switch (editMode) {
-			case me.editMode[0]:
-				me.createRecord(params);
-				break;
-			case me.editMode[1]:
-				me.updateRecord(params);
-				break;
-			default:
-				break;
-		}
-	},
+    //for (var i = 0; i < items.length; i++) {
+    //  var temp = items[i].getValue();
+    //
+    //  if (typeof temp === 'string' && temp.indexOf('T00:00:00+08:00') > -1) {
+    //    items[i].setValue(temp);
+    //  } else if (typeof temp === 'string') {
+    //    items[i].setValue(Ext.htmlEncode(temp));
+    //  } else {
+    //    items[i].setValue(temp);
+    //  }
+    //}
 
-	readRecord: function() {
-		var me = this,
-			grid = me.getGrid(),
-			store = grid.getStore();
+    if (!form.isValid()) return;
 
-		me.clearGridSelection(grid);
-		store.loadPage(1);
-	},
+    if (editMode === me.editMode[0]) {
+      form.submit({
+        url: store.proxyAPI.create + '?append=true',
+        method: 'POST',
+        success: function (that, action) {
+          var root = Ext.decode(action.response.responseText);
+          me.createUpdateSuccess();
+        },
+        failure: function (that, action) {
+          me.editWindow.setLoading(false);
+          Ext.util.errorHandler(action.response);
+        }
+      });
+    } else if (editMode === me.editMode[1]) {
+      // update
+      form.submit({
+        url: store.proxyAPI.update + '?append=false',
+        method: 'POST',
+        success: function (that, action) {
+          var root = Ext.decode(action.response.responseText);
+          me.createUpdateSuccess();
+        },
+        failure: function (that, action) {
+          me.editWindow.setLoading(false);
+          Ext.util.errorHandler(action.response);
+        }
+      });
+    }
+  },
 
-	createRecord: function(params) {
-		var me = this,
-			value,
-			store = me.getGrid().getStore(),
-			form = me.editWindow.down("form"),
-			values = form.getValues();
+  ajaxSubmit: function (params) {
+    var me = this,
+      editMode = me.editWindow.editMode;
 
-		store.proxy.extraJsonData = params;
-		store.add(values);
-	},
+    switch (editMode) {
+      case me.editMode[0]:
+        me.createRecord(params);
+        break;
+      case me.editMode[1]:
+        me.updateRecord(params);
+        break;
+      default:
+        break;
+    }
+  },
 
-	updateRecord: function(params) {
-		var me = this,
-			store = me.getGrid().getStore(),
-			form = me.editWindow.down("form"),
-			record = form.getRecord();
+  readRecord: function () {
+    var me = this,
+      grid = me.getGrid(),
+      store = grid.getStore();
 
-		store.proxy.extraJsonData = params;
-		record.set(params);
+    me.clearGridSelection(grid);
+    store.loadPage(1);
+  },
 
-		if (!record.dirty) {
-			Ext.Msg.alert('提示', '您没有对表单做任何修改, 无需保存');
-			me.editWindow.setLoading(false);
-		}
-	},
+  createRecord: function (params) {
+    var me = this,
+      value,
+      store = me.getGrid().getStore(),
+      form = me.editWindow.down("form"),
+      values = form.getValues();
 
-	destroyRecord: function(params) {
-		var me = this,
-			grid = me.getGrid(),
-			store = grid.getStore(),
-			selection = me.getGridSelection();
+    store.proxy.extraJsonData = params;
+    store.add(values);
+  },
 
-		store.proxy.extraJsonData = params;
-		store.remove(selection);
-		me.deselectAll();
-	},
+  updateRecord: function (params) {
+    var me = this,
+      store = me.getGrid().getStore(),
+      form = me.editWindow.down("form"),
+      record = form.getRecord();
 
-	exportRecord: function(that) {
-		var me = this,
-			grid = me.getGrid(),
-			url = that.exportUrl,
-			exportParams = me.getExportParams();
+    store.proxy.extraJsonData = params;
+    record.set(params);
 
-		me.exportForm.submit({
-			url: url,
-			method: 'get',
-			params: {
-				"parameters": Ext.encode(exportParams)
-			},
-			standardSubmit: true
-		});
-	},
+    if (!record.dirty) {
+      Ext.Msg.alert('提示', '您没有对表单做任何修改, 无需保存');
+      me.editWindow.setLoading(false);
+    }
+  },
 
-	handlerSuccess: function(operation) {
-		var me = this,
-			grid = me.getGrid(),
-			store = grid.getStore(),
-			queryForm = me.getQuery(),
-			action = operation.action;
+  destroyRecord: function (params) {
+    var me = this,
+      grid = me.getGrid(),
+      store = grid.getStore(),
+      selection = me.getGridSelection();
 
-		switch (action) {
-			case "create":
-			case "update":
-				me.editWindow.setLoading(false);
-				me.editWindow.close();
-				me.clearGridSelection(grid);
-				Ext.Msg.alert("提示", "保存成功");
-				break;
-			case "destroy":
-				Ext.Msg.alert("提示", "删除成功");
-				grid.setLoading(false);
-				break;
-			default:
-				break;
-		}
+    store.proxy.extraJsonData = params;
+    store.remove(selection);
+    me.deselectAll();
+  },
 
-		queryForm.doQuery();
-	},
+  exportRecord: function (that) {
+    var me = this,
+      grid = me.getGrid(),
+      url = that.exportUrl,
+      exportParams = me.getExportParams();
 
-	clearGridSelection: function(that) {
-		var me = this;
+    me.exportForm.submit({
+      url: url,
+      method: 'GET',
+      params: {
+        "args": Ext.encode(exportParams)
+      },
+      standardSubmit: true
+    });
+  },
 
-		that.getSelectionModel().clearSelections();
-		that.controlToolbarStatus(that, []);
-	},
+  handlerSuccess: function (operation) {
+    var me = this,
 
-	handlerError: function(operation, response) {
-		var me = this,
-			grid = me.getGrid(),
-			store = grid.getStore();
+      action = operation.action;
 
-		if (Ext.Array.contains(me.editMode, operation.action)) {
-			me.editWindow.setLoading(false);
-		} else {
-			grid.setLoading(false);
-		}
-		Ext.util.errorHandler(response);
-		store.rejectChanges();
-	},
+    switch (action) {
+      case "create":
+      case "update":
+        me.createUpdateSuccess();
+        break;
+      case "destroy":
+        me.destorySuccess();
+        break;
+      default:
+        break;
+    }
+  },
 
-	deselectAll: function() {
+  createUpdateSuccess: function () {
+    var me = this,
+      grid = me.getGrid(),
+      queryForm = me.getQuery();
 
-		this.getGrid().getSelectionModel().deselectAll();
-	},
+    me.editWindow.setLoading(false);
+    me.editWindow.close();
+    me.clearGridSelection(grid);
+    queryForm.doQuery();
+    Ext.Msg.alert("提示", "保存成功");
+  },
 
-	getGrid: function() {
+  destorySuccess: function () {
+    var me = this,
+      grid = me.getGrid(),
+      queryForm = me.getQuery();
 
-		return this.viewport.down("grid");
-	},
+    queryForm.doQuery();
+    Ext.Msg.alert("提示", "删除成功");
+    grid.setLoading(false);
+  },
 
-	getQuery: function() {
+  clearGridSelection: function (that) {
+    var me = this;
 
-		return this.viewport.down("[itemId=query-form]");
-	},
+    that.getSelectionModel().clearSelections();
+    that.controlToolbarStatus(that, []);
+  },
 
-	getGridSelection: function() {
+  handlerError: function (operation, response) {
+    var me = this,
+      grid = me.getGrid(),
+      store = grid.getStore();
 
-		return this.getGrid().getSelectionModel().getSelection();
-	},
+    if (Ext.Array.contains(me.editMode, operation.action)) {
+      me.editWindow.setLoading(false);
+    } else {
+      grid.setLoading(false);
+    }
+    Ext.util.errorHandler(response);
+    store.rejectChanges();
+  },
 
-	getExportParams: function() {
-		var me = this,
-			queryForm = me.getQuery(),
-			filters = queryForm.getFilters();
+  deselectAll: function () {
 
-		return {
-			args: filters
-		};
-	}
+    this.getGrid().getSelectionModel().deselectAll();
+  },
+
+  getGrid: function () {
+
+    return this.viewport.down("grid");
+  },
+
+  getQuery: function () {
+
+    return this.viewport.down("[itemId=query-form]");
+  },
+
+  getGridSelection: function () {
+
+    return this.getGrid().getSelectionModel().getSelection();
+  },
+
+  getExportParams: function () {
+    var me = this,
+      queryForm = me.getQuery(),
+      filters = queryForm.getFilters();
+
+    return {
+      filters: filters,
+      sorts: me.getStores(),
+      paging: {
+        page: 1,
+        size: 100000
+      }
+    }
+  },
+
+  getStores: function () {
+    var me = this,
+      sorts = [],
+      sorters = me.getGrid().getStore().sorters.items;
+
+    Ext.each(sorters, function (item) {
+      sorts.push({
+        field: item.property ,
+        asc: item.direction === 'ASC' ? true : false
+      });
+    });
+
+    return sorts;
+  }
+
 });

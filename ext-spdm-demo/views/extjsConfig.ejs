@@ -2,7 +2,7 @@
 <!-- extjs page config -->
 
 <script type="text/javascript">
-	Ext.define("SPDM.extjsConfig", {
+	Ext.define("HPSPDM.extjsConfig", {
 		statics : {
 			pageCode : pageCode,
 			appFolder : "/js/app",
@@ -21,13 +21,16 @@
 					controller : "account.UserManage",
 					viewport : "account.userManage.Viewport"
 				},
+				"suppliersInfo" : {
+					controller : "suppliers.SupplierInfo",
+					viewport : "suppliers.supplierInfo.Viewport"
+				},
+				"suppliersInfoPart" : {
+					controller : "suppliers.SupplierInfoPart",
+					viewport : "suppliers.supplierInfoPart.Viewport"
+				},
 				//标准名称管理
 				"f88763e6-2c88-6c04-11a6-13bba955d6a4" : {
-					controller : "standardName.PartStructureStandardName",
-					viewport : "standardName.partStructureStandardName.Viewport"
-				},
-				// 配件结构标准名称定义
-				"modelname" : {
 					controller : "standardName.PartStructureStandardName",
 					viewport : "standardName.partStructureStandardName.Viewport"
 				}

@@ -1,191 +1,192 @@
 ﻿Ext.define('Ext.ux.component.filter.Query', {
-	extend: 'Ext.form.Panel',
-	alias: 'widget.componentfilterquery',
-	bodyPadding: '10 10 0 10',
-	autoScroll: true,
-	autoLabelWidth: true,
-	defaults: {
-		layout: 'hbox',
-		border: false,
-		minWidth: 980,
-		margin: '0 0 10 0',
-		defaults: {
-			xtype: 'textfield',
-			margin: '0 10 0 0',
-			enableKeyEvents: true
-		}
-	},
-	itemId: "query-form",
-	dockedItems: [{
-		xtype: 'toolbar',
-		ui: "footer",
-		dock: 'bottom',
-		layout: {
-			align: 'middle',
-			pack: 'center',
-			type: 'hbox'
-		},
-		items: [{
-			xtype: 'button',
-			action: "query",
-			text: "查询",
-			iconCls: 'icon-find'
-		}, {
-			xtype: 'button',
-			action: "reset",
-			text: "重置",
-			iconCls: 'icon-reset'
-		}]
-	}],
+    extend: 'Ext.form.Panel',
+    alias: 'widget.componentfilterquery',
+    bodyPadding: '10 10 0 10',
+    autoScroll: true,
+    autoLabelWidth: true,
+    defaults: {
+        layout: 'hbox',
+        border: false,
+        minWidth: 980,
+        margin: '0 0 10 0',
+        defaults: {
+            xtype: 'textfield',
+            margin: '0 10 0 0',
+            enableKeyEvents: true
+        }
+    },
+    itemId: "query-form",
+    dockedItems: [{
+        xtype: 'toolbar',
+        ui: "footer",
+        dock: 'bottom',
+        layout: {
+            align: 'middle',
+            pack: 'center',
+            type: 'hbox'
+        },
+        items: [{
+            xtype: 'button',
+            action: "query",
+            text: "查询",
+            iconCls: 'icon-find'
+        }, {
+            xtype: 'button',
+            action: "reset",
+            text: "重置",
+            iconCls: 'icon-reset'
+        }]
+    }],
 
-	constructor: function() {
-		var me = this;
+    constructor: function() {
+        var me = this;
 
-		if (me.bbrExtendItems) {
-			me.extendBbrItems();
-		}
-		if (me.bbrOverrideItems) {
-			me.overrideBarItems();
-		}
+        if (me.bbrExtendItems) {
+            me.extendBbrItems();
+        }
+        if (me.bbrOverrideItems) {
+            me.overrideBarItems();
+        }
 
-		me.callParent(arguments);
-	},
+        me.callParent(arguments);
+    },
 
-	initComponent: function() {
-		var me = this;
+    initComponent: function() {
+        var me = this;
 
-		me.callParent(arguments);
+        me.callParent(arguments);
 
-		if (me.autoLabelWidth) {
-			me.autoMetricsLabelWidth();
-		}
-	},
+        if (me.autoLabelWidth) {
+            me.autoMetricsLabelWidth();
+        }
+    },
 
-	autoMetricsLabelWidth: function() {
-		var me = this,
-			boxWidth = 120,
-			labelPad = 5,
-			fields = me.query("field"),
-			tm = new Ext.util.TextMetrics();
+    autoMetricsLabelWidth: function() {
+        var me = this,
+            boxWidth = 120,
+            labelPad = 5,
+            fields = me.query("field"),
+            tm = new Ext.util.TextMetrics();
 
-		Ext.each(fields, function(item) {
-			var labelWidth = tm.getWidth(item.fieldLabel + ':');
+        Ext.each(fields, function(item) {
+            var labelWidth = tm.getWidth(item.fieldLabel + ':');
 
-			if (item.range == 'end') {
-				item.labelWidth = 0;
-				item.width = boxWidth;
-			} else {
-				item.labelWidth = labelWidth;
-				item.width = labelWidth + boxWidth + labelPad;
-			}
-		});
-	},
+            if (item.range == 'end') {
+                item.labelWidth = 0;
+                item.width = boxWidth;
+            } else {
+                item.labelWidth = labelWidth;
+                item.width = labelWidth + boxWidth + labelPad;
+            }
+        });
+    },
 
-	initEvents: function() {
-		var me = this,
-			fields = me.query("field"),
-			btnQuery = me.down("[action=query]"),
-			btnReset = me.down("[action=reset]"),
-			btnAdvancedQuery = me.down("[action=advanced-query]");
+    initEvents: function() {
+        var me = this,
+            fields = me.query("field"),
+            btnQuery = me.down("[action=query]"),
+            btnReset = me.down("[action=reset]"),
+            btnAdvancedQuery = me.down("[action=advanced-query]");
 
-		if (btnQuery) {
-			btnQuery.on("click", function() {
-				me.doQuery();
-			});
-		}
-		if (btnReset) {
-			btnReset.on("click", function() {
-				me.doReset();
-			});
-		}
-		if (btnAdvancedQuery) {
-			btnAdvancedQuery.on("click", function() {
-				me.doAdvancedQuery();
-			});
-		}
-		Ext.each(fields, function(item) {
-			item.on("keyup", function(sender, e) {
-				if (e.getKey() === e.ENTER) me.doQuery();
-			});
-		});
+        if (btnQuery) {
+            btnQuery.on("click", function() {
+                me.doQuery();
+            });
+        }
+        if (btnReset) {
+            btnReset.on("click", function() {
+                me.doReset();
+            });
+        }
+        if (btnAdvancedQuery) {
+            btnAdvancedQuery.on("click", function() {
+                me.doAdvancedQuery();
+            });
+        }
+        Ext.each(fields, function(item) {
+            item.on("keyup", function(sender, e) {
+                if (e.getKey() === e.ENTER) me.doQuery();
+            });
+        });
 
-		me.callParent(arguments);
-	},
+        me.callParent(arguments);
+    },
 
-	doQuery: function() {
-		if (!this.isValid()) return;
-		var me = this,
-			filters = me.getFilters();
+    doQuery: function() {
+        if (!this.isValid()) return;
 
-		me.fireEvent('queryRecord', filters);
-	},
+        var me = this,
+            filters = me.getFilters();
 
-	doAdvancedQuery: function() {
-		var me = this;
+        me.fireEvent('queryRecord', filters);
+    },
 
-		me.fireEvent('advancedQuery');
-	},
+    doAdvancedQuery: function() {
+        var me = this;
 
-	doReset: function() {
-		var me = this,
-			fields = me.query("field");
+        me.fireEvent('advancedQuery');
+    },
 
-		Ext.each(fields, function(item) {
-			item.setValue("");
-		});
-	},
+    doReset: function() {
+        var me = this,
+            fields = me.query("field");
 
-	extendBbrItems: function() {
-		var me = this,
-			superItems = me.superclass.dockedItems[0].items;
+        Ext.each(fields, function(item) {
+            item.setValue("");
+        });
+    },
 
-		me.superclass.dockedItems[0].items = Ext.Array.merge(superItems, me.bbrExtendItems);
-	},
+    extendBbrItems: function() {
+        var me = this,
+            superItems = me.superclass.dockedItems[0].items;
 
-	overrideBarItems: function() {
-		this.superclass.dockedItems[0].items = this.bbrOverrideItems;
-	},
+        me.superclass.dockedItems[0].items = Ext.Array.merge(superItems, me.bbrExtendItems);
+    },
 
-	getFilters: function() {
-		var me = this,
-			params = {},
-			fields = me.query("field");
+    overrideBarItems: function() {
+        this.superclass.dockedItems[0].items = this.bbrOverrideItems;
+    },
 
-		Ext.each(fields, function(item) {
-			var value = me.formatValue(item);
+    getFilters: function() {
+        var me = this,
+            params = {},
+            fields = me.query("field");
 
-			if (!me.isEmptyValue(value)) {
-				params[item.name] = value;
-			}
-		});
+        Ext.each(fields, function(item) {
+            var value = me.formatValue(item);
 
-		return params;
-	},
+            if (!me.isEmptyValue(value)) {
+                params[item.name] = value;
+            }
+        });
 
-	isEmptyValue: function(value) {
-		var me = this;
+        return params;
+    },
 
-		if (value == null || (typeof value == 'string' && value.length == 0)) {
-			return true;
-		}
+    isEmptyValue: function(value) {
+        var me = this;
 
-		return false;
-	},
+        if (value == null || (typeof value == 'string' && value.length == 0)) {
+            return true;
+        }
 
-	formatValue: function(item) {
-		var me = this,
-			value = item.getValue();
+        return false;
+    },
 
-		if (item.xtype === "textfield") {
-			return Ext.util.Format.trim(value);
-		}
-		if (item.xtype === "basecombo" || item.xtype === "combobox") {
-			return Ext.isArray(value) ? value.join(",") : value;
-		}
-		if (item.xtype == "checkbox") {
-			return value == true ? 1 : "";
-		}
+    formatValue: function(item) {
+        var me = this,
+            value = item.getValue();
 
-		return value;
-	}
+        if (item.xtype === "textfield") {
+            return Ext.util.Format.trim(value);
+        }
+        if (item.xtype === "basecombo" || item.xtype === "combobox") {
+            return Ext.isArray(value) ? value.join(",") : value;
+        }
+        if (item.xtype == "checkbox") {
+            return value == true ? 1 : "";
+        }
+
+        return value;
+    }
 });

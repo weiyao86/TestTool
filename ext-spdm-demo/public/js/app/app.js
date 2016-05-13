@@ -1,7 +1,7 @@
 ﻿// app.js
 Ext.onReady(function() {
-	var extjsConfig = SPDM.extjsConfig,
-		namespace = SPDM.globalConfig.namespace,
+	var extjsConfig = HPSPDM.extjsConfig,
+		namespace = HPSPDM.globalConfig.namespace,
 		startPage = extjsConfig.pages[extjsConfig.pageCode];
 
 	Ext.QuickTips.init();

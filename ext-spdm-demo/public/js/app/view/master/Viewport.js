@@ -1,4 +1,4 @@
-﻿Ext.define('SPDM.view.master.Viewport', {
+﻿Ext.define('HPSPDM.view.master.Viewport', {
 	extend: 'Ext.container.Viewport',
 	layout: 'border',
 	border: true,
