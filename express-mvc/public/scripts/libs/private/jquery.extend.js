@@ -372,7 +372,7 @@
 
 		/**
 		 * [waterfall description]瀑布流布局
-		 * @return {[type]} [description]
+		 * @return {[type]} [description] height list
 		 */
 		waterfall: function(opts) {
 			var opts = $.extend(true, {
@@ -467,6 +467,9 @@
 			});
 
 			$cases.parent().css("height", rst_height[0]);
+			return {
+				shortHeight: $cases.parent().offset().top + rst_height[rst_height.length - 1]
+			};
 
 		}
 	});

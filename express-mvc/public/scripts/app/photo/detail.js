@@ -1,6 +1,5 @@
 require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", "imageLoaded", "jqform", "fader", "tabPanel", "blockUI", "jquery", "bootstrap", "domReady!"], function(ajax, globalConfig, Mustache, Grid) {
 
-	console.log("win:domread")
 	var Main = function() {
 		this.init();
 	};
@@ -32,12 +31,12 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 			//图片是否加载完成
 			self.loadGlobalFlag = false;
 			self.rotatePad = 0;
+			self.lastHeight = {};
 
 		},
 
 		bindEvent: function() {
-			var self = this,
-				timer;
+			var self = this;
 
 			self.$thumbnailModal.on("show.bs.modal", function(e) {
 				var $target = $(e.relatedTarget).closest("[data-field='idx']").find("img[data-field='content']"),
@@ -71,9 +70,9 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 				self.initWaterFall();
 			}, 300));
 
-			$(window).on("scroll", function() {
-				self.scrollload(timer);
-			});
+			$(window).on("scroll", $.debounce(function() {
+				self.scrollload();
+			}, 800));
 
 			$(window).on("orientationchange", function(e) {
 				var winH = $(window).height(),
@@ -194,7 +193,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 					$.each(rst.data, function(idx, val) {
 						var img = new Image();
 						img.onload = function() {
-							console.log('==========' + this.src);
+							//console.log('==========' + this.src);
 						}
 						img.src = '/data/photo/' + val.imgguid;
 					});
@@ -272,15 +271,16 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 		},
 
 
-		scrollload: function(timer) {
+		scrollload: function() {
 			var self = this,
+				lastHeight = self.lastHeight.shortHeight,
 				winH = $(window).height(),
 				scrTop = $(window).scrollTop(),
-				docHeight = $(document).height();
+				docHeight = Math.min($(document).height(), lastHeight);
 
-			var str = winH + '=' + scrTop + '=' + docHeight;
-			$("#global_search").val(str);
-			if (scrTop + winH == docHeight) {
+			// var str = winH + '=' + scrTop + '=' + docHeight;
+			// $("#global_search").val(scrTop + '=' + winH + '=' + $(document).height() + '===' + lastHeight);
+			if (scrTop >= docHeight - winH) {
 				var later = function() {
 					if (!self.page.hasRecords) {
 						self.loadGlobalFlag = true;
@@ -291,8 +291,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 
 				};
 				if (!self.loadGlobalFlag) {
-					clearTimeout(timer);
-					timer = setTimeout(later, 300);
+					later();
 				}
 			}
 		},
@@ -386,7 +385,7 @@ require(["ajax", "globalConfig", "mustache", "grid", "imageviewer", "jqExtend", 
 
 		initWaterFall: function() {
 			var self = this;
-			self.$waterFall.waterfall();
+			self.lastHeight = self.$waterFall.waterfall();
 		}
 	}
 

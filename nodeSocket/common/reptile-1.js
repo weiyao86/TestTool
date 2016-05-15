@@ -5,7 +5,7 @@ var async = require('async');
 var cheerio = require('cheerio');
 var child_process = require('child_process');
 var clientIo = require("socket.io-client");
-var logger = require('./log4js.js').logforName('reptile');
+var logger = require('./log4js.js').logforName('reptile-1');
 
 var reptile = {
 	callbacks: {
@@ -36,13 +36,6 @@ var reptile = {
 	},
 
 	start: function(fn) {
-		//煎蛋网
-		// request("http://jandan.net/ooxx", function(err, res, body) {
-		// 	if (!err && res.statusCode == 200) {
-		// 		acquireData(body, fn);
-		// 	}
-		// });
-		// http://jandan.net/pic/page-7500#comments 456
 		var self = this,
 			list = [];
 		self.initFolder();
@@ -62,13 +55,8 @@ var reptile = {
 				});
 			});
 		}
-		for (var i = 1500; i <= 1956; i++) { //1956
-			var url = "http://jandan.net/ooxx/page-" + i + "#comments";
-			letUrl(url);
-		}
-
-		for (var i = 7500; i <= 8905; i++) { //8905
-			var url = "http://jandan.net/pic/page-" + i + "#comments";
+		for (var i = 1; i <= 118; i++) {
+			var url = "https://picjumbo.com/page/" + i;
 			letUrl(url);
 		}
 		async.series(list, function(err) {
@@ -80,26 +68,26 @@ var reptile = {
 	acquireData: function(body, fn) {
 		var self = this,
 			$ = cheerio.load(body),
-			$wrap = $(".text"),
+			$wrap = $(".item_wrap"),
 			origin = [],
 			small = [],
 			series = [];
+
 		$wrap.each(function(idx, val) {
-			var oriurl = $(val).find(".view_img_link").attr("href");
-			var smallurl = $(val).find("img").attr("src");
-			origin.push(oriurl);
+
+			var smallurl = "https:" + ($(val).find('.image').eq(1).attr('src') || $(val).find('.image').attr('data-cfsrc'));
 			small.push(smallurl);
 		});
 
-		origin.forEach(function(val) {
+		small.forEach(function(val) {
 			var filename = self.getName(val);
 			series.push(function(callback) {
-				self.downloadImg(val, 'origin/' + filename, function() {
+				self.downloadImg(val, 'small/' + filename, function() {
 
 					if (typeof self.callbacks.writedone === "function") {
 						self.callbacks.writedone.call(self, {
 							originAddress: val,
-							nowAddress: 'origin/' + filename,
+							nowAddress: 'small/' + filename,
 							filename: filename
 						});
 					}
@@ -108,28 +96,11 @@ var reptile = {
 			});
 		});
 
-		// small.forEach(function(val) {
-		// 	var filename = self.getName(val);
-		// 	series.push(function(callback) {
-		// 		self.downloadImg(val, 'small/' + filename, function() {
-
-		// 			if (typeof self.callbacks.writedone === "function") {
-		// 				self.callbacks.writedone.call(self, {
-		// 					originAddress: val,
-		// 					nowAddress: 'origin/' + filename,
-		// 					filename: filename
-		// 				});
-		// 			}
-		// 			callback();
-		// 		});
-		// 	});
-		// });
-		// 
-		// 
 		async.series(series, function(err) {
 			if (err) logger.info("async.series:" + err);
 			fn();
 		});
+		n
 	},
 
 	downloadImg: function(uri, filename, fn) {
@@ -143,6 +114,7 @@ var reptile = {
 			if (!err && res.statusCode == 200) {
 				// logger.info('content-type:', res.headers['content-type']); //这里返回图片的类型
 				// logger.info('content-length:', res.headers['content-length']); //图片大小
+
 				request(uri, {
 					timeout: 60 * 1000
 				}, function(err) {
@@ -167,6 +139,7 @@ var reptile = {
 
 	getName: function(address) {
 		var filename = path.basename(address);
+		filename = filename.replace(/\?.*$/ig, '');
 		return filename;
 	}
 };

@@ -1,6 +1,7 @@
 var server = require('http').createServer();
 var io = require('socket.io')(server);
-var reptile = require('../common/reptile.js').reptile;
+// var reptile = require('../common/reptile.js').reptile;
+var reptile = require('../common/reptile-1.js').reptile;
 
 /**/
 
