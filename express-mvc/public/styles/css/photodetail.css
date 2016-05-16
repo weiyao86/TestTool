@@ -1,6 +1,6 @@
 body { background: url("/res/images/lg_bg.png") repeat #fff; }
 
-.carousel-custom { height: 500px; background: url("/res/images/carousel_bg.png") #fff; }
+.carousel-custom { background: url("/res/images/carousel_bg.png") #fff; }
 
 .carousel-custom .carousel-inner { height: 100%; }
 

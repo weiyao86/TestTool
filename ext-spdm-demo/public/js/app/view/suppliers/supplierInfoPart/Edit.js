@@ -3,86 +3,48 @@ Ext.define('HPSPDM.view.suppliers.supplierInfoPart.Edit', {
 	title: '供应商',
 	items: [{
 		items: [{
-			fieldLabel: '供应商编号'
+			fieldLabel: '配件浩配编号',
+			name: '',
+			readOnlyCls: 'disable-cls',
+			readOnly: true,
+			allowBlank: true
 		}, {
-			fieldLabel: '供应商名称'
+			fieldLabel: '配件名称'
 		}, {
-			xtype: 'fieldcontainer',
-			fieldLabel: '所在地区',
-			layout: 'hbox',
-			defaults: {
-				type: 'basecombo',
-				margin: '0 5 0 0'
-			},
-			allowBlank: true,
-			items: [{
-				xtype: 'basecombo',
-				name: 'a',
-				flex: 1,
-				emptyText: '选择省份',
-				displayFormat: '',
-				clearFields: ['b', 'c'],
-				localData: [{
-					name: '上海',
-					code: '2'
-				}, {
-					name: '北京',
-					code: '1'
-				}, {
-					name: '重庆',
-					code: '0'
-				}]
+			xtype: 'basecombo',
+			fieldLabel: '供应商',
+			name: '',
+			displayFormat: '',
+			localData: [{
+				name: '供应商A',
+				code: '2'
 			}, {
-				xtype: 'basecombo',
-				name: 'b',
-				flex: 1,
-				emptyText: '选择城市',
-				displayFormat: '',
-				dependField: 'a',
-				clearFields: ['c'],
-				localData: [{
-					name: '上海',
-					code: '2'
-				}, {
-					name: '北京',
-					code: '1'
-				}, {
-					name: '重庆',
-					code: '0'
-				}]
-			}, {
-				xtype: 'basecombo',
-				name: 'c',
-				flex: 1,
-				emptyText: '选择区域',
-				dependField: 'b',
-				displayFormat: '',
-				margin: 0,
-				localData: [{
-					name: '上海',
-					code: '2'
-				}, {
-					name: '北京',
-					code: '1'
-				}, {
-					name: '重庆',
-					code: '0'
-				}]
+				name: '供应商B',
+				code: '1'
 			}]
 		}, {
-			fieldLabel: '详细地址',
+			fieldLabel: '配件供应商编号',
 			allowBlank: true,
 			name: ''
 		}, {
-			fieldLabel: '联系人',
+			fieldLabel: '配件厂家编号',
 			allowBlank: true,
 			name: ''
 		}, {
-			fieldLabel: '联系方式',
+			fieldLabel: '配件品牌',
 			allowBlank: true,
-			name: ''
+			xtype: 'basecombo',
+			name: '',
+			displayFormat: '',
+			localData: [{
+				name: '配件品牌A',
+				code: '2'
+			}, {
+				name: '配件品牌B',
+				code: '1'
+			}]
 		}, {
-			fieldLabel: '负责人',
+			fieldLabel: '单位',
 			allowBlank: true,
 			name: ''
 		}, {
@@ -92,25 +54,10 @@ Ext.define('HPSPDM.view.suppliers.supplierInfoPart.Edit', {
 			anchor: '100%',
 			name: ''
 		}, {
-			fieldLabel: '维护人员',
-			xtype: 'basecombo',
-			name: 'ac',
-			displayFormat: '',
-			localData: [{
-				name: '钉',
-				code: '2'
-			}, {
-				name: '北京',
-				code: '1'
-			}, {
-				name: '重庆',
-				code: '0'
-			}]
-		}, {
 			xtype: 'radiogroup',
 			fieldLabel: '状态',
 			columns: 2,
-			allowBlank: false,
+			allowBlank: true,
 			blankText: '必须选择一个',
 			items: [{
 				name: 'r1',
