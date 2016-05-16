@@ -286,13 +286,14 @@ exports.commonfun = {
 				log4js.info('原图水印完成加载---' + originPath);
 			});
 
-			//缩略图
-			operatorImg.resizeImgWithFullArgs(dest, dest, 100, undefined, 500, ext, function() {
-				log4js.info('目标文件压缩完成---' + dest);
-				operatorImg.addWaterMark(dest, watermarkImg, dest, 20, "Center", function() {
-					log4js.info('压缩图水印完成加载---' + dest);
+			//焦点图不需要压缩
+			if (!isFocus)
+				operatorImg.resizeImgWithFullArgs(dest, dest, 100, undefined, 500, ext, function() {
+					log4js.info('目标文件压缩完成---' + dest);
+					operatorImg.addWaterMark(dest, watermarkImg, dest, 20, "Center", function() {
+						log4js.info('压缩图水印完成加载---' + dest);
+					});
 				});
-			});
 
 		});
 		reader.pipe(writer);

@@ -21,6 +21,26 @@ Ext.define('HPSPDM.view.suppliers.supplierInfoPart.Grid', {
 		handler: function(that) {
 			this.up("grid").toolbarButtonsClick(that);
 		}
+	}, '-', {
+		xtype: 'button',
+		text: '导入',
+		action: 'inport',
+		disabled: true,
+		singleSelectEnable: true,
+		iconCls: 'icon-upload',
+		handler: function(that) {
+			this.up("grid").toolbarButtonsClick(that);
+		}
+	}, '-', {
+		xtype: 'button',
+		text: '导入模板下载',
+		action: 'template-download',
+		disabled: true,
+		singleSelectEnable: true,
+		iconCls: 'icon-arrow-down',
+		handler: function(that) {
+			this.up("grid").toolbarButtonsClick(that);
+		}
 	}],
 	columns: [{
 		text: '配件浩配编号',

@@ -56,6 +56,7 @@ var reptile = {
 			});
 		}
 		for (var i = 1; i <= 118; i++) {
+
 			var url = "https://picjumbo.com/page/" + i;
 			letUrl(url);
 		}
@@ -100,7 +101,6 @@ var reptile = {
 			if (err) logger.info("async.series:" + err);
 			fn();
 		});
-		n
 	},
 
 	downloadImg: function(uri, filename, fn) {

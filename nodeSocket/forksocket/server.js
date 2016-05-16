@@ -1,7 +1,7 @@
 var server = require('http').createServer();
 var io = require('socket.io')(server);
-// var reptile = require('../common/reptile.js').reptile;
-var reptile = require('../common/reptile-1.js').reptile;
+var reptile = require('../common/reptile.js').reptile;
+var reptile_1 = require('../common/reptile-1.js').reptile;
 
 /**/
 
@@ -21,14 +21,24 @@ io.on("connection", function(s) {
 		}
 	});
 
-	//photo
-
+	//http://jandan.net/ooxx/page-" + i + "#comments"
 	s.on('sayphoto', function(data) {
 		reptile.callbacks.writedone = function(data) {
 			s.emit('messagephoto', data);
 		};
 		reptile.outFolder(data);
 		reptile.start(function() {
+			console.log("---------------success------------------");
+			s.emit('end', "------complete------");
+		});
+
+
+		//https://picjumbo.com/page
+		reptile_1.callbacks.writedone = function(data) {
+			s.emit('messagephoto', data);
+		};
+		reptile_1.outFolder(data);
+		reptile_1.start(function() {
 			console.log("---------------success------------------");
 			s.emit('end', "------complete------");
 		});
