@@ -100,7 +100,6 @@ var reptile = {
 			if (err) logger.info("async.series:" + err);
 			fn();
 		});
-		n
 	},
 
 	downloadImg: function(uri, filename, fn) {
