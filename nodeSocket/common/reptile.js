@@ -62,6 +62,7 @@ var reptile = {
 				});
 			});
 		}
+		//网站加上反爬机制了..丫的 返回403状态码
 		for (var i = 1500; i <= 1956; i++) { //1956
 			var url = "http://jandan.net/ooxx/page-" + i + "#comments";
 			letUrl(url);

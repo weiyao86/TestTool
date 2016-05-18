@@ -1,4 +1,4 @@
-/***font style***/
+**font style***/
 .x-btn-default-small, .x-form-display-field, .x-btn-inner, .x-btn-default-medium .x-btn-inner, .x-btn-default-large .x-btn-inner, .x-btn-default-toolbar-small .x-btn-inner, .x-btn-default-toolbar-medium .x-btn-inner, .x-btn-default-toolbar-large .x-btn-inner, .x-menu-item-text, .x-html-editor-tb .x-font-select, .x-panel-header-default, .x-panel-header-text-default, .x-panel-header-default-framed, .x-tip-header, .x-tip-body, .x-form-invalid-tip-body, .x-tip-header-text, .x-progress-text, .x-toolbar, .x-toolbar .x-form-item-label, .x-toolbar .x-toolbar-text, .x-window-header-text-default, .x-tab-bar, .x-tab button, .x-grid-rowbody, .x-grid-row .x-grid-cell, .x-grid-group-title, .x-grid-row-editor .x-form-field, .x-grid-row-editor .x-form-display-field, .x-form-invalid-under, .x-fieldset-header, .x-column-header, .x-mask-msg div, .x-btn-group-header-text-default-framed, table.x-datepicker-inner a, .x-monthpicker-item, .x-dd-drag-ghost, .x-tree-node-text { font-size: 12px; font-family: "Microsoft Yahei", "微软雅黑"; }
 .x-form-item-label { font: normal 12px 'MicroSoft YaHei'; }
 .x-column-header { font-size: 12px; font-family: "Microsoft Yahei", "微软雅黑"; }
@@ -11,8 +11,8 @@
 
 /*header*/
 div, h1, h2, h3, h4, h5, h6, label, img, span, ul, li, ol { margin: 0; padding: 0; list-style: none; font-family: 'Microsoft Yahei'; }
-.header-logo { width: 500px; height: 60px;	/* background-color: #015c9a;
-        	background-image: url(images/header_logo.jpg); */ background-repeat: no-repeat; position: absolute; padding: 10px 0px 0px 20px; }
+.header-logo { width: 500px; height: 60px;  /* background-color: #015c9a;
+                                                                                                                                                                                background-image: url(images/header_logo.jpg); */ background-repeat: no-repeat; position: absolute; padding: 10px 0px 0px 20px; }
     .header-text { width: 75px; height: 60px; background: url(images/header_logo_text.png) no-repeat center center; position: absolute; left: 220px; }
     .header-userinfo { position: absolute; right: 200px; height: 60; line-height: 60px; }
     .header-userinfo li { margin: 0 10px; }
@@ -46,3 +46,9 @@ div, h1, h2, h3, h4, h5, h6, label, img, span, ul, li, ol { margin: 0; padding: 
     .area-active { background-color: #f60; color: #fff; }
     .btn-num-link { margin: 0 0 0 10px; }
     .disable-cls [readOnly] { background: #ddd; }
+    .wrap-list { margin: 0; padding: 0; height: 100%; overflow: auto; }
+    .wrap-list li { list-style: none; float: left; width: 300px; height: 180px; margin: 5px; }
+    .wrap-list li a { display: inline-block; width: 100%; height: 100%; border: 1px solid #ddd; padding: 1px; }
+    .wrap-list li a:hover, .wrap-list li a.active { border: 2px solid #015C9A; padding: 0; }
+    .wrap-list li a.active { border-color: #f00; }
+    .wrap-list img { width: 100%; height: 100%; border: 0; }
