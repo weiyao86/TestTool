@@ -1,6 +1,6 @@
-Ext.define('HPSPDM.view.suppliers.supplierInfoPart.Edit', {
+Ext.define('HPSPDM.view.part.partManage.Edit', {
 	extend: 'Ext.ux.component.edit.Edit',
-	title: '供应商配件',
+	title: '配件信息',
 	items: [{
 		items: [{
 			fieldLabel: '配件浩配编号',
@@ -9,7 +9,12 @@ Ext.define('HPSPDM.view.suppliers.supplierInfoPart.Edit', {
 			readOnly: true,
 			allowBlank: true
 		}, {
-			fieldLabel: '配件名称'
+			fieldLabel: '配件名称',
+			name: ''
+		}, {
+			fieldLabel: '供应商编号',
+			allowBlank: true,
+			name: ''
 		}, {
 			xtype: 'basecombo',
 			fieldLabel: '供应商',

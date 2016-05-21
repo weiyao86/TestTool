@@ -24,7 +24,7 @@
 		me.control({
 			"viewport": {
 				afterrender: function() {
-					// me.addTab('home', '首&nbsp;&nbsp;页', false);
+					me.addTab('home', '首&nbsp;&nbsp;页', false);
 				}
 			},
 			"#header-panel": {
@@ -190,6 +190,7 @@
 		Ext.each(records, function(item) {
 			var store = Ext.create('Ext.data.TreeStore', {
 				autoSync: true,
+				fields: ['id', 'text', 'url', 'children'],
 				root: item.data
 			});
 			var tree = Ext.create('Ext.tree.Panel', {

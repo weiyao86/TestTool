@@ -14,6 +14,12 @@ router.get('/master', function(req, res, next) {
 	});
 });
 
+router.get('/partDetail', function(req, res, next) {
+	res.render('detail', {
+		title: 'detail'
+	});
+});
+
 
 
 router.get('/', function(req, res, next) {

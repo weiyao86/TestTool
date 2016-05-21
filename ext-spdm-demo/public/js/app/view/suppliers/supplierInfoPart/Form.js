@@ -7,7 +7,7 @@ Ext.define('HPSPDM.view.suppliers.supplierInfoPart.Form', {
 		layout: 'column',
 		defaults: {
 			xtype: 'textfield',
-			margin: '5 10 0 0'
+			margin: '5 10 5 0'
 		},
 		items: [{
 			fieldLabel: '供应商编号',

@@ -3,11 +3,6 @@
 	"text": "用户管理",
 	"leaf": false,
 	"children": [{
-		"id": "f88763e6-2c88-6c04-11a6-13bba955d6a4",
-		"text": "标准名称管理",
-		"leaf": true,
-		"children": null
-	}, {
 		"id": "user-manage",
 		"text": "用户管理",
 		"leaf": true,
@@ -26,6 +21,31 @@
 	}, {
 		"id": "suppliersInfoPart",
 		"text": "供应商配件",
+		"leaf": true,
+		"children": null
+	}]
+}, {
+	"id": "c",
+	"text": "配件管理",
+	"leaf": false,
+	"children": [{
+		"id": "partInfo",
+		"text": "配件信息",
+		"leaf": true,
+		"children": null
+	}, {
+		"id": "partDetail",
+		"text": "配件详细",
+		"leaf": true,
+		"url": "http://localhost:8082/partDetail"
+	}]
+}, {
+	"id": "d",
+	"text": "OEM",
+	"leaf": false,
+	"children": [{
+		"id": "oemUsage",
+		"text": "OEM用法维护",
 		"leaf": true,
 		"children": null
 	}]
