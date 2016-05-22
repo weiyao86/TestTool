@@ -1,0 +1,20 @@
+[2016-05-16 21:02:26.266] [INFO] reptile - 启动服务 8010 socket.io
+[2016-05-16 21:02:26.266] [INFO] reptile - 启动服务 8010 socket.io
+[2016-05-16 21:02:26.266] [INFO] reptile - 启动服务 8010 socket.io
+[2016-05-16 21:02:44.147] [INFO] reptile - GET /photo
+[2016-05-16 21:02:44.369] [INFO] reptile - GET /stylesheets/style.css
+[2016-05-16 21:02:44.391] [INFO] reptile - GET /javascripts/socket.io.js
+[2016-05-16 21:02:44.406] [INFO] reptile - GET /javascripts/jquery-1.11.3.js
+[2016-05-16 21:02:44.662] [INFO] reptile - GET /favicon.ico
+[2016-05-16 21:03:05.957] [INFO] reptile - GET /small/HNCK2415.jpg
+[2016-05-16 21:03:12.821] [INFO] reptile - GET /small/HNCK2435.jpg
+[2016-05-16 21:05:56.940] [INFO] reptile - GET /photo
+[2016-05-16 21:05:56.977] [INFO] reptile - GET /javascripts/socket.io.js
+[2016-05-16 21:06:00.804] [INFO] reptile - --------------------------------http://jandan.net/ooxx/page-1500#comments--------------------------------
+[2016-05-16 21:06:21.912] [INFO] reptile - 你报错了ETIMEDOUT...Error: connect ETIMEDOUT 117.71.17.188:80
+[2016-05-16 21:06:21.912] [INFO] reptile - --------------------------------http://jandan.net/ooxx/page-1501#comments--------------------------------
+[2016-05-16 21:06:39.005] [INFO] reptile - GET /small/HNCK2435.jpg
+[2016-05-16 21:07:19.723] [INFO] reptile - GET /javascripts/socket.io.js
+[2016-05-16 21:07:19.726] [INFO] reptile - GET /javascripts/jquery-1.11.3.js
+[2016-05-16 21:07:20.114] [INFO] reptile - GET /favicon.ico
+[2016-05-16 21:07:21.511] [INFO] reptile - --------------------------------http://jandan.net/ooxx/page-1500#comments--------------------------------

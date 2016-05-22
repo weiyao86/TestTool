@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ext-Demo</title>
+	<link rel="stylesheet" href="ext/resources/ext-theme-access/ext-theme-access-all.css">
+	<script src="ext/extjs/bootstrap.js"></script>
+	<script src="ext/extjs/ext-lang-zh_CN.js"></script>
+	<!-- load app.js -->
+	<script type="text/javascript">
+
+		    Ext.define("DEMO.globalConfig", {
+		        statics: {
+		        	path:'http://localhost/tool/custom-help-html/Ext-Demo',
+		            nopicName:'no-img.png',
+		            namespace: "DEMO"
+		        }
+		    });
+
+			Ext.define("DEMO.extjsConfig", {
+				statics : {
+					pageCode : "index",
+					appFolder : "Ext-Demo/app",
+					uxFolder : "extjs/ux",
+					pages : {
+						"index" : {
+							controller : "account.Login",
+							viewport : "account.Viewport"
+						}
+					}
+				}
+			});
+
+	</script>
+	<script>
+	var pageCode = "index";
+	</script>
+	<script src="app.js"></script>
+</head>
+<body>
+</body>
+</html>
