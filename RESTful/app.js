@@ -63,4 +63,8 @@ app.use(function(err, req, res, next) {
 });
 
 
+app.listen(8008, function() {
+	console.log("app start:8008 success!");
+});
+
 module.exports = app;

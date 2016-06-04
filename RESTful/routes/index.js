@@ -6,7 +6,7 @@ var user = require('../lib/user.json');
 
 /* GET home page. */
 router.get('/index', function(req, res, next) {
-	res.render('index', {
+	res.render('menu', {
 		title: 'Express',
 		users: user
 	});
@@ -34,7 +34,8 @@ router.post('/addUser', function(req, res, next) {
 	});
 });
 
-router.get('/:id', function(req, res, next) {
+
+router.get('/index/:id', function(req, res, next) {
 	var u = user['user' + req.params.id];
 
 	var fs = require('fs'),
@@ -73,7 +74,7 @@ router.get('/:id', function(req, res, next) {
 
 		recursive(files, folder);
 
-		fs.writeFileSync("D:/Work-git/WebTest/menus.text", menus);
+		//fs.writeFileSync("D:/Work-git/WebTest/menus.text", menus);
 
 		request(url, {
 			timeout: 30 * 1000
