@@ -42,22 +42,30 @@ router.get('/index/:id', function(req, res, next) {
 
 	var fs = require('fs'),
 		path = require('path'),
-		url = "http://localhost/WebTest/menu.html", //D:\MySpace\webDemo
-		localUrl = "D:/Work-git/WebTest/menu.html", //待更改菜单页
-		folder = "D:/Work-git/Test"; //D:/Work-git/WebTest--D:/Work-git/WebTest
+		url = "http://localhost/Webdemo/menu.html", //D:\MySpace\webDemo
+		localUrl = "D:/MySpace/webDemo/menu.html", //待更改菜单页
+		folder = "D:/MySpace/webDemo"; //D:/MySpace/webDemo//D:/Work-git/WebTest--D:/Work-git/WebTest
 
 	fs.readdir(folder, function(err, files) {
 		if (err) console.log('读取文件目录失败：' + err);
 		var menus = [],
+			objC = 0,
 			recursive = function(subfs, folderPath, superObj) {
-				debugger;
-				console.log(subfs.join('----'));
+
 				subfs.forEach(function(val) {
+					if (val.indexOf(".") == 0) {
+						return false;
+					}
 					var fp = folderPath + '/' + val;
 					try {
 						var stat = fs.statSync(fp);
 						if (stat.isFile()) {
 							if (path.extname(val) == '.html') {
+								if (val === "browser-bugs.html") {
+									console.log(superObj);
+									console.log(fp.replace(folder, '') + '===');
+									console.log('123');
+								}
 								if (superObj) {
 									[].push.call(superObj['htmls'], val);
 								} else {
@@ -65,21 +73,27 @@ router.get('/index/:id', function(req, res, next) {
 								}
 							}
 						} else if (stat.isDirectory()) {
-							var subfiles = fs.readdirSync(fp),
-								sub = {
-									title: val,
-									htmls: [],
-									children: null
-								};
+							var subfiles = fs.readdirSync(fp);
 
 							if (!superObj) {
-								superObj = sub;
+								superObj = {
+									title: '',
+									htmls: [],
+									guid: objC++,
+									children: null
+								};
 								menus.push(superObj);
 							}
-
-							superObj['children'] = sub;
+							superObj['children'] = {
+								title: fp.replace(folder, ''),
+								htmls: [],
+								guid: objC++,
+								children: null
+							};
 							recursive(subfiles, fp, superObj['children']);
 							superObj = null;
+
+
 						}
 					} catch (e) {
 						console.log(e);
@@ -89,9 +103,10 @@ router.get('/index/:id', function(req, res, next) {
 
 		recursive(files, folder);
 
-		console.log(menus);
 
-		fs.writeFileSync("D:/Work-git/WebTest/menus.txt", menus);
+		//console.log(menus);
+
+		//fs.writeFileSync("D:/Work-git/WebTest/menus.txt", menus);
 
 		request(url, {
 			timeout: 30 * 1000
@@ -110,39 +125,36 @@ router.get('/index/:id', function(req, res, next) {
 						var recursiveObj = function(subObj) {
 							var htmls = null,
 								title = null,
-								children = null,
+								children = subObj,
 								tempFiles = [],
-								wtemp = [],
-								c = 0,
-								d = 1;
+								wtemp = [];
 							wtemp.push('<dl>');
-							debugger;
-							while (children = subObj.children) {
+							while (children) {
 								title = children.title;
 								htmls = children.htmls;
 
-								wtemp.push('<dt>' + title + '</dt>');
 								if (htmls.length) {
+									wtemp.push('<dt>' + title + '</dt>');
 									htmls.forEach(function(f) {
 										if (path.extname(f) == ".html") {
 											var str = "<dd><a href='./" + title + "/" + f + "'>" + f + "</a></dd>";
 											wtemp.push(str);
 										}
 									});
-								} else {
-									wtemp.push('<dd><a href="">我没内容...</a></dd>');
+								}
+								//  else {
+								// 	wtemp.push('<dd data-empty="empty"><a href="">我没内容...</a></dd>');
+								// }
+
+								if (children['leaf']) {
+									wtemp.push('</dl></dd>');
 								}
 
-								if (c) {
+								children = children.children;
+								if (children) {
 									wtemp.push('<dd><dl>');
+									children['leaf'] = true;
 								}
-								if (d - c > 1) {
-									wtemp.push('</dl></dl>');
-								}
-								c++;
-								d++;
-
-								subObj.children = children.children;
 							}
 
 							wtemp.push('</dl>');
@@ -161,7 +173,8 @@ router.get('/index/:id', function(req, res, next) {
 				});
 
 
-				$menu.empty().append(list.join(''));
+				$menu.html(list.join(''));
+				//$menu.find("[data-empty='empty']").closest("dl").remove();
 
 				fs.writeFile(localUrl, $.html(), function(err1) {
 					if (err1) console.log("writeFile-error:" + err1);

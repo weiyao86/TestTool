@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ext DEMO</title>
+	<script>
+    	var pageCode = "master";
+    </script>
+    <%-include("config")-%>
+  </head>
+  <body>
+
+  master
+<script id='header' type="text/template">
+
+<h1 class="header-logo">DEMO 演示</h1>
+		<ul class="header-userinfo">
+		<li><span>登录时间：</span><label>2016/5/13</label></li>
+		<li><span>用户：</span><label>data.username</label></li>
+		<li><span>角色：</span><label>管理员、文件工具员</label></li>
+		</ul>
+		<ol class="header-operation">
+		<li><a data-action="change-password"><s class="operation-lock"></s><span>修改密码</span></a></li>
+		<li><a data-action="logout"><s class="operation-logout"></s><span>退出</span></a></li>
+		</ol>
+
+		</script>
+  </body>
+</html>

@@ -9,4 +9,9 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+router.get('/master', function(req, res, next) {
+	console.log('come in master');
+	res.render('master');
+});
+
 module.exports = router;

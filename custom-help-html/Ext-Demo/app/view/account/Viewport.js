@@ -61,78 +61,63 @@ Ext.define('DEMO.view.account.Viewport', {
 				}]
 			}],
 			items: [{
-					fieldLabel: '登录名',
-					allowBlank: false,
-					// blankText: 'Viewport.js',
-					msgTarget: 'side'
+				fieldLabel: '登录名',
+				allowBlank: false,
+				// blankText: 'Viewport.js',
+				msgTarget: 'side'
+			}, {
+				xtype: 'button',
+				arrowAlign: 'right',
+				text: 'menu',
+				menu: [{
+					text: 'Item 1'
 				}, {
-					xtype: 'button',
-					arrowAlign: 'right',
-					text: 'menu',
-					menu: [{
-						text: 'Item 1'
-					}, {
-						text: 'Item 2'
-					}, {
-						text: 'Item 3',
-						checked: true
-					}, {
-						text: 'Item 4',
-						handler: function() {
-							console.log(arguments)
-						}
-
-					}],
-					draggable: true,
-					listeners: {
-						click: function() {
-							console.log('click' + arguments);
-						},
-						toggle: function() {
-							console.log('toggle' + arguments);
-						},
-						menutriggerout: function() {
-							console.log('menutriggerout' + arguments);
-						}
+					text: 'Item 2'
+				}, {
+					text: 'Item 3',
+					checked: true
+				}, {
+					text: 'Item 4',
+					handler: function() {
+						console.log(arguments)
 					}
-				}, {
-					xtype: 'cycle',
-					showText: true,
-					prependText: 'View as',
-					menu: {
-						items: [{
-							text: 'text only',
-							checked: true
-						}, {
-							text: 'HTML'
-						}, {
-							text: 'HTML-1'
-						}, {
-							text: 'HTML-2'
-						}, {
-							text: 'HTML-3'
-						}]
+
+				}],
+				draggable: true,
+				listeners: {
+					click: function() {
+						console.log('click' + arguments);
+					},
+					toggle: function() {
+						console.log('toggle' + arguments);
+					},
+					menutriggerout: function() {
+						console.log('menutriggerout' + arguments);
 					}
 				}
-				// , {
-				// 	xtype: 'split',
-				// 	text: 'split button',
-				// 	menu: new Ext.menu.Menu({
-				// 		items: [{
-				// 			text: 'text only',
-				// 			checked: true
-				// 		}, {
-				// 			text: 'HTML'
-				// 		}, {
-				// 			text: 'HTML-1'
-				// 		}, {
-				// 			text: 'HTML-2'
-				// 		}, {
-				// 			text: 'HTML-3'
-				// 		}]
-				// 	})
-				// }
-			]
+			}, {
+				xtype: 'cycle',
+				showText: true,
+				prependText: 'View as',
+				menu: {
+					items: [{
+						text: 'text only',
+						checked: true
+					}, {
+						text: 'HTML'
+					}, {
+						text: 'HTML-1'
+					}, {
+						text: 'HTML-2'
+					}, {
+						text: 'HTML-3'
+					}]
+				}
+			}, {
+				xtype: 'text',
+				text: 'split button',
+				degrees: 120
+			}]
 		}]
 	}]
 });
