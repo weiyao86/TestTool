@@ -38,13 +38,15 @@ router.post('/addUser', function(req, res, next) {
 
 //生成菜单并替换webtest中的menu.html文件
 router.get('/index/:id', function(req, res, next) {
-	var u = user['user' + req.params.id];
+	var u = user['user' + req.params.id],
+		ignore = ['node_modules', '.'];
+
 
 	var fs = require('fs'),
 		path = require('path'),
-		url = "http://localhost/Webdemo/menu.html", //D:\MySpace\webDemo
-		localUrl = "D:/MySpace/webDemo/menu.html", //待更改菜单页
-		folder = "D:/MySpace/webDemo"; //D:/MySpace/webDemo//D:/Work-git/WebTest--D:/Work-git/WebTest
+		url = "http://localhost/WebTest/menu.html", //D:\MySpace\webDemo
+		localUrl = "D:/Work-git/WebTest/menu.html", //待更改菜单页
+		folder = "D:/Work-git/WebTest"; //D:/MySpace/webDemo//D:/Work-git/WebTest--D:/Work-git/WebTest
 
 	fs.readdir(folder, function(err, files) {
 		if (err) console.log('读取文件目录失败：' + err);
@@ -53,19 +55,24 @@ router.get('/index/:id', function(req, res, next) {
 			recursive = function(subfs, folderPath, superObj) {
 
 				subfs.forEach(function(val) {
-					if (val.indexOf(".") == 0) {
-						return false;
-					}
+					var b = false;
+					ignore.forEach(function(iv) {
+						if (val.indexOf(iv) == 0) {
+							b = true;
+							return false;
+						}
+					});
+
+					if (b) return false;
+
 					var fp = folderPath + '/' + val;
+
 					try {
 						var stat = fs.statSync(fp);
+
 						if (stat.isFile()) {
 							if (path.extname(val) == '.html') {
-								if (val === "browser-bugs.html") {
-									console.log(superObj);
-									console.log(fp.replace(folder, '') + '===');
-									console.log('123');
-								}
+
 								if (superObj) {
 									[].push.call(superObj['htmls'], val);
 								} else {
@@ -74,37 +81,50 @@ router.get('/index/:id', function(req, res, next) {
 							}
 						} else if (stat.isDirectory()) {
 							var subfiles = fs.readdirSync(fp);
-
 							if (!superObj) {
 								superObj = {
 									title: '',
 									htmls: [],
 									guid: objC++,
-									children: null
+									start: true,
+									children: null,
+									list: []
 								};
 								menus.push(superObj);
 							}
-							superObj['children'] = {
-								title: fp.replace(folder, ''),
-								htmls: [],
-								guid: objC++,
-								children: null
-							};
-							recursive(subfiles, fp, superObj['children']);
-							superObj = null;
 
+							superObj['children'] = [];
 
+							subfiles.forEach(function(val) {
+								var single = {
+									title: fp.replace(folder, ''),
+									val: val,
+									htmls: [],
+									guid: objC++,
+									children: null
+								};
+								if (val.indexOf(".") > -1 && val.indexOf(".html") == -1) {
+									return false;
+								}
+								recursive([val], fp, single);
+								superObj['children'].push(single);
+							});
+
+							if (superObj.start) {
+								superObj = null;
+							}
 						}
 					} catch (e) {
-						console.log(e);
+						console.log(e + '---exception');
 					}
+
 				});
 			};
 
 		recursive(files, folder);
 
 
-		//console.log(menus);
+		//console.log('---menus---');
 
 		//fs.writeFileSync("D:/Work-git/WebTest/menus.txt", menus);
 
@@ -115,66 +135,80 @@ router.get('/index/:id', function(req, res, next) {
 				console.log('你报错了ETIMEDOUT...' + err);
 			} else if (!err && rqres.statusCode == 200) {
 				var $ = cheerio.load(body, {
-					decodeEntities: false //可以关闭这个转换实体编码的功能 (不然中文乱码)
+						decodeEntities: false //可以关闭这个转换实体编码的功能 (不然中文乱码)
+					}),
+					$menu = $("#menu"),
+					list = [];
+
+
+				menus.forEach(function(val) {
+					if (typeof val !== "object") {
+						list.push('<li><a href="' + val + '">' + val + '</a></li>');
+					}
 				});
-				var $menu = $("#menu");
-				var list = [];
 
 				menus.forEach(function(val) {
 					if (typeof val === "object") {
 						var recursiveObj = function(subObj) {
 							var htmls = null,
-								title = null,
-								children = subObj,
-								tempFiles = [],
+								children = subObj.children,
+								title = children[0] && children[0].title,
 								wtemp = [];
-							wtemp.push('<dl>');
-							while (children) {
-								title = children.title;
-								htmls = children.htmls;
 
-								if (htmls.length) {
-									wtemp.push('<dt>' + title + '</dt>');
-									htmls.forEach(function(f) {
-										if (path.extname(f) == ".html") {
-											var str = "<dd><a href='./" + title + "/" + f + "'>" + f + "</a></dd>";
-											wtemp.push(str);
+							if (!title) return;
+
+							wtemp.push('<dl><dt>' + title + '</dt>');
+
+							var curfun = function(children) {
+								if (!children.length) return;
+								children.forEach(function(cldval) {
+
+									while (cldval) {
+										title = cldval.title || '';
+										htmls = cldval.htmls;
+										if (htmls && htmls.length) {
+											// wtemp.push('<dt>' + (title || '无标题') + '</dt>');
+											htmls.forEach(function(f) {
+												if (path.extname(f) == ".html") {
+													var str = "<dd><a href='./" + title + "/" + f + "'>" + cldval.guid + '-' + f + "</a></dd>";
+													wtemp.push(str);
+												}
+											});
 										}
-									});
-								}
-								//  else {
-								// 	wtemp.push('<dd data-empty="empty"><a href="">我没内容...</a></dd>');
-								// }
+										if (cldval['leaf']) {
+											wtemp.push('</dl></dd>');
+										}
 
-								if (children['leaf']) {
-									wtemp.push('</dl></dd>');
-								}
-
-								children = children.children;
-								if (children) {
-									wtemp.push('<dd><dl>');
-									children['leaf'] = true;
-								}
-							}
+										cldval = cldval.children;
+										if (cldval) {
+											wtemp.push('<dd><dl>');
+											cldval['leaf'] = true;
+											curfun(cldval);
+										}
+									}
+								});
+							};
+							curfun(children);
 
 							wtemp.push('</dl>');
 
-							if (wtemp.length) {
-								//wtemp.splice(-12);
-								list.push('<li>' + wtemp.join('') + '</li>');
-							}
+							list.push('<li>' + wtemp.join('') + '</li>');
+
 						};
 
 						recursiveObj(val);
-					} else {
-						list.push('<li><a href="' + val + '">' + val + '</a></li>');
-					}
 
+					}
 				});
 
 
-				$menu.html(list.join(''));
-				//$menu.find("[data-empty='empty']").closest("dl").remove();
+				var l = list.join('');
+
+				for (var s = 0; s < 50; s++) {
+					l = l.replace(/\s*<dd>\s*<\/dd>\s*|\s*<dd>\s*<dl>\s*<\/dl>\s*<\/dd>\s*/igm, '');
+				}
+
+				$menu.html(l);
 
 				fs.writeFile(localUrl, $.html(), function(err1) {
 					if (err1) console.log("writeFile-error:" + err1);
