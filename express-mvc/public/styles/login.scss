@@ -57,16 +57,19 @@ body {
     height: 100%;
     background: url("/res/images/bg-new.jpg") repeat scroll center center  / cover #fff;
     background: url("/res/images/bg-new.jpg") no-repeat scroll center #fff \9;
-    animation:scale 60s ease-out 10s infinite;
+    animation:scale 30s ease-out 0s infinite;
 }
 @keyframes scale{
     0% {
         background-size:100% 100%;
+        background-position:0% 50%;
     }
-    30% {
+    50% {
+        background-position:50% 50%;
         background-size:150% 150%;
     }
     100% {
+        background-position:100% 50%;
         background-size:100% 100%;
     }
 }
@@ -74,18 +77,20 @@ body {
     width:320px;
     height:315px;
     z-index:5;
+    background:rgba(255,255,255,.3);
     @include centerEl(320px,315px);
     @include cross-browser(perspective,800px);
 }
 
 .form-signin {
-    width: 100%;
+    
     padding: 20px 0;
     color: #fff;
     font-size: 14px;
     position: absolute;
     top:0;
-    left:0;
+    left:5%;
+    right:5%;
     @include cross-browser(transform-style,preserve-3d);
     @include cross-browser(backface-visibility,hidden);
     @include cross-browser(transition,.8s);
@@ -129,6 +134,7 @@ body {
 .login-clip {
     width: 340px;
     height: 340px;
+     background:rgba(0,0,0,.4);
      @include cross-browser(animation,pulse 4s infinite);
 }
 
@@ -202,7 +208,7 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-    .login-clip {
+    .login-clip{
         display: none;
     }
 }
@@ -217,4 +223,12 @@ body {
       color:#fff;
       cursor:pointer;
     }
+}
+
+/**
+ * [input description]去除chrome文本框黄色背景
+ * @type {[type]}
+ */
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0px 100px #fff inset !important;
 }
