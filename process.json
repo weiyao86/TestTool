@@ -24,6 +24,13 @@
 		"error_file": "pm2-log/error.log",
 		"out_file": "pm2-log/out.log",
 		"ignore_watch": ["pm2-log/", "resource/", "node_modules/"],
+		"watch": false,
+		"exec_mode": "fork"
+	}, {
+		"name": "restful",
+		"script": "app.js",
+		"cwd": "RESTful/",
+		"log_date_format": "YYYY-MM-DD HH:mm Z",
 		"watch": true,
 		"exec_mode": "fork"
 	}]

@@ -5,7 +5,7 @@ var async = require('async');
 var cheerio = require('cheerio');
 var child_process = require('child_process');
 var clientIo = require("socket.io-client");
-var logger = require('./log4js.js').logforName('reptile-1');
+var logger = require('./log4js.js').logforName('reptile-2');
 
 var reptile = {
 	callbacks: {
@@ -55,11 +55,10 @@ var reptile = {
 				});
 			});
 		}
-		for (var i = 1; i <= 101; i++) {
 
-			var url = "https://picjumbo.com/latest-free-stock-photos/page/" + i;
-			letUrl(url);
-		}
+		var url = "http://www.gratisography.com/";
+		letUrl(url);
+
 		async.series(list, function(err) {
 			if (err) return logger.info(err);
 			fn();
@@ -69,31 +68,47 @@ var reptile = {
 	acquireData: function(body, fn) {
 		var self = this,
 			$ = cheerio.load(body),
-			$wrap = $(".item_wrap"),
+			$wrap = $("a[download]"),
 			origin = [],
 			small = [],
 			series = [];
 
 		$wrap.each(function(idx, val) {
 
-			var smallurl = "https:" + ($(val).find('.image').eq(1).attr('src') || $(val).find('.image').attr('data-cfsrc'));
+			var smallurl = $wrap.attr("href");
 			small.push(smallurl);
 		});
 
 		small.forEach(function(val) {
 			var filename = self.getName(val);
 			series.push(function(callback) {
-				self.downloadImg(val, 'small/' + filename, function() {
 
-					if (typeof self.callbacks.writedone === "function") {
-						self.callbacks.writedone.call(self, {
-							originAddress: val,
-							nowAddress: 'small/' + filename,
-							filename: filename
+				request(val, {
+					timeout: 60 * 1000
+				}, function(err2, res2, body) {
+					if (!err2 && res2.statusCode == 200) {
+						var $w = cheerio.load(body),
+							$img = $w(".absolute-center"),
+							imgSrc = $img.attr("src");
+
+
+						self.downloadImg(imgSrc, 'small/' + filename, function() {
+
+							if (typeof self.callbacks.writedone === "function") {
+								self.callbacks.writedone.call(self, {
+									originAddress: imgSrc,
+									nowAddress: 'small/' + filename,
+									filename: filename
+								});
+							}
+							callback();
 						});
+
+
 					}
-					callback();
 				});
+
+
 			});
 		});
 
