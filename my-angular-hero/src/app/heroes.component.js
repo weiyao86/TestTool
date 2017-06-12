@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var hero_service_1 = require("./hero.service");
+var router_1 = require("@angular/router");
 var HeroesComponent = (function () {
-    function HeroesComponent(heroService) {
+    function HeroesComponent(heroService, router) {
         this.heroService = heroService;
+        this.router = router;
         //this.heroes = this.heroService.getHeroes();
     }
     //事件注册
@@ -27,6 +29,9 @@ var HeroesComponent = (function () {
         //正常加载
         this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
     };
+    HeroesComponent.prototype.gotoDetail = function () {
+        this.router.navigate(['/detail', this.selectedHero.id]);
+    };
     HeroesComponent.prototype.ngOnInit = function () {
         console.log('ngOnInit 生命周期钩子');
         this.getHeroes();
@@ -37,9 +42,9 @@ HeroesComponent = __decorate([
     core_1.Component({
         //selector: "my-heroes",
         templateUrl: './app.hero.html',
-        styleUrls: ['styles.css']
+        styleUrls: ['./heroes.component.css']
     }),
-    __metadata("design:paramtypes", [hero_service_1.HeroService])
+    __metadata("design:paramtypes", [hero_service_1.HeroService, router_1.Router])
 ], HeroesComponent);
 exports.HeroesComponent = HeroesComponent;
 //# sourceMappingURL=heroes.component.js.map

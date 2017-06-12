@@ -19,10 +19,12 @@ import {
 } from './hero-detail.component';
 
 import {
+	DashBoardComponent
+} from './dashboard.component';
+
+import {
 	HeroesComponent
 } from './heroes.component';
-
-
 
 import {
 	HeroService
@@ -30,25 +32,21 @@ import {
 
 //配置路由
 import {
-	RouterModule,
-	Router
-} from '@angular/router';
+	AppRoutingModule
+} from './app-routing.module';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HeroDetailComponent,
-		HeroesComponent
+		HeroesComponent,
+		DashBoardComponent
 	],
 	imports: [
 		BrowserModule,
 		FormsModule,
-		RouterModule.forRoot([{
-			path: 'heroes',
-			component: HeroesComponent
-		}])
-
+		AppRoutingModule
 	],
 	providers: [HeroService],
 	bootstrap: [AppComponent]
