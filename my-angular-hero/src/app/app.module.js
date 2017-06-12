@@ -6,10 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+//https://angular.cn/docs/ts/latest/tutorial/toh-pt5.html
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
+var hero_detail_component_1 = require("./hero-detail.component");
+var heroes_component_1 = require("./heroes.component");
+var hero_service_1 = require("./hero.service");
+//配置路由
+var router_1 = require("@angular/router");
+router_1.RouterModule.forRoot([{
+        path: 'heroes',
+        component: heroes_component_1.HeroesComponent
+    }]);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -18,13 +28,15 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         declarations: [
-            app_component_1.AppComponent
+            app_component_1.AppComponent,
+            hero_detail_component_1.HeroDetailComponent,
+            heroes_component_1.HeroesComponent
         ],
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule
         ],
-        providers: [],
+        providers: [hero_service_1.HeroService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
