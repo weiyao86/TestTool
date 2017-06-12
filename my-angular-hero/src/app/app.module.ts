@@ -34,10 +34,6 @@ import {
 	Router
 } from '@angular/router';
 
-RouterModule.forRoot([{
-	path: 'heroes',
-	component: HeroesComponent
-}])
 
 @NgModule({
 	declarations: [
@@ -47,7 +43,12 @@ RouterModule.forRoot([{
 	],
 	imports: [
 		BrowserModule,
-		FormsModule
+		FormsModule,
+		RouterModule.forRoot([{
+			path: 'heroes',
+			component: HeroesComponent
+		}])
+
 	],
 	providers: [HeroService],
 	bootstrap: [AppComponent]

@@ -16,10 +16,6 @@ var heroes_component_1 = require("./heroes.component");
 var hero_service_1 = require("./hero.service");
 //配置路由
 var router_1 = require("@angular/router");
-router_1.RouterModule.forRoot([{
-        path: 'heroes',
-        component: heroes_component_1.HeroesComponent
-    }]);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,7 +30,11 @@ AppModule = __decorate([
         ],
         imports: [
             platform_browser_1.BrowserModule,
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            router_1.RouterModule.forRoot([{
+                    path: 'heroes',
+                    component: heroes_component_1.HeroesComponent
+                }])
         ],
         providers: [hero_service_1.HeroService],
         bootstrap: [app_component_1.AppComponent]

@@ -15,7 +15,7 @@ import {
 
 
 @Component({
-	selector: "my-heroes",
+	//selector: "my-heroes",
 	templateUrl: './app.hero.html',
 	styleUrls: ['styles.css']
 })
