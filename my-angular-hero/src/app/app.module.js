@@ -15,6 +15,10 @@ var hero_detail_component_1 = require("./hero-detail.component");
 var dashboard_component_1 = require("./dashboard.component");
 var heroes_component_1 = require("./heroes.component");
 var hero_service_1 = require("./hero.service");
+var hero_search_component_1 = require("./hero-search.component");
+var http_1 = require("@angular/http");
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var in_memory_data_service_1 = require("./in-memory-data.service");
 //配置路由
 var app_routing_module_1 = require("./app-routing.module");
 var AppModule = (function () {
@@ -28,12 +32,15 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             hero_detail_component_1.HeroDetailComponent,
             heroes_component_1.HeroesComponent,
-            dashboard_component_1.DashBoardComponent
+            dashboard_component_1.DashBoardComponent,
+            hero_search_component_1.HeroSearchComponent
         ],
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
-            app_routing_module_1.AppRoutingModule
+            app_routing_module_1.AppRoutingModule,
+            http_1.HttpModule,
+            angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService)
         ],
         providers: [hero_service_1.HeroService],
         bootstrap: [app_component_1.AppComponent]

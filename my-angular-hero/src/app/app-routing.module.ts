@@ -14,6 +14,7 @@ import {
 	HeroDetailComponent
 } from './hero-detail.component';
 
+
 //配置路由
 import {
 	RouterModule,

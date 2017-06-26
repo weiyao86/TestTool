@@ -32,6 +32,27 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.gotoDetail = function () {
         this.router.navigate(['/detail', this.selectedHero.id]);
     };
+    HeroesComponent.prototype.add = function (name) {
+        var _this = this;
+        name = name.trim();
+        if (!name)
+            return;
+        this.heroService.create(name).then(function (hero) {
+            _this.heroes.push(hero);
+            _this.selectedHero = null;
+        });
+    };
+    HeroesComponent.prototype.delete = function (hero) {
+        var _this = this;
+        if (confirm("确认删除当前数据")) {
+            this.heroService.delete(hero.id).then(function () {
+                _this.heroes = _this.heroes.filter(function (h) { return h !== hero; });
+                if (_this.selectedHero == hero) {
+                    _this.selectedHero = null;
+                }
+            });
+        }
+    };
     HeroesComponent.prototype.ngOnInit = function () {
         console.log('ngOnInit 生命周期钩子');
         this.getHeroes();
