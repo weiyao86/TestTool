@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,28 +7,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var hero_service_1 = require("./hero.service");
-var DashBoardComponent = (function () {
-    function DashBoardComponent(heroService) {
-        this.heroService = heroService;
-        this.heroes = [];
-    }
-    ;
-    DashBoardComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
-    };
-    return DashBoardComponent;
-}());
-DashBoardComponent = __decorate([
-    core_1.Component({
-        selector: 'my-dashboard',
-        templateUrl: './dashboard.component.html',
-        styleUrls: ['./dashboard.component.css']
-    }),
-    __metadata("design:paramtypes", [hero_service_1.HeroService])
-], DashBoardComponent);
-exports.DashBoardComponent = DashBoardComponent;
-//# sourceMappingURL=dashboard.component.js.map
+define(["require", "exports", "@angular/core", "./hero.service"], function (require, exports, core_1, hero_service_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var DashBoardComponent = (function () {
+        function DashBoardComponent(heroService) {
+            this.heroService = heroService;
+            this.heroes = [];
+        }
+        ;
+        DashBoardComponent.prototype.ngOnInit = function () {
+            var _this = this;
+            this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
+        };
+        return DashBoardComponent;
+    }());
+    DashBoardComponent = __decorate([
+        core_1.Component({
+            selector: 'my-dashboard',
+            templateUrl: './dashboard.component.html',
+            styleUrls: ['./dashboard.component.css']
+        }),
+        __metadata("design:paramtypes", [hero_service_1.HeroService])
+    ], DashBoardComponent);
+    exports.DashBoardComponent = DashBoardComponent;
+});

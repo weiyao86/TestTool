@@ -21,4 +21,7 @@ export class HeroSearchService {
 			.get(`app/heroes/?name=${term}`)
 			.map(response => response.json().data as Hero[]);
 	}
+	check(id: number): void {
+		console.log('check');
+	}
 }

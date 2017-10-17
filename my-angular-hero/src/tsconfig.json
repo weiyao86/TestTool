@@ -1,19 +1,22 @@
 {
 	"compilerOptions": {
 		"target": "es5",
-		"module": "commonjs",
+		"module": "amd",
 		"moduleResolution": "node",
-		"sourceMap": true,
+		"sourceMap": false,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"lib": ["es2015", "dom"],
 		"noImplicitAny": true,
 		"suppressImplicitAnyIndexErrors": true,
 		"typeRoots": [
-			"../node_modules/@types/"
-		]
+				"../node_modules/@types/"
+			]
+			//"inlineSourceMap": true,
+			//"outDir": "./dist/" //	重定向输出目录。
+			//"outFile": "dist.js" //只有module为'amd'和'system'能和--outFile一起使用
 	},
-	"compileOnSave": true,
+	"compileOnSave": false,
 	"exclude": [
 		"node_modules/*",
 		"**/*-aot.ts"
