@@ -1,0 +1,1387 @@
+[2018-06-14 17:44:10.962] [INFO] logs - uncaughtException:-----TypeError: app.set is not a function
+[2018-06-14 17:44:10.978] [INFO] logs - app start:8002 success!
+[2018-06-14 17:44:49.251] [INFO] logs - GET /
+[2018-06-14 17:44:49.519] [INFO] logs - GET /login
+[2018-06-14 17:44:49.633] [INFO] logs - GET /styles/css/login.css
+[2018-06-14 17:44:49.642] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 17:44:49.728] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 17:44:49.788] [INFO] logs - GET /scripts/libs/socket.io.js
+[2018-06-14 17:44:49.794] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 17:44:50.367] [INFO] logs - GET /scripts/libs/domReady.js
+[2018-06-14 17:44:50.392] [INFO] logs - GET /res/images/bg-new.jpg
+[2018-06-14 17:44:50.451] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 17:44:50.728] [INFO] logs - GET /favicon.ico
+[2018-06-14 17:44:54.046] [INFO] logs - POST /login/signin
+[2018-06-14 17:44:54.224] [INFO] logs - GET /main
+[2018-06-14 17:44:54.267] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 17:44:54.277] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 17:44:54.280] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 17:44:54.326] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 17:44:54.563] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 17:44:54.732] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 17:45:02.779] [INFO] logs - GET /photo
+[2018-06-14 17:45:02.819] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 17:45:02.822] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 17:45:02.830] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 17:45:02.837] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 17:45:02.846] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 17:45:02.859] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 17:45:03.242] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-14 17:45:03.247] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 17:45:03.394] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 17:45:03.465] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 17:45:03.469] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 17:45:03.474] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 17:45:03.508] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 17:45:03.610] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 17:45:03.616] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 17:45:03.863] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 17:45:03.921] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 17:45:04.164] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:45:13.391] [INFO] logs - GET /user
+[2018-06-14 17:45:13.457] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 17:45:13.459] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 17:45:13.477] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 17:45:13.486] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 17:45:13.489] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 17:45:13.498] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 17:45:13.853] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 17:45:13.874] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-14 17:45:13.918] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 17:45:13.920] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 17:45:13.924] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 17:45:13.933] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 17:45:13.940] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 17:45:13.951] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 17:45:13.968] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 17:45:14.033] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 17:45:14.037] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 17:45:14.186] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:45:29.108] [INFO] logs - POST /user/createUser
+[2018-06-14 17:45:29.141] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:46:03.738] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 17:46:03.742] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 17:46:03.744] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 17:46:03.945] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 17:46:03.958] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 17:46:05.895] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:49:04.274] [INFO] logs - GET /photo
+[2018-06-14 17:49:04.366] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 17:49:04.368] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 17:49:04.372] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 17:49:04.376] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 17:49:04.384] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 17:49:04.406] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 17:49:05.120] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-14 17:49:05.212] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 17:49:05.301] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 17:49:05.303] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 17:49:05.307] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 17:49:05.310] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 17:49:05.312] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 17:49:05.315] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 17:49:05.347] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 17:49:05.351] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 17:49:05.352] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 17:49:05.357] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 17:49:05.399] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 17:49:05.459] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:49:16.145] [INFO] logs - { Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\detailController.js'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.exports.resolveController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:19:26)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:47:38
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at Route.dispatch (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5) code: 'MODULE_NOT_FOUND' }
+Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\detailController.js'
+    at Function.Module._resolveFilename (module.js:469:15)
+    at Function.Module._load (module.js:417:25)
+    at Module.require (module.js:497:17)
+    at require (internal/module.js:20:19)
+    at Object.exports.resolveController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:19:26)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:47:38
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at Route.dispatch (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+[2018-06-14 17:50:05.839] [INFO] logs - { Error: Not Found
+    at D:\Work-git\TestTool\express-mvc\app.js:75:12
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\index.js:312:13)
+    at D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\index.js:330:12)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\index.js:271:10)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:121:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14) status: 404 }
+Error: Not Found
+    at D:\Work-git\TestTool\express-mvc\app.js:75:12
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\index.js:312:13)
+    at D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\index.js:280:7
+    at Function.process_params (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\index.js:330:12)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\index.js:271:10)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:121:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:51:08.178] [INFO] logs - app start:8002 success!
+[2018-06-14 17:51:17.138] [INFO] logs - GET /photo
+[2018-06-14 17:51:17.204] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 17:51:17.208] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 17:51:17.210] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 17:51:17.213] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 17:51:17.214] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 17:51:17.222] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 17:51:17.956] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-14 17:51:17.970] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 17:51:18.020] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 17:51:18.020] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 17:51:18.021] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 17:51:18.023] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 17:51:18.063] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 17:51:18.065] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 17:51:18.069] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 17:51:18.069] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 17:51:18.088] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 17:51:18.090] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 17:51:18.091] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 17:51:18.181] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:52:27.080] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:54:30.322] [INFO] logs - GET /photo
+[2018-06-14 17:54:30.446] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 17:54:30.450] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 17:54:30.451] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 17:54:30.453] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 17:54:30.454] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 17:54:30.463] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 17:54:31.289] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-14 17:54:31.339] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 17:54:31.392] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 17:54:31.394] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 17:54:31.396] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 17:54:31.396] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 17:54:31.399] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 17:54:31.399] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 17:54:31.405] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 17:54:31.407] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 17:54:31.425] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 17:54:31.481] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 17:54:31.482] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 17:54:31.571] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:55:18.675] [INFO] logs - GET /photodetail
+[2018-06-14 17:55:18.859] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 17:55:18.862] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 17:55:18.878] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 17:55:18.879] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-14 17:55:18.880] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-14 17:55:18.881] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 17:55:19.278] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 17:55:19.318] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-14 17:55:19.319] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-14 17:55:19.346] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-14 17:55:19.371] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-14 17:55:19.374] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 17:55:19.410] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 17:55:19.411] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 17:55:19.478] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 17:55:19.479] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 17:55:19.481] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 17:55:19.482] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 17:55:19.482] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 17:55:19.483] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 17:55:19.559] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 17:55:19.562] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 17:55:19.563] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-14 17:55:19.565] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-14 17:55:19.582] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 17:55:19.662] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:55:19.666] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:55:19.751] [INFO] logs - POST /photoDetail/read
+[2018-06-14 17:55:19.779] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-14 17:55:19.780] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-14 17:55:19.802] [INFO] logs - GET /data/focus/o01345zv89ubtdsrqgplyj92n9hf63673axk213e-w1m6432ci.png
+[2018-06-14 17:55:19.804] [INFO] logs - GET /data/focus/o0249367898bc641zxhijutmnspqrd4k2w4yf3513e6avg3l1-.jpg
+[2018-06-14 17:55:19.806] [INFO] logs - GET /data/focus/o02324661wvbcd-ufgtiqp1n8m14583734xyzkjehr9s369la4.jpg
+[2018-06-14 17:55:19.817] [INFO] logs - GET /data/focus/o0132568693zcu-tnmhiky62917qas1dblx8jgpr3643vf4w4e.jpg
+[2018-06-14 17:55:19.818] [INFO] logs - GET /data/focus/o0214267894b933e3gh1yxumt1pqs65l5wka-i4nfc6z8dvj3r.jpg
+[2018-06-14 17:55:19.830] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-14 17:55:19.834] [INFO] logs - GET /data/focus/o021459789a3c8-e636iywlvn1s4q24fghrj1d7b3mu6xktp3z.jpg
+[2018-06-14 17:55:19.837] [INFO] logs - GET /data/focus/o721456983a34d-zfxwivutmr1qcpslk2h47e16638nb9jyg30.jpg
+[2018-06-14 17:55:20.180] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-14 17:56:09.967] [INFO] logs - GET /photodetail
+[2018-06-14 17:56:10.127] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 17:56:10.128] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 17:56:10.129] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-14 17:56:10.130] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-14 17:56:10.132] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 17:56:10.146] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 17:56:10.767] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 17:56:10.813] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-14 17:56:10.815] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-14 17:56:10.926] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-14 17:56:10.934] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-14 17:56:10.942] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 17:56:10.978] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 17:56:10.979] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 17:56:11.065] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 17:56:11.068] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 17:56:11.068] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 17:56:11.071] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 17:56:11.076] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 17:56:11.076] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 17:56:11.141] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 17:56:11.142] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-14 17:56:11.145] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 17:56:11.147] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-14 17:56:11.148] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 17:56:11.251] [INFO] logs - POST /photoDetail/read
+[2018-06-14 17:56:11.254] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:56:11.256] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 17:56:11.336] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-14 17:56:11.338] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-14 17:56:11.369] [INFO] logs - GET /data/focus/o0249367898bc641zxhijutmnspqrd4k2w4yf3513e6avg3l1-.jpg
+[2018-06-14 17:56:11.373] [INFO] logs - GET /data/focus/o02324661wvbcd-ufgtiqp1n8m14583734xyzkjehr9s369la4.jpg
+[2018-06-14 17:56:11.392] [INFO] logs - GET /data/focus/o0132568693zcu-tnmhiky62917qas1dblx8jgpr3643vf4w4e.jpg
+[2018-06-14 17:56:11.392] [INFO] logs - GET /data/focus/o0214267894b933e3gh1yxumt1pqs65l5wka-i4nfc6z8dvj3r.jpg
+[2018-06-14 17:56:11.418] [INFO] logs - GET /data/focus/o721456983a34d-zfxwivutmr1qcpslk2h47e16638nb9jyg30.jpg
+[2018-06-14 17:56:11.420] [INFO] logs - GET /data/focus/o021459789a3c8-e636iywlvn1s4q24fghrj1d7b3mu6xktp3z.jpg
+[2018-06-14 17:56:11.447] [INFO] logs - GET /data/focus/o01345zv89ubtdsrqgplyj92n9hf63673axk213e-w1m6432ci.png
+[2018-06-14 17:56:11.464] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-14 18:00:04.030] [INFO] logs - app start:8002 success!
+[2018-06-14 18:00:07.446] [INFO] logs - GET /photodetail
+[2018-06-14 18:00:07.508] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 18:00:07.511] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 18:00:07.514] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-14 18:00:07.516] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-14 18:00:07.517] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 18:00:07.519] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 18:00:07.869] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 18:00:07.894] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-14 18:00:07.895] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-14 18:00:07.922] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-14 18:00:07.923] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-14 18:00:07.954] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 18:00:08.019] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 18:00:08.021] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 18:00:08.032] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 18:00:08.034] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 18:00:08.035] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 18:00:08.037] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 18:00:08.038] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 18:00:08.040] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 18:00:08.079] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 18:00:08.102] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-14 18:00:08.104] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 18:00:08.105] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 18:00:08.108] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-14 18:00:08.200] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:00:08.203] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:00:08.203] [INFO] logs - POST /photoDetail/read
+[2018-06-14 18:00:08.247] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-14 18:00:08.250] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-14 18:00:08.265] [INFO] logs - GET /data/focus/o0249367898bc641zxhijutmnspqrd4k2w4yf3513e6avg3l1-.jpg
+[2018-06-14 18:00:08.269] [INFO] logs - GET /data/focus/o02324661wvbcd-ufgtiqp1n8m14583734xyzkjehr9s369la4.jpg
+[2018-06-14 18:00:08.281] [INFO] logs - GET /data/focus/o0214267894b933e3gh1yxumt1pqs65l5wka-i4nfc6z8dvj3r.jpg
+[2018-06-14 18:00:08.293] [INFO] logs - GET /data/focus/o0132568693zcu-tnmhiky62917qas1dblx8jgpr3643vf4w4e.jpg
+[2018-06-14 18:00:08.295] [INFO] logs - GET /data/focus/o021459789a3c8-e636iywlvn1s4q24fghrj1d7b3mu6xktp3z.jpg
+[2018-06-14 18:00:08.316] [INFO] logs - GET /data/focus/o721456983a34d-zfxwivutmr1qcpslk2h47e16638nb9jyg30.jpg
+[2018-06-14 18:00:08.344] [INFO] logs - GET /data/focus/o01345zv89ubtdsrqgplyj92n9hf63673axk213e-w1m6432ci.png
+[2018-06-14 18:00:08.453] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-14 18:00:54.677] [INFO] logs - app start:8002 success!
+[2018-06-14 18:03:09.712] [INFO] logs - GET /photodetail
+[2018-06-14 18:03:09.770] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 18:03:09.774] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 18:03:09.777] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-14 18:03:09.780] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 18:03:09.784] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-14 18:03:09.786] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 18:03:10.150] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-14 18:03:10.152] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 18:03:10.156] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-14 18:03:10.158] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-14 18:03:10.195] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-14 18:03:10.237] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 18:03:10.278] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 18:03:10.282] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 18:03:10.308] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 18:03:10.309] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 18:03:10.311] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 18:03:10.313] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 18:03:10.316] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 18:03:10.318] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 18:03:10.372] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 18:03:10.375] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-14 18:03:10.377] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 18:03:10.382] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-14 18:03:10.384] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 18:03:10.506] [INFO] logs - POST /photoDetail/read
+[2018-06-14 18:03:10.519] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:03:10.537] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:03:10.573] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-14 18:03:10.584] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-14 18:03:10.599] [INFO] logs - GET /data/focus/o0249367898bc641zxhijutmnspqrd4k2w4yf3513e6avg3l1-.jpg
+[2018-06-14 18:03:10.630] [INFO] logs - GET /data/focus/o02324661wvbcd-ufgtiqp1n8m14583734xyzkjehr9s369la4.jpg
+[2018-06-14 18:03:10.631] [INFO] logs - GET /data/focus/o0214267894b933e3gh1yxumt1pqs65l5wka-i4nfc6z8dvj3r.jpg
+[2018-06-14 18:03:10.663] [INFO] logs - GET /data/focus/o0132568693zcu-tnmhiky62917qas1dblx8jgpr3643vf4w4e.jpg
+[2018-06-14 18:03:10.665] [INFO] logs - GET /data/focus/o01345zv89ubtdsrqgplyj92n9hf63673axk213e-w1m6432ci.png
+[2018-06-14 18:03:10.671] [INFO] logs - GET /data/focus/o021459789a3c8-e636iywlvn1s4q24fghrj1d7b3mu6xktp3z.jpg
+[2018-06-14 18:03:10.690] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-14 18:03:10.693] [INFO] logs - GET /data/focus/o721456983a34d-zfxwivutmr1qcpslk2h47e16638nb9jyg30.jpg
+[2018-06-14 18:10:37.535] [INFO] logs - GET /photodetail
+[2018-06-14 18:10:37.650] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 18:10:37.671] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 18:10:37.683] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-14 18:10:37.691] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-14 18:10:37.702] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 18:10:37.706] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 18:10:38.336] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 18:10:38.438] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-14 18:10:38.444] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-14 18:10:38.447] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-14 18:10:38.525] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-14 18:10:38.556] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 18:10:38.578] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 18:10:38.580] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 18:10:38.644] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 18:10:38.648] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 18:10:38.657] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 18:10:38.658] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 18:10:38.661] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 18:10:38.666] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 18:10:38.703] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-14 18:10:38.707] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 18:10:38.709] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-14 18:10:38.714] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 18:10:38.724] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 18:10:38.819] [INFO] logs - POST /photoDetail/read
+[2018-06-14 18:10:38.823] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:10:38.830] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:10:38.890] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-14 18:10:38.895] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-14 18:10:38.917] [INFO] logs - GET /data/focus/o0249367898bc641zxhijutmnspqrd4k2w4yf3513e6avg3l1-.jpg
+[2018-06-14 18:10:38.919] [INFO] logs - GET /data/focus/o02324661wvbcd-ufgtiqp1n8m14583734xyzkjehr9s369la4.jpg
+[2018-06-14 18:10:38.943] [INFO] logs - GET /data/focus/o0132568693zcu-tnmhiky62917qas1dblx8jgpr3643vf4w4e.jpg
+[2018-06-14 18:10:38.946] [INFO] logs - GET /data/focus/o0214267894b933e3gh1yxumt1pqs65l5wka-i4nfc6z8dvj3r.jpg
+[2018-06-14 18:10:38.990] [INFO] logs - GET /data/focus/o021459789a3c8-e636iywlvn1s4q24fghrj1d7b3mu6xktp3z.jpg
+[2018-06-14 18:10:38.993] [INFO] logs - GET /data/focus/o721456983a34d-zfxwivutmr1qcpslk2h47e16638nb9jyg30.jpg
+[2018-06-14 18:10:39.036] [INFO] logs - GET /data/focus/o01345zv89ubtdsrqgplyj92n9hf63673axk213e-w1m6432ci.png
+[2018-06-14 18:10:39.050] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-14 18:10:57.055] [INFO] logs - app start:8002 success!
+[2018-06-14 18:11:15.356] [INFO] logs - GET /photo
+[2018-06-14 18:11:15.412] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 18:11:15.423] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 18:11:15.426] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 18:11:15.433] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 18:11:15.434] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 18:11:15.435] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 18:11:15.797] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-14 18:11:15.804] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 18:11:15.807] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 18:11:15.812] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 18:11:15.867] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 18:11:15.869] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 18:11:15.872] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 18:11:15.874] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 18:11:15.878] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 18:11:15.879] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 18:11:15.917] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 18:11:15.921] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 18:11:15.942] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 18:11:16.025] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:12:11.731] [INFO] logs - GET /user
+[2018-06-14 18:12:11.833] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 18:12:11.837] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 18:12:11.847] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 18:12:11.852] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 18:12:11.854] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 18:12:11.857] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 18:12:12.437] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-14 18:12:12.494] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 18:12:12.530] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 18:12:12.532] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 18:12:12.587] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 18:12:12.589] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 18:12:12.591] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 18:12:12.594] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 18:12:12.612] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 18:12:12.613] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 18:12:12.632] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 18:12:12.683] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 18:12:12.684] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 18:12:12.770] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:12:41.056] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:13:20.406] [INFO] logs - GET /user
+[2018-06-14 18:13:20.485] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 18:13:20.491] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 18:13:20.499] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 18:13:20.501] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 18:13:20.505] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 18:13:20.519] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 18:13:21.061] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-14 18:13:21.108] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 18:13:21.111] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 18:13:21.123] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 18:13:21.201] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 18:13:21.205] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 18:13:21.213] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 18:13:21.214] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 18:13:21.218] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 18:13:21.224] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 18:13:21.238] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 18:13:21.264] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 18:13:21.266] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 18:13:21.319] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:13:51.810] [INFO] logs - GET /user
+[2018-06-14 18:13:51.875] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 18:13:51.879] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 18:13:51.881] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 18:13:51.892] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 18:13:51.894] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 18:13:51.898] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 18:13:52.395] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 18:13:52.400] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 18:13:52.407] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-14 18:13:52.450] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 18:13:52.502] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 18:13:52.504] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 18:13:52.519] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 18:13:52.520] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 18:13:52.521] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 18:13:52.523] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 18:13:52.529] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 18:13:52.547] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 18:13:52.548] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 18:13:52.602] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:14:01.809] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:14:23.241] [INFO] logs - app start:8002 success!
+[2018-06-14 18:14:39.438] [INFO] logs - GET /user
+[2018-06-14 18:14:39.504] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 18:14:39.507] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 18:14:39.513] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 18:14:39.516] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 18:14:39.525] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 18:14:39.531] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 18:14:40.036] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-14 18:14:40.048] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 18:14:40.074] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 18:14:40.078] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 18:14:40.137] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 18:14:40.138] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 18:14:40.149] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 18:14:40.152] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 18:14:40.153] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 18:14:40.155] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 18:14:40.190] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 18:14:40.192] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 18:14:40.193] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 18:14:40.295] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:22)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:22:19)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-14 18:15:43.217] [INFO] logs - app start:8002 success!
+[2018-06-14 18:15:48.008] [INFO] logs - GET /user
+[2018-06-14 18:15:48.076] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-14 18:15:48.079] [INFO] logs - GET /styles/css/all.css
+[2018-06-14 18:15:48.081] [INFO] logs - GET /styles/css/grid.css
+[2018-06-14 18:15:48.087] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-14 18:15:48.089] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-14 18:15:48.093] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-14 18:15:48.436] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-14 18:15:48.440] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-14 18:15:48.462] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-14 18:15:48.471] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-14 18:15:48.523] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-14 18:15:48.531] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-14 18:15:48.536] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-14 18:15:48.538] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-14 18:15:48.539] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-14 18:15:48.544] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-14 18:15:48.571] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-14 18:15:48.576] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-14 18:15:48.578] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-14 18:15:48.640] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:44:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:44:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)

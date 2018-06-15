@@ -4,6 +4,27 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="refresh" content="0;url=view/basic.html">
 	<title>Document</title>
+
+
+	<script>
+		var a = [1, 5, 1, 6, 3,1,1,1,5],
+			rst = {},
+			i, item;
+
+		for (i = 0; item = a[i]; i++) {
+			if (!rst[item]) rst[item] = [];
+
+			rst[item].push(0);
+		}
+
+		for(var key in rst){
+			if(rst[key].length > a.length/2){
+				alert(key);
+			}
+		}
+	</script>
+
+
 </head>
 <body>
 	我要跳转

@@ -1,7 +1,7 @@
 Ext.define("et6.view.main.Group", {
 	extend: 'Ext.panel.Panel',
 	alias: 'widget.group',
-	layout: 'fit',
+	// layout: 'fit',
 	tbar: [
 		'->', {
 			text: 'Toggle markers',
@@ -15,16 +15,15 @@ Ext.define("et6.view.main.Group", {
 		xtype: 'cartesian',
 		itemId: 'group-chart',
 		reference: 'chart',
+		height: 600,
 		interactions: {
 			type: 'itemedit',
 			// type: 'panzoom',
 			zoomOnPanGesture: true
 		},
-		width: 400,
-		height: 400,
-		innerPadding: {
-			left: 40,
-			right: 40
+		insetPadding: 40,
+		theme: {
+			type: 'muted' //SW000872048
 		},
 		legend: {
 			type: 'sprite',
@@ -40,27 +39,35 @@ Ext.define("et6.view.main.Group", {
 			fontSize: 22,
 			width: 100,
 			height: 30,
-			x: 40, // the sprite x position
+			x: 80, // the sprite x position
 			y: 20 // the sprite y position
 		}, {
 			type: 'text',
 			text: 'Data: Browser Stats 2012',
 			fontSize: 10,
-			x: 200,
-			y: 470
+			x: 40,
+			y: 570
 		}, {
 			type: 'text',
 			text: 'Source: http://www.w3schools.com/',
 			fontSize: 10,
-			x: 200,
-			y: 485
+			x: 40,
+			y: 585
 		}],
 		axes: [{
-			type: 'numeric',
+			type: 'numeric3d',
 			position: 'left',
-			grid: true,
+			grid: {
+				odd: {
+					fillStyle: 'rgba(255, 255, 255, 0.06)'
+				},
+				even: {
+					fillStyle: 'rgba(0, 0, 0, 0.03)'
+				}
+			},
 			minimum: 0,
-			maximum: 24,
+			maximum: 40,
+			fields: ['data1', 'data2', 'data3', 'data4'],
 			renderer: 'onAxisLabelRender'
 		}, {
 			type: 'category',
@@ -73,10 +80,10 @@ Ext.define("et6.view.main.Group", {
 			}
 		}],
 		series: [{
-			type: 'bar',
+			type: 'bar3d',
 			title: 'bar',
 			xField: 'month',
-			yField: 'data4',
+			yField: 'data2',
 			style: {
 				minGapWidth: 10
 			},
@@ -86,12 +93,12 @@ Ext.define("et6.view.main.Group", {
 			},
 
 			label: {
-				field: 'data4',
-				display: 'insideEnd'
-					// renderer: 'onSeriesLabelRender'
+				field: 'data2',
+				display: 'insideEnd',
+				renderer: 'onSeriesLabelRender'
 			},
 			marker: {
-				type: 'square',
+				type: 'cross',
 				fx: {
 					duration: 200,
 					easing: 'backOut'
@@ -115,7 +122,7 @@ Ext.define("et6.view.main.Group", {
 			marker: {
 				radius: 4,
 				lineWidth: 2,
-				type: 'triangle',
+				type: 'arrow',
 				fx: {
 					duration: 200,
 					easing: 'backOut'
@@ -129,7 +136,7 @@ Ext.define("et6.view.main.Group", {
 				scaling: 2
 			},
 			highlight: {
-				fillStyle: '#000',
+				fillStyle: '#f00',
 				radius: 5,
 				lineWidth: 2,
 				strokeStyle: '#fff'

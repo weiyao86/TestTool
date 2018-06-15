@@ -5,6 +5,7 @@
  */
 Ext.require([
 	'Ext.chart.*',
+	'Ext.data.*',
 	'Ext.container.*',
 	'Ext.Component'
 ]);

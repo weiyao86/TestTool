@@ -19,7 +19,7 @@ photoDetailController.actions = {
 		POST: function(req, res) {
 			var condition = this.condition,
 				filters = this.filters;
-
+			debugger;
 			commonfun.queryAll(res, photo, condition, filters);
 		}
 	},

@@ -17,7 +17,8 @@ Ext.define('et6.view.main.Main', {
 		'et6.view.main.MainModel',
 		'et6.view.main.List',
 		'et6.view.main.Group',
-		'et6.view.main.User'
+		'et6.view.main.User',
+		'et6.view.main.Settings'
 	],
 
 	controller: 'main',
@@ -101,8 +102,9 @@ Ext.define('et6.view.main.Main', {
 	}, {
 		title: 'Settings',
 		iconCls: 'fa-cog',
-		bind: {
-			html: '{loremIpsum}'
+		layout: 'fit',
+		items: {
+			xtype: 'settings'
 		}
 	}]
 });

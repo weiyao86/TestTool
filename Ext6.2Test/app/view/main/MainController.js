@@ -24,11 +24,14 @@ Ext.define('et6.view.main.MainController', {
 		// ourselves except appending a '%' sign, but at the same time
 		// don't want to loose the formatting done by the native renderer,
 		// we let the native renderer process the value first.
-		return layoutContext.renderer(label) + '%';
+		// return layoutContext.renderer(label) + '%';
+		return label.toFixed(label < 10 ? 1 : 0) + '%';
 	},
 
 	onSeriesTooltipRender: function(tooltip, record, item) {
-		tooltip.setHtml(record.get('month') + ': ' + record.get('data1') + '%');
+		var title = item.series.getTitle();
+
+		tooltip.setHtml(title + ' on' + record.get('month') + ': ' + record.get(item.series.getYField()) + '%');
 	},
 
 	onItemHighlightChange: function(chart, newHighlightItem, oldHighlightItem) {
@@ -42,6 +45,10 @@ Ext.define('et6.view.main.MainController', {
 				lineWidth: lineWidth
 			});
 		}
+	},
+
+	onSeriesLabelRender: function(value) {
+		return 'Hi: ' + value.toFixed(1);
 	},
 
 	onToggleMarkers: function() {

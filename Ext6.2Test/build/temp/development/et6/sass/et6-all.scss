@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'et6' );
-$image-search-path: 'D:/sersivion-git/Ext6.2Test/build/development/et6/resources';
+$image-search-path: 'D:/Work-git/TestTool/Ext6.2Test/build/development/et6/resources';
 $theme-name:  dynamic( 'theme-triton' );
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;
@@ -1067,7 +1067,10 @@ $include-ext-window-messagebox: dynamic(true);;
 $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-et6-application: dynamic(true);;
+$include-et6-store-climate: dynamic(true);;
 $include-et6-store-personnel: dynamic(true);;
+$include-et6-store-browsers: dynamic(true);;
+$include-et6-view-main-group: dynamic(true);;
 $include-et6-view-main-list: dynamic(true);;
 $include-et6-view-main-main: dynamic(true);;
 $include-et6-view-main-maincontroller: dynamic(true);;

@@ -19,8 +19,8 @@
     };
 
     exports.userfilter = function(req, res, next) {
-        var rst = filterModel(req, res, user);
 
+        var rst = filterModel(req, res, user);
         this.condition = rst.condition;
         this.filters = rst.filters;
         next();
@@ -40,20 +40,21 @@
             filters = {};
 
         for (var i in body) {
-            if (body.hasOwnProperty(i)) {
-                var val = body[i];
-                if (val) {
-                    if (model.schema.paths[i]) { //筛选数据库查询字段
-                        if (model.schema.paths[i].instance == "String") {
-                            params[i] = new RegExp(val, "ig");
-                        } else {
-                            params[i] = val;
-                        }
-                    } else { //与数据库字段无关作其它条件筛选
-                        filters[i] = val;
+
+            // if (body.hasOwnProperty && body.hasOwnProperty(i)) {
+            var val = body[i];
+            if (val) {
+                if (model.schema.paths[i]) { //筛选数据库查询字段
+                    if (model.schema.paths[i].instance == "String") {
+                        params[i] = new RegExp(val, "ig");
+                    } else {
+                        params[i] = val;
                     }
+                } else { //与数据库字段无关作其它条件筛选
+                    filters[i] = val;
                 }
             }
+            // }
         }
         return {
             condition: params,
