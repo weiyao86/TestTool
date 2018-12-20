@@ -7,7 +7,7 @@ var url = require("url");
 var fs = require("fs");
 var path = require("path");
 var mine = require("./mine").types;
-
+debugger;
 var server = http.createServer(function(req, res) {
 
 	var reurl = url.parse(req.url).pathname;
