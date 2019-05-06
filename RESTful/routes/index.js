@@ -45,8 +45,8 @@ router.get('/index/:id', function(req, res, next) {
     var fs = require('fs'),
         path = require('path'),
         url = "http://localhost/Work-git/WebTest/menu.html", //D:\MySpace\webDemo
-        localUrl = "D:/Work-git/WebTest/menu.html", //待更改菜单页
-        folder = "D:/Work-git/WebTest"; //D:/MySpace/webDemo//D:/Work-git/WebTest--D:/Work-git/WebTest
+        localUrl = "G:/Work-git/WebTest/menu.html", //待更改菜单页
+        folder = "G:/Work-git/WebTest"; //D:/MySpace/webDemo//D:/Work-git/WebTest--D:/Work-git/WebTest
 
     fs.readdir(folder, function(err, files) {
         if (err) console.log('读取文件目录失败：' + err);
@@ -126,8 +126,8 @@ router.get('/index/:id', function(req, res, next) {
 
         //console.log('---menus---');
 
-        //fs.writeFileSync("D:/Work-git/WebTest/menus.txt", menus);
-
+       //fs.writeFileSync("G:/Work-git/WebTest/menus.txt", menus);
+debugger;
         request(url, {
             timeout: 30 * 1000
         }, function(err, rqres, body) {
