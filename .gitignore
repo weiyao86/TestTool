@@ -3,6 +3,7 @@
 *.bak
 *.log
 *.obj
+*.fbf
 
 express-mvc/resource
 express-mvc/tempFile
