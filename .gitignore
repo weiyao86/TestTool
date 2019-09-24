@@ -2,6 +2,7 @@
 *.rar
 *.bak
 *.log
+*.obj
 
 express-mvc/resource
 express-mvc/tempFile

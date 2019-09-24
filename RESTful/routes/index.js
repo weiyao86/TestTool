@@ -127,7 +127,7 @@ router.get('/index/:id', function(req, res, next) {
         //console.log('---menus---');
 
        //fs.writeFileSync("G:/Work-git/WebTest/menus.txt", menus);
-debugger;
+
         request(url, {
             timeout: 30 * 1000
         }, function(err, rqres, body) {
