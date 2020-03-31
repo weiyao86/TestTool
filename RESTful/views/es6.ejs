@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ES6</title>
+	<!-- Traceur 转码器 Google 公司的Traceur转码器，也可以将 ES6 代码转为 ES5 代码。 -->
+	<!-- <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+	<script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+	<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script> -->
+	<!-- end -->
+	<script src="/javascripts/jquery-1.11.3.js"></script>
+
+	<script>
+		// window.onload=function(){
+		// 		// Create the System object
+		//   window.System = new traceur.runtime.BrowserTraceurLoader();
+		//   // Set some experimental options
+		//   var metadata = {
+		//   	traceurOptions: {
+		//   		experimental: true,
+		//   		properTailCalls: true,
+		//   		symbols: true,
+		//   		arrayComprehension: true,
+		//   		asyncFunctions: true,
+		//   		asyncGenerators: exponentiation,
+		//   		forOn: true,
+		//   		generatorComprehension: true
+		//   	}
+		//   };
+		//   // Load your module
+		//   System.import('/javascripts/es6/base.js', {
+		//   	metadata: metadata
+		//   }).catch(function(ex) {
+		//   	console.error('Import failed', ex.stack || ex);
+		//   });
+
+		//   // 上面代码中，首先生成 Traceur 的全局对象window.System，然后System.import方法可以用来加载 ES6。加载的时候，需要传入一个配置对象metadata，该对象的traceurOptions属性可以配置支持 ES6 功能。如果设为experimental: true，就表示除了 ES6 以外，还支持一些实验性的新功能。
+		// }
+	</script>
+
+	<script type="module">
+		class Calc {
+			constructor() {
+				console.log('Calc constructor');
+			}
+			add(a, b) {
+				return a + b;
+			}
+		}
+
+		var c = new Calc();
+		console.log(c.add(4, 5));
+		import myModule from '/javascripts/es6/base.js';
+		alert(myModule.name);
+</script>
+</head>
+
+<body>
+	<h1>ES6</h1>
+</body>
+
+</html>

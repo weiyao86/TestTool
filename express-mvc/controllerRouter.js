@@ -4,6 +4,7 @@
 	var path = require('path');
 	mongoose.connect(uri);
 	var db = mongoose.connection;
+
 	db.on('error', function() {
 		console.log('mongodb connection error');
 	});

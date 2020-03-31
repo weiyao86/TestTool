@@ -1,0 +1,2164 @@
+[2018-06-15 09:41:01.968] [INFO] logs - uncaughtException:-----TypeError: app.set is not a function
+[2018-06-15 09:41:01.982] [INFO] logs - app start:8002 success!
+[2018-06-15 09:41:05.158] [INFO] logs - GET /user
+[2018-06-15 09:41:05.214] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:41:05.232] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:41:05.268] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:41:05.270] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:41:05.277] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:41:05.280] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:41:05.847] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:41:05.854] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:41:05.860] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 09:41:05.907] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:41:05.968] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:41:05.970] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:41:05.980] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:41:05.983] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:41:05.986] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:41:05.991] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:41:06.005] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:41:06.033] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:41:06.037] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:41:06.112] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-15 09:44:33.372] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-15 09:45:36.040] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-15 09:46:16.446] [INFO] logs - app start:8002 success!
+[2018-06-15 09:46:28.143] [INFO] logs - GET /user
+[2018-06-15 09:46:28.228] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:46:28.232] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:46:28.249] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:46:28.251] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:46:28.253] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:46:28.258] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:46:29.068] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:46:29.076] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:46:29.088] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 09:46:29.150] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:46:29.242] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:46:29.244] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:46:29.267] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:46:29.270] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:46:29.271] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:46:29.297] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:46:29.301] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:46:29.327] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:46:29.336] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:46:29.546] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-15 09:47:17.833] [INFO] logs - GET /user
+[2018-06-15 09:47:17.890] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:47:17.894] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:47:17.900] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:47:17.902] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:47:17.904] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:47:17.906] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:47:18.253] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:47:18.255] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 09:47:18.259] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:47:18.278] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:47:18.315] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:47:18.316] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:47:18.319] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:47:18.320] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:47:18.329] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:47:18.330] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:47:18.352] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:47:18.405] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:47:18.406] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:47:18.443] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-15 09:48:35.943] [INFO] logs - GET /user
+[2018-06-15 09:48:36.044] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:48:36.055] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:48:36.060] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:48:36.064] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:48:36.066] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:48:36.068] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:48:36.687] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 09:48:36.720] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:48:36.723] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:48:36.726] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:48:36.782] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:48:36.794] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:48:36.799] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:48:36.800] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:48:36.801] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:48:36.805] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:48:36.844] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:48:36.846] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:48:36.851] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:48:36.915] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-15 09:48:46.090] [INFO] logs - app start:8002 success!
+[2018-06-15 09:48:51.463] [INFO] logs - GET /user
+[2018-06-15 09:48:51.568] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:48:51.573] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:48:51.582] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:48:51.586] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:48:51.590] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:48:51.594] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:48:52.343] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:48:52.354] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:48:52.358] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 09:48:52.386] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:48:52.484] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:48:52.487] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:48:52.494] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:48:52.501] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:48:52.505] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:48:52.507] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:48:52.518] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:48:52.555] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:48:52.561] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:48:52.695] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-15 09:49:44.963] [INFO] logs - GET /user
+[2018-06-15 09:49:45.099] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:49:45.113] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:49:45.133] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:49:45.135] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:49:45.138] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:49:45.141] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:49:45.628] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 09:49:45.647] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:49:45.660] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:49:45.664] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:49:45.732] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:49:45.734] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:49:45.738] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:49:45.740] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:49:45.745] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:49:45.749] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:49:45.785] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:49:45.787] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:49:45.799] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:49:45.861] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.userfilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:23:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-15 09:50:00.714] [INFO] logs - GET /photo
+[2018-06-15 09:50:00.807] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:50:00.813] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:50:00.818] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:50:00.832] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:50:00.836] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:50:00.847] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:50:01.580] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 09:50:01.592] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:50:01.597] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:50:01.607] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:50:01.680] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:50:01.684] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:50:01.699] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:50:01.705] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:50:01.709] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:50:01.720] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:50:01.745] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:50:01.802] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:50:01.811] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:50:01.937] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:43:16)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-15 09:50:56.287] [INFO] logs - app start:8002 success!
+[2018-06-15 09:51:10.567] [INFO] logs - GET /photo
+[2018-06-15 09:51:10.685] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:51:10.695] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:51:10.699] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:51:10.703] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:51:10.711] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:51:10.714] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:51:11.456] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:51:11.470] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:51:11.499] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 09:51:11.519] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:51:11.609] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:51:11.624] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:51:11.630] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:51:11.633] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:51:11.636] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:51:11.638] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:51:11.686] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:51:11.692] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:51:11.701] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:51:11.901] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:45:16)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:45:16)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-15 09:53:11.166] [INFO] logs - GET /photo
+[2018-06-15 09:53:11.320] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:53:11.328] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:53:11.331] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:53:11.336] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:53:11.338] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:53:11.339] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:53:12.100] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 09:53:12.126] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:53:12.131] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:53:12.150] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:53:12.233] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:53:12.236] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:53:12.255] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:53:12.261] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:53:12.267] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:53:12.270] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:53:12.329] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:53:12.334] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:53:12.343] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:53:12.518] [INFO] logs - TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:45:16)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+TypeError: body.hasOwnProperty is not a function
+    at filterModel (D:\Work-git\TestTool\express-mvc\lib\filters.js:45:16)
+    at Object.exports.photofilter (D:\Work-git\TestTool\express-mvc\lib\filters.js:30:16)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:168:13
+    at Object.<anonymous> (D:\Work-git\TestTool\express-mvc\controllers\mybaseController.js:14:3)
+    at callNextMiddleware (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:167:14)
+    at Object.exports.executeController (D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\utils\routerUtils.js:81:5)
+    at D:\Work-git\TestTool\express-mvc\node_modules\guthrie\lib\Router.js:85:21
+    at Layer.handle [as handle_request] (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:131:13)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+    at next (D:\Work-git\TestTool\express-mvc\node_modules\express\lib\router\route.js:125:14)
+[2018-06-15 09:53:32.206] [INFO] logs - app start:8002 success!
+[2018-06-15 09:53:45.052] [INFO] logs - GET /photo
+[2018-06-15 09:53:45.166] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:53:45.172] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:53:45.186] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:53:45.188] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:53:45.195] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:53:45.199] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:53:46.017] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:53:46.031] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:53:46.033] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 09:53:46.071] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:53:46.143] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:53:46.178] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:53:46.181] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:53:46.182] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:53:46.185] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:53:46.188] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:53:46.245] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:53:46.248] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:53:46.265] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:53:46.588] [INFO] logs - POST /photo/read
+[2018-06-15 09:53:47.039] [INFO] logs - POST /photo/read
+[2018-06-15 09:53:56.956] [INFO] logs - GET /user
+[2018-06-15 09:53:57.061] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:53:57.069] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:53:57.071] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:53:57.077] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:53:57.079] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:53:57.082] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:53:57.749] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 09:53:57.768] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:53:57.789] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:53:57.793] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:53:57.856] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:53:57.860] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:53:57.866] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:53:57.868] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:53:57.869] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:53:57.870] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:53:57.892] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:53:57.949] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:53:57.951] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:53:58.053] [INFO] photo - start Watch
+[2018-06-15 09:53:58.083] [INFO] logs - POST /user/queryAll
+[2018-06-15 09:54:00.857] [INFO] logs - GET /photo
+[2018-06-15 09:54:00.961] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:54:00.967] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:54:00.971] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:54:00.972] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:54:00.986] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:54:00.995] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:54:01.735] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 09:54:01.755] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:54:01.765] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:54:01.768] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:54:01.838] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:54:01.843] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:54:01.850] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:54:01.852] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:54:01.854] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:54:01.856] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:54:01.880] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:54:01.943] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:54:01.948] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:54:02.066] [INFO] logs - POST /photo/read
+[2018-06-15 09:54:02.366] [INFO] logs - POST /photo/read
+[2018-06-15 09:54:10.469] [INFO] logs - GET /user
+[2018-06-15 09:54:10.577] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:54:10.627] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:54:10.637] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:54:10.652] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:54:10.658] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:54:10.662] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:54:11.303] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:54:11.309] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 09:54:11.315] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:54:11.322] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:54:11.405] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:54:11.418] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:54:11.429] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:54:11.437] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:54:11.440] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:54:11.443] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:54:11.465] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:54:11.610] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:54:11.613] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:54:11.806] [INFO] photo - start Watch
+[2018-06-15 09:54:11.862] [INFO] logs - POST /user/queryAll
+[2018-06-15 09:54:56.998] [INFO] logs - GET /photo
+[2018-06-15 09:54:57.097] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:54:57.117] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:54:57.123] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:54:57.132] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:54:57.135] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:54:57.144] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:54:57.833] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 09:54:57.964] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 09:54:57.984] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 09:54:58.011] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:54:58.034] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:54:58.037] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:54:58.041] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:54:58.063] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:54:58.066] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:54:58.071] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:54:58.073] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:54:58.176] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:54:58.183] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:54:58.327] [INFO] logs - POST /photo/read
+[2018-06-15 09:54:58.768] [INFO] logs - POST /photo/read
+[2018-06-15 09:55:17.557] [INFO] logs - GET /photoDetail
+[2018-06-15 09:55:17.649] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:55:17.677] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:55:17.693] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:55:17.717] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:55:17.724] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-15 09:55:17.727] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-15 09:55:18.131] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:55:18.216] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-15 09:55:18.228] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-15 09:55:18.265] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-15 09:55:18.273] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:55:18.309] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 09:55:18.453] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:55:18.465] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:55:18.469] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:55:18.477] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:55:18.480] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:55:18.495] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:55:18.558] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:55:18.603] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:55:18.612] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-15 09:55:18.618] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:55:18.620] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-15 09:55:18.727] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:55:18.843] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:55:18.855] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:55:18.896] [INFO] logs - GET /data/focus/o01345zv89ubtdsrqgplyj92n9hf63673axk213e-w1m6432ci.png
+[2018-06-15 09:55:18.905] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-15 09:55:18.908] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-15 09:55:18.914] [INFO] logs - GET /data/focus/o0249367898bc641zxhijutmnspqrd4k2w4yf3513e6avg3l1-.jpg
+[2018-06-15 09:55:18.945] [INFO] logs - GET /data/focus/o02324661wvbcd-ufgtiqp1n8m14583734xyzkjehr9s369la4.jpg
+[2018-06-15 09:55:18.954] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-15 09:55:18.958] [INFO] logs - GET /data/focus/o0214267894b933e3gh1yxumt1pqs65l5wka-i4nfc6z8dvj3r.jpg
+[2018-06-15 09:55:18.986] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\dataController.js'-----/data/photo/
+[2018-06-15 09:55:18.990] [INFO] logs - GET /data/photo/
+[2018-06-15 09:55:18.997] [INFO] logs - GET /data/photo/o024456789ab4yvuftqildk3219h81je-x62zsm6p33g3r3cnw.jpg
+[2018-06-15 09:55:19.011] [INFO] logs - GET /data/photo/o0233567294bc3-e63364k1znypqrwth349gvljdi8x8a1fsum.jpg
+[2018-06-15 09:55:19.038] [INFO] logs - GET /data/photo/o023252749a86d1ezwtsrknf81p6jihuv93yl-4b33cxg68q4m.jpg
+[2018-06-15 09:55:19.042] [INFO] logs - GET /data/photo/o923452789ab463zfyhixkwmnvtr6q2uc3jged3-l48s119p06.jpg
+[2018-06-15 09:55:19.097] [INFO] logs - GET /data/photo/o032953763a4cyxvfu1ijkzl39pq6bdghen4m6sr3w881t204-.jpg
+[2018-06-15 09:55:19.119] [INFO] logs - GET /data/photo/o093361z8vabct-esqhiml73214grf2u4w4j8kx533639dpny6.jpg
+[2018-06-15 09:55:19.128] [INFO] logs - GET /data/photo/o0224497398636-efghijk1wn1pvtscr35x8alb3u4zdy6q3m0.jpg
+[2018-06-15 09:55:19.133] [INFO] logs - GET /data/photo/o1324567898bc6-31zhivulmnsrq60t2jadygf413ewx3493pk.jpg
+[2018-06-15 09:55:19.147] [INFO] logs - GET /data/photo/o09345688664cdvefghusnlm12pqr32i-w33a13byjt7z94x2k.jpg
+[2018-06-15 09:55:19.170] [INFO] logs - GET /data/focus/o0132568693zcu-tnmhiky62917qas1dblx8jgpr3643vf4w4e.jpg
+[2018-06-15 09:55:19.178] [INFO] logs - GET /data/focus/o021459789a3c8-e636iywlvn1s4q24fghrj1d7b3mu6xktp3z.jpg
+[2018-06-15 09:55:19.196] [INFO] logs - GET /data/focus/o721456983a34d-zfxwivutmr1qcpslk2h47e16638nb9jyg30.jpg
+[2018-06-15 09:55:19.209] [INFO] logs - GET /data/photo/o0234349896bcd-4f1zxjwuts1rqap2l8k63hgen3ymiv37655.jpg
+[2018-06-15 09:55:19.222] [INFO] logs - GET /data/photo/o433426483636d-4fg1izylmx1wqrs3t7pnujhc90ba8592ekv.jpg
+[2018-06-15 09:55:19.244] [INFO] logs - GET /data/photo/o523426783abc83efg36j4lmn1pqrstzyw60u1k5h-vd4399xi.jpg
+[2018-06-15 09:55:19.264] [INFO] logs - GET /data/photo/o424456793ab4d1ezgyijkxwnvpqut3s123h8-39r668cfml30.jpg
+[2018-06-15 09:55:19.319] [INFO] logs - GET /data/photo/o523656349ayvd-efghusklmn1pq603ic293818437bjx4zwtr.jpg
+[2018-06-15 09:55:19.323] [INFO] logs - GET /data/photo/o623249789ab364ezgyixklwv1puts3r5mj6f1-dqc638hn430.jpg
+[2018-06-15 09:55:19.340] [INFO] logs - GET /data/photo/o7233568694b1dzefgtqpk1-0lj2r44u7wx36vcn3i8as9hy3m.jpg
+[2018-06-15 09:55:19.344] [INFO] logs - GET /data/photo/o832456783a86d-3f3hi6k1znxpqwstveu49blcrgyj9342m10.jpg
+[2018-06-15 09:55:19.356] [INFO] logs - GET /data/photo/o7234327849341yewuhsjpmzl386r36gcn-q0dvi1ftkba69x5.jpg
+[2018-06-15 09:55:19.358] [INFO] logs - GET /res/images/nopic.jpg
+[2018-06-15 09:55:19.394] [INFO] logs - GET /data/photo/o7234598693b64zefvhqpk1n1063r3lugwy8mtdcas37ji-4x2.jpg
+[2018-06-15 09:55:26.518] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:55:26.526] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:55:26.564] [INFO] logs - GET /data/photo/o424456793ab4d1ezgyijkxwnvpqut3s123h8-39r668cfml30.jpg
+[2018-06-15 09:55:26.580] [INFO] logs - GET /data/photo/o433426483636d-4fg1izylmx1wqrs3t7pnujhc90ba8592ekv.jpg
+[2018-06-15 09:55:26.583] [INFO] logs - GET /data/photo/o0234349896bcd-4f1zxjwuts1rqap2l8k63hgen3ymiv37655.jpg
+[2018-06-15 09:55:26.586] [INFO] logs - GET /data/photo/o523426783abc83efg36j4lmn1pqrstzyw60u1k5h-vd4399xi.jpg
+[2018-06-15 09:55:26.622] [INFO] logs - GET /data/photo/o939853789ab1d-xfgwujslmnr4p122i4363c4066yekt3vhzq.jpg
+[2018-06-15 09:55:26.637] [INFO] logs - GET /data/photo/o0334593896b6dzyfwv1jkm-9ip2r2t68gx33174neauchq4ls.jpg
+[2018-06-15 09:55:26.639] [INFO] logs - GET /data/photo/o022454789abc3-e41hzjxlsrqfpnm4u3d6y3g1368i9wvtk60.jpg
+[2018-06-15 09:55:26.641] [INFO] logs - GET /data/photo/o223256689ab3d-efgh6jklmn1pqzstuxw70r14i44y8393c4v.jpg
+[2018-06-15 09:55:26.666] [INFO] logs - GET /data/photo/o023426493834d1ezvhujklr1-nqmsti4wxy5p78b3a9g66cf0.jpg
+[2018-06-15 09:55:26.669] [INFO] logs - GET /data/photo/o123656339a64dzefxhqpk1mn1lir2tu93g48bwc44y8jv-07s.jpg
+[2018-06-15 09:55:26.685] [INFO] logs - GET /data/photo/o293863689ab1d-ezxhrjklmnp414s2367gyfcqu0234t54ivw.jpg
+[2018-06-15 09:55:26.688] [INFO] logs - GET /data/photo/o0244367886bc6-eyghwvtlmn1pqrs34j4xfz34959ad3u1i2k.jpg
+[2018-06-15 09:55:26.691] [INFO] logs - GET /data/photo/o3244567892b4d-e9g3361yxvspqrj1ctwmkz80nafh46il3u3.jpg
+[2018-06-15 09:55:26.699] [INFO] logs - GET /data/photo/o323446238a6cd-34gyixwqn105l48t3vk6hz1smpub9rj9e7f.jpg
+[2018-06-15 09:55:33.915] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:55:33.932] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:55:33.955] [INFO] logs - GET /data/photo/o939853789ab1d-xfgwujslmnr4p122i4363c4066yekt3vhzq.jpg
+[2018-06-15 09:55:33.967] [INFO] logs - GET /data/photo/o0334593896b6dzyfwv1jkm-9ip2r2t68gx33174neauchq4ls.jpg
+[2018-06-15 09:55:33.985] [INFO] logs - GET /data/photo/o022454789abc3-e41hzjxlsrqfpnm4u3d6y3g1368i9wvtk60.jpg
+[2018-06-15 09:55:33.989] [INFO] logs - GET /data/photo/o023426493834d1ezvhujklr1-nqmsti4wxy5p78b3a9g66cf0.jpg
+[2018-06-15 09:55:33.995] [INFO] logs - GET /data/photo/o123656339a64dzefxhqpk1mn1lir2tu93g48bwc44y8jv-07s.jpg
+[2018-06-15 09:55:34.000] [INFO] logs - GET /data/photo/o223256689ab3d-efgh6jklmn1pqzstuxw70r14i44y8393c4v.jpg
+[2018-06-15 09:55:34.006] [INFO] logs - GET /data/photo/o293863689ab1d-ezxhrjklmnp414s2367gyfcqu0234t54ivw.jpg
+[2018-06-15 09:55:34.012] [INFO] logs - GET /data/photo/o323446238a6cd-34gyixwqn105l48t3vk6hz1smpub9rj9e7f.jpg
+[2018-06-15 09:55:34.014] [INFO] logs - GET /data/photo/o3244567892b4d-e9g3361yxvspqrj1ctwmkz80nafh46il3u3.jpg
+[2018-06-15 09:55:34.017] [INFO] logs - GET /data/photo/o0244367886bc6-eyghwvtlmn1pqrs34j4xfz34959ad3u1i2k.jpg
+[2018-06-15 09:55:34.080] [INFO] logs - GET /data/photo/o03361zy89xbcwvetsrip1lm5n249g64kdfa6jq2387u43h-44.jpg
+[2018-06-15 09:55:34.104] [INFO] logs - GET /data/photo/o424356886a33d1ewrp1jklmn-i3gst9vf79c440zx6qb4yu2h.jpg
+[2018-06-15 09:55:34.146] [INFO] logs - GET /data/photo/o023426988636y-efgxijvlsr1q46m4ubnhd19zct3a5374wpk.jpg
+[2018-06-15 09:55:34.164] [INFO] logs - GET /data/photo/o7234547821bcw-efghuq1lma0p6r4t83dx6zk43nj9i3s96yv.jpg
+[2018-06-15 09:55:34.176] [INFO] logs - GET /data/photo/o022456789abc38e3g4i1kywnvpt61qu5m3l-6hf3szdj94x1r.jpg
+[2018-06-15 09:55:34.197] [INFO] logs - GET /data/photo/o749634781abzdyefgtsjklq90p2r43846vnc-63x32hum15wi.jpg
+[2018-06-15 09:55:34.218] [INFO] logs - GET /data/photo/o023456729ab498e33hijkl4z1pyrswvfuxqn48dg3-t66cm15.jpg
+[2018-06-15 09:55:34.228] [INFO] logs - GET /data/photo/o0229538636b1dweushqj1nmc05i4489va4yz7k-pgt3x63flr.jpg
+[2018-06-15 09:55:34.236] [INFO] logs - GET /data/photo/o423546789383d6e1wr1nykmji42hst5a3c-bz4qugv9fx6lp0.jpg
+[2018-06-15 09:55:34.241] [INFO] logs - GET /data/photo/o024459631azyw-evgutrkqp925367ihf8x418n2c3ds3bjl6m.jpg
+[2018-06-15 09:55:46.916] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:55:46.928] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:55:47.008] [INFO] logs - GET /data/photo/o0934563861zxusr1mhjy4l54fpq2-t39wb6ke4v87c3da2gin.jpg
+[2018-06-15 09:55:47.014] [INFO] logs - GET /data/photo/o023554939a833-ef4hywkuqp15mrs42v67izb68gc6ndtjlx1.jpg
+[2018-06-15 09:55:47.020] [INFO] logs - GET /data/photo/o05446674yabcd-wvghusrlmnq8p2jtifex9z36531318938k2.jpg
+[2018-06-15 09:55:47.026] [INFO] logs - GET /data/photo/o05344364vautdsrfghqjklp11556-37mzyex982c3i98w6bn2.jpg
+[2018-06-15 09:55:47.058] [INFO] logs - GET /data/photo/o6244367883b3yrqlgjxi53661pe4st1zwhd9v-fc95muan2k0.jpg
+[2018-06-15 09:55:47.070] [INFO] logs - GET /data/photo/o9252987893bcd34f1zijxwmug1qr4436l-y6pnek3s6thva50.jpg
+[2018-06-15 09:55:47.085] [INFO] logs - GET /data/photo/o0644363861xur-q1ghijnlmakped2t3v957394b0y2cwz68sf.jpg
+[2018-06-15 09:55:47.094] [INFO] logs - GET /data/photo/o923452484abc1-eutqipklnd0jh57gfv339z1wy689636sxmr.jpg
+[2018-06-15 09:55:47.107] [INFO] logs - GET /data/photo/o0234564ywabcsrpnghilkz041331dmuv96x6-f6938q8et27j.jpg
+[2018-06-15 09:55:47.111] [INFO] logs - GET /data/photo/o02365628493cd34f1zijylxwvuqs6071nath8gkbe6m-p39r4.jpg
+[2018-06-15 09:55:51.619] [INFO] logs - GET /data/photoOrigin/o3244567892b4d-e9g3361yxvspqrj1ctwmkz80nafh46il3u3.jpg
+[2018-06-15 09:56:20.864] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:56:20.872] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:56:20.925] [INFO] logs - GET /data/photo/o164986783364d-1fghyjtlmnrpcqs335wx9ze1b6aiv2uk402.jpg
+[2018-06-15 09:56:20.934] [INFO] logs - GET /data/photo/o023456729abcd-e49h8634znypqrstxw3v1m1liufkj63g268.jpg
+[2018-06-15 09:56:20.937] [INFO] logs - GET /data/photo/o0236527498b3z-efyhwjkvutq4p4sn6li8g9116c33amrd6x4.jpg
+[2018-06-15 09:56:20.939] [INFO] logs - GET /data/photo/o223249369abc3-efg3i64lmn1pqrstxdv4yz1kj587w86u0h6.jpg
+[2018-06-15 09:56:20.941] [INFO] logs - GET /data/photo/o029456689a4czyefxhijwlvn1pqrs332k8-6u73tm3g16d43b.jpg
+[2018-06-15 09:56:20.948] [INFO] logs - GET /data/photo/o0434936841bxdt1nmliyj623epqrs79z6wk5fu8c6-3va2g5h.jpg
+[2018-06-15 09:56:20.964] [INFO] logs - GET /data/photo/o02638178zxbud-tfsp1nkl9m2h4r945v3ayj64e6w6c3iqg63.jpg
+[2018-06-15 09:56:20.988] [INFO] logs - GET /data/photo/o662456389a1xw-vftrky0l931pqh6gu76bz8i42escn3jm43d.jpg
+[2018-06-15 09:56:21.005] [INFO] logs - GET /data/photo/o026498786a4c1-efghzjxlmn1wqrvtu3s59b6732p4iy36dk3.jpg
+[2018-06-15 09:56:21.016] [INFO] logs - GET /data/photo/o8632933641zyw-vfutsjklmr1q9024g5dxcb8n8366a7ehi4p.jpg
+[2018-06-15 09:56:25.873] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:56:25.882] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:56:25.963] [INFO] logs - GET /data/photo/o124936739a3c1zxfghvj1nmdl2q86bui4ey-rk678sw543p0t.jpg
+[2018-06-15 09:56:25.980] [INFO] logs - GET /data/photo/o023464364azyd-vsrhpjkl1n19qg566ewx798m83cuf39tib2.jpg
+[2018-06-15 09:56:26.002] [INFO] logs - GET /data/photo/o0749587863b6d4ztshijkrq1n2m436u3-xy1f2plgvw9a23ce.jpg
+[2018-06-15 09:56:26.006] [INFO] logs - GET /data/photo/o3228yv7uq1ncmkfw0h74-93b63961z865xagjl4tpr33d4sie.jpg
+[2018-06-15 09:56:26.011] [INFO] logs - GET /data/photo/o2298566834b1dzefghxjklmw1tqr6suvni7-2ap43743y9c30.jpg
+[2018-06-15 09:56:26.017] [INFO] logs - GET /data/photo/o47345278983cd4efgzijvlmn1tr6q2u43a63bsw-61xyk9hp0.jpg
+[2018-06-15 09:56:26.020] [INFO] logs - GET /data/photo/o027496789a8cd63fghi1klvn1sqr65u3wx4z34b-je3t52ypm.jpg
+[2018-06-15 09:56:26.026] [INFO] logs - GET /data/photo/o32338638934zd-sfghirklqn1bp7e2445x67a6v0tyw19ucmj.jpg
+[2018-06-15 09:56:26.040] [INFO] logs - GET /data/photo/o033646yv9abud-sfqhij1lmn1k2retc8wx9z3583642p747g5.jpg
+[2018-06-15 09:56:26.044] [INFO] logs - GET /data/photo/o622459383abc6-eywvijkuts1p407m368x6z937dlfgh4rqn1.jpg
+[2018-06-15 09:56:29.176] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:56:29.182] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:56:29.234] [INFO] logs - GET /data/photo/o6246563836bxdvtsq1inkmz0h9gr3e47wc9j14fa-u87p2y3l.jpg
+[2018-06-15 09:56:29.235] [INFO] logs - GET /data/photo/o723446989a3cd86f3zyjkxmwvputs30727bg1ir1hen6l5q-4.jpg
+[2018-06-15 09:56:29.238] [INFO] logs - GET /data/photo/o0234574893b6d-ef1hiwklunq4pr7a3vj1yg8z623cxtm9s76.jpg
+[2018-06-15 09:56:29.254] [INFO] logs - GET /data/photo/o7234563wvtsp1neljixhk2m-4cq3bau9886z1r4f76dg3y970.jpg
+[2018-06-15 09:56:29.264] [INFO] logs - GET /data/photo/o873459739a8cd-e6g3i6kl4y1pqruh0v2x4z6bjf3m2s81nwt.jpg
+[2018-06-15 09:56:29.266] [INFO] logs - GET /data/photo/o927456789ab9d3e8ghi6k336zyqn03u2cx-jmpr4l1wsvf14t.jpg
+[2018-06-15 09:56:29.282] [INFO] logs - GET /data/photo/o02845988633cd-e4gzixwlun1tfqspm24jy9b63rah3v6k711.jpg
+[2018-06-15 09:56:29.288] [INFO] logs - GET /data/photo/o0934866833bzywefgviuklsnr421m3jh7xdc1q6a-252t849p.jpg
+[2018-06-15 09:56:29.290] [INFO] logs - GET /data/photo/o033853649abzxwetghsjklmnrp808fu46dy312q29-7c461iv.jpg
+[2018-06-15 09:56:29.299] [INFO] logs - GET /data/photo/o043936889ab3d-1vghiusrqn1p4m2t4fw5yz6lc3e7xj62k18.jpg
+[2018-06-15 09:56:46.606] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:56:46.616] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:56:46.682] [INFO] logs - GET /data/photo/o388653386a4cdzyvghijktsn1rq90l236xm-1b3pw2f794u4e.jpg
+[2018-06-15 09:56:46.690] [INFO] logs - GET /data/photo/o023852363abc3-e41hijyxmnuts6rp1vwl4z788d9qgf946k5.jpg
+[2018-06-15 09:56:46.699] [INFO] logs - GET /data/photo/o024936749xbcu-etghinlz431pq86f368a1rkwv82y54djs3m.jpg
+[2018-06-15 09:56:46.719] [INFO] logs - GET /data/photo/o023426493a86d3e6g41jzlmyuqh68913wrikbn5sxcv-78ftp.jpg
+[2018-06-15 09:56:46.721] [INFO] logs - GET /data/photo/o083364789abc1-ezyhixwumn1ts56pl2k2gfd63349q648rjv.jpg
+[2018-06-15 09:56:46.728] [INFO] logs - GET /data/photo/o529453683a6cd-4fghiywvutspe0143lkxjz1r8376b9m8nq2.jpg
+[2018-06-15 09:56:46.733] [INFO] logs - GET /data/photo/o089436yxwvbut-sfghij1lm1n2qred24937zk37a368548p6c.jpg
+[2018-06-15 09:56:46.735] [INFO] logs - GET /data/photo/o643853789a6cd4eugtsqkmzl1pjri29v6w0n12b6f34-h83yx.jpg
+[2018-06-15 09:56:46.738] [INFO] logs - GET /data/photo/o043493863a3c4zetghpnl-7j827r61uywx8v6mfs2dqb5i1k9.jpg
+[2018-06-15 09:56:46.751] [INFO] logs - GET /data/photo/o82393876941wd-efuhitslz056arkbnyxpcgjq883v614243m.jpg
+[2018-06-15 09:57:14.238] [INFO] logs - GET /user
+[2018-06-15 09:57:14.348] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:57:14.356] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:57:14.366] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:57:14.368] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:57:14.370] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:57:14.371] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:57:15.041] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 09:57:15.052] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:57:15.180] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:57:15.185] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:57:15.199] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:57:15.218] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:57:15.222] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:57:15.224] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:57:15.227] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:57:15.260] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:57:15.283] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:57:15.394] [INFO] photo - start Watch
+[2018-06-15 09:57:15.415] [INFO] logs - POST /user/queryAll
+[2018-06-15 09:57:18.637] [INFO] logs - GET /photo
+[2018-06-15 09:57:18.678] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:57:18.711] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:57:18.719] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:57:18.722] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:57:18.724] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:57:18.736] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:57:19.310] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 09:57:19.317] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:57:19.407] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:57:19.423] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:57:19.427] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:57:19.429] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:57:19.430] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:57:19.433] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:57:19.457] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:57:19.461] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:57:19.463] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:57:19.593] [INFO] logs - POST /photo/read
+[2018-06-15 09:57:19.978] [INFO] logs - POST /photo/read
+[2018-06-15 09:57:20.456] [INFO] logs - GET /user
+[2018-06-15 09:57:20.515] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:57:20.533] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:57:20.547] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:57:20.552] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:57:20.556] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:57:20.559] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:57:21.180] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 09:57:21.199] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:57:21.326] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:57:21.335] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:57:21.342] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:57:21.347] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:57:21.348] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:57:21.359] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:57:21.363] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:57:21.408] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:57:21.414] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:57:21.622] [INFO] photo - start Watch
+[2018-06-15 09:57:21.665] [INFO] logs - POST /user/queryAll
+[2018-06-15 09:57:26.455] [INFO] logs - GET /photo
+[2018-06-15 09:57:26.500] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:57:26.518] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:57:26.533] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:57:26.538] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:57:26.543] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:57:26.550] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 09:57:27.239] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 09:57:27.267] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:57:27.383] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:57:27.396] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:57:27.403] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:57:27.406] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:57:27.418] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:57:27.422] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:57:27.427] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:57:27.478] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:57:27.482] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:57:27.718] [INFO] logs - POST /photo/read
+[2018-06-15 09:57:28.050] [INFO] logs - POST /photo/read
+[2018-06-15 09:57:29.142] [INFO] logs - GET /photoDetail
+[2018-06-15 09:57:29.188] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:57:29.216] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:57:29.219] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:57:29.220] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-15 09:57:29.223] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-15 09:57:29.227] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:57:29.730] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:57:29.799] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-15 09:57:29.802] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-15 09:57:29.821] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 09:57:29.854] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-15 09:57:29.885] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:57:30.012] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:57:30.030] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:57:30.031] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:57:30.038] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:57:30.042] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:57:30.055] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:57:30.065] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:57:30.127] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:57:30.131] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-15 09:57:30.133] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:57:30.136] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-15 09:57:30.316] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:57:30.370] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:57:30.385] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:57:30.410] [INFO] logs - GET /data/focus/o01345zv89ubtdsrqgplyj92n9hf63673axk213e-w1m6432ci.png
+[2018-06-15 09:57:30.416] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-15 09:57:30.422] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-15 09:57:30.435] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-15 09:57:30.439] [INFO] logs - GET /data/focus/o0249367898bc641zxhijutmnspqrd4k2w4yf3513e6avg3l1-.jpg
+[2018-06-15 09:57:30.460] [INFO] logs - GET /data/focus/o02324661wvbcd-ufgtiqp1n8m14583734xyzkjehr9s369la4.jpg
+[2018-06-15 09:57:30.471] [INFO] logs - GET /data/focus/o0214267894b933e3gh1yxumt1pqs65l5wka-i4nfc6z8dvj3r.jpg
+[2018-06-15 09:57:30.475] [INFO] logs - GET /data/focus/o0132568693zcu-tnmhiky62917qas1dblx8jgpr3643vf4w4e.jpg
+[2018-06-15 09:57:30.482] [INFO] logs - GET /data/focus/o021459789a3c8-e636iywlvn1s4q24fghrj1d7b3mu6xktp3z.jpg
+[2018-06-15 09:57:30.498] [INFO] logs - GET /data/focus/o721456983a34d-zfxwivutmr1qcpslk2h47e16638nb9jyg30.jpg
+[2018-06-15 09:57:30.500] [INFO] logs - GET /data/photo/o024456789ab4yvuftqildk3219h81je-x62zsm6p33g3r3cnw.jpg
+[2018-06-15 09:57:30.501] [INFO] logs - GET /data/photo/o032953763a4cyxvfu1ijkzl39pq6bdghen4m6sr3w881t204-.jpg
+[2018-06-15 09:57:30.503] [INFO] logs - GET /data/photo/o09345688664cdvefghusnlm12pqr32i-w33a13byjt7z94x2k.jpg
+[2018-06-15 09:57:30.506] [INFO] logs - GET /data/photo/o0233567294bc3-e63364k1znypqrwth349gvljdi8x8a1fsum.jpg
+[2018-06-15 09:57:30.512] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\dataController.js'-----/data/photo/
+[2018-06-15 09:57:30.517] [INFO] logs - GET /data/photo/
+[2018-06-15 09:57:30.519] [INFO] logs - GET /data/photo/o923452789ab463zfyhixkwmnvtr6q2uc3jged3-l48s119p06.jpg
+[2018-06-15 09:57:30.525] [INFO] logs - GET /data/photo/o093361z8vabct-esqhiml73214grf2u4w4j8kx533639dpny6.jpg
+[2018-06-15 09:57:30.533] [INFO] logs - GET /data/photo/o0224497398636-efghijk1wn1pvtscr35x8alb3u4zdy6q3m0.jpg
+[2018-06-15 09:57:30.537] [INFO] logs - GET /data/photo/o023252749a86d1ezwtsrknf81p6jihuv93yl-4b33cxg68q4m.jpg
+[2018-06-15 09:57:30.538] [INFO] logs - GET /data/photo/o1324567898bc6-31zhivulmnsrq60t2jadygf413ewx3493pk.jpg
+[2018-06-15 09:57:30.549] [INFO] logs - GET /data/photo/o424456793ab4d1ezgyijkxwnvpqut3s123h8-39r668cfml30.jpg
+[2018-06-15 09:57:30.554] [INFO] logs - GET /data/photo/o433426483636d-4fg1izylmx1wqrs3t7pnujhc90ba8592ekv.jpg
+[2018-06-15 09:57:30.560] [INFO] logs - GET /data/photo/o0234349896bcd-4f1zxjwuts1rqap2l8k63hgen3ymiv37655.jpg
+[2018-06-15 09:57:30.562] [INFO] logs - GET /data/photo/o523656349ayvd-efghusklmn1pq603ic293818437bjx4zwtr.jpg
+[2018-06-15 09:57:30.567] [INFO] logs - GET /data/photo/o523426783abc83efg36j4lmn1pqrstzyw60u1k5h-vd4399xi.jpg
+[2018-06-15 09:57:30.573] [INFO] logs - GET /data/photo/o623249789ab364ezgyixklwv1puts3r5mj6f1-dqc638hn430.jpg
+[2018-06-15 09:57:30.588] [INFO] logs - GET /data/photo/o7233568694b1dzefgtqpk1-0lj2r44u7wx36vcn3i8as9hy3m.jpg
+[2018-06-15 09:57:30.601] [INFO] logs - GET /data/photo/o7234598693b64zefvhqpk1n1063r3lugwy8mtdcas37ji-4x2.jpg
+[2018-06-15 09:57:30.614] [INFO] logs - GET /data/photo/o7234327849341yewuhsjpmzl386r36gcn-q0dvi1ftkba69x5.jpg
+[2018-06-15 09:57:30.696] [INFO] logs - GET /data/photo/o832456783a86d-3f3hi6k1znxpqwstveu49blcrgyj9342m10.jpg
+[2018-06-15 09:57:30.703] [INFO] logs - GET /res/images/nopic.jpg
+[2018-06-15 09:57:37.146] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:57:37.151] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:57:37.190] [INFO] logs - GET /data/photo/o424456793ab4d1ezgyijkxwnvpqut3s123h8-39r668cfml30.jpg
+[2018-06-15 09:57:37.212] [INFO] logs - GET /data/photo/o433426483636d-4fg1izylmx1wqrs3t7pnujhc90ba8592ekv.jpg
+[2018-06-15 09:57:37.220] [INFO] logs - GET /data/photo/o0234349896bcd-4f1zxjwuts1rqap2l8k63hgen3ymiv37655.jpg
+[2018-06-15 09:57:37.223] [INFO] logs - GET /data/photo/o523656349ayvd-efghusklmn1pq603ic293818437bjx4zwtr.jpg
+[2018-06-15 09:57:37.235] [INFO] logs - GET /data/photo/o523426783abc83efg36j4lmn1pqrstzyw60u1k5h-vd4399xi.jpg
+[2018-06-15 09:57:37.238] [INFO] logs - GET /data/photo/o623249789ab364ezgyixklwv1puts3r5mj6f1-dqc638hn430.jpg
+[2018-06-15 09:57:37.242] [INFO] logs - GET /data/photo/o7233568694b1dzefgtqpk1-0lj2r44u7wx36vcn3i8as9hy3m.jpg
+[2018-06-15 09:57:37.258] [INFO] logs - GET /data/photo/o939853789ab1d-xfgwujslmnr4p122i4363c4066yekt3vhzq.jpg
+[2018-06-15 09:57:37.267] [INFO] logs - GET /data/photo/o0334593896b6dzyfwv1jkm-9ip2r2t68gx33174neauchq4ls.jpg
+[2018-06-15 09:57:37.269] [INFO] logs - GET /data/photo/o022454789abc3-e41hzjxlsrqfpnm4u3d6y3g1368i9wvtk60.jpg
+[2018-06-15 09:57:37.272] [INFO] logs - GET /data/photo/o023426493834d1ezvhujklr1-nqmsti4wxy5p78b3a9g66cf0.jpg
+[2018-06-15 09:57:37.295] [INFO] logs - GET /data/photo/o123656339a64dzefxhqpk1mn1lir2tu93g48bwc44y8jv-07s.jpg
+[2018-06-15 09:57:37.296] [INFO] logs - GET /data/photo/o223256689ab3d-efgh6jklmn1pqzstuxw70r14i44y8393c4v.jpg
+[2018-06-15 09:57:37.310] [INFO] logs - GET /data/photo/o293863689ab1d-ezxhrjklmnp414s2367gyfcqu0234t54ivw.jpg
+[2018-06-15 09:57:37.323] [INFO] logs - GET /data/photo/o323446238a6cd-34gyixwqn105l48t3vk6hz1smpub9rj9e7f.jpg
+[2018-06-15 09:57:37.328] [INFO] logs - GET /data/photo/o3244567892b4d-e9g3361yxvspqrj1ctwmkz80nafh46il3u3.jpg
+[2018-06-15 09:57:37.330] [INFO] logs - GET /data/photo/o0244367886bc6-eyghwvtlmn1pqrs34j4xfz34959ad3u1i2k.jpg
+[2018-06-15 09:57:41.674] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:57:41.681] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:57:41.725] [INFO] logs - GET /data/photo/o424356886a33d1ewrp1jklmn-i3gst9vf79c440zx6qb4yu2h.jpg
+[2018-06-15 09:57:41.752] [INFO] logs - GET /data/photo/o023456729ab498e33hijkl4z1pyrswvfuxqn48dg3-t66cm15.jpg
+[2018-06-15 09:57:41.764] [INFO] logs - GET /data/photo/o03361zy89xbcwvetsrip1lm5n249g64kdfa6jq2387u43h-44.jpg
+[2018-06-15 09:57:41.771] [INFO] logs - GET /data/photo/o023426988636y-efgxijvlsr1q46m4ubnhd19zct3a5374wpk.jpg
+[2018-06-15 09:57:41.804] [INFO] logs - GET /data/photo/o749634781abzdyefgtsjklq90p2r43846vnc-63x32hum15wi.jpg
+[2018-06-15 09:57:41.814] [INFO] logs - GET /data/photo/o7234547821bcw-efghuq1lma0p6r4t83dx6zk43nj9i3s96yv.jpg
+[2018-06-15 09:57:41.817] [INFO] logs - GET /data/photo/o0229538636b1dweushqj1nmc05i4489va4yz7k-pgt3x63flr.jpg
+[2018-06-15 09:57:41.825] [INFO] logs - GET /data/photo/o022456789abc38e3g4i1kywnvpt61qu5m3l-6hf3szdj94x1r.jpg
+[2018-06-15 09:57:41.837] [INFO] logs - GET /data/photo/o024459631azyw-evgutrkqp925367ihf8x418n2c3ds3bjl6m.jpg
+[2018-06-15 09:57:41.849] [INFO] logs - GET /data/photo/o423546789383d6e1wr1nykmji42hst5a3c-bz4qugv9fx6lp0.jpg
+[2018-06-15 09:57:46.826] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:57:46.832] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:57:46.900] [INFO] logs - GET /data/photo/o023554939a833-ef4hywkuqp15mrs42v67izb68gc6ndtjlx1.jpg
+[2018-06-15 09:57:46.913] [INFO] logs - GET /data/photo/o05344364vautdsrfghqjklp11556-37mzyex982c3i98w6bn2.jpg
+[2018-06-15 09:57:46.920] [INFO] logs - GET /data/photo/o0934563861zxusr1mhjy4l54fpq2-t39wb6ke4v87c3da2gin.jpg
+[2018-06-15 09:57:46.936] [INFO] logs - GET /data/photo/o6244367883b3yrqlgjxi53661pe4st1zwhd9v-fc95muan2k0.jpg
+[2018-06-15 09:57:46.939] [INFO] logs - GET /data/photo/o05446674yabcd-wvghusrlmnq8p2jtifex9z36531318938k2.jpg
+[2018-06-15 09:57:46.943] [INFO] logs - GET /data/photo/o9252987893bcd34f1zijxwmug1qr4436l-y6pnek3s6thva50.jpg
+[2018-06-15 09:57:46.945] [INFO] logs - GET /data/photo/o923452484abc1-eutqipklnd0jh57gfv339z1wy689636sxmr.jpg
+[2018-06-15 09:57:46.948] [INFO] logs - GET /data/photo/o02365628493cd34f1zijylxwvuqs6071nath8gkbe6m-p39r4.jpg
+[2018-06-15 09:57:46.955] [INFO] logs - GET /data/photo/o0644363861xur-q1ghijnlmakped2t3v957394b0y2cwz68sf.jpg
+[2018-06-15 09:57:46.972] [INFO] logs - GET /data/photo/o0234564ywabcsrpnghilkz041331dmuv96x6-f6938q8et27j.jpg
+[2018-06-15 09:57:46.981] [INFO] logs - GET /data/photo/o424356886a33d1ewrp1jklmn-i3gst9vf79c440zx6qb4yu2h.jpg
+[2018-06-15 09:57:46.986] [INFO] logs - GET /data/photo/o03361zy89xbcwvetsrip1lm5n249g64kdfa6jq2387u43h-44.jpg
+[2018-06-15 09:57:46.988] [INFO] logs - GET /data/photo/o023456729ab498e33hijkl4z1pyrswvfuxqn48dg3-t66cm15.jpg
+[2018-06-15 09:57:46.992] [INFO] logs - GET /data/photo/o023426988636y-efgxijvlsr1q46m4ubnhd19zct3a5374wpk.jpg
+[2018-06-15 09:57:47.006] [INFO] logs - GET /data/photo/o749634781abzdyefgtsjklq90p2r43846vnc-63x32hum15wi.jpg
+[2018-06-15 09:57:47.020] [INFO] logs - GET /data/photo/o7234547821bcw-efghuq1lma0p6r4t83dx6zk43nj9i3s96yv.jpg
+[2018-06-15 09:57:47.026] [INFO] logs - GET /data/photo/o0229538636b1dweushqj1nmc05i4489va4yz7k-pgt3x63flr.jpg
+[2018-06-15 09:57:47.031] [INFO] logs - GET /data/photo/o022456789abc38e3g4i1kywnvpt61qu5m3l-6hf3szdj94x1r.jpg
+[2018-06-15 09:57:47.037] [INFO] logs - GET /data/photo/o024459631azyw-evgutrkqp925367ihf8x418n2c3ds3bjl6m.jpg
+[2018-06-15 09:57:47.047] [INFO] logs - GET /data/photo/o423546789383d6e1wr1nykmji42hst5a3c-bz4qugv9fx6lp0.jpg
+[2018-06-15 09:57:49.233] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:57:49.239] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:57:49.283] [INFO] logs - GET /data/photo/o0934563861zxusr1mhjy4l54fpq2-t39wb6ke4v87c3da2gin.jpg
+[2018-06-15 09:57:49.294] [INFO] logs - GET /data/photo/o023554939a833-ef4hywkuqp15mrs42v67izb68gc6ndtjlx1.jpg
+[2018-06-15 09:57:49.299] [INFO] logs - GET /data/photo/o05344364vautdsrfghqjklp11556-37mzyex982c3i98w6bn2.jpg
+[2018-06-15 09:57:49.312] [INFO] logs - GET /data/photo/o6244367883b3yrqlgjxi53661pe4st1zwhd9v-fc95muan2k0.jpg
+[2018-06-15 09:57:49.316] [INFO] logs - GET /data/photo/o05446674yabcd-wvghusrlmnq8p2jtifex9z36531318938k2.jpg
+[2018-06-15 09:57:49.324] [INFO] logs - GET /data/photo/o9252987893bcd34f1zijxwmug1qr4436l-y6pnek3s6thva50.jpg
+[2018-06-15 09:57:49.335] [INFO] logs - GET /data/photo/o923452484abc1-eutqipklnd0jh57gfv339z1wy689636sxmr.jpg
+[2018-06-15 09:57:49.337] [INFO] logs - GET /data/photo/o02365628493cd34f1zijylxwvuqs6071nath8gkbe6m-p39r4.jpg
+[2018-06-15 09:57:49.346] [INFO] logs - GET /data/photo/o0644363861xur-q1ghijnlmakped2t3v957394b0y2cwz68sf.jpg
+[2018-06-15 09:57:49.348] [INFO] logs - GET /data/photo/o0234564ywabcsrpnghilkz041331dmuv96x6-f6938q8et27j.jpg
+[2018-06-15 09:57:49.357] [INFO] logs - GET /data/photo/o164986783364d-1fghyjtlmnrpcqs335wx9ze1b6aiv2uk402.jpg
+[2018-06-15 09:57:49.362] [INFO] logs - GET /data/photo/o223249369abc3-efg3i64lmn1pqrstxdv4yz1kj587w86u0h6.jpg
+[2018-06-15 09:57:49.372] [INFO] logs - GET /data/photo/o023456729abcd-e49h8634znypqrstxw3v1m1liufkj63g268.jpg
+[2018-06-15 09:57:49.374] [INFO] logs - GET /data/photo/o029456689a4czyefxhijwlvn1pqrs332k8-6u73tm3g16d43b.jpg
+[2018-06-15 09:57:49.379] [INFO] logs - GET /data/photo/o0434936841bxdt1nmliyj623epqrs79z6wk5fu8c6-3va2g5h.jpg
+[2018-06-15 09:57:49.386] [INFO] logs - GET /data/photo/o0236527498b3z-efyhwjkvutq4p4sn6li8g9116c33amrd6x4.jpg
+[2018-06-15 09:57:49.392] [INFO] logs - GET /data/photo/o02638178zxbud-tfsp1nkl9m2h4r945v3ayj64e6w6c3iqg63.jpg
+[2018-06-15 09:57:49.395] [INFO] logs - GET /data/photo/o662456389a1xw-vftrky0l931pqh6gu76bz8i42escn3jm43d.jpg
+[2018-06-15 09:57:49.397] [INFO] logs - GET /data/photo/o026498786a4c1-efghzjxlmn1wqrvtu3s59b6732p4iy36dk3.jpg
+[2018-06-15 09:57:49.401] [INFO] logs - GET /data/photo/o8632933641zyw-vfutsjklmr1q9024g5dxcb8n8366a7ehi4p.jpg
+[2018-06-15 09:57:58.321] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 09:57:58.648] [INFO] logs - GET /data/focus/o01345zv89ubtdsrqgplyj92n9hf63673axk213e-w1m6432ci.png
+[2018-06-15 09:57:58.965] [INFO] logs - POST /photo/read
+[2018-06-15 09:58:10.314] [INFO] logs - POST /photo/upload
+[2018-06-15 09:58:10.344] [INFO] logs - GET /o4234867709b2d-ezywvjklutrq50309i1x18p59g2mhans0cf.jpg
+[2018-06-15 09:58:17.608] [INFO] logs - POST /photo/update
+[2018-06-15 09:58:17.663] [INFO] logs - POST /photo/read
+[2018-06-15 09:58:17.707] [INFO] photo - 原图保存完成---D:\Work-git\TestTool\express-mvc/resource/data/photoOrigin/o4234867709b2d-ezywvjklutrq50309i1x18p59g2mhans0cf.jpg
+[2018-06-15 09:58:18.041] [INFO] logs - POST /photo/read
+[2018-06-15 09:58:18.451] [INFO] photo - 原图水印完成加载---D:\Work-git\TestTool\express-mvc/resource/data/photoOrigin/o4234867709b2d-ezywvjklutrq50309i1x18p59g2mhans0cf.jpg
+[2018-06-15 09:58:22.582] [INFO] logs - GET /data/focus/o4234867709b2d-ezywvjklutrq50309i1x18p59g2mhans0cf.jpg
+[2018-06-15 09:58:22.791] [INFO] logs - POST /photo/read
+[2018-06-15 09:58:28.373] [INFO] logs - GET /photoDetail
+[2018-06-15 09:58:28.444] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 09:58:28.471] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 09:58:28.482] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 09:58:28.489] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-15 09:58:28.501] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-15 09:58:28.504] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 09:58:29.174] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 09:58:29.238] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-15 09:58:29.242] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-15 09:58:29.261] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 09:58:29.291] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-15 09:58:29.308] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 09:58:29.427] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 09:58:29.455] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 09:58:29.456] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 09:58:29.460] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 09:58:29.467] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 09:58:29.470] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 09:58:29.472] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 09:58:29.506] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 09:58:29.511] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-15 09:58:29.513] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 09:58:29.515] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-15 09:58:29.667] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:58:29.869] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-15 09:58:29.882] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-15 09:58:29.884] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-15 09:58:29.896] [INFO] logs - GET /data/focus/o0249367898bc641zxhijutmnspqrd4k2w4yf3513e6avg3l1-.jpg
+[2018-06-15 09:58:29.916] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:58:29.935] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:58:29.940] [INFO] logs - GET /data/focus/o02324661wvbcd-ufgtiqp1n8m14583734xyzkjehr9s369la4.jpg
+[2018-06-15 09:58:29.942] [INFO] logs - GET /data/focus/o0214267894b933e3gh1yxumt1pqs65l5wka-i4nfc6z8dvj3r.jpg
+[2018-06-15 09:58:29.948] [INFO] logs - GET /data/focus/o0132568693zcu-tnmhiky62917qas1dblx8jgpr3643vf4w4e.jpg
+[2018-06-15 09:58:29.953] [INFO] logs - GET /favicon.ico
+[2018-06-15 09:58:29.961] [INFO] logs - GET /data/focus/o021459789a3c8-e636iywlvn1s4q24fghrj1d7b3mu6xktp3z.jpg
+[2018-06-15 09:58:29.963] [INFO] logs - GET /data/focus/o721456983a34d-zfxwivutmr1qcpslk2h47e16638nb9jyg30.jpg
+[2018-06-15 09:58:29.968] [INFO] logs - GET /data/focus/o4234867709b2d-ezywvjklutrq50309i1x18p59g2mhans0cf.jpg
+[2018-06-15 09:58:29.971] [INFO] logs - GET /data/photo/o023252749a86d1ezwtsrknf81p6jihuv93yl-4b33cxg68q4m.jpg
+[2018-06-15 09:58:29.977] [INFO] logs - GET /data/photo/o923452789ab463zfyhixkwmnvtr6q2uc3jged3-l48s119p06.jpg
+[2018-06-15 09:58:29.985] [INFO] logs - GET /data/photo/o032953763a4cyxvfu1ijkzl39pq6bdghen4m6sr3w881t204-.jpg
+[2018-06-15 09:58:29.990] [INFO] logs - GET /data/photo/o0224497398636-efghijk1wn1pvtscr35x8alb3u4zdy6q3m0.jpg
+[2018-06-15 09:58:29.994] [INFO] logs - GET /data/photo/o1324567898bc6-31zhivulmnsrq60t2jadygf413ewx3493pk.jpg
+[2018-06-15 09:58:30.008] [INFO] logs - GET /data/photo/o0233567294bc3-e63364k1znypqrwth349gvljdi8x8a1fsum.jpg
+[2018-06-15 09:58:30.024] [INFO] logs - GET /data/photo/o024456789ab4yvuftqildk3219h81je-x62zsm6p33g3r3cnw.jpg
+[2018-06-15 09:58:30.031] [INFO] logs - GET /data/photo/o093361z8vabct-esqhiml73214grf2u4w4j8kx533639dpny6.jpg
+[2018-06-15 09:58:30.034] [INFO] logs - GET /data/photo/o09345688664cdvefghusnlm12pqr32i-w33a13byjt7z94x2k.jpg
+[2018-06-15 09:58:30.042] [INFO] logs - GET /data/photo/o424456793ab4d1ezgyijkxwnvpqut3s123h8-39r668cfml30.jpg
+[2018-06-15 09:58:30.044] [INFO] logs - GET /data/photo/o433426483636d-4fg1izylmx1wqrs3t7pnujhc90ba8592ekv.jpg
+[2018-06-15 09:58:30.048] [INFO] logs - GET /data/photo/o0234349896bcd-4f1zxjwuts1rqap2l8k63hgen3ymiv37655.jpg
+[2018-06-15 09:58:30.061] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\dataController.js'-----/data/photo/
+[2018-06-15 09:58:30.065] [INFO] logs - GET /data/photo/o523656349ayvd-efghusklmn1pq603ic293818437bjx4zwtr.jpg
+[2018-06-15 09:58:30.067] [INFO] logs - GET /data/photo/o523426783abc83efg36j4lmn1pqrstzyw60u1k5h-vd4399xi.jpg
+[2018-06-15 09:58:30.073] [INFO] logs - GET /data/photo/
+[2018-06-15 09:58:30.075] [INFO] logs - GET /data/photo/o623249789ab364ezgyixklwv1puts3r5mj6f1-dqc638hn430.jpg
+[2018-06-15 09:58:30.080] [INFO] logs - GET /data/photo/o7233568694b1dzefgtqpk1-0lj2r44u7wx36vcn3i8as9hy3m.jpg
+[2018-06-15 09:58:30.082] [INFO] logs - GET /data/photo/o7234598693b64zefvhqpk1n1063r3lugwy8mtdcas37ji-4x2.jpg
+[2018-06-15 09:58:30.091] [INFO] logs - GET /data/photo/o7234327849341yewuhsjpmzl386r36gcn-q0dvi1ftkba69x5.jpg
+[2018-06-15 09:58:30.093] [INFO] logs - GET /data/photo/o832456783a86d-3f3hi6k1znxpqwstveu49blcrgyj9342m10.jpg
+[2018-06-15 09:58:30.165] [INFO] logs - GET /res/images/nopic.jpg
+[2018-06-15 09:58:54.556] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:58:54.561] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:58:54.594] [INFO] logs - GET /data/photo/o424456793ab4d1ezgyijkxwnvpqut3s123h8-39r668cfml30.jpg
+[2018-06-15 09:58:54.606] [INFO] logs - GET /data/photo/o433426483636d-4fg1izylmx1wqrs3t7pnujhc90ba8592ekv.jpg
+[2018-06-15 09:58:54.618] [INFO] logs - GET /data/photo/o0234349896bcd-4f1zxjwuts1rqap2l8k63hgen3ymiv37655.jpg
+[2018-06-15 09:58:54.622] [INFO] logs - GET /data/photo/o523656349ayvd-efghusklmn1pq603ic293818437bjx4zwtr.jpg
+[2018-06-15 09:58:54.626] [INFO] logs - GET /data/photo/o523426783abc83efg36j4lmn1pqrstzyw60u1k5h-vd4399xi.jpg
+[2018-06-15 09:58:54.632] [INFO] logs - GET /data/photo/o623249789ab364ezgyixklwv1puts3r5mj6f1-dqc638hn430.jpg
+[2018-06-15 09:58:54.643] [INFO] logs - GET /data/photo/o7233568694b1dzefgtqpk1-0lj2r44u7wx36vcn3i8as9hy3m.jpg
+[2018-06-15 09:58:54.648] [INFO] logs - GET /data/photo/o7234598693b64zefvhqpk1n1063r3lugwy8mtdcas37ji-4x2.jpg
+[2018-06-15 09:58:54.656] [INFO] logs - GET /data/photo/o7234327849341yewuhsjpmzl386r36gcn-q0dvi1ftkba69x5.jpg
+[2018-06-15 09:58:54.668] [INFO] logs - GET /data/photo/o832456783a86d-3f3hi6k1znxpqwstveu49blcrgyj9342m10.jpg
+[2018-06-15 09:58:54.677] [INFO] logs - GET /data/photo/o0334593896b6dzyfwv1jkm-9ip2r2t68gx33174neauchq4ls.jpg
+[2018-06-15 09:58:54.682] [INFO] logs - GET /data/photo/o939853789ab1d-xfgwujslmnr4p122i4363c4066yekt3vhzq.jpg
+[2018-06-15 09:58:54.688] [INFO] logs - GET /data/photo/o022454789abc3-e41hzjxlsrqfpnm4u3d6y3g1368i9wvtk60.jpg
+[2018-06-15 09:58:54.718] [INFO] logs - GET /data/photo/o023426493834d1ezvhujklr1-nqmsti4wxy5p78b3a9g66cf0.jpg
+[2018-06-15 09:58:54.720] [INFO] logs - GET /data/photo/o123656339a64dzefxhqpk1mn1lir2tu93g48bwc44y8jv-07s.jpg
+[2018-06-15 09:58:54.734] [INFO] logs - GET /data/photo/o223256689ab3d-efgh6jklmn1pqzstuxw70r14i44y8393c4v.jpg
+[2018-06-15 09:58:54.738] [INFO] logs - GET /data/photo/o293863689ab1d-ezxhrjklmnp414s2367gyfcqu0234t54ivw.jpg
+[2018-06-15 09:58:54.743] [INFO] logs - GET /data/photo/o323446238a6cd-34gyixwqn105l48t3vk6hz1smpub9rj9e7f.jpg
+[2018-06-15 09:58:54.748] [INFO] logs - GET /data/photo/o3244567892b4d-e9g3361yxvspqrj1ctwmkz80nafh46il3u3.jpg
+[2018-06-15 09:58:54.751] [INFO] logs - GET /data/photo/o0244367886bc6-eyghwvtlmn1pqrs34j4xfz34959ad3u1i2k.jpg
+[2018-06-15 09:58:59.678] [INFO] logs - GET /data/photoOrigin/o023252749a86d1ezwtsrknf81p6jihuv93yl-4b33cxg68q4m.jpg
+[2018-06-15 09:59:03.354] [INFO] logs - GET /data/photoOrigin/o923452789ab463zfyhixkwmnvtr6q2uc3jged3-l48s119p06.jpg
+[2018-06-15 09:59:18.301] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:59:18.305] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:59:18.352] [INFO] logs - GET /data/photo/o424356886a33d1ewrp1jklmn-i3gst9vf79c440zx6qb4yu2h.jpg
+[2018-06-15 09:59:18.356] [INFO] logs - GET /data/photo/o03361zy89xbcwvetsrip1lm5n249g64kdfa6jq2387u43h-44.jpg
+[2018-06-15 09:59:18.361] [INFO] logs - GET /data/photo/o023456729ab498e33hijkl4z1pyrswvfuxqn48dg3-t66cm15.jpg
+[2018-06-15 09:59:18.365] [INFO] logs - GET /data/photo/o023426988636y-efgxijvlsr1q46m4ubnhd19zct3a5374wpk.jpg
+[2018-06-15 09:59:18.381] [INFO] logs - GET /data/photo/o749634781abzdyefgtsjklq90p2r43846vnc-63x32hum15wi.jpg
+[2018-06-15 09:59:18.384] [INFO] logs - GET /data/photo/o7234547821bcw-efghuq1lma0p6r4t83dx6zk43nj9i3s96yv.jpg
+[2018-06-15 09:59:18.391] [INFO] logs - GET /data/photo/o0229538636b1dweushqj1nmc05i4489va4yz7k-pgt3x63flr.jpg
+[2018-06-15 09:59:18.397] [INFO] logs - GET /data/photo/o022456789abc38e3g4i1kywnvpt61qu5m3l-6hf3szdj94x1r.jpg
+[2018-06-15 09:59:18.400] [INFO] logs - GET /data/photo/o024459631azyw-evgutrkqp925367ihf8x418n2c3ds3bjl6m.jpg
+[2018-06-15 09:59:18.436] [INFO] logs - GET /data/photo/o423546789383d6e1wr1nykmji42hst5a3c-bz4qugv9fx6lp0.jpg
+[2018-06-15 09:59:29.643] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:59:29.658] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:59:29.730] [INFO] logs - GET /data/photo/o0934563861zxusr1mhjy4l54fpq2-t39wb6ke4v87c3da2gin.jpg
+[2018-06-15 09:59:29.735] [INFO] logs - GET /data/photo/o023554939a833-ef4hywkuqp15mrs42v67izb68gc6ndtjlx1.jpg
+[2018-06-15 09:59:29.756] [INFO] logs - GET /data/photo/o05344364vautdsrfghqjklp11556-37mzyex982c3i98w6bn2.jpg
+[2018-06-15 09:59:29.767] [INFO] logs - GET /data/photo/o6244367883b3yrqlgjxi53661pe4st1zwhd9v-fc95muan2k0.jpg
+[2018-06-15 09:59:29.777] [INFO] logs - GET /data/photo/o05446674yabcd-wvghusrlmnq8p2jtifex9z36531318938k2.jpg
+[2018-06-15 09:59:29.788] [INFO] logs - GET /data/photo/o9252987893bcd34f1zijxwmug1qr4436l-y6pnek3s6thva50.jpg
+[2018-06-15 09:59:29.795] [INFO] logs - GET /data/photo/o923452484abc1-eutqipklnd0jh57gfv339z1wy689636sxmr.jpg
+[2018-06-15 09:59:29.799] [INFO] logs - GET /data/photo/o02365628493cd34f1zijylxwvuqs6071nath8gkbe6m-p39r4.jpg
+[2018-06-15 09:59:29.811] [INFO] logs - GET /data/photo/o0644363861xur-q1ghijnlmakped2t3v957394b0y2cwz68sf.jpg
+[2018-06-15 09:59:29.820] [INFO] logs - GET /data/photo/o0234564ywabcsrpnghilkz041331dmuv96x6-f6938q8et27j.jpg
+[2018-06-15 09:59:30.778] [INFO] logs - GET /data/photoOrigin/o323446238a6cd-34gyixwqn105l48t3vk6hz1smpub9rj9e7f.jpg
+[2018-06-15 09:59:49.529] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:59:49.539] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:59:49.606] [INFO] logs - GET /data/photo/o223249369abc3-efg3i64lmn1pqrstxdv4yz1kj587w86u0h6.jpg
+[2018-06-15 09:59:49.621] [INFO] logs - GET /data/photo/o023456729abcd-e49h8634znypqrstxw3v1m1liufkj63g268.jpg
+[2018-06-15 09:59:49.624] [INFO] logs - GET /data/photo/o029456689a4czyefxhijwlvn1pqrs332k8-6u73tm3g16d43b.jpg
+[2018-06-15 09:59:49.631] [INFO] logs - GET /data/photo/o164986783364d-1fghyjtlmnrpcqs335wx9ze1b6aiv2uk402.jpg
+[2018-06-15 09:59:49.635] [INFO] logs - GET /data/photo/o0236527498b3z-efyhwjkvutq4p4sn6li8g9116c33amrd6x4.jpg
+[2018-06-15 09:59:49.646] [INFO] logs - GET /data/photo/o0434936841bxdt1nmliyj623epqrs79z6wk5fu8c6-3va2g5h.jpg
+[2018-06-15 09:59:49.656] [INFO] logs - GET /data/photo/o02638178zxbud-tfsp1nkl9m2h4r945v3ayj64e6w6c3iqg63.jpg
+[2018-06-15 09:59:49.667] [INFO] logs - GET /data/photo/o662456389a1xw-vftrky0l931pqh6gu76bz8i42escn3jm43d.jpg
+[2018-06-15 09:59:49.668] [INFO] logs - GET /data/photo/o026498786a4c1-efghzjxlmn1wqrvtu3s59b6732p4iy36dk3.jpg
+[2018-06-15 09:59:49.679] [INFO] logs - GET /data/photo/o8632933641zyw-vfutsjklmr1q9024g5dxcb8n8366a7ehi4p.jpg
+[2018-06-15 09:59:52.317] [INFO] logs - GET /data/photoOrigin/o6244367883b3yrqlgjxi53661pe4st1zwhd9v-fc95muan2k0.jpg
+[2018-06-15 09:59:56.161] [INFO] logs - GET /data/photoOrigin/o05344364vautdsrfghqjklp11556-37mzyex982c3i98w6bn2.jpg
+[2018-06-15 09:59:56.935] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:59:56.939] [INFO] logs - POST /photoDetail/read
+[2018-06-15 09:59:56.989] [INFO] logs - GET /data/photo/o023464364azyd-vsrhpjkl1n19qg566ewx798m83cuf39tib2.jpg
+[2018-06-15 09:59:56.996] [INFO] logs - GET /data/photo/o124936739a3c1zxfghvj1nmdl2q86bui4ey-rk678sw543p0t.jpg
+[2018-06-15 09:59:57.009] [INFO] logs - GET /data/photo/o2298566834b1dzefghxjklmw1tqr6suvni7-2ap43743y9c30.jpg
+[2018-06-15 09:59:57.014] [INFO] logs - GET /data/photo/o0749587863b6d4ztshijkrq1n2m436u3-xy1f2plgvw9a23ce.jpg
+[2018-06-15 09:59:57.023] [INFO] logs - GET /data/photo/o32338638934zd-sfghirklqn1bp7e2445x67a6v0tyw19ucmj.jpg
+[2018-06-15 09:59:57.024] [INFO] logs - GET /data/photo/o3228yv7uq1ncmkfw0h74-93b63961z865xagjl4tpr33d4sie.jpg
+[2018-06-15 09:59:57.035] [INFO] logs - GET /data/photo/o47345278983cd4efgzijvlmn1tr6q2u43a63bsw-61xyk9hp0.jpg
+[2018-06-15 09:59:57.038] [INFO] logs - GET /data/photo/o027496789a8cd63fghi1klvn1sqr65u3wx4z34b-je3t52ypm.jpg
+[2018-06-15 09:59:57.044] [INFO] logs - GET /data/photo/o033646yv9abud-sfqhij1lmn1k2retc8wx9z3583642p747g5.jpg
+[2018-06-15 09:59:57.047] [INFO] logs - GET /data/photo/o622459383abc6-eywvijkuts1p407m368x6z937dlfgh4rqn1.jpg
+[2018-06-15 10:00:03.429] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:00:03.437] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:00:03.479] [INFO] logs - GET /data/photo/o023464364azyd-vsrhpjkl1n19qg566ewx798m83cuf39tib2.jpg
+[2018-06-15 10:00:03.487] [INFO] logs - GET /data/photo/o124936739a3c1zxfghvj1nmdl2q86bui4ey-rk678sw543p0t.jpg
+[2018-06-15 10:00:03.489] [INFO] logs - GET /data/photo/o2298566834b1dzefghxjklmw1tqr6suvni7-2ap43743y9c30.jpg
+[2018-06-15 10:00:03.493] [INFO] logs - GET /data/photo/o0749587863b6d4ztshijkrq1n2m436u3-xy1f2plgvw9a23ce.jpg
+[2018-06-15 10:00:03.514] [INFO] logs - GET /data/photo/o32338638934zd-sfghirklqn1bp7e2445x67a6v0tyw19ucmj.jpg
+[2018-06-15 10:00:03.518] [INFO] logs - GET /data/photo/o3228yv7uq1ncmkfw0h74-93b63961z865xagjl4tpr33d4sie.jpg
+[2018-06-15 10:00:03.522] [INFO] logs - GET /data/photo/o47345278983cd4efgzijvlmn1tr6q2u43a63bsw-61xyk9hp0.jpg
+[2018-06-15 10:00:03.533] [INFO] logs - GET /data/photo/o027496789a8cd63fghi1klvn1sqr65u3wx4z34b-je3t52ypm.jpg
+[2018-06-15 10:00:03.536] [INFO] logs - GET /data/photo/o033646yv9abud-sfqhij1lmn1k2retc8wx9z3583642p747g5.jpg
+[2018-06-15 10:00:03.549] [INFO] logs - GET /data/photo/o622459383abc6-eywvijkuts1p407m368x6z937dlfgh4rqn1.jpg
+[2018-06-15 10:00:03.550] [INFO] logs - GET /data/photo/o6246563836bxdvtsq1inkmz0h9gr3e47wc9j14fa-u87p2y3l.jpg
+[2018-06-15 10:00:03.564] [INFO] logs - GET /data/photo/o723446989a3cd86f3zyjkxmwvputs30727bg1ir1hen6l5q-4.jpg
+[2018-06-15 10:00:03.570] [INFO] logs - GET /data/photo/o7234563wvtsp1neljixhk2m-4cq3bau9886z1r4f76dg3y970.jpg
+[2018-06-15 10:00:03.583] [INFO] logs - GET /data/photo/o0234574893b6d-ef1hiwklunq4pr7a3vj1yg8z623cxtm9s76.jpg
+[2018-06-15 10:00:03.613] [INFO] logs - GET /data/photo/o873459739a8cd-e6g3i6kl4y1pqruh0v2x4z6bjf3m2s81nwt.jpg
+[2018-06-15 10:00:03.617] [INFO] logs - GET /data/photo/o927456789ab9d3e8ghi6k336zyqn03u2cx-jmpr4l1wsvf14t.jpg
+[2018-06-15 10:00:03.619] [INFO] logs - GET /data/photo/o033853649abzxwetghsjklmnrp808fu46dy312q29-7c461iv.jpg
+[2018-06-15 10:00:03.623] [INFO] logs - GET /data/photo/o043936889ab3d-1vghiusrqn1p4m2t4fw5yz6lc3e7xj62k18.jpg
+[2018-06-15 10:00:03.629] [INFO] logs - GET /data/photo/o02845988633cd-e4gzixwlun1tfqspm24jy9b63rah3v6k711.jpg
+[2018-06-15 10:00:03.631] [INFO] logs - GET /data/photo/o0934866833bzywefgviuklsnr421m3jh7xdc1q6a-252t849p.jpg
+[2018-06-15 10:00:16.375] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:00:16.385] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:00:16.437] [INFO] logs - GET /data/photo/o388653386a4cdzyvghijktsn1rq90l236xm-1b3pw2f794u4e.jpg
+[2018-06-15 10:00:16.450] [INFO] logs - GET /data/photo/o024936749xbcu-etghinlz431pq86f368a1rkwv82y54djs3m.jpg
+[2018-06-15 10:00:16.456] [INFO] logs - GET /data/photo/o023852363abc3-e41hijyxmnuts6rp1vwl4z788d9qgf946k5.jpg
+[2018-06-15 10:00:16.462] [INFO] logs - GET /data/photo/o529453683a6cd-4fghiywvutspe0143lkxjz1r8376b9m8nq2.jpg
+[2018-06-15 10:00:16.466] [INFO] logs - GET /data/photo/o083364789abc1-ezyhixwumn1ts56pl2k2gfd63349q648rjv.jpg
+[2018-06-15 10:00:16.472] [INFO] logs - GET /data/photo/o023426493a86d3e6g41jzlmyuqh68913wrikbn5sxcv-78ftp.jpg
+[2018-06-15 10:00:16.475] [INFO] logs - GET /data/photo/o643853789a6cd4eugtsqkmzl1pjri29v6w0n12b6f34-h83yx.jpg
+[2018-06-15 10:00:16.478] [INFO] logs - GET /data/photo/o089436yxwvbut-sfghij1lm1n2qred24937zk37a368548p6c.jpg
+[2018-06-15 10:00:16.482] [INFO] logs - GET /data/photo/o043493863a3c4zetghpnl-7j827r61uywx8v6mfs2dqb5i1k9.jpg
+[2018-06-15 10:00:16.484] [INFO] logs - GET /data/photo/o82393876941wd-efuhitslz056arkbnyxpcgjq883v614243m.jpg
+[2018-06-15 10:00:26.623] [INFO] logs - GET /user
+[2018-06-15 10:00:26.803] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:00:26.812] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:00:26.823] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:00:26.828] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:00:26.832] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:00:26.837] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:00:27.500] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 10:00:27.504] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:00:27.522] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:00:27.531] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:00:27.652] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:00:27.654] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:00:27.659] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:00:27.660] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:00:27.664] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:00:27.668] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:00:27.689] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:00:27.696] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:00:27.709] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:00:27.781] [INFO] photo - start Watch
+[2018-06-15 10:00:27.797] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:00:31.818] [INFO] photo - start Watch
+[2018-06-15 10:00:31.851] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:00:32.645] [INFO] photo - start Watch
+[2018-06-15 10:00:32.678] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:00:33.695] [INFO] logs - GET /photo
+[2018-06-15 10:00:33.766] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:00:33.804] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:00:33.810] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:00:33.819] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:00:33.824] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:00:33.828] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:00:34.547] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 10:00:34.567] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:00:34.574] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:00:34.583] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:00:34.667] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:00:34.673] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:00:34.689] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:00:34.693] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:00:34.698] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:00:34.700] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:00:34.703] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:00:34.730] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:00:34.733] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:00:34.817] [INFO] logs - POST /photo/read
+[2018-06-15 10:00:35.110] [INFO] logs - POST /photo/read
+[2018-06-15 10:00:37.297] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 10:00:38.019] [INFO] logs - POST /photo/read
+[2018-06-15 10:00:38.027] [INFO] logs - GET /data/focus/o4234867709b2d-ezywvjklutrq50309i1x18p59g2mhans0cf.jpg
+[2018-06-15 10:00:46.307] [INFO] logs - GET /photoDetail
+[2018-06-15 10:00:46.351] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:00:46.376] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:00:46.382] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:00:46.404] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-15 10:00:46.408] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-15 10:00:46.410] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:00:46.943] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:00:47.008] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-15 10:00:47.014] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-15 10:00:47.032] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-15 10:00:47.039] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:00:47.046] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 10:00:47.144] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:00:47.158] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:00:47.162] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:00:47.165] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:00:47.169] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:00:47.173] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:00:47.250] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:00:47.296] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-15 10:00:47.299] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:00:47.304] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-15 10:00:47.306] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:00:47.520] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:00:47.613] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:00:47.627] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:00:47.650] [INFO] logs - GET /data/focus/o4234867709b2d-ezywvjklutrq50309i1x18p59g2mhans0cf.jpg
+[2018-06-15 10:00:47.653] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-15 10:00:47.655] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-15 10:00:47.660] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-15 10:00:47.682] [INFO] logs - GET /data/focus/o0249367898bc641zxhijutmnspqrd4k2w4yf3513e6avg3l1-.jpg
+[2018-06-15 10:00:47.716] [INFO] logs - GET /data/focus/o02324661wvbcd-ufgtiqp1n8m14583734xyzkjehr9s369la4.jpg
+[2018-06-15 10:00:47.745] [INFO] logs - GET /data/focus/o0214267894b933e3gh1yxumt1pqs65l5wka-i4nfc6z8dvj3r.jpg
+[2018-06-15 10:00:47.750] [INFO] logs - GET /data/focus/o0132568693zcu-tnmhiky62917qas1dblx8jgpr3643vf4w4e.jpg
+[2018-06-15 10:00:47.754] [INFO] logs - GET /data/focus/o021459789a3c8-e636iywlvn1s4q24fghrj1d7b3mu6xktp3z.jpg
+[2018-06-15 10:00:47.766] [INFO] logs - GET /data/focus/o721456983a34d-zfxwivutmr1qcpslk2h47e16638nb9jyg30.jpg
+[2018-06-15 10:00:47.768] [INFO] logs - GET /data/photo/o923452789ab463zfyhixkwmnvtr6q2uc3jged3-l48s119p06.jpg
+[2018-06-15 10:00:47.771] [INFO] logs - GET /data/photo/o032953763a4cyxvfu1ijkzl39pq6bdghen4m6sr3w881t204-.jpg
+[2018-06-15 10:00:47.778] [INFO] logs - GET /data/photo/o09345688664cdvefghusnlm12pqr32i-w33a13byjt7z94x2k.jpg
+[2018-06-15 10:00:47.783] [INFO] logs - GET /data/photo/o093361z8vabct-esqhiml73214grf2u4w4j8kx533639dpny6.jpg
+[2018-06-15 10:00:47.796] [INFO] logs - GET /data/photo/o023252749a86d1ezwtsrknf81p6jihuv93yl-4b33cxg68q4m.jpg
+[2018-06-15 10:00:47.800] [INFO] logs - GET /data/photo/o0224497398636-efghijk1wn1pvtscr35x8alb3u4zdy6q3m0.jpg
+[2018-06-15 10:00:47.810] [INFO] logs - GET /data/photo/o024456789ab4yvuftqildk3219h81je-x62zsm6p33g3r3cnw.jpg
+[2018-06-15 10:00:47.816] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\dataController.js'-----/data/photo/
+[2018-06-15 10:00:47.880] [INFO] logs - GET /data/photo/o1324567898bc6-31zhivulmnsrq60t2jadygf413ewx3493pk.jpg
+[2018-06-15 10:00:47.886] [INFO] logs - GET /data/photo/o0233567294bc3-e63364k1znypqrwth349gvljdi8x8a1fsum.jpg
+[2018-06-15 10:00:47.891] [INFO] logs - GET /data/photo/
+[2018-06-15 10:00:47.900] [INFO] logs - GET /data/photo/o424456793ab4d1ezgyijkxwnvpqut3s123h8-39r668cfml30.jpg
+[2018-06-15 10:00:47.925] [INFO] logs - GET /data/photo/o433426483636d-4fg1izylmx1wqrs3t7pnujhc90ba8592ekv.jpg
+[2018-06-15 10:00:47.934] [INFO] logs - GET /data/photo/o0234349896bcd-4f1zxjwuts1rqap2l8k63hgen3ymiv37655.jpg
+[2018-06-15 10:00:47.942] [INFO] logs - GET /data/photo/o523656349ayvd-efghusklmn1pq603ic293818437bjx4zwtr.jpg
+[2018-06-15 10:00:47.953] [INFO] logs - GET /data/photo/o7233568694b1dzefgtqpk1-0lj2r44u7wx36vcn3i8as9hy3m.jpg
+[2018-06-15 10:00:47.958] [INFO] logs - GET /data/photo/o523426783abc83efg36j4lmn1pqrstzyw60u1k5h-vd4399xi.jpg
+[2018-06-15 10:00:47.962] [INFO] logs - GET /data/photo/o623249789ab364ezgyixklwv1puts3r5mj6f1-dqc638hn430.jpg
+[2018-06-15 10:00:47.976] [INFO] logs - GET /data/photo/o7234598693b64zefvhqpk1n1063r3lugwy8mtdcas37ji-4x2.jpg
+[2018-06-15 10:00:47.979] [INFO] logs - GET /data/photo/o7234327849341yewuhsjpmzl386r36gcn-q0dvi1ftkba69x5.jpg
+[2018-06-15 10:00:47.990] [INFO] logs - GET /res/images/nopic.jpg
+[2018-06-15 10:00:47.993] [INFO] logs - GET /data/photo/o832456783a86d-3f3hi6k1znxpqwstveu49blcrgyj9342m10.jpg
+[2018-06-15 10:01:06.249] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:01:06.266] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:01:06.335] [INFO] logs - GET /data/photo/o939853789ab1d-xfgwujslmnr4p122i4363c4066yekt3vhzq.jpg
+[2018-06-15 10:01:06.350] [INFO] logs - GET /data/photo/o0334593896b6dzyfwv1jkm-9ip2r2t68gx33174neauchq4ls.jpg
+[2018-06-15 10:01:06.354] [INFO] logs - GET /data/photo/o022454789abc3-e41hzjxlsrqfpnm4u3d6y3g1368i9wvtk60.jpg
+[2018-06-15 10:01:06.364] [INFO] logs - GET /data/photo/o023426493834d1ezvhujklr1-nqmsti4wxy5p78b3a9g66cf0.jpg
+[2018-06-15 10:01:06.366] [INFO] logs - GET /data/photo/o123656339a64dzefxhqpk1mn1lir2tu93g48bwc44y8jv-07s.jpg
+[2018-06-15 10:01:06.372] [INFO] logs - GET /data/photo/o223256689ab3d-efgh6jklmn1pqzstuxw70r14i44y8393c4v.jpg
+[2018-06-15 10:01:06.375] [INFO] logs - GET /data/photo/o293863689ab1d-ezxhrjklmnp414s2367gyfcqu0234t54ivw.jpg
+[2018-06-15 10:01:06.390] [INFO] logs - GET /data/photo/o323446238a6cd-34gyixwqn105l48t3vk6hz1smpub9rj9e7f.jpg
+[2018-06-15 10:01:06.392] [INFO] logs - GET /data/photo/o3244567892b4d-e9g3361yxvspqrj1ctwmkz80nafh46il3u3.jpg
+[2018-06-15 10:01:06.398] [INFO] logs - GET /data/photo/o0244367886bc6-eyghwvtlmn1pqrs34j4xfz34959ad3u1i2k.jpg
+[2018-06-15 10:01:10.780] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:01:10.790] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:01:10.835] [INFO] logs - GET /data/photo/o023456729ab498e33hijkl4z1pyrswvfuxqn48dg3-t66cm15.jpg
+[2018-06-15 10:01:10.839] [INFO] logs - GET /data/photo/o03361zy89xbcwvetsrip1lm5n249g64kdfa6jq2387u43h-44.jpg
+[2018-06-15 10:01:10.852] [INFO] logs - GET /data/photo/o424356886a33d1ewrp1jklmn-i3gst9vf79c440zx6qb4yu2h.jpg
+[2018-06-15 10:01:10.858] [INFO] logs - GET /data/photo/o023426988636y-efgxijvlsr1q46m4ubnhd19zct3a5374wpk.jpg
+[2018-06-15 10:01:10.868] [INFO] logs - GET /data/photo/o749634781abzdyefgtsjklq90p2r43846vnc-63x32hum15wi.jpg
+[2018-06-15 10:01:10.871] [INFO] logs - GET /data/photo/o7234547821bcw-efghuq1lma0p6r4t83dx6zk43nj9i3s96yv.jpg
+[2018-06-15 10:01:10.878] [INFO] logs - GET /data/photo/o0229538636b1dweushqj1nmc05i4489va4yz7k-pgt3x63flr.jpg
+[2018-06-15 10:01:10.883] [INFO] logs - GET /data/photo/o022456789abc38e3g4i1kywnvpt61qu5m3l-6hf3szdj94x1r.jpg
+[2018-06-15 10:01:10.887] [INFO] logs - GET /data/photo/o423546789383d6e1wr1nykmji42hst5a3c-bz4qugv9fx6lp0.jpg
+[2018-06-15 10:01:10.893] [INFO] logs - GET /data/photo/o024459631azyw-evgutrkqp925367ihf8x418n2c3ds3bjl6m.jpg
+[2018-06-15 10:01:15.645] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:01:15.653] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:01:15.676] [INFO] logs - GET /data/photo/o0934563861zxusr1mhjy4l54fpq2-t39wb6ke4v87c3da2gin.jpg
+[2018-06-15 10:01:15.687] [INFO] logs - GET /data/photo/o023554939a833-ef4hywkuqp15mrs42v67izb68gc6ndtjlx1.jpg
+[2018-06-15 10:01:15.699] [INFO] logs - GET /data/photo/o05344364vautdsrfghqjklp11556-37mzyex982c3i98w6bn2.jpg
+[2018-06-15 10:01:15.704] [INFO] logs - GET /data/photo/o6244367883b3yrqlgjxi53661pe4st1zwhd9v-fc95muan2k0.jpg
+[2018-06-15 10:01:15.712] [INFO] logs - GET /data/photo/o05446674yabcd-wvghusrlmnq8p2jtifex9z36531318938k2.jpg
+[2018-06-15 10:01:15.719] [INFO] logs - GET /data/photo/o9252987893bcd34f1zijxwmug1qr4436l-y6pnek3s6thva50.jpg
+[2018-06-15 10:01:15.731] [INFO] logs - GET /data/photo/o923452484abc1-eutqipklnd0jh57gfv339z1wy689636sxmr.jpg
+[2018-06-15 10:01:15.736] [INFO] logs - GET /data/photo/o02365628493cd34f1zijylxwvuqs6071nath8gkbe6m-p39r4.jpg
+[2018-06-15 10:01:15.746] [INFO] logs - GET /data/photo/o0644363861xur-q1ghijnlmakped2t3v957394b0y2cwz68sf.jpg
+[2018-06-15 10:01:15.748] [INFO] logs - GET /data/photo/o0234564ywabcsrpnghilkz041331dmuv96x6-f6938q8et27j.jpg
+[2018-06-15 10:01:15.752] [INFO] logs - GET /data/photo/o424356886a33d1ewrp1jklmn-i3gst9vf79c440zx6qb4yu2h.jpg
+[2018-06-15 10:01:15.761] [INFO] logs - GET /data/photo/o03361zy89xbcwvetsrip1lm5n249g64kdfa6jq2387u43h-44.jpg
+[2018-06-15 10:01:15.779] [INFO] logs - GET /data/photo/o023456729ab498e33hijkl4z1pyrswvfuxqn48dg3-t66cm15.jpg
+[2018-06-15 10:01:15.781] [INFO] logs - GET /data/photo/o023426988636y-efgxijvlsr1q46m4ubnhd19zct3a5374wpk.jpg
+[2018-06-15 10:01:15.798] [INFO] logs - GET /data/photo/o749634781abzdyefgtsjklq90p2r43846vnc-63x32hum15wi.jpg
+[2018-06-15 10:01:15.805] [INFO] logs - GET /data/photo/o7234547821bcw-efghuq1lma0p6r4t83dx6zk43nj9i3s96yv.jpg
+[2018-06-15 10:01:15.811] [INFO] logs - GET /data/photo/o0229538636b1dweushqj1nmc05i4489va4yz7k-pgt3x63flr.jpg
+[2018-06-15 10:01:15.815] [INFO] logs - GET /data/photo/o022456789abc38e3g4i1kywnvpt61qu5m3l-6hf3szdj94x1r.jpg
+[2018-06-15 10:01:15.834] [INFO] logs - GET /data/photo/o024459631azyw-evgutrkqp925367ihf8x418n2c3ds3bjl6m.jpg
+[2018-06-15 10:01:15.838] [INFO] logs - GET /data/photo/o423546789383d6e1wr1nykmji42hst5a3c-bz4qugv9fx6lp0.jpg
+[2018-06-15 10:02:52.879] [INFO] logs - GET /user
+[2018-06-15 10:02:52.934] [INFO] logs - GET /login
+[2018-06-15 10:02:53.003] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:02:53.010] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:02:53.015] [INFO] logs - GET /styles/css/login.css
+[2018-06-15 10:02:53.039] [INFO] logs - GET /scripts/libs/socket.io.js
+[2018-06-15 10:02:53.239] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:02:53.618] [INFO] logs - GET /scripts/libs/domReady.js
+[2018-06-15 10:02:53.646] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:02:53.828] [INFO] logs - GET /res/images/bg-new.jpg
+[2018-06-15 10:02:54.164] [INFO] logs - GET /favicon.ico
+[2018-06-15 10:03:09.958] [INFO] logs - GET /login
+[2018-06-15 10:03:10.020] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:03:10.027] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:03:10.039] [INFO] logs - GET /scripts/libs/socket.io.js
+[2018-06-15 10:03:10.051] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:03:10.055] [INFO] logs - GET /styles/css/login.css
+[2018-06-15 10:03:10.683] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:03:10.692] [INFO] logs - GET /scripts/libs/domReady.js
+[2018-06-15 10:03:10.707] [INFO] logs - GET /res/images/bg-new.jpg
+[2018-06-15 10:03:35.751] [INFO] logs - POST /login/signin
+[2018-06-15 10:03:35.820] [INFO] logs - GET /main
+[2018-06-15 10:03:35.925] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:03:35.935] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:03:35.942] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:03:35.945] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:03:36.013] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:03:36.083] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:03:45.413] [INFO] logs - GET /photo
+[2018-06-15 10:03:45.856] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:03:45.864] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:03:45.867] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:03:46.537] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:03:46.540] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:03:46.580] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:03:47.038] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:03:47.040] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 10:03:47.797] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:03:47.803] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:03:47.806] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:03:47.809] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:03:47.890] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:03:48.138] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:03:48.217] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:03:48.412] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:03:49.001] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:03:49.993] [INFO] logs - POST /photo/read
+[2018-06-15 10:03:50.434] [INFO] logs - POST /photo/read
+[2018-06-15 10:04:00.395] [INFO] logs - GET /photoDetail
+[2018-06-15 10:04:00.546] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:04:00.551] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:04:01.411] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-15 10:04:01.453] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:04:01.598] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:04:01.613] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-15 10:04:01.662] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:04:02.291] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:04:02.294] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-15 10:04:02.305] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-15 10:04:02.307] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-15 10:04:02.327] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 10:04:02.572] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:04:02.740] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-15 10:04:02.858] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-15 10:04:03.121] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:04:03.124] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:04:03.127] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:04:03.133] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:04:03.149] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:04:03.152] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:04:03.155] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:04:03.174] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:04:03.273] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:03.344] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:03.350] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:03.534] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-15 10:04:03.537] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-15 10:04:29.917] [INFO] logs - POST /login/signin
+[2018-06-15 10:04:30.001] [INFO] logs - GET /main
+[2018-06-15 10:04:30.056] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:04:30.061] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:04:30.129] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:04:30.136] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:04:30.867] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:04:30.982] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:04:32.508] [INFO] logs - GET /photo
+[2018-06-15 10:04:32.557] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:04:32.575] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:04:32.580] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:04:32.586] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:04:32.589] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:04:32.591] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:04:33.280] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 10:04:33.295] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:04:33.422] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:04:33.442] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:04:33.507] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:04:33.510] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:04:33.511] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:04:33.514] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:04:33.560] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:04:33.563] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:04:33.575] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:04:33.695] [INFO] logs - POST /photo/read
+[2018-06-15 10:04:33.976] [INFO] logs - POST /photo/read
+[2018-06-15 10:04:34.657] [INFO] logs - GET /photoDetail
+[2018-06-15 10:04:34.733] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:04:34.764] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:04:34.767] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:04:34.768] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-15 10:04:34.769] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-15 10:04:34.770] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:04:35.293] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:04:35.361] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-15 10:04:35.373] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-15 10:04:35.381] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 10:04:35.395] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-15 10:04:35.417] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:04:35.547] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:04:35.550] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:04:35.556] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:04:35.571] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:04:35.575] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:04:35.579] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:04:35.582] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:04:35.615] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:04:35.622] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-15 10:04:35.628] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:04:35.630] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-15 10:04:35.785] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:35.867] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:35.912] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:35.944] [INFO] logs - GET /data/focus/o4234867709b2d-ezywvjklutrq50309i1x18p59g2mhans0cf.jpg
+[2018-06-15 10:04:35.960] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-15 10:04:35.962] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-15 10:04:35.967] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-15 10:04:35.980] [INFO] logs - GET /data/focus/o0249367898bc641zxhijutmnspqrd4k2w4yf3513e6avg3l1-.jpg
+[2018-06-15 10:04:35.990] [INFO] logs - GET /data/focus/o02324661wvbcd-ufgtiqp1n8m14583734xyzkjehr9s369la4.jpg
+[2018-06-15 10:04:35.996] [INFO] logs - GET /data/focus/o0214267894b933e3gh1yxumt1pqs65l5wka-i4nfc6z8dvj3r.jpg
+[2018-06-15 10:04:35.998] [INFO] logs - GET /data/focus/o0132568693zcu-tnmhiky62917qas1dblx8jgpr3643vf4w4e.jpg
+[2018-06-15 10:04:36.004] [INFO] logs - GET /data/focus/o021459789a3c8-e636iywlvn1s4q24fghrj1d7b3mu6xktp3z.jpg
+[2018-06-15 10:04:36.015] [INFO] logs - GET /data/focus/o721456983a34d-zfxwivutmr1qcpslk2h47e16638nb9jyg30.jpg
+[2018-06-15 10:04:36.024] [INFO] logs - GET /data/photo/o424456793ab4d1ezgyijkxwnvpqut3s123h8-39r668cfml30.jpg
+[2018-06-15 10:04:36.035] [INFO] logs - GET /data/photo/o0233567294bc3-e63364k1znypqrwth349gvljdi8x8a1fsum.jpg
+[2018-06-15 10:04:36.038] [INFO] logs - GET /data/photo/o093361z8vabct-esqhiml73214grf2u4w4j8kx533639dpny6.jpg
+[2018-06-15 10:04:36.042] [INFO] logs - GET /data/photo/o923452789ab463zfyhixkwmnvtr6q2uc3jged3-l48s119p06.jpg
+[2018-06-15 10:04:36.045] [INFO] logs - GET /data/photo/o09345688664cdvefghusnlm12pqr32i-w33a13byjt7z94x2k.jpg
+[2018-06-15 10:04:36.052] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\dataController.js'-----/data/photo/
+[2018-06-15 10:04:36.056] [INFO] logs - GET /data/photo/o032953763a4cyxvfu1ijkzl39pq6bdghen4m6sr3w881t204-.jpg
+[2018-06-15 10:04:36.059] [INFO] logs - GET /data/photo/o0224497398636-efghijk1wn1pvtscr35x8alb3u4zdy6q3m0.jpg
+[2018-06-15 10:04:36.067] [INFO] logs - GET /data/photo/o024456789ab4yvuftqildk3219h81je-x62zsm6p33g3r3cnw.jpg
+[2018-06-15 10:04:36.069] [INFO] logs - GET /data/photo/o023252749a86d1ezwtsrknf81p6jihuv93yl-4b33cxg68q4m.jpg
+[2018-06-15 10:04:36.072] [INFO] logs - GET /data/photo/o1324567898bc6-31zhivulmnsrq60t2jadygf413ewx3493pk.jpg
+[2018-06-15 10:04:36.078] [INFO] logs - GET /data/photo/
+[2018-06-15 10:04:36.097] [INFO] logs - GET /data/photo/o433426483636d-4fg1izylmx1wqrs3t7pnujhc90ba8592ekv.jpg
+[2018-06-15 10:04:36.100] [INFO] logs - GET /data/photo/o0234349896bcd-4f1zxjwuts1rqap2l8k63hgen3ymiv37655.jpg
+[2018-06-15 10:04:36.104] [INFO] logs - GET /data/photo/o523656349ayvd-efghusklmn1pq603ic293818437bjx4zwtr.jpg
+[2018-06-15 10:04:36.119] [INFO] logs - GET /data/photo/o523426783abc83efg36j4lmn1pqrstzyw60u1k5h-vd4399xi.jpg
+[2018-06-15 10:04:36.122] [INFO] logs - GET /data/photo/o623249789ab364ezgyixklwv1puts3r5mj6f1-dqc638hn430.jpg
+[2018-06-15 10:04:36.128] [INFO] logs - GET /data/photo/o7233568694b1dzefgtqpk1-0lj2r44u7wx36vcn3i8as9hy3m.jpg
+[2018-06-15 10:04:36.136] [INFO] logs - GET /data/photo/o7234598693b64zefvhqpk1n1063r3lugwy8mtdcas37ji-4x2.jpg
+[2018-06-15 10:04:36.144] [INFO] logs - GET /data/photo/o7234327849341yewuhsjpmzl386r36gcn-q0dvi1ftkba69x5.jpg
+[2018-06-15 10:04:36.150] [INFO] logs - GET /data/photo/o832456783a86d-3f3hi6k1znxpqwstveu49blcrgyj9342m10.jpg
+[2018-06-15 10:04:36.202] [INFO] logs - GET /res/images/nopic.jpg
+[2018-06-15 10:04:39.406] [INFO] logs - GET /photoDetail
+[2018-06-15 10:04:39.937] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:04:40.110] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:04:40.116] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:04:40.158] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-15 10:04:40.174] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-15 10:04:40.413] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:04:40.416] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:04:40.420] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-15 10:04:40.433] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-15 10:04:41.047] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 10:04:41.049] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-15 10:04:41.051] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:04:41.226] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:04:41.229] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:04:41.268] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:04:41.273] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:04:41.551] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:41.563] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:41.615] [INFO] logs - GET /data/photo/o939853789ab1d-xfgwujslmnr4p122i4363c4066yekt3vhzq.jpg
+[2018-06-15 10:04:41.636] [INFO] logs - GET /data/photo/o0334593896b6dzyfwv1jkm-9ip2r2t68gx33174neauchq4ls.jpg
+[2018-06-15 10:04:41.638] [INFO] logs - GET /data/photo/o022454789abc3-e41hzjxlsrqfpnm4u3d6y3g1368i9wvtk60.jpg
+[2018-06-15 10:04:41.644] [INFO] logs - GET /data/photo/o023426493834d1ezvhujklr1-nqmsti4wxy5p78b3a9g66cf0.jpg
+[2018-06-15 10:04:41.652] [INFO] logs - GET /data/photo/o123656339a64dzefxhqpk1mn1lir2tu93g48bwc44y8jv-07s.jpg
+[2018-06-15 10:04:41.655] [INFO] logs - GET /data/photo/o223256689ab3d-efgh6jklmn1pqzstuxw70r14i44y8393c4v.jpg
+[2018-06-15 10:04:41.659] [INFO] logs - GET /data/photo/o293863689ab1d-ezxhrjklmnp414s2367gyfcqu0234t54ivw.jpg
+[2018-06-15 10:04:41.666] [INFO] logs - GET /data/photo/o323446238a6cd-34gyixwqn105l48t3vk6hz1smpub9rj9e7f.jpg
+[2018-06-15 10:04:41.672] [INFO] logs - GET /data/photo/o3244567892b4d-e9g3361yxvspqrj1ctwmkz80nafh46il3u3.jpg
+[2018-06-15 10:04:41.680] [INFO] logs - GET /data/photo/o0244367886bc6-eyghwvtlmn1pqrs34j4xfz34959ad3u1i2k.jpg
+[2018-06-15 10:04:41.820] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:04:41.904] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:04:41.906] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:04:41.920] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-15 10:04:42.222] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:04:42.225] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-15 10:04:42.230] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:04:48.815] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:48.820] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:48.857] [INFO] logs - GET /data/photo/o424356886a33d1ewrp1jklmn-i3gst9vf79c440zx6qb4yu2h.jpg
+[2018-06-15 10:04:48.864] [INFO] logs - GET /data/photo/o03361zy89xbcwvetsrip1lm5n249g64kdfa6jq2387u43h-44.jpg
+[2018-06-15 10:04:48.879] [INFO] logs - GET /data/photo/o023456729ab498e33hijkl4z1pyrswvfuxqn48dg3-t66cm15.jpg
+[2018-06-15 10:04:48.896] [INFO] logs - GET /data/photo/o023426988636y-efgxijvlsr1q46m4ubnhd19zct3a5374wpk.jpg
+[2018-06-15 10:04:48.919] [INFO] logs - GET /data/photo/o749634781abzdyefgtsjklq90p2r43846vnc-63x32hum15wi.jpg
+[2018-06-15 10:04:48.925] [INFO] logs - GET /data/photo/o7234547821bcw-efghuq1lma0p6r4t83dx6zk43nj9i3s96yv.jpg
+[2018-06-15 10:04:48.927] [INFO] logs - GET /data/photo/o0229538636b1dweushqj1nmc05i4489va4yz7k-pgt3x63flr.jpg
+[2018-06-15 10:04:48.932] [INFO] logs - GET /data/photo/o022456789abc38e3g4i1kywnvpt61qu5m3l-6hf3szdj94x1r.jpg
+[2018-06-15 10:04:48.935] [INFO] logs - GET /data/photo/o024459631azyw-evgutrkqp925367ihf8x418n2c3ds3bjl6m.jpg
+[2018-06-15 10:04:48.939] [INFO] logs - GET /data/photo/o423546789383d6e1wr1nykmji42hst5a3c-bz4qugv9fx6lp0.jpg
+[2018-06-15 10:04:52.525] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:52.536] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:52.568] [INFO] logs - GET /data/photo/o0934563861zxusr1mhjy4l54fpq2-t39wb6ke4v87c3da2gin.jpg
+[2018-06-15 10:04:52.572] [INFO] logs - GET /data/photo/o023554939a833-ef4hywkuqp15mrs42v67izb68gc6ndtjlx1.jpg
+[2018-06-15 10:04:52.586] [INFO] logs - GET /data/photo/o05344364vautdsrfghqjklp11556-37mzyex982c3i98w6bn2.jpg
+[2018-06-15 10:04:52.588] [INFO] logs - GET /data/photo/o6244367883b3yrqlgjxi53661pe4st1zwhd9v-fc95muan2k0.jpg
+[2018-06-15 10:04:52.593] [INFO] logs - GET /data/photo/o05446674yabcd-wvghusrlmnq8p2jtifex9z36531318938k2.jpg
+[2018-06-15 10:04:52.613] [INFO] logs - GET /data/photo/o9252987893bcd34f1zijxwmug1qr4436l-y6pnek3s6thva50.jpg
+[2018-06-15 10:04:52.618] [INFO] logs - GET /data/photo/o923452484abc1-eutqipklnd0jh57gfv339z1wy689636sxmr.jpg
+[2018-06-15 10:04:52.620] [INFO] logs - GET /data/photo/o02365628493cd34f1zijylxwvuqs6071nath8gkbe6m-p39r4.jpg
+[2018-06-15 10:04:52.624] [INFO] logs - GET /data/photo/o0644363861xur-q1ghijnlmakped2t3v957394b0y2cwz68sf.jpg
+[2018-06-15 10:04:52.643] [INFO] logs - GET /data/photo/o0234564ywabcsrpnghilkz041331dmuv96x6-f6938q8et27j.jpg
+[2018-06-15 10:04:52.656] [INFO] logs - GET /data/photo/o424356886a33d1ewrp1jklmn-i3gst9vf79c440zx6qb4yu2h.jpg
+[2018-06-15 10:04:52.665] [INFO] logs - GET /data/photo/o03361zy89xbcwvetsrip1lm5n249g64kdfa6jq2387u43h-44.jpg
+[2018-06-15 10:04:52.672] [INFO] logs - GET /data/photo/o023456729ab498e33hijkl4z1pyrswvfuxqn48dg3-t66cm15.jpg
+[2018-06-15 10:04:52.677] [INFO] logs - GET /data/photo/o023426988636y-efgxijvlsr1q46m4ubnhd19zct3a5374wpk.jpg
+[2018-06-15 10:04:52.694] [INFO] logs - GET /data/photo/o749634781abzdyefgtsjklq90p2r43846vnc-63x32hum15wi.jpg
+[2018-06-15 10:04:52.705] [INFO] logs - GET /data/photo/o7234547821bcw-efghuq1lma0p6r4t83dx6zk43nj9i3s96yv.jpg
+[2018-06-15 10:04:52.720] [INFO] logs - GET /data/photo/o0229538636b1dweushqj1nmc05i4489va4yz7k-pgt3x63flr.jpg
+[2018-06-15 10:04:52.734] [INFO] logs - GET /data/photo/o022456789abc38e3g4i1kywnvpt61qu5m3l-6hf3szdj94x1r.jpg
+[2018-06-15 10:04:52.737] [INFO] logs - GET /data/photo/o024459631azyw-evgutrkqp925367ihf8x418n2c3ds3bjl6m.jpg
+[2018-06-15 10:04:52.739] [INFO] logs - GET /data/photo/o423546789383d6e1wr1nykmji42hst5a3c-bz4qugv9fx6lp0.jpg
+[2018-06-15 10:04:56.008] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:56.017] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:56.095] [INFO] logs - GET /data/photo/o164986783364d-1fghyjtlmnrpcqs335wx9ze1b6aiv2uk402.jpg
+[2018-06-15 10:04:56.105] [INFO] logs - GET /data/photo/o223249369abc3-efg3i64lmn1pqrstxdv4yz1kj587w86u0h6.jpg
+[2018-06-15 10:04:56.108] [INFO] logs - GET /data/photo/o023456729abcd-e49h8634znypqrstxw3v1m1liufkj63g268.jpg
+[2018-06-15 10:04:56.112] [INFO] logs - GET /data/photo/o029456689a4czyefxhijwlvn1pqrs332k8-6u73tm3g16d43b.jpg
+[2018-06-15 10:04:56.117] [INFO] logs - GET /data/photo/o0236527498b3z-efyhwjkvutq4p4sn6li8g9116c33amrd6x4.jpg
+[2018-06-15 10:04:56.136] [INFO] logs - GET /data/photo/o0434936841bxdt1nmliyj623epqrs79z6wk5fu8c6-3va2g5h.jpg
+[2018-06-15 10:04:56.140] [INFO] logs - GET /data/photo/o02638178zxbud-tfsp1nkl9m2h4r945v3ayj64e6w6c3iqg63.jpg
+[2018-06-15 10:04:56.151] [INFO] logs - GET /data/photo/o662456389a1xw-vftrky0l931pqh6gu76bz8i42escn3jm43d.jpg
+[2018-06-15 10:04:56.162] [INFO] logs - GET /data/photo/o026498786a4c1-efghzjxlmn1wqrvtu3s59b6732p4iy36dk3.jpg
+[2018-06-15 10:04:56.166] [INFO] logs - GET /data/photo/o8632933641zyw-vfutsjklmr1q9024g5dxcb8n8366a7ehi4p.jpg
+[2018-06-15 10:04:58.617] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:58.632] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:04:58.690] [INFO] logs - GET /data/photo/o023464364azyd-vsrhpjkl1n19qg566ewx798m83cuf39tib2.jpg
+[2018-06-15 10:04:58.695] [INFO] logs - GET /data/photo/o124936739a3c1zxfghvj1nmdl2q86bui4ey-rk678sw543p0t.jpg
+[2018-06-15 10:04:58.700] [INFO] logs - GET /data/photo/o2298566834b1dzefghxjklmw1tqr6suvni7-2ap43743y9c30.jpg
+[2018-06-15 10:04:58.704] [INFO] logs - GET /data/photo/o0749587863b6d4ztshijkrq1n2m436u3-xy1f2plgvw9a23ce.jpg
+[2018-06-15 10:04:58.711] [INFO] logs - GET /data/photo/o32338638934zd-sfghirklqn1bp7e2445x67a6v0tyw19ucmj.jpg
+[2018-06-15 10:04:58.722] [INFO] logs - GET /data/photo/o3228yv7uq1ncmkfw0h74-93b63961z865xagjl4tpr33d4sie.jpg
+[2018-06-15 10:04:58.731] [INFO] logs - GET /data/photo/o47345278983cd4efgzijvlmn1tr6q2u43a63bsw-61xyk9hp0.jpg
+[2018-06-15 10:04:58.737] [INFO] logs - GET /data/photo/o027496789a8cd63fghi1klvn1sqr65u3wx4z34b-je3t52ypm.jpg
+[2018-06-15 10:04:58.743] [INFO] logs - GET /data/photo/o033646yv9abud-sfqhij1lmn1k2retc8wx9z3583642p747g5.jpg
+[2018-06-15 10:04:58.750] [INFO] logs - GET /data/photo/o622459383abc6-eywvijkuts1p407m368x6z937dlfgh4rqn1.jpg
+[2018-06-15 10:05:00.848] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:05:00.864] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:05:00.912] [INFO] logs - GET /data/photo/o6246563836bxdvtsq1inkmz0h9gr3e47wc9j14fa-u87p2y3l.jpg
+[2018-06-15 10:05:00.925] [INFO] logs - GET /data/photo/o723446989a3cd86f3zyjkxmwvputs30727bg1ir1hen6l5q-4.jpg
+[2018-06-15 10:05:00.934] [INFO] logs - GET /data/photo/o7234563wvtsp1neljixhk2m-4cq3bau9886z1r4f76dg3y970.jpg
+[2018-06-15 10:05:00.943] [INFO] logs - GET /data/photo/o0234574893b6d-ef1hiwklunq4pr7a3vj1yg8z623cxtm9s76.jpg
+[2018-06-15 10:05:00.955] [INFO] logs - GET /data/photo/o873459739a8cd-e6g3i6kl4y1pqruh0v2x4z6bjf3m2s81nwt.jpg
+[2018-06-15 10:05:00.969] [INFO] logs - GET /data/photo/o927456789ab9d3e8ghi6k336zyqn03u2cx-jmpr4l1wsvf14t.jpg
+[2018-06-15 10:05:00.973] [INFO] logs - GET /data/photo/o033853649abzxwetghsjklmnrp808fu46dy312q29-7c461iv.jpg
+[2018-06-15 10:05:00.977] [INFO] logs - GET /data/photo/o043936889ab3d-1vghiusrqn1p4m2t4fw5yz6lc3e7xj62k18.jpg
+[2018-06-15 10:05:00.979] [INFO] logs - GET /data/photo/o02845988633cd-e4gzixwlun1tfqspm24jy9b63rah3v6k711.jpg
+[2018-06-15 10:05:00.980] [INFO] logs - GET /data/photo/o0934866833bzywefgviuklsnr421m3jh7xdc1q6a-252t849p.jpg
+[2018-06-15 10:05:02.614] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:05:02.622] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:05:02.688] [INFO] logs - GET /data/photo/o388653386a4cdzyvghijktsn1rq90l236xm-1b3pw2f794u4e.jpg
+[2018-06-15 10:05:02.700] [INFO] logs - GET /data/photo/o024936749xbcu-etghinlz431pq86f368a1rkwv82y54djs3m.jpg
+[2018-06-15 10:05:02.705] [INFO] logs - GET /data/photo/o023852363abc3-e41hijyxmnuts6rp1vwl4z788d9qgf946k5.jpg
+[2018-06-15 10:05:02.721] [INFO] logs - GET /data/photo/o529453683a6cd-4fghiywvutspe0143lkxjz1r8376b9m8nq2.jpg
+[2018-06-15 10:05:02.724] [INFO] logs - GET /data/photo/o023426493a86d3e6g41jzlmyuqh68913wrikbn5sxcv-78ftp.jpg
+[2018-06-15 10:05:02.735] [INFO] logs - GET /data/photo/o083364789abc1-ezyhixwumn1ts56pl2k2gfd63349q648rjv.jpg
+[2018-06-15 10:05:02.740] [INFO] logs - GET /data/photo/o643853789a6cd4eugtsqkmzl1pjri29v6w0n12b6f34-h83yx.jpg
+[2018-06-15 10:05:02.746] [INFO] logs - GET /data/photo/o089436yxwvbut-sfghij1lm1n2qred24937zk37a368548p6c.jpg
+[2018-06-15 10:05:02.752] [INFO] logs - GET /data/photo/o043493863a3c4zetghpnl-7j827r61uywx8v6mfs2dqb5i1k9.jpg
+[2018-06-15 10:05:02.756] [INFO] logs - GET /data/photo/o82393876941wd-efuhitslz056arkbnyxpcgjq883v614243m.jpg
+[2018-06-15 10:05:05.772] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:05:05.936] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:05:05.943] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:05:07.413] [INFO] logs - GET /data/photo/o0234349896bcd-4f1zxjwuts1rqap2l8k63hgen3ymiv37655.jpg
+[2018-06-15 10:05:07.453] [INFO] logs - GET /data/photo/o433426483636d-4fg1izylmx1wqrs3t7pnujhc90ba8592ekv.jpg
+[2018-06-15 10:05:07.455] [INFO] logs - GET /data/photo/o424456793ab4d1ezgyijkxwnvpqut3s123h8-39r668cfml30.jpg
+[2018-06-15 10:05:08.989] [INFO] logs - GET /data/photo/o523656349ayvd-efghusklmn1pq603ic293818437bjx4zwtr.jpg
+[2018-06-15 10:05:09.193] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:05:09.201] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:05:09.250] [INFO] logs - GET /data/photo/o388653386a4cdzyvghijktsn1rq90l236xm-1b3pw2f794u4e.jpg
+[2018-06-15 10:05:09.252] [INFO] logs - GET /data/photo/o024936749xbcu-etghinlz431pq86f368a1rkwv82y54djs3m.jpg
+[2018-06-15 10:05:09.261] [INFO] logs - GET /data/photo/o023852363abc3-e41hijyxmnuts6rp1vwl4z788d9qgf946k5.jpg
+[2018-06-15 10:05:09.265] [INFO] logs - GET /data/photo/o529453683a6cd-4fghiywvutspe0143lkxjz1r8376b9m8nq2.jpg
+[2018-06-15 10:05:09.278] [INFO] logs - GET /data/photo/o023426493a86d3e6g41jzlmyuqh68913wrikbn5sxcv-78ftp.jpg
+[2018-06-15 10:05:09.284] [INFO] logs - GET /data/photo/o083364789abc1-ezyhixwumn1ts56pl2k2gfd63349q648rjv.jpg
+[2018-06-15 10:05:09.290] [INFO] logs - GET /data/photo/o643853789a6cd4eugtsqkmzl1pjri29v6w0n12b6f34-h83yx.jpg
+[2018-06-15 10:05:09.294] [INFO] logs - GET /data/photo/o089436yxwvbut-sfghij1lm1n2qred24937zk37a368548p6c.jpg
+[2018-06-15 10:05:09.300] [INFO] logs - GET /data/photo/o043493863a3c4zetghpnl-7j827r61uywx8v6mfs2dqb5i1k9.jpg
+[2018-06-15 10:05:09.303] [INFO] logs - GET /data/photo/o82393876941wd-efuhitslz056arkbnyxpcgjq883v614243m.jpg
+[2018-06-15 10:05:09.313] [INFO] logs - GET /data/photo/o023854639a6cyueqplkjdim429frst38wbhz14-x6g8v73n19.jpg
+[2018-06-15 10:05:09.316] [INFO] logs - GET /data/photo/o8239367836xcd-wughijktpn11qr4lf458yzm9a4be0368vs2.jpg
+[2018-06-15 10:05:09.320] [INFO] logs - GET /data/photo/o093456983361dzywutrjklpc027i3hgvf8ea4sn246xq-91mb.jpg
+[2018-06-15 10:05:09.323] [INFO] logs - GET /data/photo/o0239526641bzytsrgpidj6381hacekuvwx70q9m338n944lf-.jpg
+[2018-06-15 10:05:09.336] [INFO] logs - GET /data/photo/o093456493ab4d-1fzwvtrlqpe1mk2j3639yg6cunhs21887xi.jpg
+[2018-06-15 10:05:09.344] [INFO] logs - GET /data/photo/o0239549386bcd3ef1yxjkurpg149-tl36ha1247v8mwsn6ziq.jpg
+[2018-06-15 10:05:09.350] [INFO] logs - GET /data/photo/o324459789a8361zwvhijtlqn1402sk3gf3ye63dm-6bpcx9ur.jpg
+[2018-06-15 10:05:09.353] [INFO] logs - GET /data/photo/o0934536z9rbc1mlfwgi2498n1pqashu3vx2kd4e6t3-6y78j4.jpg
+[2018-06-15 10:05:09.360] [INFO] logs - GET /data/photo/o092434719aycdxevuhiqklpn16m34t3fw8bz8-6r92gj35s56.jpg
+[2018-06-15 10:05:09.373] [INFO] logs - GET /data/photo/o529356863a361zwvuhitksrq1p4nlj4f978bdm4c3yx-eg290.jpg
+[2018-06-15 10:05:09.414] [INFO] logs - GET /data/photo/o523426783abc83efg36j4lmn1pqrstzyw60u1k5h-vd4399xi.jpg
+[2018-06-15 10:05:10.763] [INFO] logs - GET /data/photo/o623249789ab364ezgyixklwv1puts3r5mj6f1-dqc638hn430.jpg
+[2018-06-15 10:05:13.505] [INFO] logs - GET /data/photo/o7234598693b64zefvhqpk1n1063r3lugwy8mtdcas37ji-4x2.jpg
+[2018-06-15 10:05:13.566] [INFO] logs - GET /data/photo/o7233568694b1dzefgtqpk1-0lj2r44u7wx36vcn3i8as9hy3m.jpg
+[2018-06-15 10:05:26.624] [INFO] logs - GET /data/photo/o832456783a86d-3f3hi6k1znxpqwstveu49blcrgyj9342m10.jpg
+[2018-06-15 10:05:28.063] [INFO] logs - GET /data/photo/o7234327849341yewuhsjpmzl386r36gcn-q0dvi1ftkba69x5.jpg
+[2018-06-15 10:05:49.234] [INFO] logs - GET /data/focus/o4234867709b2d-ezywvjklutrq50309i1x18p59g2mhans0cf.jpg
+[2018-06-15 10:05:53.657] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-15 10:06:22.998] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:06:23.014] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:06:23.020] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-15 10:06:23.026] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-15 10:06:23.196] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:06:23.201] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:06:38.382] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-15 10:12:10.264] [INFO] logs - app start:8002 success!
+[2018-06-15 10:12:19.286] [INFO] logs - GET /photoDetail
+[2018-06-15 10:12:19.392] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:12:19.399] [INFO] logs - GET /styles/css/photodetail.css
+[2018-06-15 10:12:19.404] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:12:19.410] [INFO] logs - GET /styles/css/imageviewer.css
+[2018-06-15 10:12:19.415] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:12:19.418] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:12:20.115] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:12:20.164] [INFO] logs - GET /res/images/lg_bg.png
+[2018-06-15 10:12:20.165] [INFO] logs - GET /res/images/carousel_bg.png
+[2018-06-15 10:12:20.239] [INFO] logs - GET /scripts/app/photo/detail.js
+[2018-06-15 10:12:20.246] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:12:20.252] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:12:20.256] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 10:12:20.332] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:12:20.364] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:12:20.368] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:12:20.371] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:12:20.373] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:12:20.376] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:12:20.377] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:12:20.392] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:12:20.442] [INFO] logs - GET /scripts/libs/private/imageviewer.js
+[2018-06-15 10:12:20.443] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:12:20.452] [INFO] logs - GET /scripts/libs/private/imageLoaded.js
+[2018-06-15 10:12:20.456] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:12:20.768] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:12:20.783] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:12:20.784] [INFO] logs - POST /photoDetail/read
+[2018-06-15 10:12:20.817] [INFO] logs - GET /data/focus/o02324661wvbcd-ufgtiqp1n8m14583734xyzkjehr9s369la4.jpg
+[2018-06-15 10:12:20.826] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-15 10:12:20.827] [INFO] logs - GET /data/focus/o0231524893bc66e4ghijk1ynupf247183xmrlaz369v-wtdsq.jpg
+[2018-06-15 10:12:20.844] [INFO] logs - GET /data/focus/o0249367898bc641zxhijutmnspqrd4k2w4yf3513e6avg3l1-.jpg
+[2018-06-15 10:12:20.848] [INFO] logs - GET /data/focus/o4234867709b2d-ezywvjklutrq50309i1x18p59g2mhans0cf.jpg
+[2018-06-15 10:12:20.863] [INFO] logs - GET /data/focus/o0214267894b933e3gh1yxumt1pqs65l5wka-i4nfc6z8dvj3r.jpg
+[2018-06-15 10:12:20.874] [INFO] logs - GET /data/focus/o0132568693zcu-tnmhiky62917qas1dblx8jgpr3643vf4w4e.jpg
+[2018-06-15 10:12:20.885] [INFO] logs - GET /data/focus/o021459789a3c8-e636iywlvn1s4q24fghrj1d7b3mu6xktp3z.jpg
+[2018-06-15 10:12:20.889] [INFO] logs - GET /data/focus/o721456983a34d-zfxwivutmr1qcpslk2h47e16638nb9jyg30.jpg
+[2018-06-15 10:12:20.892] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\dataController.js'-----/data/photo/
+[2018-06-15 10:12:20.895] [INFO] logs - GET /data/photo/
+[2018-06-15 10:12:20.898] [INFO] logs - GET /data/photo/o023252749a86d1ezwtsrknf81p6jihuv93yl-4b33cxg68q4m.jpg
+[2018-06-15 10:12:20.907] [INFO] logs - GET /data/photo/o923452789ab463zfyhixkwmnvtr6q2uc3jged3-l48s119p06.jpg
+[2018-06-15 10:12:20.912] [INFO] logs - GET /data/photo/o0224497398636-efghijk1wn1pvtscr35x8alb3u4zdy6q3m0.jpg
+[2018-06-15 10:12:20.919] [INFO] logs - GET /data/photo/o032953763a4cyxvfu1ijkzl39pq6bdghen4m6sr3w881t204-.jpg
+[2018-06-15 10:12:20.921] [INFO] logs - GET /data/photo/o09345688664cdvefghusnlm12pqr32i-w33a13byjt7z94x2k.jpg
+[2018-06-15 10:12:20.925] [INFO] logs - GET /data/photo/o1324567898bc6-31zhivulmnsrq60t2jadygf413ewx3493pk.jpg
+[2018-06-15 10:12:20.930] [INFO] logs - GET /data/photo/o024456789ab4yvuftqildk3219h81je-x62zsm6p33g3r3cnw.jpg
+[2018-06-15 10:12:20.933] [INFO] logs - GET /data/photo/o0233567294bc3-e63364k1znypqrwth349gvljdi8x8a1fsum.jpg
+[2018-06-15 10:12:20.943] [INFO] logs - GET /data/photo/o093361z8vabct-esqhiml73214grf2u4w4j8kx533639dpny6.jpg
+[2018-06-15 10:12:20.959] [INFO] logs - GET /data/photo/o424456793ab4d1ezgyijkxwnvpqut3s123h8-39r668cfml30.jpg
+[2018-06-15 10:12:20.962] [INFO] logs - GET /data/photo/o433426483636d-4fg1izylmx1wqrs3t7pnujhc90ba8592ekv.jpg
+[2018-06-15 10:12:20.971] [INFO] logs - GET /data/photo/o523656349ayvd-efghusklmn1pq603ic293818437bjx4zwtr.jpg
+[2018-06-15 10:12:20.980] [INFO] logs - GET /data/photo/o0234349896bcd-4f1zxjwuts1rqap2l8k63hgen3ymiv37655.jpg
+[2018-06-15 10:12:20.985] [INFO] logs - GET /data/photo/o523426783abc83efg36j4lmn1pqrstzyw60u1k5h-vd4399xi.jpg
+[2018-06-15 10:12:20.993] [INFO] logs - GET /data/photo/o7233568694b1dzefgtqpk1-0lj2r44u7wx36vcn3i8as9hy3m.jpg
+[2018-06-15 10:12:21.005] [INFO] logs - GET /data/photo/o7234598693b64zefvhqpk1n1063r3lugwy8mtdcas37ji-4x2.jpg
+[2018-06-15 10:12:21.006] [INFO] logs - GET /data/photo/o623249789ab364ezgyixklwv1puts3r5mj6f1-dqc638hn430.jpg
+[2018-06-15 10:12:21.046] [INFO] logs - GET /data/photo/o832456783a86d-3f3hi6k1znxpqwstveu49blcrgyj9342m10.jpg
+[2018-06-15 10:12:21.087] [INFO] logs - GET /data/photo/o7234327849341yewuhsjpmzl386r36gcn-q0dvi1ftkba69x5.jpg
+[2018-06-15 10:12:21.149] [INFO] logs - GET /res/images/nopic.jpg
+[2018-06-15 10:12:21.169] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-15 10:14:03.483] [INFO] logs - GET /photo
+[2018-06-15 10:14:03.616] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:14:03.627] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:14:03.631] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:14:03.633] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:14:03.637] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:14:03.643] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:14:04.387] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 10:14:04.410] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:14:04.535] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:14:04.541] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:14:04.550] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:14:04.552] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:14:04.555] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:14:04.564] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:14:04.568] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:14:04.607] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:14:04.612] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:14:04.870] [INFO] logs - GET /favicon.ico
+[2018-06-15 10:14:04.880] [INFO] logs - POST /photo/read
+[2018-06-15 10:14:05.357] [INFO] logs - POST /photo/read
+[2018-06-15 10:14:35.354] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 10:14:35.682] [INFO] logs - GET /data/focus/o4234867709b2d-ezywvjklutrq50309i1x18p59g2mhans0cf.jpg
+[2018-06-15 10:14:36.070] [INFO] logs - POST /photo/read
+[2018-06-15 10:16:57.280] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:16:57.283] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:16:57.288] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:16:57.478] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:16:57.483] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:18:16.502] [INFO] logs - app start:8002 success!
+[2018-06-15 10:18:22.250] [INFO] logs - GET /photo
+[2018-06-15 10:18:22.374] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:18:22.378] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:18:22.384] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:18:22.388] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:18:22.403] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:18:22.406] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:18:23.236] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:18:23.242] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:18:23.295] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 10:18:23.303] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:18:23.380] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:18:23.382] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:18:23.386] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:18:23.387] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:18:23.388] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:18:23.390] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:18:23.445] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:18:23.450] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:18:23.464] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:23:49.611] [INFO] logs - app start:8002 success!
+[2018-06-15 10:23:55.816] [INFO] logs - GET /photo
+[2018-06-15 10:23:55.903] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:23:55.921] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:23:55.930] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:23:55.933] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:23:55.935] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:23:55.937] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:23:56.838] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 10:23:56.845] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:23:56.904] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:23:56.910] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:23:56.956] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:23:56.959] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:23:56.962] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:23:56.963] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:23:56.965] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:23:56.967] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:23:56.997] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:23:56.998] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:23:57.016] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:23:57.181] [INFO] logs - POST /photo/read
+[2018-06-15 10:23:57.460] [INFO] logs - POST /photo/read
+[2018-06-15 10:24:30.136] [INFO] logs - GET /user
+[2018-06-15 10:24:30.212] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:24:30.221] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:24:30.224] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:24:30.229] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:24:30.234] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:24:30.304] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:24:30.814] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:24:30.818] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:24:30.822] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 10:24:30.840] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:24:30.928] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:24:30.930] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:24:30.936] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:24:30.939] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:24:30.941] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:24:30.945] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:24:31.002] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:24:31.004] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:24:31.016] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:24:31.097] [INFO] photo - start Watch
+[2018-06-15 10:24:31.122] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:24:33.114] [INFO] photo - start Watch
+[2018-06-15 10:24:33.146] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:25:11.574] [INFO] logs - app start:8002 success!
+[2018-06-15 10:25:16.042] [INFO] logs - GET /user
+[2018-06-15 10:25:16.129] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:25:16.134] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:25:16.136] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:25:16.138] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:25:16.140] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:25:16.142] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:25:16.593] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 10:25:16.598] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:25:16.603] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:25:16.622] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:25:16.675] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:25:16.693] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:25:16.695] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:25:16.696] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:25:16.697] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:25:16.711] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:25:16.729] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:25:16.730] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:25:16.731] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:32:31.901] [INFO] logs - app start:8002 success!
+[2018-06-15 10:32:40.173] [INFO] logs - GET /user
+[2018-06-15 10:32:40.221] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:32:40.260] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:32:40.268] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:32:40.273] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:32:40.276] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:32:40.279] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:32:40.816] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'D:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:32:40.869] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:32:40.898] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 10:32:40.907] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:32:40.947] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:32:40.978] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:32:40.985] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:32:40.995] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:32:40.996] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:32:41.014] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:32:41.033] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:32:41.035] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:32:41.041] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:38:36.906] [INFO] logs - app start:8002 success!
+[2018-06-15 10:42:02.535] [INFO] photo - start Watch
+[2018-06-15 10:43:40.672] [INFO] logs - app start:8002 success!
+[2018-06-15 10:43:44.057] [INFO] logs - GET /user
+[2018-06-15 10:43:44.100] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:43:44.123] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:43:44.125] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:43:44.126] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:43:44.128] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:43:44.131] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:43:44.909] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'd:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:43:44.912] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:43:44.922] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 10:43:44.983] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:43:45.043] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:43:45.046] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:43:45.048] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:43:45.050] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:43:45.051] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:43:45.072] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:43:45.108] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:43:45.111] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:43:45.118] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:43:55.547] [INFO] photo - start Watch
+[2018-06-15 10:43:55.928] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:44:03.146] [INFO] photo - start Watch
+[2018-06-15 10:44:03.222] [INFO] logs - GET /user
+[2018-06-15 10:44:04.860] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:44:04.863] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:44:04.864] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:44:04.865] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:44:04.867] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:44:04.871] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:44:05.522] [INFO] logs - GET /user
+[2018-06-15 10:44:05.597] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:44:05.598] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:44:05.601] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:44:05.629] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:44:05.630] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:44:05.632] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:44:06.283] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 10:44:06.290] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:44:06.381] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'd:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:44:06.385] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:44:06.486] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:44:06.514] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:44:06.520] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:44:06.522] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:44:06.523] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:44:06.524] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:44:06.558] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:44:06.559] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:44:06.613] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:44:08.193] [INFO] photo - start Watch
+[2018-06-15 10:44:08.457] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:44:48.937] [INFO] logs - GET /user
+[2018-06-15 10:44:49.044] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:44:49.048] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:44:49.049] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:44:49.051] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:44:49.119] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:44:49.120] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:44:49.637] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'd:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:44:49.638] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 10:44:49.642] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:44:49.647] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:44:49.726] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:44:49.727] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:44:49.730] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:44:49.732] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:44:49.734] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:44:49.740] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:44:49.773] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:44:49.774] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:44:49.783] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:44:54.961] [INFO] photo - start Watch
+[2018-06-15 10:44:55.192] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:45:05.489] [INFO] logs - app start:8002 success!
+[2018-06-15 10:45:12.294] [INFO] logs - GET /user
+[2018-06-15 10:45:12.511] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:45:12.514] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:45:12.519] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:45:12.525] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:45:12.527] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:45:12.528] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:45:13.348] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'd:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:45:13.351] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:45:13.354] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 10:45:13.607] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:45:13.610] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:45:13.613] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:45:13.616] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:45:13.619] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:45:13.748] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:45:13.749] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:45:13.806] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:45:13.914] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:45:13.916] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:45:14.034] [INFO] photo - start Watch
+[2018-06-15 10:45:14.269] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:45:40.430] [INFO] photo - start Watch
+[2018-06-15 10:45:40.675] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:45:48.182] [INFO] photo - start Watch
+[2018-06-15 10:45:48.471] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:46:47.297] [INFO] logs - app start:8002 success!
+[2018-06-15 10:46:50.421] [INFO] logs - GET /user
+[2018-06-15 10:46:50.654] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:46:50.656] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:46:50.658] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:46:50.659] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:46:50.661] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:46:50.666] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:46:51.439] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'd:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:46:51.442] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:46:51.443] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 10:46:51.521] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:46:51.572] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:46:51.575] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:46:51.578] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:46:51.593] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:46:51.594] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:46:51.596] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:46:51.643] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:46:51.651] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:46:51.656] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:46:51.831] [INFO] photo - start Watch
+[2018-06-15 10:46:51.866] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:46:54.266] [INFO] photo - start Watch
+[2018-06-15 10:46:54.295] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:46:55.202] [INFO] photo - start Watch
+[2018-06-15 10:46:55.227] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:46:56.151] [INFO] photo - start Watch
+[2018-06-15 10:46:56.176] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:46:56.776] [INFO] photo - start Watch
+[2018-06-15 10:46:56.805] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:46:57.992] [INFO] photo - start Watch
+[2018-06-15 10:46:58.023] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:46:58.906] [INFO] logs - GET /photo
+[2018-06-15 10:46:58.969] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:46:58.998] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:46:59.000] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:46:59.002] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:46:59.003] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:46:59.004] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:46:59.802] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 10:46:59.825] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'd:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:46:59.826] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:46:59.834] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:46:59.900] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:46:59.912] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:46:59.915] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:46:59.916] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:46:59.917] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:46:59.920] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:46:59.968] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:46:59.968] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:46:59.983] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:47:00.096] [INFO] logs - POST /photo/read
+[2018-06-15 10:47:00.492] [INFO] logs - POST /photo/read
+[2018-06-15 10:47:03.327] [INFO] logs - GET /user
+[2018-06-15 10:47:03.412] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:47:03.413] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:47:03.414] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:47:03.416] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:47:03.417] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:47:03.507] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:47:04.250] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'd:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:47:04.252] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:47:04.260] [INFO] logs - GET /scripts/app/user/main.js
+[2018-06-15 10:47:04.302] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:47:04.414] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:47:04.415] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:47:04.423] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:47:04.429] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:47:04.432] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:47:04.434] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:47:04.472] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:47:04.537] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:47:04.538] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:47:04.656] [INFO] photo - start Watch
+[2018-06-15 10:47:04.686] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:47:06.330] [INFO] photo - start Watch
+[2018-06-15 10:47:06.402] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:47:09.271] [INFO] photo - start Watch
+[2018-06-15 10:47:09.285] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:47:13.028] [INFO] photo - start Watch
+[2018-06-15 10:47:13.070] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:47:15.897] [INFO] photo - start Watch
+[2018-06-15 10:47:15.916] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:48:38.026] [INFO] logs - uncaughtException:-----TypeError: Cannot read property 'toString' of undefined
+[2018-06-15 10:48:47.788] [INFO] photo - start Watch
+[2018-06-15 10:48:47.826] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:48:55.958] [INFO] photo - start Watch
+[2018-06-15 10:48:55.982] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:48:58.657] [INFO] photo - start Watch
+[2018-06-15 10:48:58.682] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:49:00.363] [INFO] photo - start Watch
+[2018-06-15 10:49:00.383] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:49:03.630] [INFO] logs - POST /user/deleteUserByEmail
+[2018-06-15 10:49:03.661] [INFO] photo - start Watch
+[2018-06-15 10:49:03.685] [INFO] logs - POST /user/queryAll
+[2018-06-15 10:49:07.235] [INFO] logs - GET /user/exportExcel
+[2018-06-15 10:49:45.722] [INFO] logs - GET /user/export
+[2018-06-15 10:50:04.330] [INFO] logs - GET /user/export
+[2018-06-15 10:51:25.308] [INFO] logs - uncaughtException:-----TypeError: Cannot read property 'GetCityWeatherByZIP' of undefined
+[2018-06-15 10:51:35.292] [INFO] logs - GET /photo
+[2018-06-15 10:51:35.379] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:51:35.384] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:51:35.385] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:51:35.392] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:51:35.393] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:51:35.395] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:51:36.231] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 10:51:36.283] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:51:36.353] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'd:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:51:42.411] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:51:42.421] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:51:42.427] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:51:42.429] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:51:42.434] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:51:42.435] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:51:42.494] [INFO] logs - GET /photo
+[2018-06-15 10:51:42.498] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:51:42.499] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:51:42.501] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:51:42.502] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:51:42.585] [INFO] logs - GET /scripts/libs/require.js
+[2018-06-15 10:51:42.587] [INFO] logs - GET /styles/css/all.css
+[2018-06-15 10:51:42.588] [INFO] logs - GET /styles/css/grid.css
+[2018-06-15 10:51:42.589] [INFO] logs - GET /scripts/app/boots.js
+[2018-06-15 10:51:42.590] [INFO] logs - GET /release/scripts/master.min.js
+[2018-06-15 10:51:42.590] [INFO] logs - GET /styles/css/bootstrap.css
+[2018-06-15 10:51:43.361] [INFO] logs - GET /scripts/app/photo/main.js
+[2018-06-15 10:51:43.365] [INFO] logs - 过滤静态文件,此处错误忽略！-----Error: Cannot find module 'd:\Work-git\TestTool\express-mvc\controllers\stylesController.js'-----/styles/css/bootstrap.css.map
+[2018-06-15 10:51:43.367] [INFO] logs - GET /styles/css/bootstrap.css.map
+[2018-06-15 10:51:43.453] [INFO] logs - GET /scripts/app/common/grid.js
+[2018-06-15 10:51:43.454] [INFO] logs - GET /scripts/libs/jquery-1.11.3.js
+[2018-06-15 10:51:43.454] [INFO] logs - GET /scripts/libs/jquery.form.js
+[2018-06-15 10:51:43.456] [INFO] logs - GET /scripts/libs/private/mustache.js
+[2018-06-15 10:51:43.457] [INFO] logs - GET /scripts/libs/tabPanel/Fader.js
+[2018-06-15 10:51:43.461] [INFO] logs - GET /scripts/libs/tabPanel/TabPanel.js
+[2018-06-15 10:51:43.510] [INFO] logs - GET /scripts/libs/blockUI/jquery.blockUI.js
+[2018-06-15 10:51:43.574] [INFO] logs - GET /scripts/app/common/paging.js
+[2018-06-15 10:51:43.782] [INFO] logs - GET /scripts/libs/private/jquery.extend.js
+[2018-06-15 10:51:43.783] [INFO] logs - GET /scripts/libs/bootstrap.min.js
+[2018-06-15 10:51:44.006] [INFO] logs - POST /photo/read
+[2018-06-15 10:51:44.275] [INFO] logs - POST /photo/read
+[2018-06-15 10:51:53.337] [INFO] logs - GET /styles/fonts/glyphicons-halflings-regular.woff2
+[2018-06-15 10:51:53.842] [INFO] logs - POST /photo/read
+[2018-06-15 10:51:53.937] [INFO] logs - GET /data/focus/o793456789abc33ef64ijk1mnzyqxstuvw600lhg42dp8-3r12.jpg
+[2018-06-15 10:51:57.028] [INFO] logs - GET /data/focus/o94393648zvbts-rfgqipnlm10j2e533ax6k012648ycdu7hw9.jpg
+[2018-06-15 10:51:57.219] [INFO] logs - POST /photo/read
+[2018-06-15 10:52:00.044] [INFO] logs - POST /photo/read
+[2018-06-15 10:52:00.437] [INFO] logs - POST /photo/read
+[2018-06-15 10:52:02.082] [INFO] logs - GET /data/focus/o0234267294bcd9e386ijk3m41xqu6srv5ayz1ntlghf3p-8w3.jpg
+[2018-06-15 10:52:02.361] [INFO] logs - POST /photo/read
+[2018-06-15 10:52:09.586] [INFO] logs - GET /data/photo/o832456783a86d-3f3hi6k1znxpqwstveu49blcrgyj9342m10.jpg
+[2018-06-15 10:52:09.846] [INFO] logs - POST /photo/read

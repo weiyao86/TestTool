@@ -18,7 +18,8 @@ var now = new Date();
 var dateTime = dateFormat(now, "isoDateTime");
 var pkg = require('./package.json');
 var comments = "/* build date: " + dateTime + " */ \n";
-//build sass
+console.log('task')
+	//build sass
 gulp.task("sass", function() {
 	//.pipe(sass({outputStyle: 'extend'})compressed
 	gulp.src('./*.scss')

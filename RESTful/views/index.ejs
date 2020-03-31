@@ -1,56 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
 
-    <script src="./javascripts/jquery-1.11.3.js"></script>
-    <script>
-    	$(function() {
-    		$("#btn").on("click", function() {
-    			$.ajax({
-    				type: 'post',
-    				url:"/addUser",
-    				contentType: "text/plain",
-    				dataType:"json",
-    				data: {
-    					"id": 4,
-    					"name": 'wei',
-    					"password": "123",
-    					"profession": "know"
-    				},
-    				success: function() {
-    					alert('success')
-    				},
-    				error: function() {
-    					alert('error')
-    				}
-    			});
-    		});
-    	});
-    </script>
-  </head>
-  <body>
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  <script src="/javascripts/jquery-1.11.3.js"></script>
+  <script>
+    $(function () {
+      $("#btn").on("click", function () {
+        $.ajax({
+          type: 'post',
+          url: "/addUser",
+          contentType: "text/plain",
+          dataType: "json",
+          data: {
+            "id": 4,
+            "name": 'wei',
+            "password": "123",
+            "profession": "know"
+          },
+          success: function () {
+            alert('success')
+          },
+          error: function () {
+            alert('error')
+          }
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
   <h1>此页面生成webtest中menu.html中的menu菜单</h1>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-   <!--  <form action="addUserd" method="post">
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to
+    <%= title %>
+  </p>
+  <!--  <form action="addUserd" method="post">
     <input type="hidden" value="cc" name="name">
     <input type="hidden" value="bb" name="password">
     <input type="hidden" value="aa" name="profession">
     <input type="hidden" value="4" name="id">
   
     </form> -->
-      <input type="submit" id="btn" value="click me">
-    <% for(var val in users){ %>
+  <input type="submit" id="btn" value="click me">
+  <% for(var val in users){ %>
     <br>
-    <p><span>name:</span><%= users[val].name %><%= users[val] %></p>
-    <p><span>password:</span><%= users[val].password %><%= val.password %></p>
-    <p><span>profession:</span><%= users[val].profession %><%= val.profession %></p>
-    <p><span>id:</span><%= users[val].id %><%= val.id %></p>
+    <p><span>name:</span>
+      <%= users[val].name %>
+        <%= users[val] %>
+    </p>
+    <p><span>password:</span>
+      <%= users[val].password %>
+        <%= val.password %>
+    </p>
+    <p><span>profession:</span>
+      <%= users[val].profession %>
+        <%= val.profession %>
+    </p>
+    <p><span>id:</span>
+      <%= users[val].id %>
+        <%= val.id %>
+    </p>
 
 
     <% } %>
 
-  </body>
+</body>
+
 </html>

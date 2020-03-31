@@ -21,4 +21,8 @@ import {
 
 export class AppComponent {
 	title = "Tour of Heroes";
+
+	check() {
+		console.log('abc');
+	}
 }

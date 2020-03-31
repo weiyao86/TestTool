@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/javascripts/jquery-1.11.3.js"></script>
+
+    <title>
+        <%= title %>
+    </title>
+
+    <script>
+        $(function () {
+            $("#upload").on("click", function () {
+                $.get("users/upload", function (rst, success, xhr) {
+                    if (success === "success") {
+                        $("#msg").html(rst.msg);
+                    } else { }
+                });
+            })
+
+            $("#download").on("click", function () {
+                $.get("users/download", function (rst, success, xhr) {
+                    if (success === "success") {
+                        $("#msg").html(rst.msg);
+                    } else { }
+                });
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h3>FTP上传,下载文件</h3>
+    <button id="upload">点我测试从FTP上传</button>
+    <button id="download">点我测试从FTP下载</button>
+    <h2 id="msg">
+    </h2>
+</body>
+
+</html>
