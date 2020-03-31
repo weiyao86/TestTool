@@ -1,3 +1,7 @@
+/**
+ * app.js
+ */
+
 global.__appRoot = __dirname;
 var express = require('express');
 var path = require('path');

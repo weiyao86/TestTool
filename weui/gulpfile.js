@@ -1,4 +1,7 @@
-
+/**
+ * [path description]
+ * @type {[type]}
+ */
 var path = require('path');
 var fs = require('fs');
 var yargs = require('yargs').argv;
