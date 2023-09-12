@@ -104,21 +104,21 @@ server.listen(8005, function() {
 });
 
 var clientIo = require("socket.io-client");
-//var clientList = {};
+var clientList = {};
 
 io.on("connection", function(s) {
-	//clientList[s.client.conn.remoteAddress] = s;
-	//方法－：8005 当前服务器聊天室
-	// s.on('say', function(data) {
-	// 	var ip = 'ip--' + s.client.conn.remoteAddress.replace(/(\:)?.+(\:)/, '');
-	// 	for (var key in clientList) {
-	// 		console.log(key + "说:---" + ip);
-	// 		clientList[key].emit('message', {
-	// 			title: ip + "说:",
-	// 			content: data.content
-	// 		});
-	// 	}
-	// });
+	clientList[s.client.conn.remoteAddress] = s;
+	// 方法－：8005 当前服务器聊天室
+	s.on('say', function(data) {
+		var ip = 'ip--' + s.client.conn.remoteAddress.replace(/(\:)?.+(\:)/, '');
+		for (var key in clientList) {
+			console.log(key + "说:---" + ip);
+			clientList[key].emit('message', {
+				title: ip + "说1:",
+				content: data.content
+			});
+		}
+	});
 
 	//方法二：8010 服务器  通过中转服务（端口8010）
 	var ioclient = clientIo.connect("http://localhost:8010", {

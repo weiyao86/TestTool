@@ -16,13 +16,13 @@
 		"serve-favicon": "~2.3.0"
 	},
 	"devDependencies": {
-		"async": "^1.5.2",
-		"bower": "^1.7.9",
-		"cheerio": "^0.20.0",
-		"jquery": "^2.2.3",
-		"log4js": "^0.6.35",
-		"request": "^2.72.0",
-		"socket.io": "^1.4.5",
+		"async": "~1.5.2",
+		"bower": "~1.7.9",
+		"cheerio": "~0.20.0",
+		"jquery": "~2.2.3",
+		"log4js": "~0.6.35",
+		"request": "~2.72.0",
+		"socket.io": "~1.4.5",
 		"socket.io-client": "1.4.5"
 	}
 }

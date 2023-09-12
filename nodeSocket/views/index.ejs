@@ -16,7 +16,7 @@
     <script>
     	window.onload=function(){
 
-    		var s=io.connect(configParams.remoteIp); //服务器地址 //remoteIp
+    		var s=io.connect(configParams.localIp); //服务器地址 //remoteIp
 
     		var $template=$("#template").hide(),
 
@@ -30,13 +30,14 @@
                         rgb+=colorList[ran];
                          colorList.sort(function () { return Math.random() > 0.6 });
                         rgb+=colorList[ran];
-                    return "#"+rgb;
+                    // return "#"+rgb;
+					return "#fff";
                 };
 
     		function setContent(data){
                 
     				$template.find("p:first").html(data.title);
-    				$template.find("p:last").html(data.content).css("background",getRgb());
+    				$template.find("p:last").html(data.content).css("background",getRgb()).css("color","#333");
 
     				var temp = $template.clone().html();
     				$(".body").append(temp).scrollTop(9999);
@@ -69,7 +70,7 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <div class="wrap">
-    	<div class="head">Socket.io.js</div>
+    	<div class="head">Socket</div>
     	<div class="body">
     	</div>
     	<div class="bottom">

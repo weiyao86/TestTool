@@ -16,7 +16,7 @@ io.on("connection", function(s) {
 		for (var key in clientList) {
 			console.log(key + "说:---" + ip);
 			clientList[key].emit('message', {
-				title: ip + "说:",
+				title: ip + "说2:",
 				content: data.content
 			});
 		}

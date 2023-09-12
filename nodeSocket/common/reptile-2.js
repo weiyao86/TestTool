@@ -72,7 +72,7 @@ var reptile = {
 	acquireData: function (body, fn) {
 		var self = this,
 			$ = cheerio.load(body),
-			$wrap = $(".single-photo-thumb a[rel='bookmark'] img"),
+			$wrap = $(".single-photo a[rel='bookmark'] img"),
 			origin = [],
 			small = [],
 			series = [];
